@@ -14,7 +14,7 @@ public class PlayerScript : MonoBehaviour
 
     bool mode = true;//現在の向き(ONかOFFか)
     bool beforeMode = true;//以前の向き(ONかOFFか)
-    bool jumpFlag = false;//現在ジャンプ中か
+    bool jumpFlag = true;//現在ジャンプ中か
 
 
     void Start()
