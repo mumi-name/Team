@@ -35,7 +35,7 @@ public class PlayerScript : MonoBehaviour
     void Jump()
     {
         //スペースボタンが押されたらジャンプする
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetAxis("Jump")>0f)
         {
             if (jumpFlag) return;
             rb.AddForce(transform.up * jumpPower);
