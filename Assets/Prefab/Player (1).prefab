@@ -170,7 +170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1000
   maxSpeed: 10
-  jumpPower: 250
+  jumpPower: 500
   rb: {fileID: 2503404638839307223}
 --- !u!114 &3600196515399268365
 MonoBehaviour:

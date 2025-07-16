@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -26,7 +27,6 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         Jump();
         Move();
 
@@ -35,9 +35,10 @@ public class PlayerScript : MonoBehaviour
     void Jump()
     {
         //スペースボタンが押されたらジャンプする
-        if (Input.GetAxis("Jump")>0f)
+        if (Input.GetAxis("Jump")>0f)//Input.GetKeyDown(KeyCode.Space)
         {
             if (jumpFlag) return;
+            rb.linearVelocityY = 0;
             rb.AddForce(transform.up * jumpPower);
             jumpFlag = true;
         }
@@ -102,6 +103,11 @@ public class PlayerScript : MonoBehaviour
     {
         jumpFlag = false;
     }
+
+    private void CheckGround()
+    {
+
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //罠に触れたらリセットする
@@ -110,6 +116,7 @@ public class PlayerScript : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
+
 }
 
 
