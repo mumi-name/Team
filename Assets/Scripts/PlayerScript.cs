@@ -13,8 +13,8 @@ public class PlayerScript : MonoBehaviour
     public Rigidbody2D rb;
     public static PlayerScript instance;
 
-    bool mode = true;//現在の向き(ONかOFFか)
-    bool beforeMode = true;//以前の向き(ONかOFFか)
+    int beforeMode = 1;//以前の向き(ONかOFFか)
+    int  mode = 1;//現在の向き(ONかOFFか)
     bool jumpFlag = true;//現在ジャンプ中か
 
 
@@ -24,6 +24,7 @@ public class PlayerScript : MonoBehaviour
     {
         rb.GetComponent<Rigidbody2D>();
         instance = this;
+
     }
 
     // Update is called once per frame
@@ -50,6 +51,21 @@ public class PlayerScript : MonoBehaviour
         //左右キーの入力を検知
         float num = Input.GetAxisRaw("Horizontal");
 
+        //ジャンプ中に別方向に力が掛かっている場合(オブジェクトの端を使ったバグ対策)
+        if (jumpFlag)
+        {
+            //velocityを0にしてreturnする
+            if (beforeMode > 0 && rb.linearVelocityX < 0)
+            {
+                rb.linearVelocityX = 0;
+                return;
+            }
+            if (beforeMode < 0 && rb.linearVelocityX > 0)
+            {
+                rb.linearVelocityX = 0;
+                return;
+            }
+        }
         //左右キーが押されてない場合、止める
         if (num == 0)
         {
@@ -58,17 +74,12 @@ public class PlayerScript : MonoBehaviour
         }
 
         //ジャンプ中に違う方向を向かないようにする
-        if (jumpFlag)
-        {
-            if (num > 0 && beforeMode == false) return;
-            if (num < 0 && beforeMode == true) return;
-
-        }
+        if (jumpFlag && num != beforeMode) return;
 
         //プレイヤーの速度が一定量を超えたら加速を中止
         if (Mathf.Abs(rb.linearVelocity.x) > 5f) return;
-        if (num > 0) mode = true;
-        else if (num < 0) mode = false;
+        if (num > 0) mode = 1;
+        else if (num < 0) mode = -1;
 
         //入力方向が変わった場合、ONとOFFを切り替える
         if (beforeMode != mode)
@@ -76,12 +87,12 @@ public class PlayerScript : MonoBehaviour
             if (num > 0)
             {
                 GameManager.instance.ON();
-                beforeMode = true;
+                beforeMode = 1;
             }
             else if (num < 0)
             {
                 GameManager.instance.OFF();
-                beforeMode = false;
+                beforeMode = -1;
             }
         }
         //左右キーを押した方向に力を掛けて移動させる
@@ -92,7 +103,7 @@ public class PlayerScript : MonoBehaviour
     }
 
 
-    public bool GetMode()
+    public int GetMode()
     {
         //現在の向きを返す
         return mode;
@@ -106,10 +117,7 @@ public class PlayerScript : MonoBehaviour
         jumpFlag = false;
     }
 
-    private void CheckGround()
-    {
-
-    }
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //罠に触れたらリセットする
