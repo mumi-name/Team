@@ -18,6 +18,8 @@ public class PlayerScript : MonoBehaviour
     bool jumpFlag = true;//現在ジャンプ中か
 
 
+    //FIX:バグ
+
     void Start()
     {
         rb.GetComponent<Rigidbody2D>();
