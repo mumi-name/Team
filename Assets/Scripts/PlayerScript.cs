@@ -98,7 +98,7 @@ public class PlayerScript : MonoBehaviour
         //左右キーを押した方向に力を掛けて移動させる
         rb.AddForce(transform.right * speed * num * Time.deltaTime);
         //プレイヤーの向きを変更する
-        transform.localScale = new Vector3(1 * num, 1, 1);
+        transform.localScale = new Vector3(1 * mode, 1, 1);
 
     }
 
