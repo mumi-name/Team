@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class OnOffBrock : MonoBehaviour
 {
-    
+
     public bool on = false;
     public bool move = false;
     public Vector3 movevec = Vector3.zero;
@@ -10,19 +10,34 @@ public class OnOffBrock : MonoBehaviour
     public Vector3 orizinalpos = Vector3.zero;
     public BoxCollider2D box;
     public SpriteRenderer spr;
-    public Sprite newSprite;
+    public Sprite onSprite;
+    public Sprite offSprite;
     //public string defaultTag = "Selectable";//初期タグをここに保存
     //public Sprite offSprite;//点線(OFF用)
 
     bool moveFlag = false;
- 
+
 
     void Start()
     {
-        //if(on&& new) spr = spr.sprite = newSprite;
-        //else spr.color = new Color(255, 255, 255, spr.color.a);
-        //orizinalpos=transform.position;
-        
+        /*
+        if(spr != null){
+            if (on && onSprite != null) spr.sprite = onSprite;
+            else if (!on && offSprite != null)
+            {
+                spr.sprite = offSprite;
+                //spr.color = new Color(255, 255, 255, spr.color.a);
+            }
+            spr.color = new Color(1f, 1f, 1f, spr.color.a);
+        }
+        */
+        if (spr == null) spr = GetComponent<SpriteRenderer>();
+
+        orizinalpos = transform.position;
+
+        // 初期状態のスプライトを設定（色はいじらない）
+        ApplyVisual();
+
     }
 
     void Update()
@@ -32,35 +47,51 @@ public class OnOffBrock : MonoBehaviour
 
     public void OnMove()
     {
+        if (!on) return;
         moveFlag = true;
-        if (!on) moveFlag = false;
+        //if (!on) moveFlag = false;
     }
 
     public void OffMove()
     {
         moveFlag = false;
         transform.position = orizinalpos;//元の場所に戻す
-        if (!on) moveFlag = true;
+        //if (!on) moveFlag = true;
     }
-    
+
     void Move()
     {
-        if (!move||!moveFlag) return;
+        if (!move || !moveFlag) return;
 
         if (moveFlag)
         {
             transform.Translate(movevec * Time.deltaTime);
         }
-        
+
         if (transform.position.x >= movestop.x || transform.position.y >= movestop.y)
         {
             moveFlag = false;
         }
-        
+
     }
 
-  
+    public void ApplyVisual()
+    {
+        if (on)
+        {
+            box.enabled = true;
+            spr.sprite = onSprite;
+            //spr.color = new Color(1f, 1f, 1f, 1f); // 不透明
+            //box.size = new Vector2(1f, 1f);//オン時の大きさ
+        }
+        else
+        {
+            box.enabled = false;
+            spr.sprite = offSprite;
+            //spr.color = new Color(1f, 1f, 1f, 1f); // 半透明
+            //box.size = new Vector2(1f, 1f);//オフ時の大きさ
+        }
+    }
+
+
 }
-
-
-

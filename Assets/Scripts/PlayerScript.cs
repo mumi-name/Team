@@ -14,7 +14,7 @@ public class PlayerScript : MonoBehaviour
     public static PlayerScript instance;
 
     int beforeMode = 1;//以前の向き(ONかOFFか)
-    int  mode = 1;//現在の向き(ONかOFFか)
+    int mode = 1;//現在の向き(ONかOFFか)
     bool jumpFlag = true;//現在ジャンプ中か
 
 
@@ -117,7 +117,7 @@ public class PlayerScript : MonoBehaviour
         jumpFlag = false;
     }
 
-    
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //罠に触れたらリセットする
@@ -191,7 +191,6 @@ public class PlayerScript : MonoBehaviour
        //プレイヤーの速度が一定量を超えたら加速を中止
        if (Mathf.Abs(rb.linearVelocity.x) < 5f) rb.AddForce(transform.right * speed * Time.deltaTime * num);
        //移動キーが入力されていたら、反転
-       if (num!=0)transform.localScale = new Vector3(1*num, 1, 1);*/
-
-
-
+       if (num!=0)transform.localScale = new Vector3(1*num, 1, 1);
+}
+*/

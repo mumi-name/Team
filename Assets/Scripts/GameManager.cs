@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
     {
         foreach (var brock in brocks)
         {
+            /*
             if (brock.on)
             {
                 brock.box.enabled = true;
@@ -54,14 +55,18 @@ public class GameManager : MonoBehaviour
                 brock.spr.color = new Color(0, 0, 0, 0.4f);
                
             }
+            */
             brock.OnMove();
+            brock.ApplyVisual();
         }
         
     }
     public void OFF()
     {
+        
         foreach (var brock in brocks)
         {
+            /*
             if (brock.on)
             {
                 
@@ -75,7 +80,9 @@ public class GameManager : MonoBehaviour
                 brock.box.enabled = true;
                 brock.spr.color = new Color(255, 255, 0, 255);
             }
+            */
             brock.OffMove();
+            brock.ApplyVisual();
         }
     }
 
@@ -83,7 +90,8 @@ public class GameManager : MonoBehaviour
     {
         foreach (var brock in brocks)
         {
-            brock.on = !brock.on;
+            //brock.on = !brock.on;
+            brock.on = on;
         }
         if (on) ON();
         else OFF();

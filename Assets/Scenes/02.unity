@@ -491,6 +491,22 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1394088240642963700, guid: 918b7aa0d70386b4088c966f646982da, type: 3}
+      propertyPath: move
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1394088240642963700, guid: 918b7aa0d70386b4088c966f646982da, type: 3}
+      propertyPath: onSprite
+      value: 
+      objectReference: {fileID: 2141544752653111221, guid: fc42510ec2bbc844990a78bf76f4c617, type: 3}
+    - target: {fileID: 1394088240642963700, guid: 918b7aa0d70386b4088c966f646982da, type: 3}
+      propertyPath: newSprite
+      value: 
+      objectReference: {fileID: 2141544752653111221, guid: fc42510ec2bbc844990a78bf76f4c617, type: 3}
+    - target: {fileID: 1394088240642963700, guid: 918b7aa0d70386b4088c966f646982da, type: 3}
+      propertyPath: offSprite
+      value: 
+      objectReference: {fileID: 5145108679139011623, guid: 4f53d9f5742495f4ab4dcf4b4e968f76, type: 3}
+    - target: {fileID: 1394088240642963700, guid: 918b7aa0d70386b4088c966f646982da, type: 3}
       propertyPath: defaultTag
       value: Floor
       objectReference: {fileID: 0}
@@ -500,15 +516,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1952178127475050760, guid: 918b7aa0d70386b4088c966f646982da, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1952178127475050760, guid: 918b7aa0d70386b4088c966f646982da, type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1952178127475050760, guid: 918b7aa0d70386b4088c966f646982da, type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5316478070407123087, guid: 918b7aa0d70386b4088c966f646982da, type: 3}
       propertyPath: m_LocalScale.x
@@ -848,9 +864,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1394088240642963700, guid: 918b7aa0d70386b4088c966f646982da, type: 3}
+      propertyPath: onSprite
+      value: 
+      objectReference: {fileID: 2141544752653111221, guid: fc42510ec2bbc844990a78bf76f4c617, type: 3}
+    - target: {fileID: 1394088240642963700, guid: 918b7aa0d70386b4088c966f646982da, type: 3}
       propertyPath: newSprite
       value: 
       objectReference: {fileID: 2141544752653111221, guid: fc42510ec2bbc844990a78bf76f4c617, type: 3}
+    - target: {fileID: 1394088240642963700, guid: 918b7aa0d70386b4088c966f646982da, type: 3}
+      propertyPath: offSprite
+      value: 
+      objectReference: {fileID: 5145108679139011623, guid: 4f53d9f5742495f4ab4dcf4b4e968f76, type: 3}
     - target: {fileID: 1394088240642963700, guid: 918b7aa0d70386b4088c966f646982da, type: 3}
       propertyPath: defaultTag
       value: Floor
@@ -861,15 +885,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1952178127475050760, guid: 918b7aa0d70386b4088c966f646982da, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1952178127475050760, guid: 918b7aa0d70386b4088c966f646982da, type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1952178127475050760, guid: 918b7aa0d70386b4088c966f646982da, type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5316478070407123087, guid: 918b7aa0d70386b4088c966f646982da, type: 3}
       propertyPath: m_LocalScale.x
@@ -1481,7 +1505,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1394088240642963700, guid: 918b7aa0d70386b4088c966f646982da, type: 3}
+      propertyPath: onSprite
+      value: 
+      objectReference: {fileID: 2141544752653111221, guid: fc42510ec2bbc844990a78bf76f4c617, type: 3}
+    - target: {fileID: 1394088240642963700, guid: 918b7aa0d70386b4088c966f646982da, type: 3}
       propertyPath: newSprite
+      value: 
+      objectReference: {fileID: 5145108679139011623, guid: 4f53d9f5742495f4ab4dcf4b4e968f76, type: 3}
+    - target: {fileID: 1394088240642963700, guid: 918b7aa0d70386b4088c966f646982da, type: 3}
+      propertyPath: offSprite
       value: 
       objectReference: {fileID: 5145108679139011623, guid: 4f53d9f5742495f4ab4dcf4b4e968f76, type: 3}
     - target: {fileID: 1394088240642963700, guid: 918b7aa0d70386b4088c966f646982da, type: 3}
@@ -1561,8 +1593,8 @@ SceneRoots:
   - {fileID: 2135618519}
   - {fileID: 1888407660}
   - {fileID: 2016482925}
-  - {fileID: 4681515401693262944}
   - {fileID: 1600835861}
+  - {fileID: 4681515401693262944}
   - {fileID: 985941208}
   - {fileID: 685783118}
   - {fileID: 544315069}
