@@ -20,8 +20,8 @@ public class OnOffBrock : MonoBehaviour
     void Start()
     {
         //if(on&& new) spr = spr.sprite = newSprite;
-        else spr.color = new Color(255, 255, 255, spr.color.a);
-        orizinalpos=transform.position;
+        //else spr.color = new Color(255, 255, 255, spr.color.a);
+        //orizinalpos=transform.position;
         
     }
 
