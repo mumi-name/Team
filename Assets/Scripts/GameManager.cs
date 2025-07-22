@@ -51,14 +51,16 @@ public class GameManager : MonoBehaviour
             if (brock.on)
             {
                 brock.box.enabled = true;
-                spr.sprite = onSprite;
+                brock.spr.sprite = onSprite;
+                //spr.sprite = onSprite;
                 //brock.spr.color= new Color(255, 255, 0, 255);
                 Debug.Log("オン起動中");
             }
             else
             {
                 brock.box.enabled = false;
-                spr.sprite = offSprite;
+                brock.spr.sprite= offSprite;
+                //spr.sprite = offSprite;
                 //brock.spr.color = new Color(0, 0, 0, 0.4f);
                
             }
@@ -71,7 +73,6 @@ public class GameManager : MonoBehaviour
     public void OFF()
     {
 
-        
         foreach (var brock in brocks)
         {
            
@@ -79,15 +80,17 @@ public class GameManager : MonoBehaviour
             {
                 
                 brock.box.enabled = false;
-                spr.sprite = offSprite;
+                brock.spr.sprite = offSprite;
+                //spr.sprite = offSprite;
                 //brock.spr.color = new Color(0, 0, 0, 0.4f);
-                 Debug.Log("オフ起動中");
+                Debug.Log("オフ起動中");
                 
             }
             else
             {
                 brock.box.enabled = true;
-                spr.sprite = onSprite;
+                brock.spr.sprite = onSprite;
+                //spr.sprite = onSprite;
                 //brock.spr.color = new Color(255, 255, 0, 255);
             }
             

@@ -2104,6 +2104,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brocks:
   - {fileID: 584771507}
+  spr: {fileID: 1556995766}
+  onSprite: {fileID: 0}
+  offSprite: {fileID: 0}
 --- !u!4 &685783118
 Transform:
   m_ObjectHideFlags: 0
@@ -3779,6 +3782,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!212 &1556995766 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1952178127475050760, guid: 918b7aa0d70386b4088c966f646982da, type: 3}
+  m_PrefabInstance: {fileID: 4681515401693262944}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1670091342
 GameObject:
   m_ObjectHideFlags: 0
@@ -5262,6 +5270,14 @@ PrefabInstance:
       propertyPath: on
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1394088240642963700, guid: 918b7aa0d70386b4088c966f646982da, type: 3}
+      propertyPath: onSprite
+      value: 
+      objectReference: {fileID: -6373972758247592290, guid: 7922245629c5ccb4b872f774f8960962, type: 3}
+    - target: {fileID: 1394088240642963700, guid: 918b7aa0d70386b4088c966f646982da, type: 3}
+      propertyPath: offSprite
+      value: 
+      objectReference: {fileID: -6373972758247592290, guid: 7922245629c5ccb4b872f774f8960962, type: 3}
     - target: {fileID: 1952178127475050760, guid: 918b7aa0d70386b4088c966f646982da, type: 3}
       propertyPath: m_Color.a
       value: 0
