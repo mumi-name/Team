@@ -10,6 +10,7 @@ public class OnOffBrock : MonoBehaviour
     public Vector3 orizinalpos = Vector3.zero;
     public BoxCollider2D box;
     public SpriteRenderer spr;
+
     public Sprite onSprite;
     public Sprite offSprite;
     //public string defaultTag = "Selectable";//初期タグをここに保存
@@ -36,7 +37,7 @@ public class OnOffBrock : MonoBehaviour
         orizinalpos = transform.position;
 
         // 初期状態のスプライトを設定（色はいじらない）
-        ApplyVisual();
+        //ApplyVisual();
 
     }
 
@@ -75,12 +76,15 @@ public class OnOffBrock : MonoBehaviour
 
     }
 
+    
     public void ApplyVisual()
     {
         if (on)
         {
             box.enabled = true;
             spr.sprite = onSprite;
+            spr.color = Color.white;
+            
             //spr.color = new Color(1f, 1f, 1f, 1f); // 不透明
             //box.size = new Vector2(1f, 1f);//オン時の大きさ
         }
@@ -88,6 +92,7 @@ public class OnOffBrock : MonoBehaviour
         {
             box.enabled = false;
             spr.sprite = offSprite;
+            spr.color = Color.white;
             //spr.color = new Color(1f, 1f, 1f, 1f); // 半透明
             //box.size = new Vector2(1f, 1f);//オフ時の大きさ
         }
