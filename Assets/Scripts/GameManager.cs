@@ -108,7 +108,7 @@ public class GameManager : MonoBehaviour
         foreach (var brock in brocks)
         {
             //brock.on = !brock.on;
-            brock.on = !on;
+            brock.on = !brock.on;
         }
         if (on) ON();
         else OFF();
