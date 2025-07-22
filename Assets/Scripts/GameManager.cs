@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
                 brock.box.enabled = true;
                 brock.spr.sprite = onSprite;
                 //spr.sprite = onSprite;
-                //brock.spr.color= new Color(255, 255, 0, 255);
+                //brock.spr.color = new Color(spr.color.r, spr.color.g, spr.color.b, 255);
                 Debug.Log("オン起動中");
             }
             else
@@ -61,8 +61,8 @@ public class GameManager : MonoBehaviour
                 brock.box.enabled = false;
                 brock.spr.sprite= offSprite;
                 //spr.sprite = offSprite;
-                //brock.spr.color = new Color(0, 0, 0, 0.4f);
-               
+                //brock.spr.color = new Color(spr.color.r, spr.color.g, spr.color.b, 0.4f);
+
             }
             
             //brock.ApplyVisual();
@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour
                 brock.box.enabled = false;
                 brock.spr.sprite = offSprite;
                 //spr.sprite = offSprite;
-                //brock.spr.color = new Color(0, 0, 0, 0.4f);
+                //brock.spr.color = new Color(spr.color.r, spr.color.g, spr.color.b, 0.4f);
                 Debug.Log("オフ起動中");
                 
             }
@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour
                 brock.box.enabled = true;
                 brock.spr.sprite = onSprite;
                 //spr.sprite = onSprite;
-                //brock.spr.color = new Color(255, 255, 0, 255);
+                //brock.spr.color = new Color(spr.color.r, spr.color.g, spr.color.b, 255);
             }
             
             //brock.OffMove();

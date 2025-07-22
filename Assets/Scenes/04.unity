@@ -618,6 +618,7 @@ MonoBehaviour:
   maxSpeed: 10
   jumpPower: 450
   rb: {fileID: 440716439}
+  animator: {fileID: 0}
 --- !u!114 &440716444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1090,7 +1091,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1394088240642963700, guid: 918b7aa0d70386b4088c966f646982da, type: 3}
       propertyPath: orizinalpos.y
-      value: -4.05
+      value: -3.96
       objectReference: {fileID: 0}
     - target: {fileID: 1952178127475050760, guid: 918b7aa0d70386b4088c966f646982da, type: 3}
       propertyPath: m_Color.b
@@ -1118,7 +1119,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5316478070407123087, guid: 918b7aa0d70386b4088c966f646982da, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.6
+      value: -3.96
       objectReference: {fileID: 0}
     - target: {fileID: 5316478070407123087, guid: 918b7aa0d70386b4088c966f646982da, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1332,6 +1333,9 @@ MonoBehaviour:
   - {fileID: 631634356}
   - {fileID: 646978555}
   - {fileID: 1882058400}
+  spr: {fileID: 0}
+  onSprite: {fileID: 0}
+  offSprite: {fileID: 0}
 --- !u!4 &685783118
 Transform:
   m_ObjectHideFlags: 0
