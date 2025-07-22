@@ -1580,6 +1580,7 @@ MonoBehaviour:
   maxSpeed: 10
   jumpPower: 500
   rb: {fileID: 440716439}
+  animator: {fileID: 0}
 --- !u!1 &502874295
 GameObject:
   m_ObjectHideFlags: 0
@@ -4500,11 +4501,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1197886452449778927, guid: 8f1fe4a2423ca2a45ba9618216f09d4f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.992487
+      value: -7.3
       objectReference: {fileID: 0}
     - target: {fileID: 1197886452449778927, guid: 8f1fe4a2423ca2a45ba9618216f09d4f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.22
+      value: -3.2
       objectReference: {fileID: 0}
     - target: {fileID: 1197886452449778927, guid: 8f1fe4a2423ca2a45ba9618216f09d4f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5288,7 +5289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5316478070407123087, guid: 918b7aa0d70386b4088c966f646982da, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.7
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5316478070407123087, guid: 918b7aa0d70386b4088c966f646982da, type: 3}
       propertyPath: m_LocalPosition.z

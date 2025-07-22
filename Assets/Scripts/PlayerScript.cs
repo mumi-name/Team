@@ -11,6 +11,7 @@ public class PlayerScript : MonoBehaviour
     public float maxSpeed = 10f;//最大速度
     public float jumpPower = 300f;//ジャンプ力
     public Rigidbody2D rb;
+    public Animator animator;
     public static PlayerScript instance;
 
     int beforeMode = 1;//以前の向き(ONかOFFか)
@@ -43,6 +44,7 @@ public class PlayerScript : MonoBehaviour
             if (jumpFlag) return;
             rb.linearVelocityY = 0;
             rb.AddForce(transform.up * jumpPower);
+            animator.SetBool("JumpBool", true);
             jumpFlag = true;
         }
     }
@@ -70,16 +72,27 @@ public class PlayerScript : MonoBehaviour
         if (num == 0)
         {
             rb.linearVelocity = new Vector2(0, rb.linearVelocityY);
+            animator.speed = 0;
             return;
         }
-
         //ジャンプ中に違う方向を向かないようにする
         if (jumpFlag && num != beforeMode) return;
 
+        //入力方向によってアニメーションのバージョンを切り替える
+        if (num > 0)
+        {
+            animator.SetBool("OnOffBool", true);
+            mode = 1;
+
+        }
+        else if (num < 0)
+        {
+            mode = -1;
+            animator.SetBool("OnOffBool", false);
+        }
+        
         //プレイヤーの速度が一定量を超えたら加速を中止
         if (Mathf.Abs(rb.linearVelocity.x) > 5f) return;
-        if (num > 0) mode = 1;
-        else if (num < 0) mode = -1;
 
         //入力方向が変わった場合、ONとOFFを切り替える
         if (beforeMode != mode)
@@ -88,6 +101,7 @@ public class PlayerScript : MonoBehaviour
             {
                 GameManager.instance.ON();
                 beforeMode = 1;
+
             }
             else if (num < 0)
             {
@@ -97,6 +111,8 @@ public class PlayerScript : MonoBehaviour
         }
         //左右キーを押した方向に力を掛けて移動させる
         rb.AddForce(transform.right * speed * num * Time.deltaTime);
+        //アニメーションのスピードを速度によって変更する
+        animator.speed = Mathf.Abs(rb.linearVelocityX)/2;
         //プレイヤーの向きを変更する
         transform.localScale = new Vector3(1 * mode, 1, 1);
 
@@ -111,10 +127,12 @@ public class PlayerScript : MonoBehaviour
     public void OnJumpFlag()
     {
         jumpFlag = true;
+        animator.SetBool("JumpBool", true);
     }
     public void OffJumpFlag()
     {
         jumpFlag = false;
+        animator.SetBool("JumpBool", false);
     }
 
 
