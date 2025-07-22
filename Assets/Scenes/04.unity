@@ -1082,6 +1082,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1394088240642963700, guid: 918b7aa0d70386b4088c966f646982da, type: 3}
+      propertyPath: movestop.x
+      value: -6.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 1394088240642963700, guid: 918b7aa0d70386b4088c966f646982da, type: 3}
       propertyPath: movestop.y
       value: -0.91
       objectReference: {fileID: 0}
