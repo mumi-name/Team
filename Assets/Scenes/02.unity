@@ -848,6 +848,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1394088240642963700, guid: 918b7aa0d70386b4088c966f646982da, type: 3}
+      propertyPath: newSprite
+      value: 
+      objectReference: {fileID: 2141544752653111221, guid: fc42510ec2bbc844990a78bf76f4c617, type: 3}
+    - target: {fileID: 1394088240642963700, guid: 918b7aa0d70386b4088c966f646982da, type: 3}
       propertyPath: defaultTag
       value: Floor
       objectReference: {fileID: 0}
@@ -1476,6 +1480,10 @@ PrefabInstance:
       propertyPath: on
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1394088240642963700, guid: 918b7aa0d70386b4088c966f646982da, type: 3}
+      propertyPath: newSprite
+      value: 
+      objectReference: {fileID: 5145108679139011623, guid: 4f53d9f5742495f4ab4dcf4b4e968f76, type: 3}
     - target: {fileID: 1394088240642963700, guid: 918b7aa0d70386b4088c966f646982da, type: 3}
       propertyPath: defaultTag
       value: Floor
