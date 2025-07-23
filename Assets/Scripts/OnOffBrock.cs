@@ -4,7 +4,7 @@ public class OnOffBrock : MonoBehaviour
 {
 
     public bool on = false;
-    public bool move = false;
+    //public bool move = false;
     public Vector3 movevec = Vector3.zero;
     public Vector3 movestop = Vector3.zero;
     public Vector3 orizinalpos = Vector3.zero;
@@ -48,29 +48,36 @@ public class OnOffBrock : MonoBehaviour
 
     public void OnMove()
     {
-        if (!on) return;
+        //if (!on) return;
         moveFlag = true;
-        //if (!on) moveFlag = false;
+        //モードがOFFで動く場合
+        if (!on)
+        {
+            moveFlag = false;
+            transform.position = orizinalpos;//元の場所に戻す
+        }
     }
 
     public void OffMove()
     {
         moveFlag = false;
         transform.position = orizinalpos;//元の場所に戻す
-        //if (!on) moveFlag = true;
+        if (!on) moveFlag = true;
     }
 
     void Move()
     {
-        if (!move || !moveFlag) return;
+        if (/*!move ||*/ !moveFlag) return;
 
         if (moveFlag)
         {
+            Debug.Log("ブロック移動中");
             transform.Translate(movevec * Time.deltaTime);
         }
 
-        if (transform.position.x >= movestop.x || transform.position.y >= movestop.y)
+        if (transform.localPosition.x > movestop.x ||transform.localPosition.y > movestop.y)
         {
+            Debug.Log("ブロックの移動を止めました");
             moveFlag = false;
         }
 
