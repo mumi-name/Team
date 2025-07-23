@@ -148,7 +148,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   on: 1
-  move: 0
   movevec: {x: 0, y: 0, z: 0}
   movestop: {x: 0, y: 0, z: 0}
   orizinalpos: {x: 0, y: 0, z: 0}
