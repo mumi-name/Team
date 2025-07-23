@@ -2106,8 +2106,8 @@ MonoBehaviour:
   brocks:
   - {fileID: 432294127}
   spr: {fileID: 0}
-  onSprite: {fileID: -7365593208591039550, guid: e076c65a2bf8e3c4eb71488d476f2932, type: 3}
-  offSprite: {fileID: -6373972758247592290, guid: 7922245629c5ccb4b872f774f8960962, type: 3}
+  onSprite: {fileID: 21300000, guid: e076c65a2bf8e3c4eb71488d476f2932, type: 3}
+  offSprite: {fileID: 21300000, guid: 7922245629c5ccb4b872f774f8960962, type: 3}
 --- !u!4 &685783118
 Transform:
   m_ObjectHideFlags: 0

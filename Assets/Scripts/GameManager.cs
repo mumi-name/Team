@@ -52,6 +52,9 @@ public class GameManager : MonoBehaviour
             {
                 brock.box.enabled = true;
                 brock.spr.sprite = onSprite;
+                Color color = brock.spr.material.color;
+                color.a = 1f;
+                brock.spr.material.color = color;
                 //spr.sprite = onSprite;
                 //brock.spr.color = new Color(spr.color.r, spr.color.g, spr.color.b, 255);
                 //brock.spr.material.color= new Color(spr.color.r, spr.color.g, spr.color.b, 255);
@@ -61,6 +64,9 @@ public class GameManager : MonoBehaviour
             {
                 brock.box.enabled = false;
                 brock.spr.sprite = offSprite;
+                Color color = brock.spr.material.color;
+                color.a = 0.4f;
+                brock.spr.material.color = color;
                 //spr.sprite = offSprite;
                 //brock.spr.material.color = new Color(spr.color.r, spr.color.g, spr.color.b, 0.4f);
                 //brock.spr.color = new Color(spr.color.r, spr.color.g, spr.color.b, 0.4f);
@@ -83,6 +89,9 @@ public class GameManager : MonoBehaviour
 
                 brock.box.enabled = false;
                 brock.spr.sprite = offSprite;
+                Color color=brock.spr.material.color;
+                color.a = 0.4f;
+                brock.spr.material.color= color;
                 //spr.sprite = offSprite;
                 //brock.spr.color = new Color(spr.color.r, spr.color.g, spr.color.b, 0.4f);
                 //brock.spr.material.color = new Color(spr.color.r, spr.color.g, spr.color.b, 0.4f);
@@ -93,6 +102,9 @@ public class GameManager : MonoBehaviour
             {
                 brock.box.enabled = true;
                 brock.spr.sprite = onSprite;
+                Color color = brock.spr.material.color;
+                color.a = 1f;
+                brock.spr.material.color = color;
                 //spr.sprite = onSprite;
                 //brock.spr.material.color = new Color(spr.color.r, spr.color.g, spr.color.b, 255);
                 //brock.spr.color = new Color(spr.color.r, spr.color.g, spr.color.b, 255);
