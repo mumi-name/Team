@@ -78,18 +78,8 @@ public class PlayerScript : MonoBehaviour
         //ジャンプ中に違う方向を向かないようにする
         if (jumpFlag && num != beforeMode) return;
 
-        //入力方向によってアニメーションのバージョンを切り替える
-        if (num > 0)
-        {
-            animator.SetBool("OnOffBool", true);
-            mode = 1;
-
-        }
-        else if (num < 0)
-        {
-            mode = -1;
-            animator.SetBool("OnOffBool", false);
-        }
+        if (num > 0)mode = 1;
+        else if (num < 0)mode = -1;
         
         //プレイヤーの速度が一定量を超えたら加速を中止
         if (Mathf.Abs(rb.linearVelocity.x) > 5f) return;
@@ -99,12 +89,15 @@ public class PlayerScript : MonoBehaviour
         {
             if (num > 0)
             {
+                animator.SetBool("OnOffBool", true);
                 GameManager.instance.ON();
                 beforeMode = 1;
 
             }
             else if (num < 0)
             {
+                Debug.Log("OFFを起動します。7/22");
+                animator.SetBool("OnOffBool", false);
                 GameManager.instance.OFF();
                 beforeMode = -1;
             }

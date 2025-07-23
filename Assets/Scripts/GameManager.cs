@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
             }
             
             //brock.ApplyVisual();
-            //brock.OnMove();
+            brock.OnMove();
         }
 
     }
@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour
                 //brock.spr.color = new Color(spr.color.r, spr.color.g, spr.color.b, 255);
             }
             
-            //brock.OffMove();
+            brock.OffMove();
             //brock.ApplyVisual();
         }
     }
