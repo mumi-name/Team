@@ -75,7 +75,7 @@ public class OnOffBrock : MonoBehaviour
             transform.Translate(movevec * Time.deltaTime);
         }
 
-        if (transform.localPosition.x > movestop.x ||transform.localPosition.y > movestop.y)
+        if (transform.localPosition.x > movestop.x || transform.localPosition.y > movestop.y)
         {
             Debug.Log("ブロックの移動を止めました");
             moveFlag = false;
@@ -83,7 +83,7 @@ public class OnOffBrock : MonoBehaviour
 
     }
 
-    
+
     public void ApplyVisual()
     {
         if (on)
@@ -91,7 +91,7 @@ public class OnOffBrock : MonoBehaviour
             box.enabled = true;
             spr.sprite = onSprite;
             spr.color = Color.white;
-            
+
             //spr.color = new Color(1f, 1f, 1f, 1f); // 不透明
             //box.size = new Vector2(1f, 1f);//オン時の大きさ
         }

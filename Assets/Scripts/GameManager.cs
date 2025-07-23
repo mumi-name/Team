@@ -12,10 +12,10 @@ public class GameManager : MonoBehaviour
     public List<OnOffBrock> brocks;
     public static GameManager instance;
 
-    public  SpriteRenderer spr;
+    public SpriteRenderer spr;
     public Sprite onSprite;
     public Sprite offSprite;
-    
+
     void Start()
     {
         instance = this;
@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
     {
         foreach (var brock in brocks)
         {
-            
+
             if (brock.on)
             {
                 brock.box.enabled = true;
@@ -60,13 +60,13 @@ public class GameManager : MonoBehaviour
             else
             {
                 brock.box.enabled = false;
-                brock.spr.sprite= offSprite;
+                brock.spr.sprite = offSprite;
                 //spr.sprite = offSprite;
                 //brock.spr.material.color = new Color(spr.color.r, spr.color.g, spr.color.b, 0.4f);
                 //brock.spr.color = new Color(spr.color.r, spr.color.g, spr.color.b, 0.4f);
 
             }
-            
+
             //brock.ApplyVisual();
             brock.OnMove();
         }
@@ -77,17 +77,17 @@ public class GameManager : MonoBehaviour
 
         foreach (var brock in brocks)
         {
-           
+
             if (brock.on)
             {
-                
+
                 brock.box.enabled = false;
                 brock.spr.sprite = offSprite;
                 //spr.sprite = offSprite;
                 //brock.spr.color = new Color(spr.color.r, spr.color.g, spr.color.b, 0.4f);
                 //brock.spr.material.color = new Color(spr.color.r, spr.color.g, spr.color.b, 0.4f);
                 Debug.Log("ƒIƒt‹N“®’†");
-                
+
             }
             else
             {
@@ -97,7 +97,7 @@ public class GameManager : MonoBehaviour
                 //brock.spr.material.color = new Color(spr.color.r, spr.color.g, spr.color.b, 255);
                 //brock.spr.color = new Color(spr.color.r, spr.color.g, spr.color.b, 255);
             }
-            
+
             brock.OffMove();
             //brock.ApplyVisual();
         }

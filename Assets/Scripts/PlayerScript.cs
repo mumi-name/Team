@@ -78,9 +78,9 @@ public class PlayerScript : MonoBehaviour
         //ジャンプ中に違う方向を向かないようにする
         if (jumpFlag && num != beforeMode) return;
 
-        if (num > 0)mode = 1;
-        else if (num < 0)mode = -1;
-        
+        if (num > 0) mode = 1;
+        else if (num < 0) mode = -1;
+
         //プレイヤーの速度が一定量を超えたら加速を中止
         if (Mathf.Abs(rb.linearVelocity.x) > 5f) return;
 
@@ -105,7 +105,7 @@ public class PlayerScript : MonoBehaviour
         //左右キーを押した方向に力を掛けて移動させる
         rb.AddForce(transform.right * speed * num * Time.deltaTime);
         //アニメーションのスピードを速度によって変更する
-        animator.speed = Mathf.Abs(rb.linearVelocityX)/2;
+        animator.speed = Mathf.Abs(rb.linearVelocityX) / 2;
         //プレイヤーの向きを変更する
         transform.localScale = new Vector3(1 * mode, 1, 1);
 
@@ -203,5 +203,4 @@ public class PlayerScript : MonoBehaviour
        if (Mathf.Abs(rb.linearVelocity.x) < 5f) rb.AddForce(transform.right * speed * Time.deltaTime * num);
        //移動キーが入力されていたら、反転
        if (num!=0)transform.localScale = new Vector3(1*num, 1, 1);
-}
-*/
+}*/

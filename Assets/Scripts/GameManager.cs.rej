@@ -1,0 +1,10 @@
+diff a/Assets/Scripts/GameManager.cs b/Assets/Scripts/GameManager.cs	(rejected hunks)
+@@ -98,7 +98,7 @@
+                 //brock.spr.color = new Color(spr.color.r, spr.color.g, spr.color.b, 255);
+             }
+             
+-            //brock.OffMove();
++            brock.OffMove();
+             //brock.ApplyVisual();
+         }
+     }
