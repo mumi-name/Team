@@ -19,7 +19,7 @@ public class CheckJump : MonoBehaviour
         if (collision.gameObject.CompareTag("Floor"))
         {
             Debug.Log("’n–Ê");
-            PlayerScript.instance.OffJumpFlag();
+            PlayerScript.instance.OnOffJumpFlag(false);
         }
     }
 
@@ -28,8 +28,7 @@ public class CheckJump : MonoBehaviour
         if (collision.gameObject.CompareTag("Floor"))
         {
             Debug.Log("‹ó’†");
-
-            PlayerScript.instance.OnJumpFlag();
+            PlayerScript.instance.OnOffJumpFlag(true);
         }
     }
 

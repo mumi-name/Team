@@ -2105,7 +2105,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brocks:
   - {fileID: 432294127}
-  spr: {fileID: 0}
   onSprite: {fileID: 21300000, guid: e076c65a2bf8e3c4eb71488d476f2932, type: 3}
   offSprite: {fileID: 21300000, guid: 7922245629c5ccb4b872f774f8960962, type: 3}
 --- !u!4 &685783118
@@ -4551,6 +4550,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 81692818376763022, guid: 8f1fe4a2423ca2a45ba9618216f09d4f, type: 3}
+      propertyPath: maxSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1197886452449778927, guid: 8f1fe4a2423ca2a45ba9618216f09d4f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.3

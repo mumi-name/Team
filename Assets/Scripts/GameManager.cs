@@ -3,16 +3,14 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
-    /*public BoxCollider2D box;
-    public SpriteRenderer spr;
-    bool jumpFlag = false;*/
-    public List<OnOffBrock> brocks;
+
+    public List<OnOffBrock> brocks;//ステージ中にあるONOFFブロック
     public static GameManager instance;
 
-    public SpriteRenderer spr;
     public Sprite onSprite;
     public Sprite offSprite;
 
@@ -25,22 +23,12 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (Input.GetKey(KeyCode.RightArrow))
-        {
-            if (jumpFlag) return;
-            box.enabled=false;
-            spr.color = new Color(255, 255, 255, 0);
-        }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            if (jumpFlag) return;
-            box.enabled = true;
-            spr.color = new Color(255, 255, 255, 255);
-        }*/
-        if (Input.GetKeyDown(KeyCode.R))
+        //リセットボタンが押されたらゲームシーンをリセット
+        if (Input.GetButtonDown("Reset"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+
     }
 
     public void ON()
@@ -126,3 +114,26 @@ public class GameManager : MonoBehaviour
         else OFF();
     }
 }
+
+
+
+//<変数宣言に書いてあったコメント文>
+
+/*public BoxCollider2D box;
+    public SpriteRenderer spr;
+    bool jumpFlag = false;*/
+
+//<Updateに書いてあったコメント文>
+/*if (Input.GetKey(KeyCode.RightArrow))
+{
+    if (jumpFlag) return;
+    box.enabled = false;
+    spr.color = new Color(255, 255, 255, 0);
+}
+if (Input.GetKey(KeyCode.LeftArrow))
+{
+    if (jumpFlag) return;
+    box.enabled = true;
+    spr.color = new Color(255, 255, 255, 255);
+}
+*/

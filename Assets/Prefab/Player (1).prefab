@@ -281,7 +281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1000
-  maxSpeed: 10
+  maxSpeed: 5
   jumpPower: 500
   rb: {fileID: 2503404638839307223}
   animator: {fileID: 2681397312015002000}
