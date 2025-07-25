@@ -4,7 +4,7 @@ public class OnOffBrock : MonoBehaviour
 {
 
     public bool on = false;
-    //public bool move = false;
+    public bool move = false;
     public Vector3 movevec = Vector3.zero;
     public Vector3 movestop = Vector3.zero;
     public Vector3 orizinalpos = Vector3.zero;
@@ -34,7 +34,7 @@ public class OnOffBrock : MonoBehaviour
         */
         if (spr == null) spr = GetComponent<SpriteRenderer>();
 
-        orizinalpos = transform.position;
+        //orizinalpos = transform.position;
 
         // 初期状態のスプライトを設定（色はいじらない）
         //ApplyVisual();
