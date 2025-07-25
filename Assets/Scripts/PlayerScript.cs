@@ -102,9 +102,16 @@ public class PlayerScript : MonoBehaviour
         //左右キーを押した方向に力を掛けて移動させる
         rb.AddForce(transform.right * speed * num * Time.deltaTime);
         //アニメーションのスピードを速度によって変更する
-        animator.speed = Mathf.Abs(rb.linearVelocityX) / 2;
+        float animeSpeed = 1;
+        if (Mathf.Abs(rb.linearVelocityX )>= maxSpeed - 1.0f)
+        {
+            animeSpeed = 0.5f;
+            
+        }
+
+        animator.speed = Mathf.Abs(rb.linearVelocityX*animeSpeed) ;
         //プレイヤーの向きを変更する
-        transform.localScale = new Vector3(1 * mode, 1, 1);
+        transform.localScale = new Vector3(-1*1 * mode, 1, 1);
 
     }
 
