@@ -42,7 +42,7 @@ public class PlayerScript : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             if (jumpFlag) return;
-            rb.linearVelocityY = 0;
+            rb.linearVelocityY = 0; 
             rb.AddForce(transform.up * jumpPower);
             OnOffJumpFlag(true);
         }
@@ -52,28 +52,33 @@ public class PlayerScript : MonoBehaviour
         //左右キーの入力を検知
         float num = Input.GetAxisRaw("Horizontal");
 
-        //ジャンプ中に別方向に力が掛かっている場合(オブジェクトの端を使ったバグ対策)
-        if (jumpFlag)
-        {
-            //velocityを0にしてreturnする
-            if (Mathf.Sign(beforeMode) != Mathf.Sign(rb.linearVelocityX)) 
-            {
-                rb.linearVelocityX = 0;
-                return;
-            }
-        }
+        if (num > 0)mode = 1;
+        if (num < 0)mode = -1;
+
         //左右キーが押されてない場合、止める
         if (num == 0)
         {
             rb.linearVelocity = new Vector2(0, rb.linearVelocityY);
             animator.speed = 0;
             return;
-        }
-        //ジャンプ中に違う方向を向けないようにする
-        if (jumpFlag && num != beforeMode) return;
 
-        if (num > 0) mode = 1;
-        else if (num < 0) mode = -1;
+        }
+
+        //ジャンプ中に別方向に力が掛かっている場合(オブジェクトの端を使ったバグ対策)
+        if (jumpFlag)
+        {
+            //velocityを0にしてreturnする
+            if (Mathf.Sign(beforeMode) != Mathf.Sign(rb.linearVelocityX)&&rb.linearVelocityX!=0) 
+            {
+                rb.linearVelocityX = 0;
+                return;
+            }
+        }
+
+
+        //ジャンプ中に違う方向を向けないようにする
+        if (jumpFlag && mode != beforeMode) return;
+
 
         //プレイヤーの速度が最大速度を超えたら加速を中止
         if (Mathf.Abs(rb.linearVelocity.x) > maxSpeed) return;
@@ -94,6 +99,8 @@ public class PlayerScript : MonoBehaviour
             beforeMode = mode;
 
         }
+
+      
         //左右キーを押した方向に力を掛けて移動させる
         rb.AddForce(transform.right * speed * num * Time.deltaTime);
         //アニメーションのスピードを速度によって変更する
