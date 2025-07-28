@@ -15,6 +15,11 @@ public class PlayerScript : MonoBehaviour
     int beforeMode = 1;//以前の向き(ONかOFFか)
     int mode = 1;//現在の向き(ONかOFFか)
     bool jumpFlag = true;//現在ジャンプ中か
+    bool countFlag = false;
+    bool canPushJumpFlag = true;//ジャンプボタンを押せるかどうか
+    float interval=5f;//向き切り替え直後にジャンプを押せない時間(同時押し禁止)
+    float timer = 0f;
+    float num;
 
 
     //FIX:バグ
@@ -31,15 +36,26 @@ public class PlayerScript : MonoBehaviour
     {
         Jump();
         Move();
+        if (countFlag)
+        {
+            timer += Time.deltaTime;
+            if (timer > interval)
+            {
+                timer = 0;
+                canPushJumpFlag = true;
+                countFlag = false;
+            }
+        }
 
     }
 
     void Jump()
     {
         //スペースボタンが押されたらジャンプする
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump")&&canPushJumpFlag)
         {
             if (jumpFlag) return;
+            Debug.Log("ジャンプ"+Time.time);
             rb.linearVelocityY = 0; 
             rb.AddForce(transform.up * jumpPower);
             OnOffJumpFlag(true);
@@ -48,7 +64,8 @@ public class PlayerScript : MonoBehaviour
     void Move()
     {
         //左右キーの入力を検知
-        float num = Input.GetAxisRaw("Horizontal");
+        num = Input.GetAxisRaw("Horizontal");
+
 
         if (num > 0)mode = 1;
         if (num < 0)mode = -1;
@@ -84,6 +101,8 @@ public class PlayerScript : MonoBehaviour
         //入力方向が変わった場合、ONとOFFを切り替える
         if (beforeMode != mode)
         {
+            canPushJumpFlag = false;
+            countFlag = true;
             if (num > 0)
             {
                 animator.SetBool("OnOffBool", true);
@@ -98,7 +117,7 @@ public class PlayerScript : MonoBehaviour
 
         }
 
-      
+        Debug.Log("移動"+Time.time);
         //左右キーを押した方向に力を掛けて移動させる
         rb.AddForce(transform.right * speed * num * Time.deltaTime);
         //アニメーションのスピードを速度によって変更する
@@ -111,7 +130,7 @@ public class PlayerScript : MonoBehaviour
 
         animator.speed = Mathf.Abs(rb.linearVelocityX*animeSpeed) ;
         //プレイヤーの向きを変更する
-        transform.localScale = new Vector3(-1*1 * mode, 1, 1);
+        transform.localScale = new Vector3(1 * mode, 1, 1);
 
     }
 
@@ -125,6 +144,7 @@ public class PlayerScript : MonoBehaviour
     {
         jumpFlag = flag;
         animator.SetBool("JumpBool", flag);
+        
     }
 
 

@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
                 //spr.sprite = onSprite;
                 //brock.spr.color = new Color(spr.color.r, spr.color.g, spr.color.b, 255);
                 //brock.spr.material.color= new Color(spr.color.r, spr.color.g, spr.color.b, 255);
-                Debug.Log("オン起動中");
+                //Debug.Log("オン起動中");
             }
             else
             {
@@ -83,7 +83,7 @@ public class GameManager : MonoBehaviour
                 //spr.sprite = offSprite;
                 //brock.spr.color = new Color(spr.color.r, spr.color.g, spr.color.b, 0.4f);
                 //brock.spr.material.color = new Color(spr.color.r, spr.color.g, spr.color.b, 0.4f);
-                Debug.Log("オフ起動中");
+                //Debug.Log("オフ起動中");
 
             }
             else

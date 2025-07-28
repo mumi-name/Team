@@ -71,13 +71,13 @@ public class OnOffBrock : MonoBehaviour
 
         if (moveFlag)
         {
-            Debug.Log("ブロック移動中");
+            //Debug.Log("ブロック移動中");
             transform.Translate(movevec * Time.deltaTime);
         }
 
         if (transform.localPosition.x > movestop.x || transform.localPosition.y > movestop.y)
         {
-            Debug.Log("ブロックの移動を止めました");
+            //Debug.Log("ブロックの移動を止めました");
             moveFlag = false;
         }
 
