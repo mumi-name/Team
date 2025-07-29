@@ -20,7 +20,7 @@ public class PlayerScript : MonoBehaviour
     float interval=0.3f;//向き切り替え直後にジャンプを押せない時間(同時押し禁止)
     float timer = 0f;
     float num;
-
+    int pendingMode = 0;//失敗した場合消す。(記録)
 
     //FIX:バグ
 
@@ -92,8 +92,11 @@ public class PlayerScript : MonoBehaviour
 
 
         //ジャンプ中に違う方向を向けないようにする
-        if (jumpFlag && mode != beforeMode) return;
-
+        if (jumpFlag && mode != beforeMode)
+        {
+            pendingMode = mode;
+            return;
+        }
 
         //プレイヤーの速度が最大速度を超えたら加速を中止
         if (Mathf.Abs(rb.linearVelocity.x) > maxSpeed) return;
@@ -159,6 +162,32 @@ public class PlayerScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Trap"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        //地面に着地した時に向きを更新する。
+        if (collision.gameObject.CompareTag("Floor"))
+        {
+            if (pendingMode != 0 && pendingMode != beforeMode)
+            {
+                canPushJumpFlag = false;
+                countFlag = true;
+
+                if (pendingMode > 0)
+                {
+                    animator.SetBool("OnOffBool", false);
+                    GameManager.instance.OFF();
+                }
+                else
+                {
+                    animator.SetBool("OnOffBool", true);
+                    GameManager.instance.ON();
+                }
+
+                beforeMode = pendingMode;
+            }
+
+            pendingMode = 0;//使ったらリセット
+            OnOffJumpFlag(false);//着地後ジャンプ状態解除
         }
     }
 
