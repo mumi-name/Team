@@ -17,7 +17,7 @@ public class PlayerScript : MonoBehaviour
     bool jumpFlag = true;//現在ジャンプ中か
     bool countFlag = false;
     bool canPushJumpFlag = true;//ジャンプボタンを押せるかどうか
-    float interval=5f;//向き切り替え直後にジャンプを押せない時間(同時押し禁止)
+    float interval=0.3f;//向き切り替え直後にジャンプを押せない時間(同時押し禁止)
     float timer = 0f;
     float num;
 
@@ -139,6 +139,10 @@ public class PlayerScript : MonoBehaviour
     {
         return mode;
     }
+    public bool GetJumpFlag()
+    {
+        return jumpFlag;
+    }
     //ジャンプ状態を切り替える
     public void OnOffJumpFlag(bool flag)
     {
@@ -146,6 +150,7 @@ public class PlayerScript : MonoBehaviour
         animator.SetBool("JumpBool", flag);
         
     }
+    
 
 
     private void OnCollisionEnter2D(Collision2D collision)

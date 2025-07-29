@@ -3,9 +3,10 @@ using UnityEngine;
 
 public class CheckJump : MonoBehaviour
 {
+    public PlayerScript playerScript;
     void Start()
     {
-        
+        //if(playerScript == null)playerScript=transform.parent.GetComponent<PlayerScript>();
     }
 
     void Update()
@@ -19,6 +20,43 @@ public class CheckJump : MonoBehaviour
         if (collision.gameObject.CompareTag("Floor"))
         {
             //Debug.Log("地面");
+            Vector2 vec = (collision.transform.position - this.transform.position);
+
+            
+
+            /*if (Mathf.Abs(vec.x) > Mathf.Abs(vec.y))
+            {
+                Debug.Log("ジャンプ中且つ側面に接触中"+Time.time);
+
+            }*/
+
+            /*if (vec.x > 0 && Mathf.Abs(vec.y) > 0)
+            {
+                Debug.Log("左面?");
+            }
+            else if (vec.x < 0 && Mathf.Abs(vec.y) > 0)
+            {
+                Debug.Log("右面?");
+            }*/
+
+            /*if (vec.y > Mathf.Abs(vec.x))
+            {
+                Debug.Log("相手は上にいる → 自分が下からぶつかった（＝相手にとっては下面）");
+            }
+            else if (-vec.y > Mathf.Abs(vec.x))
+            {
+                Debug.Log("相手は下にいる → 自分が上からぶつかった（＝相手にとっては上面）");
+            }
+            else if (vec.x > 0)
+            {
+                Debug.Log("相手は右にいる → 自分が左からぶつかった（＝相手にとっては左側面）");
+            }
+            else
+            {
+                Debug.Log("相手は左にいる → 自分が右からぶつかった（＝相手にとっては右側面）"); 
+        
+            }*/
+
             PlayerScript.instance.OnOffJumpFlag(false);
         }
     }
