@@ -20,8 +20,8 @@ public class PlayerScript : MonoBehaviour
     float interval=0.3f;//向き切り替え直後にジャンプを押せない時間(同時押し禁止)
     float timer = 0f;
     float num;
-    int pendingMode = 0;//失敗した場合消す。(記録)
-
+    int pendingMode = 0;//記録用
+    //private OnOffBrock onoffBrock;
     //FIX:バグ
 
     void Start()
@@ -34,6 +34,7 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //spriteRenderer = GetComponent<SpriteRenderer>();
         Jump();
         Move();
         if (countFlag)
@@ -174,13 +175,13 @@ public class PlayerScript : MonoBehaviour
 
                 if (pendingMode > 0)
                 {
-                    animator.SetBool("OnOffBool", false);
-                    GameManager.instance.OFF();
+                    animator.SetBool("OnOffBool", true);
+                    GameManager.instance.ON();
                 }
                 else
                 {
-                    animator.SetBool("OnOffBool", true);
-                    GameManager.instance.ON();
+                    animator.SetBool("OnOffBool", false);
+                    GameManager.instance.OFF();
                 }
 
                 beforeMode = pendingMode;
