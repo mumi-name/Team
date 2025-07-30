@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
             if (brock.on)
             {
                 brock.box.enabled = true;
-                brock.spr.sprite = onSprite;
+                brock.spr.sprite = brock.onSprite;
                 Color color = brock.spr.material.color;
                 color.a = 1f;
                 brock.spr.material.color = color;
@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
             else
             {
                 brock.box.enabled = false;
-                brock.spr.sprite = offSprite;
+                brock.spr.sprite = brock.offSprite;
                 Color color = brock.spr.material.color;
                 color.a = 0.4f;
                 brock.spr.material.color = color;
@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
             {
 
                 brock.box.enabled = false;
-                brock.spr.sprite = offSprite;
+                brock.spr.sprite = brock.offSprite;
                 Color color=brock.spr.material.color;
                 color.a = 0.4f;
                 brock.spr.material.color= color;
@@ -89,7 +89,7 @@ public class GameManager : MonoBehaviour
             else
             {
                 brock.box.enabled = true;
-                brock.spr.sprite = onSprite;
+                brock.spr.sprite = brock.onSprite;
                 Color color = brock.spr.material.color;
                 color.a = 1f;
                 brock.spr.material.color = color;
