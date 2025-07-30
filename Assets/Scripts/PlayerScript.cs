@@ -135,6 +135,8 @@ public class PlayerScript : MonoBehaviour
     //ジャンプ状態を切り替える
     public void OnOffJumpFlag(bool flag)
     {
+        //ジャンプ中にフラグをfalseにしようとした場合リターンする
+        if (flag == false && Mathf.Abs(rb.linearVelocityY) > 0) return;
         jumpFlag = flag;
         animator.SetBool("JumpBool", flag);
         
