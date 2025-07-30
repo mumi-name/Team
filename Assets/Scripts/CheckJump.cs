@@ -15,20 +15,25 @@ public class CheckJump : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        PlayerScript.instance.OnOffJumpFlag(false);
-
+        //プレイヤー足元の判定が触れたのが、床であり
+        if (collision.gameObject.CompareTag("Floor"))
+        {
+            //尚且つプレイヤーの"下"に床がある場合、ジャンプ可能にする
+            Vector2 vec = (collision.transform.position - this.transform.position);
+            if (vec.y < 0) PlayerScript.instance.OnOffJumpFlag(false);
+            
+        }
+        
     }
-    private void OnTriggerStay2D(Collider2D collision)
+    /*private void OnTriggerStay2D(Collider2D collision)
     {
       
         if (collision.gameObject.CompareTag("Floor"))
         {
             //Debug.Log("地面");
             Vector2 vec = (collision.transform.position - this.transform.position);
-
-           
-
-            PlayerScript.instance.OnOffJumpFlag(false);
+            if(vec.y<0)PlayerScript.instance.OnOffJumpFlag(false);
+            else PlayerScript.instance.OnOffJumpFlag(true);
         }
     }
 
@@ -39,7 +44,7 @@ public class CheckJump : MonoBehaviour
             //Debug.Log("空中");
             PlayerScript.instance.OnOffJumpFlag(true);
         }
-    }
+    }*/
 
    
 }
