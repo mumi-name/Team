@@ -166,7 +166,7 @@ public class PlayerScript : MonoBehaviour
         }
 
         //地面に着地した時に向きを更新する。
-        if (collision.gameObject.CompareTag("Floor"))
+        /*if (collision.gameObject.CompareTag("Floor"))
         {
             if (pendingMode != 0 && pendingMode != beforeMode)
             {
@@ -189,7 +189,7 @@ public class PlayerScript : MonoBehaviour
 
             pendingMode = 0;//使ったらリセット
             OnOffJumpFlag(false);//着地後ジャンプ状態解除
-        }
+        }*/
     }
 
 }
