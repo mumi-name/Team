@@ -7,12 +7,17 @@ using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
-
+    public float slowSpeed = 0.2f;
     public List<OnOffBrock> brocks;//ステージ中にあるONOFFブロック
     public static GameManager instance;
 
     public Sprite onSprite;
     public Sprite offSprite;
+
+    float targetScale = 1;
+    bool waveAnimation = false;//波動アニメーションの最中かどうか?
+    //bool slow = false;
+
 
     void Start()
     {
@@ -26,43 +31,25 @@ public class GameManager : MonoBehaviour
         //リセットボタンが押されたらゲームシーンをリセット
         if (Input.GetButtonDown("Reset"))
         {
+            //スローモーションを即座に終了
+            //slow = false;
+            Time.timeScale = 1f;
+            Time.fixedDeltaTime = 0.02f;
+            //シーンを遷移させる
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+        changeSlow(targetScale);
 
     }
+
+    //追加分---------------------------------------------------------------------
 
     public void ON()
     {
         foreach (var brock in brocks)
         {
 
-            if (brock.on)
-            {
-                brock.box.enabled = true;
-                brock.spr.sprite = brock.onSprite;
-                Color color = brock.spr.material.color;
-                color.a = 1f;
-                brock.spr.material.color = color;
-                //spr.sprite = onSprite;
-                //brock.spr.color = new Color(spr.color.r, spr.color.g, spr.color.b, 255);
-                //brock.spr.material.color= new Color(spr.color.r, spr.color.g, spr.color.b, 255);
-                //Debug.Log("オン起動中");
-            }
-            else
-            {
-                brock.box.enabled = false;
-                brock.spr.sprite = brock.offSprite;
-                Color color = brock.spr.material.color;
-                color.a = 0.4f;
-                brock.spr.material.color = color;
-                //spr.sprite = offSprite;
-                //brock.spr.material.color = new Color(spr.color.r, spr.color.g, spr.color.b, 0.4f);
-                //brock.spr.color = new Color(spr.color.r, spr.color.g, spr.color.b, 0.4f);
-
-            }
-
-            //brock.ApplyVisual();
-            brock.OnMove();
+            brock.ON();
         }
 
     }
@@ -72,36 +59,46 @@ public class GameManager : MonoBehaviour
         foreach (var brock in brocks)
         {
 
-            if (brock.on)
-            {
-
-                brock.box.enabled = false;
-                brock.spr.sprite = brock.offSprite;
-                Color color=brock.spr.material.color;
-                color.a = 0.4f;
-                brock.spr.material.color= color;
-                //spr.sprite = offSprite;
-                //brock.spr.color = new Color(spr.color.r, spr.color.g, spr.color.b, 0.4f);
-                //brock.spr.material.color = new Color(spr.color.r, spr.color.g, spr.color.b, 0.4f);
-                //Debug.Log("オフ起動中");
-
-            }
-            else
-            {
-                brock.box.enabled = true;
-                brock.spr.sprite = brock.onSprite;
-                Color color = brock.spr.material.color;
-                color.a = 1f;
-                brock.spr.material.color = color;
-                //spr.sprite = onSprite;
-                //brock.spr.material.color = new Color(spr.color.r, spr.color.g, spr.color.b, 255);
-                //brock.spr.color = new Color(spr.color.r, spr.color.g, spr.color.b, 255);
-            }
-
-            brock.OffMove();
-            //brock.ApplyVisual();
+            brock.OFF();
         }
     }
+
+    public void OFFChanged()
+    {
+        foreach (var brock in brocks)
+        {
+
+            brock.SetOffChanged();
+        }
+    }
+
+    //スローモーションの切り替え
+    public void OnOffSlow(bool on)
+    {
+        if (on)
+        {
+            //slow = true;
+            targetScale = slowSpeed;
+            waveAnimation = true;
+        }
+        else
+        {
+            targetScale = 1;
+            waveAnimation = false;
+        }
+    }
+
+    void changeSlow(float targetScale)
+    {
+        //if (!slow) return;
+        //スローモーションにグラデーションを持たせる
+        Time.timeScale = Mathf.Lerp(Time.timeScale, targetScale, 10  * Time.unscaledDeltaTime);
+        //物理演算がカクつかないように周期の倍率を合わせる
+        Time.fixedDeltaTime = 0.02f * Time.timeScale;
+    }
+
+
+    //------------------------------------------------------------------------------
 
     public void ChangeOnOff(bool on)
     {
@@ -113,17 +110,32 @@ public class GameManager : MonoBehaviour
         if (on) ON();
         else OFF();
     }
+
+    //enabled判定からtrigger判定へ切り替える(これが無いと、OnOff切り替えが上手くいかない)
+    public void ChangeEnabledToTrigger()
+    {
+        foreach(var brock in brocks)
+        {
+            brock.ChangeEnabledToTrigger();
+        }
+    }
+
+    public bool GetWaveAnimation()
+    {
+        return waveAnimation;
+    }
+    
 }
 
 
 
-//<変数宣言に書いてあったコメント文>
+//<???????????????????????R?????g??>
 
 /*public BoxCollider2D box;
     public SpriteRenderer spr;
     bool jumpFlag = false;*/
 
-//<Updateに書いてあったコメント文>
+//<Update???????????????R?????g??>
 /*if (Input.GetKey(KeyCode.RightArrow))
 {
     if (jumpFlag) return;

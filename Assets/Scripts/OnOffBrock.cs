@@ -1,8 +1,11 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using static Unity.Collections.AllocatorManager;
+
 
 public class OnOffBrock : MonoBehaviour
 {
-
+    public float animationSpeed = 0.03f;
     public bool on = false;
     public bool move = false;
     public Vector3 movevec = Vector3.zero;
@@ -14,9 +17,12 @@ public class OnOffBrock : MonoBehaviour
     public Sprite onSprite;
     public Sprite offSprite;
     //public string defaultTag = "Selectable";//初期タグをここに保存
-    //public Sprite offSprite;//点線(OFF用)
+    //public Sprite offSprite;//?_??(OFF?p)
 
     bool moveFlag = false;
+    bool fadeFlag = false;
+    bool changed = false;
+    bool invalid = false;//ブロックの判定を有効化するのを禁止する
 
 
     void Start()
@@ -36,7 +42,7 @@ public class OnOffBrock : MonoBehaviour
 
         //orizinalpos = transform.position;
 
-        // 初期状態のスプライトを設定（色はいじらない）
+        //初期状態のスプライトを設定（色はいじらない）
         //ApplyVisual();
 
     }
@@ -44,6 +50,107 @@ public class OnOffBrock : MonoBehaviour
     void Update()
     {
         Move();
+        FadeAnimation();
+    }
+
+    //追加分---------------------------------------------------------------------
+
+    public void ON(bool animation = false)
+    {
+        if (on)
+        {
+            
+            box.enabled = true;
+            if(GameManager.instance.GetWaveAnimation())box.isTrigger = false;
+            spr.sprite = onSprite;
+            Color color = spr.material.color;
+            color.a = 1f;
+            //波動アニメーションから呼び出されたら、a値を0.4にしとく（アニメーション時の演出用）
+            if (animation)
+            {
+                color.a = 0.1f;
+                if (animationSpeed < 0) animationSpeed *= -1;
+            }
+
+            spr.material.color = color;
+        }
+        else
+        {
+            
+            box.enabled = false;
+            //waveAnimation中の場合は当たり判定の取り方を一時的にTriggerで取る。(enabledだとOnOff反転しないため)
+            if (GameManager.instance.GetWaveAnimation())
+            {
+                box.enabled = true;
+                box.isTrigger = true;
+            }
+            spr.sprite = offSprite;
+            Color color = spr.material.color;
+            color.a = 0.4f;
+            if (animation)
+            {
+                spr.sprite = onSprite;
+                color.a = 1f;
+                if (animationSpeed > 0) animationSpeed *= -1;
+            }
+            spr.material.color = color;
+
+        }
+        OnMove();
+    }
+
+    public void OFF(bool animation = false)
+    {
+        if (on)
+        {
+
+            box.enabled = false;
+            //waveAnimation中の場合は当たり判定の取り方を一時的にTriggerで取る。(enabledだとOnOff反転しないため)
+            if (GameManager.instance.GetWaveAnimation())
+            {
+                box.enabled = true;
+                box.isTrigger = true;
+            }
+            spr.sprite = offSprite;
+            Color color = spr.material.color;
+            color.a = 0.4f;
+            if (animation)
+            {
+                spr.sprite = onSprite;
+                color.a = 1f;
+                if (animationSpeed > 0) animationSpeed *= -1;
+            }
+            spr.material.color = color;
+
+        }
+        else
+        {
+     
+            box.enabled = true;
+            if (GameManager.instance.GetWaveAnimation()) box.isTrigger = false;
+            spr.sprite = onSprite;
+            Color color = spr.material.color;
+            color.a = 1f;
+
+            //波動アニメーションから呼び出されたら、a値を0.4にしとく（アニメーション時の演出用）
+            if (animation)
+            {
+                color.a = 0.1f;
+                if (animationSpeed < 0) animationSpeed *= -1;
+            }
+            spr.material.color = color;
+
+        }
+
+        OffMove();
+
+    }
+
+    //---------------------------------------------------------------------------
+
+    public void OnfadeAnimation()
+    {
+        fadeFlag = true;
     }
 
     public void OnMove()
@@ -65,6 +172,55 @@ public class OnOffBrock : MonoBehaviour
         if (!on) moveFlag = true;
     }
 
+    //--------------------------------------------------------------------------
+    public bool GetChanged()
+    {
+        return changed;
+    }
+
+    public void SetOnChanged()
+    {
+        //一度の衝撃波に2回当たっても変わらないようにフラグを立てておく
+        changed = true;
+    }
+
+    public void SetOffChanged()
+    {
+        //フラグを降ろす
+        changed = false;
+    }
+
+
+    //enabled判定からtrigger判定へ切り替える(これが無いと、OnOff切り替えが上手くいかない)
+    public void ChangeEnabledToTrigger()
+    {
+        if (box.enabled == true)
+        {
+            box.isTrigger = false;
+        }
+        else
+        {
+            box.enabled = true;
+            box.isTrigger = true;
+        }
+    }
+
+    //trigger判定からenabled判定へ切り替える(これが無いと、OnOff切り替え時めり込みが発生する)
+    public void ChangeTriggerToEnabled()
+    {
+        if (box.isTrigger == false)
+        {
+            box.enabled = true;
+        }
+        else
+        {
+            box.enabled = false;
+            box.isTrigger = false;
+        }
+    }
+
+    //--------------------------------------------------------------------------
+
     void Move()
     {
         if (/*!move ||*/ !moveFlag) return;
@@ -77,8 +233,28 @@ public class OnOffBrock : MonoBehaviour
 
         if (transform.localPosition.x > movestop.x || transform.localPosition.y > movestop.y)
         {
-            //Debug.Log("ブロックの移動を止めました");
+            //Debug.Log("ブロックの移動を停止");
             moveFlag = false;
+        }
+
+    }
+
+    void FadeAnimation()
+    {
+        if (fadeFlag == false) return;
+        Color color = spr.material.color;
+        color.a += animationSpeed;
+        spr.material.color = color;
+
+        //透明度が１以上になったらアニメーションを終了させる
+        if (color.a >= 1f && animationSpeed > 0) fadeFlag = false;
+        //OFF状態で透明度が0.4を切ったら画像を差し替えてアニメーション終了
+        if (color.a <= 0.1f && animationSpeed < 0)
+        {
+            fadeFlag = false;
+            spr.sprite = offSprite;
+            color.a = 0.4f;
+            spr.material.color = color;
         }
 
     }
@@ -104,6 +280,8 @@ public class OnOffBrock : MonoBehaviour
             //box.size = new Vector2(1f, 1f);//オフ時の大きさ
         }
     }
+
+  
 
 
 }

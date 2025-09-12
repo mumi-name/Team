@@ -2,23 +2,23 @@ using UnityEngine;
 
 public class ChangeButton : MonoBehaviour
 {
+    public GameObject wavePrefab;//ボタンを取った際に出る波動
     void Start()
     {
-        
+
     }
     void Update()
     {
-        
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            int num = PlayerScript.instance.GetMode();//現在の向きを取得
-            bool flag=true;
-            if (num > 0) flag = true;
-            if (num < 0) flag = false;
-            GameManager.instance.ChangeOnOff(flag);
+            //スローモードにする
+            GameManager.instance.OnOffSlow(true);
+            GameManager.instance.ChangeEnabledToTrigger();
+            Instantiate(wavePrefab, position: new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
             Destroy(this.gameObject);
 
         }

@@ -8,16 +8,25 @@ public class PlayerScript : MonoBehaviour
     public float speed = 1000f;//移動速度
     public float maxSpeed = 5f;//最大速度
     public float jumpPower = 300f;//ジャンプ力
+    public float slowMaxSpeed = 0.1f;
+    public float slowGravity = 0.1f;
     public Rigidbody2D rb;
     public Animator animator;
     public static PlayerScript instance;
 
-    int beforeMode = 1;//以前の向き(ONかOFFか)
-    int mode = 1;//現在の向き(ONかOFFか)
+    int beforeMode = 1;//以前の向き（ONかOFFか）
+    int mode = 1;//現在の向き（ONかOFFか）
+    int pendingMode = 0;//記録用
+    float num;
     bool jumpFlag = true;//現在ジャンプ中か
     bool canPushJumpFlag = true;//ジャンプボタンを押せるかどうか
-    float num;
-    int pendingMode = 0;//記録用
+
+    //-------------------------------------------------------------------------------------------
+    bool ignoreInput = false;//入力を全て無視する
+    //-------------------------------------------------------------------------------------------
+
+    
+    
     //private OnOffBrock onoffBrock;
     //FIX:バグ
 
@@ -32,6 +41,9 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         //spriteRenderer = GetComponent<SpriteRenderer>();
+        //-------------------------------------------------------------------------------------------
+        if (ignoreInput) return;//入力を無視し、処理を行わない
+        //-------------------------------------------------------------------------------------------
         Jump();
         Move();
 
@@ -40,11 +52,11 @@ public class PlayerScript : MonoBehaviour
     void Jump()
     {
         //スペースボタンが押されたらジャンプする
-        if (Input.GetButtonDown("Jump")&&canPushJumpFlag)
+        if (Input.GetButtonDown("Jump") && canPushJumpFlag)
         {
             if (jumpFlag) return;
-            Debug.Log("ジャンプ"+Time.time);
-            rb.linearVelocityY = 0; 
+            Debug.Log("ジャンプ" + Time.time);
+            rb.linearVelocityY = 0;
             rb.AddForce(transform.up * jumpPower);
             OnOffJumpFlag(true);
         }
@@ -55,11 +67,11 @@ public class PlayerScript : MonoBehaviour
         num = Input.GetAxisRaw("Horizontal");
 
 
-        if (num > 0)mode = 1;
-        if (num < 0)mode = -1;
+        if (num > 0) mode = 1;
+        if (num < 0) mode = -1;
 
         //左右キーが押されてない場合、止める
-        if (num == 0)
+        if (Mathf.Abs(num) < 0.5)
         {
             rb.linearVelocity = new Vector2(0, rb.linearVelocityY);
             animator.speed = 0;
@@ -67,17 +79,25 @@ public class PlayerScript : MonoBehaviour
 
         }
 
-        //ジャンプ中に別方向に力が掛かっている場合(オブジェクトの端を使ったバグ対策)
+        //FIX：バグ（コントローラーで操作すると、微妙な値が入って停止せず動いてしまう）
+        /*if (num == 0)
+        {
+            rb.linearVelocity = new Vector2(0, rb.linearVelocityY);
+            animator.speed = 0;
+            return;
+
+        }*/
+
+        //ジャンプ中に別方向に力が掛かっている場合（オブジェクトの端を使ったバグ対策）
         if (jumpFlag)
         {
             //velocityを0にしてreturnする
-            if (Mathf.Sign(beforeMode) != Mathf.Sign(rb.linearVelocityX)&&rb.linearVelocityX!=0) 
+            if (Mathf.Sign(beforeMode) != Mathf.Sign(rb.linearVelocityX) && rb.linearVelocityX != 0)
             {
                 rb.linearVelocityX = 0;
                 return;
             }
         }
-
 
         //ジャンプ中に違う方向を向けないようにする
         if (jumpFlag && mode != beforeMode)
@@ -106,32 +126,52 @@ public class PlayerScript : MonoBehaviour
 
         }
 
-        Debug.Log("移動"+Time.time);
+        //Debug.Log("移動"+Time.time);
         //左右キーを押した方向に力を掛けて移動させる
         rb.AddForce(transform.right * speed * mode * Time.deltaTime);
         //アニメーションのスピードを速度によって変更する
         float animeSpeed = 1;
-        if (Mathf.Abs(rb.linearVelocityX )>= maxSpeed - 1.0f)
+        if (Mathf.Abs(rb.linearVelocityX) >= maxSpeed - 1.0f)
         {
             animeSpeed = 0.3f;
-            
+
         }
 
-        animator.speed = Mathf.Abs(rb.linearVelocityX*animeSpeed) ;
+        animator.speed = Mathf.Abs(rb.linearVelocityX * animeSpeed);
         //プレイヤーの向きを変更する
-        transform.localScale = new Vector3(-1 * mode, 1, 1);
+        transform.localScale = new Vector3(1 * mode, 1, 1);
 
+    }
+
+    //動けないように空中に固定
+    public void cannotMoveMode()
+    {
+        ignoreInput = true;
+        rb.linearVelocityX = 0;
+        rb.linearVelocityY = 0;
+        rb.gravityScale = 0;
+    }
+
+    public void canMoveMode()
+    {
+        ignoreInput = false;
+        rb.gravityScale = 1.7f;
     }
 
     //現在の向きを返す
     public int GetMode()
     {
-        return mode;
+        //return mode;
+        return (int)transform.localScale.x;
     }
     public bool GetJumpFlag()
     {
         return jumpFlag;
     }
+    //--------------------------------------------------------------------------
+
+
+
     //ジャンプ状態を切り替える
     public void OnOffJumpFlag(bool flag)
     {
@@ -139,10 +179,8 @@ public class PlayerScript : MonoBehaviour
         if (flag == false && Mathf.Abs(rb.linearVelocityY) > 0) return;
         jumpFlag = flag;
         animator.SetBool("JumpBool", flag);
-        
-    }
-    
 
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -152,7 +190,7 @@ public class PlayerScript : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
-        //地面に着地した時に向きを更新する。
+        //地面に着地した時に向きを更新する
         /*if (collision.gameObject.CompareTag("Floor"))
         {
             if (pendingMode != 0 && pendingMode != beforeMode)
@@ -174,13 +212,9 @@ public class PlayerScript : MonoBehaviour
                 beforeMode = pendingMode;
             }
 
-            pendingMode = 0;//使ったらリセット
-            OnOffJumpFlag(false);//着地後ジャンプ状態解除
+            pendingMode = 0;//?g?????????Z?b?g
+            OnOffJumpFlag(false);//???n???W?????v????????
         }*/
     }
 
 }
-
-
-
-

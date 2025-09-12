@@ -521,6 +521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0ea463c442bce943ae097d347f192e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slowSpeed: 0.2
   brocks:
   - {fileID: 50501185}
   - {fileID: 125959476}
@@ -1001,6 +1002,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7710228906333859497, guid: 2049c70d94e43c5418c8d20ce42ce7cf, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7710228906333859497, guid: 2049c70d94e43c5418c8d20ce42ce7cf, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.42
       objectReference: {fileID: 0}
@@ -1415,7 +1420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce6568ed6dc64eb40b18f640d2d78d02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: 03
+  sceneName: 03_Keenshyou
 --- !u!58 &2016482927
 CircleCollider2D:
   m_ObjectHideFlags: 0
