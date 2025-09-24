@@ -45,7 +45,8 @@ public class AnimationScript : MonoBehaviour
             transform.localScale = orizinSize;
             circleCollider.enabled = false;
             GameManager.instance.OnOffSlow(false);
-            if (CameraZoomTransition.instance.zoomCamera != null)
+            
+            if (CameraZoomTransition.instance!=null&&CameraZoomTransition.instance.zoomCamera != null)
             {
                 CameraZoomTransition.instance.StartZoom();
                 //プレイヤー位置固定と入力はじきの処理を呼び出す

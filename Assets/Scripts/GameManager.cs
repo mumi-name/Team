@@ -85,6 +85,7 @@ public class GameManager : MonoBehaviour
         {
             targetScale = 1;
             waveAnimation = false;
+            ChangeTriggerToEnabled();
         }
     }
 
@@ -117,6 +118,15 @@ public class GameManager : MonoBehaviour
         foreach(var brock in brocks)
         {
             brock.ChangeEnabledToTrigger();
+        }
+    }
+
+    //trigger”»’è‚©‚çenabled”»’è‚ÖØ‚è‘Ö‚¦‚é(‚±‚ê‚ª–³‚¢‚ÆAOnOffØ‚è‘Ö‚¦‚ªãè‚­‚¢‚©‚È‚¢)
+    public void ChangeTriggerToEnabled()
+    {
+        foreach (var brock in brocks)
+        {
+            brock.ChangeTriggerToEnabled();
         }
     }
 

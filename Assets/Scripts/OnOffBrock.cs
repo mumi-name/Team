@@ -68,6 +68,7 @@ public class OnOffBrock : MonoBehaviour
             //waveAnimation中の場合は当たり判定の取り方を一時的にTriggerで取る。(enabledだとOnOff反転しないため)
             if (GameManager.instance.GetWaveAnimation())
             {
+                Debug.Log("Trueになっているだと?");
                 box.enabled = true;
                 box.isTrigger = true;
             }
@@ -95,6 +96,7 @@ public class OnOffBrock : MonoBehaviour
             //waveAnimation中の場合は当たり判定の取り方を一時的にTriggerで取る。(enabledだとOnOff反転しないため)
             if (GameManager.instance.GetWaveAnimation())
             {
+                Debug.Log("Trueになっているだと?");
                 box.enabled = true;
                 box.isTrigger = true;
             }
