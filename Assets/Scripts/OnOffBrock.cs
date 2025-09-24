@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using static Unity.Collections.AllocatorManager;
+using static UnityEngine.GraphicsBuffer;
 
 
 public class OnOffBrock : MonoBehaviour
@@ -8,9 +9,10 @@ public class OnOffBrock : MonoBehaviour
     public float animationSpeed = 0.03f;
     public bool on = false;
     public bool move = false;
-    public Vector3 movevec = Vector3.zero;
+    //public Vector3 movevec = Vector3.zero;
+    public float moveSpeed=0.4f;//移動速度
     public Vector3 movestop = Vector3.zero;
-    public Vector3 orizinalpos = Vector3.zero;
+    /*public*/ Vector3 orizinalpos = Vector3.zero;
     public BoxCollider2D box;
     public SpriteRenderer spr;
 
@@ -23,20 +25,12 @@ public class OnOffBrock : MonoBehaviour
     bool fadeFlag = false;
     bool changed = false;
     bool invalid = false;//ブロックの判定を有効化するのを禁止する
-    bool up = false;//上方向
 
 
     void Start()
     {
-       
+        orizinalpos = transform.position;
         if (spr == null) spr = GetComponent<SpriteRenderer>();
-        //上方向に移動か下方向に移動か?
-        if (movestop.y > orizinalpos.y)
-        {
-            up = true;
-        }
-       
-        
 
     }
 
@@ -218,24 +212,11 @@ public class OnOffBrock : MonoBehaviour
     {
         if (/*!move ||*/ !moveFlag) return;
 
+        //ONで動くブロックがOFFの時にも動いてしまわないようにmoveFlagを確認する
         if (moveFlag)
         {
-            //Debug.Log("ブロック移動中");
-            transform.Translate(movevec * Time.deltaTime);
+            if(move)transform.position = Vector3.MoveTowards(transform.position, movestop, Mathf.Abs(moveSpeed) * Time.deltaTime);
         }
-
-        if (/*transform.localPosition.x > movestop.x || */transform.localPosition.y > movestop.y)
-        {
-            //Debug.Log("ブロックの移動を停止");
-            if(up)moveFlag = false;
-        }
-
-        if (/*transform.localPosition.x < movestop.x || */transform.localPosition.y < movestop.y)
-        {
-            if (!up) moveFlag = false;
-        }
-
-        
 
     }
 
