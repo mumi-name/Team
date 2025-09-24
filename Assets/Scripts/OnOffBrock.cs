@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using static Unity.Collections.AllocatorManager;
+using static UnityEngine.GraphicsBuffer;
 
 
 public class OnOffBrock : MonoBehaviour
@@ -8,9 +9,10 @@ public class OnOffBrock : MonoBehaviour
     public float animationSpeed = 0.03f;
     public bool on = false;
     public bool move = false;
-    public Vector3 movevec = Vector3.zero;
+    //public Vector3 movevec = Vector3.zero;
+    public float moveSpeed=0.4f;//移動速度
     public Vector3 movestop = Vector3.zero;
-    public Vector3 orizinalpos = Vector3.zero;
+    /*public*/ Vector3 orizinalpos = Vector3.zero;
     public BoxCollider2D box;
     public SpriteRenderer spr;
 
@@ -27,23 +29,8 @@ public class OnOffBrock : MonoBehaviour
 
     void Start()
     {
-        /*
-        if(spr != null){
-            if (on && onSprite != null) spr.sprite = onSprite;
-            else if (!on && offSprite != null)
-            {
-                spr.sprite = offSprite;
-                //spr.color = new Color(255, 255, 255, spr.color.a);
-            }
-            spr.color = new Color(1f, 1f, 1f, spr.color.a);
-        }
-        */
+        orizinalpos = transform.position;
         if (spr == null) spr = GetComponent<SpriteRenderer>();
-
-        //orizinalpos = transform.position;
-
-        //初期状態のスプライトを設定（色はいじらない）
-        //ApplyVisual();
 
     }
 
@@ -225,16 +212,10 @@ public class OnOffBrock : MonoBehaviour
     {
         if (/*!move ||*/ !moveFlag) return;
 
+        //ONで動くブロックがOFFの時にも動いてしまわないようにmoveFlagを確認する
         if (moveFlag)
         {
-            //Debug.Log("ブロック移動中");
-            transform.Translate(movevec * Time.deltaTime);
-        }
-
-        if (transform.localPosition.x > movestop.x || transform.localPosition.y > movestop.y)
-        {
-            //Debug.Log("ブロックの移動を停止");
-            moveFlag = false;
+            if(move)transform.position = Vector3.MoveTowards(transform.position, movestop, Mathf.Abs(moveSpeed) * Time.deltaTime);
         }
 
     }
