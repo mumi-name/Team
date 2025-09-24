@@ -23,27 +23,20 @@ public class OnOffBrock : MonoBehaviour
     bool fadeFlag = false;
     bool changed = false;
     bool invalid = false;//ブロックの判定を有効化するのを禁止する
+    bool up = false;//上方向
 
 
     void Start()
     {
-        /*
-        if(spr != null){
-            if (on && onSprite != null) spr.sprite = onSprite;
-            else if (!on && offSprite != null)
-            {
-                spr.sprite = offSprite;
-                //spr.color = new Color(255, 255, 255, spr.color.a);
-            }
-            spr.color = new Color(1f, 1f, 1f, spr.color.a);
-        }
-        */
+       
         if (spr == null) spr = GetComponent<SpriteRenderer>();
-
-        //orizinalpos = transform.position;
-
-        //初期状態のスプライトを設定（色はいじらない）
-        //ApplyVisual();
+        //上方向に移動か下方向に移動か?
+        if (movestop.y > orizinalpos.y)
+        {
+            up = true;
+        }
+       
+        
 
     }
 
@@ -231,11 +224,18 @@ public class OnOffBrock : MonoBehaviour
             transform.Translate(movevec * Time.deltaTime);
         }
 
-        if (transform.localPosition.x > movestop.x || transform.localPosition.y > movestop.y)
+        if (/*transform.localPosition.x > movestop.x || */transform.localPosition.y > movestop.y)
         {
             //Debug.Log("ブロックの移動を停止");
-            moveFlag = false;
+            if(up)moveFlag = false;
         }
+
+        if (/*transform.localPosition.x < movestop.x || */transform.localPosition.y < movestop.y)
+        {
+            if (!up) moveFlag = false;
+        }
+
+        
 
     }
 
