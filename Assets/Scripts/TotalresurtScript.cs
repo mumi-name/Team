@@ -7,7 +7,7 @@ public class TotalresurtScript : MonoBehaviour
 
     public float Keikajikan = 3f;
     private float timer = 0f;
-        private bool resultShow = false;
+    private bool resultShow = false;
     void Start()
     {
         resultPanel.SetActive(false);
@@ -34,10 +34,11 @@ public class TotalresurtScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Timer = Time.deltaTime;
-        if(Keikajikan > Timer)
+        timer += Time.deltaTime;
+        if(timer >= Keikajikan)
         {
-            ShowResult(Timer);
+            ShowResult(timer);
+            resultShow = true;
         }
     }
 }
