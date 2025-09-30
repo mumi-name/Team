@@ -422,6 +422,7 @@ GameObject:
   - component: {fileID: 916127906}
   - component: {fileID: 916127908}
   - component: {fileID: 916127907}
+  - component: {fileID: 916127909}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -547,6 +548,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 916127905}
   m_CullTransparentMesh: 1
+--- !u!114 &916127909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916127905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7966785eecd9131478ff1dcab3b66e64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerText: {fileID: 916127907}
 --- !u!1 &1261357454
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,13 +792,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2083129729}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e708214cc314c264f8edda81806855d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   resultPanel: {fileID: 143944418}
   resultText: {fileID: 916127907}
+  Keikajikan: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

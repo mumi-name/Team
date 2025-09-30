@@ -3,36 +3,50 @@ using TMPro;
 
 public class TimerManager : MonoBehaviour
 {
-    public TextMeshProUGUI timerText;
+    public static TimerManager instance;
 
+    public TextMeshProUGUI timerText;
+    
     private float startTime;
-    private float elapsedTime;
+    public float elapsedTime { get; private set; }
+
     void Start()
     {
-        startTime = Time.time;
+        if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+            startTime = Time.time;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        elapsedTime = Time.time - startTime;//差を計算して経過時間を出す。
+        elapsedTime = Time.time - startTime;
 
-        string formattedTime = FormatTime(elapsedTime);//FormatTime関数が無いとエラー吐く
-        // テキストを更新する
         if (timerText != null)
         {
-            timerText.text = "Time:" + formattedTime;
+            timerText.text = "Time: " + FormatTime(elapsedTime);
         }
+    }
 
-        // 経過時間を分:秒.ミリ秒の形式に変換する関数
-        string FormatTime(float timeInSeconds)
-        {
-            int minutes = Mathf.FloorToInt(timeInSeconds / 60F);
-            int seconds = Mathf.FloorToInt(timeInSeconds % 60F);
-            int milliseconds = Mathf.FloorToInt((timeInSeconds * 100F) % 100F);
+    private string FormatTime(float timeInSeconds)
+    {
+        int minutes = Mathf.FloorToInt(timeInSeconds / 60F);
+        int seconds = Mathf.FloorToInt(timeInSeconds % 60F);
+        int milliseconds = Mathf.FloorToInt((timeInSeconds * 100F) % 100F);
 
-            // ゼロ埋めを行う
-            return string.Format("{0}:{1}.{2}", minutes, seconds, milliseconds);
-        }
+        return string.Format("{0}:{1}.{2}", minutes, seconds, milliseconds);
+    }
+
+    //新しいシーンでUIを再アサイン用の関数
+    public void SetTimerText(TextMeshProUGUI newText)
+    {
+        timerText = newText;
     }
 }

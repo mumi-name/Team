@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         instance = this;
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
         ON();
     }
 

@@ -2344,6 +2344,7 @@ MonoBehaviour:
   - {fileID: 432294127}
   onSprite: {fileID: 21300000, guid: e076c65a2bf8e3c4eb71488d476f2932, type: 3}
   offSprite: {fileID: 21300000, guid: 7922245629c5ccb4b872f774f8960962, type: 3}
+  finalTime: 0
 --- !u!4 &685783118
 Transform:
   m_ObjectHideFlags: 0
@@ -4197,6 +4198,7 @@ GameObject:
   - component: {fileID: 1533330913}
   - component: {fileID: 1533330915}
   - component: {fileID: 1533330914}
+  - component: {fileID: 1533330916}
   m_Layer: 5
   m_Name: ClearTime
   m_TagString: Untagged
@@ -4322,6 +4324,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1533330912}
   m_CullTransparentMesh: 1
+--- !u!114 &1533330916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1533330912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7966785eecd9131478ff1dcab3b66e64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerText: {fileID: 1533330914}
 --- !u!1 &1670091342
 GameObject:
   m_ObjectHideFlags: 0

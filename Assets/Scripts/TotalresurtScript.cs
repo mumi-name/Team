@@ -4,6 +4,10 @@ public class TotalresurtScript : MonoBehaviour
 {
     public GameObject resultPanel;　　//黒幕パネル
     public TextMeshProUGUI resultText;//時間表示テキスト
+
+    public float Keikajikan = 3f;
+    private float timer = 0f;
+        private bool resultShow = false;
     void Start()
     {
         resultPanel.SetActive(false);
@@ -30,6 +34,10 @@ public class TotalresurtScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Timer = Time.deltaTime;
+        if(Keikajikan > Timer)
+        {
+            ShowResult(Timer);
+        }
     }
 }
