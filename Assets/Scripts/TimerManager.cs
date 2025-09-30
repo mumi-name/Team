@@ -34,7 +34,8 @@ public class TimerManager : MonoBehaviour
         // タイマーが動いている場合、経過時間を加算
         if (isRunning)
         {
-            elapsedTime += Time.deltaTime;
+            //elapsedTime += Time.deltaTime;
+            elapsedTime += Time.unscaledDeltaTime;
         }
 
         // UI表示更新

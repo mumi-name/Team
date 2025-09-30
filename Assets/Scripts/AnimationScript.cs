@@ -81,7 +81,7 @@ public class AnimationScript : MonoBehaviour
             if (on) brock.ON(true);
             else brock.OFF(true);
 
-            brock.ChangeTriggerToEnabled();
+            //brock.ChangeTriggerToEnabled();
 
 
             Debug.Log("On??Off?????]");

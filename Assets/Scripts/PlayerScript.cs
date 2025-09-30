@@ -45,7 +45,7 @@ public class PlayerScript : MonoBehaviour
         if (ignoreInput) return;//“ü—Í‚ğ–³‹‚µAˆ—‚ğs‚í‚È‚¢
         //-------------------------------------------------------------------------------------------
 
-        Debug.Log("velocity:" + rb.linearVelocityY);
+        //Debug.Log("velocity:" + rb.linearVelocityY);
 
         if(ignoreInput) return;
         Jump();

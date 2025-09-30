@@ -69,7 +69,7 @@ public class CameraZoomTransition : MonoBehaviour
         foreach (var brock in GameManager.instance.brocks)
         {
             if (brock.GetChanged() == true) return;
-            brock.ChangeTriggerToEnabled();
+            
             brock.on = !brock.on;
             brock.OnfadeAnimation();
             brock.SetOnChanged();
@@ -81,6 +81,11 @@ public class CameraZoomTransition : MonoBehaviour
 
     public void ReturnZoom()
     {
+        //”»’è‚ðŒ³‚É–ß‚·
+        foreach (var brock in GameManager.instance.brocks)
+        {
+            brock.ChangeTriggerToEnabled();
+        }
         Vector3 tempPos = startPos;
         float tempSize = startSize;
         startPos = endPos;
