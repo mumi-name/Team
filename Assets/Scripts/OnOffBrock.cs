@@ -12,7 +12,7 @@ public class OnOffBrock : MonoBehaviour
     //public Vector3 movevec = Vector3.zero;
     public float moveSpeed=0.4f;//ˆÚ“®‘¬“x
     public Vector3 movestop = Vector3.zero;
-    /*public*/ Vector3 orizinalpos = Vector3.zero;
+    public Vector3 orizinalpos = Vector3.zero;
     public BoxCollider2D box;
     public SpriteRenderer spr;
 
@@ -29,7 +29,7 @@ public class OnOffBrock : MonoBehaviour
 
     void Start()
     {
-        orizinalpos = transform.position;
+        if(orizinalpos==Vector3.zero)orizinalpos = transform.position;
         if (spr == null) spr = GetComponent<SpriteRenderer>();
 
     }
