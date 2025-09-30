@@ -424,7 +424,7 @@ GameObject:
   - component: {fileID: 916127907}
   - component: {fileID: 916127909}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: ClearTime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -446,8 +446,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -84, y: 120.92}
-  m_SizeDelta: {x: 720.2612, y: 241.8469}
+  m_AnchoredPosition: {x: -82.2123, y: 181.38}
+  m_SizeDelta: {x: 723.8367, y: 120.92}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &916127907
 MonoBehaviour:

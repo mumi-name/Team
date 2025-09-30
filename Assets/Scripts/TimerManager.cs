@@ -40,7 +40,7 @@ public class TimerManager : MonoBehaviour
         // UI表示更新
         if (timerText != null)
         {
-            timerText.text = "Time: " + FormatTime(elapsedTime);
+            timerText.text = "Time: " + FormatTime(elapsedTime)+"\n"+"Deaths:"+deathCount;
         }
 
         // デバッグ用キー操作
@@ -65,7 +65,6 @@ public class TimerManager : MonoBehaviour
     public void ResetTimer()
     {
         elapsedTime = 0f;
-        deathCount++;
         if (timerText != null)
             timerText.text = "Time: 0:00.00";
     }

@@ -34,8 +34,8 @@ public class TotalResultScript : MonoBehaviour
         int deaths = TimerManager.instance != null ? TimerManager.instance.GetDeathCount() : 0;
         // リザルトテキストを表示
         resultText.gameObject.SetActive(true);
-        resultText.text = 
-            "Time: " + FormatTime(currentTime)+ "\n"+ "Deaths" + deaths;
+        resultText.text = "Time: " + FormatTime(currentTime)+"\n"+ "Deaths" + FormatTime(deaths);
+        
         
     }
 
