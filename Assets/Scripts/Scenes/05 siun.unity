@@ -2041,13 +2041,11 @@ MonoBehaviour:
   - {fileID: 600622035}
   - {fileID: 584116577}
   - {fileID: 651630291}
-  - {fileID: 1721568104}
-  - {fileID: 1789395627}
+  - {fileID: 107239130}
   - {fileID: 258119809}
   - {fileID: 1842257911}
-  - {fileID: 844286520}
   - {fileID: 517793563}
-  - {fileID: 107239130}
+  - {fileID: 844286520}
   onSprite: {fileID: 21300000, guid: e076c65a2bf8e3c4eb71488d476f2932, type: 3}
   offSprite: {fileID: 21300000, guid: 7922245629c5ccb4b872f774f8960962, type: 3}
 --- !u!4 &685783118
@@ -5017,17 +5015,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1721568104 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6097547811025956829, guid: 5f7d1f828ac1b7d449e842f0230d398c, type: 3}
-  m_PrefabInstance: {fileID: 460357553}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95de427b9f4232645bdc1f681d4d84ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1727854102
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5334,17 +5321,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1599299284}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1789395627 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5866547833927730314, guid: a576c472fb386114792bb32331b2b81f, type: 3}
-  m_PrefabInstance: {fileID: 1206988711}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95de427b9f4232645bdc1f681d4d84ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1792358357
 GameObject:
   m_ObjectHideFlags: 0
