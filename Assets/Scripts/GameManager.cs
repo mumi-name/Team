@@ -17,12 +17,20 @@ public class GameManager : MonoBehaviour
     float targetScale = 1;
     bool waveAnimation = false;//波動アニメーションの最中かどうか?
     //bool slow = false;
-
+    public float finalTime;//タイマーマネージャー用変数
 
     void Start()
     {
-        instance = this;
-        ON();
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+            ON();
     }
 
     // Update is called once per frame
