@@ -191,6 +191,7 @@ public class PlayerScript : MonoBehaviour
         //ã©‚ÉG‚ê‚½‚çƒŠƒZƒbƒg‚·‚é
         if (collision.gameObject.CompareTag("Trap"))
         {
+            TimerManager.instance.AddDeath();
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
