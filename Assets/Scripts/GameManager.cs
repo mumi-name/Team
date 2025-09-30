@@ -21,16 +21,9 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-            ON();
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+        ON();
     }
 
     // Update is called once per frame
