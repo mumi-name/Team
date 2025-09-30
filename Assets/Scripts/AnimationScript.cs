@@ -65,8 +65,9 @@ public class AnimationScript : MonoBehaviour
         {
             if (tutorial) return;
             OnOffBrock brock = collision.gameObject.GetComponent<OnOffBrock>();
-            //On??Off?????]????
+            //OnOff‚ªŠù‚ÉØ‚è‘Ö‚í‚Á‚Ä‚¢‚½ê‡‚ÍAˆ—‚ğI—¹
             if (brock.GetChanged() == true) return;
+            //OnOff‚Ì‘®«‚ğØ‚è‘Ö‚¦
             brock.on = !brock.on;
 
             brock.OnfadeAnimation();
