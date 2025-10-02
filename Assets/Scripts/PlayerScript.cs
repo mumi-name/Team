@@ -20,7 +20,7 @@ public class PlayerScript : MonoBehaviour
     float num;
     bool jumpFlag = true;//現在ジャンプ中か
     bool canPushJumpFlag = true;//ジャンプボタンを押せるかどうか
-
+    private bool isDead = false;
     //-------------------------------------------------------------------------------------------
     bool ignoreInput = false;//入力を全て無視する
     //-------------------------------------------------------------------------------------------
@@ -45,7 +45,7 @@ public class PlayerScript : MonoBehaviour
         if (ignoreInput) return;//入力を無視し、処理を行わない
         //-------------------------------------------------------------------------------------------
 
-        Debug.Log("velocity:" + rb.linearVelocityY);
+        //Debug.Log("velocity:" + rb.linearVelocityY);
 
         if(ignoreInput) return;
         Jump();
@@ -189,8 +189,10 @@ public class PlayerScript : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //罠に触れたらリセットする
-        if (collision.gameObject.CompareTag("Trap"))
+        if (collision.gameObject.CompareTag("Trap") && !isDead)
         {
+            isDead = true;
+            TimerManager.instance.AddDeath();
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
