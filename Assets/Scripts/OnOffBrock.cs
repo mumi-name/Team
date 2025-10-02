@@ -53,7 +53,7 @@ public class OnOffBrock : MonoBehaviour
             Color color = spr.material.color;
             color.a = 1f;
             //波動アニメーションから呼び出されたら、a値を0.4にしとく（アニメーション時の演出用）
-            if (animation)
+            if (animation || GameManager.instance.GetWaveAnimation())
             {
                 color.a = 0.1f;
                 if (animationSpeed < 0) animationSpeed *= -1;
@@ -75,7 +75,7 @@ public class OnOffBrock : MonoBehaviour
             spr.sprite = offSprite;
             Color color = spr.material.color;
             color.a = 0.4f;
-            if (animation)
+            if (animation || GameManager.instance.GetWaveAnimation())
             {
                 spr.sprite = onSprite;
                 color.a = 1f;
@@ -102,7 +102,7 @@ public class OnOffBrock : MonoBehaviour
             spr.sprite = offSprite;
             Color color = spr.material.color;
             color.a = 0.4f;
-            if (animation)
+            if (animation || GameManager.instance.GetWaveAnimation())
             {
                 spr.sprite = onSprite;
                 color.a = 1f;
@@ -121,7 +121,7 @@ public class OnOffBrock : MonoBehaviour
             color.a = 1f;
 
             //波動アニメーションから呼び出されたら、a値を0.4にしとく（アニメーション時の演出用）
-            if (animation)
+            if (animation || GameManager.instance.GetWaveAnimation())
             {
                 color.a = 0.1f; 
                 if (animationSpeed < 0) animationSpeed *= -1;
