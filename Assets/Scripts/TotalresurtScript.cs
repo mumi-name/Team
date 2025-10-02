@@ -11,6 +11,7 @@ public class TotalResultScript : MonoBehaviour
 
     void Start()
     {
+        if (TimerManager.instance != null) TimerManager.instance.StopTimer();
         // 最初は黒幕とテキスト非表示
         resultPanel.SetActive(false);
         resultText.gameObject.SetActive(false);
@@ -23,11 +24,9 @@ public class TotalResultScript : MonoBehaviour
     {
         if (resultShown) return;
         resultShown = true;
-        if(TimerManager.instance != null) TimerManager.instance.StopTimer();
 
-
-        // 黒幕パネルを表示
-        resultPanel.SetActive(true);
+            // 黒幕パネルを表示
+            resultPanel.SetActive(true);
 
         // ステージの総経過時間を取得
         float currentTime = TimerManager.instance != null ? TimerManager.instance.GetElapsedTime() : 0f;
@@ -35,8 +34,16 @@ public class TotalResultScript : MonoBehaviour
         // リザルトテキストを表示
         resultText.gameObject.SetActive(true);
         resultText.text = "Time: " + FormatTime(currentTime)+"\n"+ "Deaths" + FormatTime(deaths);
+
         
-        
+    }
+    public void HideResult()//リザルトを閉じる
+    {
+        resultPanel.SetActive(false);
+        resultText.gameObject.SetActive(false);
+
+        //タイマー再開
+        if (TimerManager.instance != null) TimerManager.instance.StartTimer();
     }
 
     private string FormatTime(float timeInSeconds)

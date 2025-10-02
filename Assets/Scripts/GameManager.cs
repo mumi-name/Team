@@ -22,6 +22,14 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         instance = this;
+        //ステージ01に入ったらカウントを全てリセット
+        if(SceneManager.GetActiveScene().name == "01")
+        {
+            if (TimerManager.instance != null)
+            {
+                TimerManager.instance.AllCountReset();
+            }
+        }
         //DontDestroyOnLoad(gameObject);
         ON();
     }
@@ -36,6 +44,7 @@ public class GameManager : MonoBehaviour
             //slow = false;
             Time.timeScale = 1f;
             Time.fixedDeltaTime = 0.02f;
+            TimerManager.instance.AddDeath();
             //シーンを遷移させる
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }

@@ -8,12 +8,16 @@ public class SceneChangeScript : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         if (Input.GetButtonDown("Title"))
         {
-            SceneManager.LoadScene(sceneName);
+            if(TimerManager.instance != null)
+            {
+                TimerManager.instance.AllCountReset();           
+            }
+                SceneManager.LoadScene(sceneName);
         }
     }
 }

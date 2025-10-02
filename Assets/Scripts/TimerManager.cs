@@ -50,24 +50,24 @@ public class TimerManager : MonoBehaviour
         //if (Input.GetKeyDown(KeyCode.R)) ResetTimer();
     }
 
-    // タイマー開始
+    // タイマー操作
     public void StartTimer()
     {
         isRunning = true;
     }
-
-    // タイマー停止
     public void StopTimer()
     {
         isRunning = false;
     }
 
     // タイマーリセット＋死亡回数カウント
-    public void ResetTimer()
+    public void AllCountReset()
     {
+        deathCount = 0;
         elapsedTime = 0f;
         if (timerText != null)
             timerText.text = "Time: 0:00.00";
+        isRunning = true;
     }
 
     //外部から死亡を通知する関数
@@ -92,7 +92,7 @@ public class TimerManager : MonoBehaviour
         timerText = newText;
     }
 
-    // 他のスクリプトから経過時間を取得可能
+    // 他のスクリプトから時間・回数を取得可能
     public float GetElapsedTime()
     {
         return elapsedTime;
