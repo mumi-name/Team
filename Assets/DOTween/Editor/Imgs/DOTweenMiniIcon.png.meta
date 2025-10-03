@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 530ad6f9256660147897846ca5ce1488
+guid: 24154a6bc3671d245aecabb21d40bb3f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5081949855336221306
-    second: "\u30BF\u30A4\u30C8\u30EB\u753B\u9762_0"
+      213: 3691463601059337291
+    second: DOTweenMiniIcon_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u30BF\u30A4\u30C8\u30EB\u753B\u9762_0"
+      name: DOTweenMiniIcon_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1920
-        height: 1080
+        width: 9
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 685365a28894979b0800000000000000
-      internalID: -5081949855336221306
+      spriteID: b441d624696ba3330800000000000000
+      internalID: 3691463601059337291
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "\u30BF\u30A4\u30C8\u30EB\u753B\u9762_0": -5081949855336221306
+      DOTweenMiniIcon_0: 3691463601059337291
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
