@@ -21,14 +21,19 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        
         instance = this;
         //ステージ01に入ったらカウントを全てリセット
-        if(SceneManager.GetActiveScene().name == "01")
+        if (SceneManager.GetActiveScene().name == "01")
         {
             if (TimerManager.instance != null)
             {
                 TimerManager.instance.AllCountReset();
             }
+        }
+        if(IrisShot.instance != null)
+        {
+            IrisShot.instance.IrisIN();
         }
         //DontDestroyOnLoad(gameObject);
         ON();
