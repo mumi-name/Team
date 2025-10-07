@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 23e9a4c875a8e284ea132571c551de7d
+guid: 1f20bd3e77ae73d438e4683d2990c49e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 482665541604642415
-    second: kuria_0
+      213: 3233897186776746605
+    second: bimu3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: kuria_0
+      name: bimu3_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1920
-        height: 1080
+        x: 40
+        y: 37
+        width: 438
+        height: 440
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f6e8aa8b0c5c2b600800000000000000
-      internalID: 482665541604642415
+      spriteID: d6a86f18b5c11ec20800000000000000
+      internalID: 3233897186776746605
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      kuria_0: 482665541604642415
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
