@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      taitel_logo_0: 1558768601352763303
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      wakumidori_0: -4063441775977730457
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
