@@ -10,7 +10,7 @@ public class SceneTransition : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            IrisShot.instance.IrisIN();
+            IrisShot.instance.IrisOut();
             TimerManager.instance.StopTimer();
             //ŽO•bŒã‚ÉƒV[ƒ“‘JˆÚ
             DOVirtual.DelayedCall(2.0f, () =>
@@ -37,4 +37,5 @@ public class SceneTransition : MonoBehaviour
 
         }
     }
+    
 }
