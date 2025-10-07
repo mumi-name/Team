@@ -7,7 +7,7 @@ public class IrisShot : MonoBehaviour
 
     [SerializeField] RectTransform unmask;
     private bool startClosed = false;
-
+    private bool hasOpened = false;
     readonly Vector2 IRIS_IN_SCALE = new Vector2(15, 15);
     readonly Vector2 IRIS_MID_SCALE1 = new Vector2(0.8f, 0.8f);
     readonly Vector2 IRIS_MID_SCALE2 = new Vector2(1.2f, 1.2f);
@@ -39,6 +39,8 @@ public class IrisShot : MonoBehaviour
     }
     public void IrisIN()
     {
+        if (hasOpened) return;
+        hasOpened = true;
 
         //unmask.DOScale(new Vector3(0, 0, 0), SCALE_DURATION).SetEase(Ease.OutCubic);
         unmask.DOScale(IRIS_MID_SCALE2, 0.4f).SetEase(Ease.InCubic);
@@ -54,7 +56,6 @@ public class IrisShot : MonoBehaviour
 
     public void IrisOut()
     {
-
         //unmask.DOScale(IRIS_IN_SCALE, SCALE_DURATION).SetEase(Ease.InCubic);
         //unmask.DOScale(IRIS_IN_SCALE, SCALE_DURATION).SetEase(Ease.InCubic).OnComplete(() => unmask.localScale = Vector3.zero);
         unmask.DOScale(IRIS_MID_SCALE1, 0.2f).SetEase(Ease.InCubic);
@@ -70,6 +71,11 @@ public class IrisShot : MonoBehaviour
         */
     }
 
+    public void ResetIris()
+    {
+        hasOpened = false;
+        unmask.localScale = IRIS_IN_SCALE;
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))

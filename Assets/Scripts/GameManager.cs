@@ -50,6 +50,11 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 1f;
             Time.fixedDeltaTime = 0.02f;
             TimerManager.instance.AddDeath();
+            IrisShot.instance.ResetIris();
+            if(IrisShot.instance != null)
+            {
+                Destroy(IrisShot.instance.gameObject);//ŒÃ‚¢‚à‚Ì‚ğíœ
+            }
             //ƒV[ƒ“‚ğ‘JˆÚ‚³‚¹‚é
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
