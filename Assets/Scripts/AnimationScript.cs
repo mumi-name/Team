@@ -70,8 +70,8 @@ public class AnimationScript : MonoBehaviour
             //OnOff‚Ì‘®«‚ðØ‚è‘Ö‚¦
             brock.on = !brock.on;
 
-            brock.OnfadeAnimation();
-            brock.SetOnChanged();
+            //brock.OnfadeAnimation();
+            //brock.SetOnChanged();
 
             int num = PlayerScript.instance.GetMode();//Œ»Ý‚ÌŒü‚«‚ðŽæ“¾
             if (num > 0) on = true;
@@ -82,6 +82,9 @@ public class AnimationScript : MonoBehaviour
             else brock.OFF(true);
 
             //brock.ChangeTriggerToEnabled();
+
+            brock.OnfadeAnimation();
+            brock.SetOnChanged();
 
 
             Debug.Log("On??Off?????]");
