@@ -7,7 +7,7 @@ public class IrisShot : MonoBehaviour
 
     [SerializeField] RectTransform unmask;
     private bool startClosed = false;
-    private bool hasOpened = false;
+
     readonly Vector2 IRIS_IN_SCALE = new Vector2(15, 15);
     readonly Vector2 IRIS_MID_SCALE1 = new Vector2(0.8f, 0.8f);
     readonly Vector2 IRIS_MID_SCALE2 = new Vector2(1.2f, 1.2f);
