@@ -10,6 +10,7 @@ public class SceneTransition : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
+            PlayerScript.instance.cannotMoveMode();//プレイヤーが動かないように
             IrisShot.instance.IrisOut();
             TimerManager.instance.StopTimer();
             //三秒後にシーン遷移

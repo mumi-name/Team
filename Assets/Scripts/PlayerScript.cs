@@ -10,6 +10,7 @@ public class PlayerScript : MonoBehaviour
     public float jumpPower = 300f;//ジャンプ力
     public float slowMaxSpeed = 0.1f;
     public float slowGravity = 0.1f;
+    public bool jumpMode = true;//ジャンプのアリ・ナシ
     public Rigidbody2D rb;
     public Animator animator;
     public static PlayerScript instance;
@@ -47,8 +48,7 @@ public class PlayerScript : MonoBehaviour
 
         //Debug.Log("velocity:" + rb.linearVelocityY);
 
-        if(ignoreInput) return;
-        Jump();
+        if(jumpMode)Jump();
         Move();
 
     }
