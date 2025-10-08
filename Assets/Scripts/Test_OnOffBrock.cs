@@ -1,20 +1,16 @@
-using Unity.VisualScripting;
 using UnityEngine;
-using static Unity.Collections.AllocatorManager;
-using static UnityEngine.GraphicsBuffer;
 
-
-public class OnOffBrock : MonoBehaviour
+public class Test_OnOffBrock : OnOffBrock
 {
     public float animationSpeed = 0.03f;
     public bool on = false;
     public bool move = false;
     //public Vector3 movevec = Vector3.zero;
-    public float moveSpeed=0.4f;//移動速度
+    public float moveSpeed = 0.4f;//移動速度
     public Vector3 movestop = Vector3.zero;
     public Vector3 orizinalpos = Vector3.zero;
     public BoxCollider2D box;
-    public Rigidbody2D rb;
+    //public Rigidbody2D rb;
     public SpriteRenderer spr;
 
     public Sprite onSprite;
@@ -30,38 +26,32 @@ public class OnOffBrock : MonoBehaviour
 
     void Start()
     {
-        if(orizinalpos==Vector3.zero)orizinalpos = transform.position;
+        if (orizinalpos == Vector3.zero) orizinalpos = transform.position;
         if (spr == null) spr = GetComponent<SpriteRenderer>();
+        //if(rb!=null)rb.
+
     }
 
     void Update()
     {
-        //Move();
-        FadeAnimation();
-    }
-
-    private void FixedUpdate()
-    {
         Move();
+        FadeAnimation();
     }
 
     //追加分---------------------------------------------------------------------
 
     public void ON(bool animation = false)
     {
-        //透明度変化アニメーション中に呼び出されたら、アニメを停止
-        fadeFlag = false;
-
         if (on)
         {
-            
+
             box.enabled = true;
-            if(GameManager.instance.GetWaveAnimation()==true)box.isTrigger = false;
+            if (GameManager.instance.GetWaveAnimation() == true) box.isTrigger = false;
             spr.sprite = onSprite;
             Color color = spr.material.color;
             color.a = 1f;
             //波動アニメーションから呼び出されたら、a値を0.4にしとく（アニメーション時の演出用）
-            if (animation)
+            if (animation || GameManager.instance.GetWaveAnimation())
             {
                 color.a = 0.1f;
                 if (animationSpeed < 0) animationSpeed *= -1;
@@ -71,10 +61,10 @@ public class OnOffBrock : MonoBehaviour
         }
         else
         {
-            
+
             box.enabled = false;
             //waveAnimation中の場合は当たり判定の取り方を一時的にTriggerで取る。(enabledだとOnOff反転しないため)
-            if (GameManager.instance.GetWaveAnimation()==true||animation)
+            if (GameManager.instance.GetWaveAnimation() == true || animation)
             {
                 Debug.Log("Trueになっているだと?");
                 box.enabled = true;
@@ -83,7 +73,7 @@ public class OnOffBrock : MonoBehaviour
             spr.sprite = offSprite;
             Color color = spr.material.color;
             color.a = 0.4f;
-            if (animation)
+            if (animation || GameManager.instance.GetWaveAnimation())
             {
                 spr.sprite = onSprite;
                 color.a = 1f;
@@ -97,14 +87,11 @@ public class OnOffBrock : MonoBehaviour
 
     public void OFF(bool animation = false)
     {
-        //透明度変化アニメーション中に呼び出されたら、アニメを停止
-        fadeFlag = false;
-
         if (on)
         {
             box.enabled = false;
             //waveAnimation中の場合は当たり判定の取り方を一時的にTriggerで取る。(enabledだとOnOff反転しないため)
-            if (GameManager.instance.GetWaveAnimation()||animation)
+            if (GameManager.instance.GetWaveAnimation() || animation)
             {
                 Debug.Log("Trueになっているだと?");
                 box.enabled = true;
@@ -113,7 +100,7 @@ public class OnOffBrock : MonoBehaviour
             spr.sprite = offSprite;
             Color color = spr.material.color;
             color.a = 0.4f;
-            if (animation)
+            if (animation || GameManager.instance.GetWaveAnimation())
             {
                 spr.sprite = onSprite;
                 color.a = 1f;
@@ -124,7 +111,7 @@ public class OnOffBrock : MonoBehaviour
         }
         else
         {
-     
+
             box.enabled = true;
             if (GameManager.instance.GetWaveAnimation()) box.isTrigger = false;
             spr.sprite = onSprite;
@@ -132,9 +119,9 @@ public class OnOffBrock : MonoBehaviour
             color.a = 1f;
 
             //波動アニメーションから呼び出されたら、a値を0.4にしとく（アニメーション時の演出用）
-            if (animation)
+            if (animation || GameManager.instance.GetWaveAnimation())
             {
-                color.a = 0.1f; 
+                color.a = 0.1f;
                 if (animationSpeed < 0) animationSpeed *= -1;
             }
             spr.material.color = color;
@@ -222,9 +209,15 @@ public class OnOffBrock : MonoBehaviour
 
     void Move()
     {
+        if (/*!move ||*/ !moveFlag) return;
+
         //ONで動くブロックがOFFの時にも動いてしまわないようにmoveFlagを確認する
-        if (!moveFlag) return;
-        if(move)transform.position = Vector3.MoveTowards(transform.position, movestop, Mathf.Abs(moveSpeed) * Time.deltaTime);
+        if (moveFlag)
+        {
+            if (move) transform.position = Vector3.MoveTowards(transform.position, movestop, Mathf.Abs(moveSpeed) * Time.deltaTime);
+            //if (move) rb.MovePosition(movestop);
+        }
+
     }
 
     void FadeAnimation()
@@ -248,15 +241,24 @@ public class OnOffBrock : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void ApplyVisual()
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (on)
         {
-            //transform.SetParent()
+            box.enabled = true;
+            spr.sprite = onSprite;
+            spr.color = Color.white;
+
+            //spr.color = new Color(1f, 1f, 1f, 1f); // 不透明
+            //box.size = new Vector2(1f, 1f);//オン時の大きさ
+        }
+        else
+        {
+            box.enabled = false;
+            spr.sprite = offSprite;
+            spr.color = Color.white;
+            //spr.color = new Color(1f, 1f, 1f, 1f); // 半透明
+            //box.size = new Vector2(1f, 1f);//オフ時の大きさ
         }
     }
-
-
-
-
 }

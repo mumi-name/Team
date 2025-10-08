@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 461828663587657134}
   - component: {fileID: 2395284883119588261}
   - component: {fileID: 5866547833927730314}
+  - component: {fileID: 232062648891100081}
   m_Layer: 0
   m_Name: OFF_Floor Ere
   m_TagString: Floor
@@ -152,7 +153,36 @@ MonoBehaviour:
   move: 0
   moveSpeed: 0.4
   movestop: {x: 0, y: 0, z: 0}
+  orizinalpos: {x: 0, y: 0, z: 0}
   box: {fileID: 2395284883119588261}
+  rb: {fileID: 232062648891100081}
   spr: {fileID: 461828663587657134}
   onSprite: {fileID: 21300000, guid: f2b80be37aad4ea489767355e734c30c, type: 3}
   offSprite: {fileID: 21300000, guid: f2b80be37aad4ea489767355e734c30c, type: 3}
+--- !u!50 &232062648891100081
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8225937056063140339}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
