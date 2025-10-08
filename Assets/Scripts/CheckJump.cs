@@ -22,6 +22,15 @@ public class CheckJump : MonoBehaviour
 
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.TryGetComponent<OnOffBrock>(out var brock))
+        {
+            if (brock.move) PlayerScript.instance.transform.SetParent(collision.transform, worldPositionStays: true);
+
+        }
+    }
     private void OnCollisionStay2D(Collision2D collision)
     {
         //プレイヤー足元の判定が触れたのが、床であり
