@@ -1,0 +1,3067 @@
+fileFormatVersion: 2
+guid: 16ab83b065d336f4aa5dc43df5fb44a8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1954452185129825814
+    second: tennsen_2__0
+  - first:
+      213: -6025953107814516968
+    second: tennsen_2__1
+  - first:
+      213: -4907169122169766235
+    second: tennsen_2__2
+  - first:
+      213: -2651139040114333406
+    second: tennsen_2__3
+  - first:
+      213: -5335397708022337973
+    second: tennsen_2__4
+  - first:
+      213: -2034664643673260227
+    second: tennsen_2__5
+  - first:
+      213: 2260760337809525676
+    second: tennsen_2__6
+  - first:
+      213: 161671181943767297
+    second: tennsen_2__7
+  - first:
+      213: -8738193219343977445
+    second: tennsen_2__8
+  - first:
+      213: 6491392825991125426
+    second: tennsen_2__9
+  - first:
+      213: -4788933692970813590
+    second: tennsen_2__10
+  - first:
+      213: -9177536955510209559
+    second: tennsen_2__11
+  - first:
+      213: 1349421645052942761
+    second: tennsen_2__12
+  - first:
+      213: 8415759694949651848
+    second: tennsen_2__13
+  - first:
+      213: -6341336474874928803
+    second: tennsen_2__14
+  - first:
+      213: 8252571450414337618
+    second: tennsen_2__15
+  - first:
+      213: 6059119106386330726
+    second: tennsen_2__16
+  - first:
+      213: -1678977308758637295
+    second: tennsen_2__17
+  - first:
+      213: 7221829328335218443
+    second: tennsen_2__18
+  - first:
+      213: -2522933962060728842
+    second: tennsen_2__19
+  - first:
+      213: -6711064375449893437
+    second: tennsen_2__20
+  - first:
+      213: 4398779298913755495
+    second: tennsen_2__21
+  - first:
+      213: -4207503830326257565
+    second: tennsen_2__22
+  - first:
+      213: -4674951902857728082
+    second: tennsen_2__23
+  - first:
+      213: -1055840913098655955
+    second: tennsen_2__24
+  - first:
+      213: -1923300956082177608
+    second: tennsen_2__25
+  - first:
+      213: 1557838488268121550
+    second: tennsen_2__26
+  - first:
+      213: 6526752558538981848
+    second: tennsen_2__27
+  - first:
+      213: 2767745648803495918
+    second: tennsen_2__28
+  - first:
+      213: 6554293111183264014
+    second: tennsen_2__29
+  - first:
+      213: 6410155049222214365
+    second: tennsen_2__30
+  - first:
+      213: -2826069403513752374
+    second: tennsen_2__31
+  - first:
+      213: 29006726108890176
+    second: tennsen_2__32
+  - first:
+      213: 4670159430885013902
+    second: tennsen_2__33
+  - first:
+      213: -7888034241088330031
+    second: tennsen_2__34
+  - first:
+      213: -1548595269691145914
+    second: tennsen_2__35
+  - first:
+      213: -7695496870372706347
+    second: tennsen_2__36
+  - first:
+      213: 2489065586823698002
+    second: tennsen_2__37
+  - first:
+      213: 4341323605197526288
+    second: tennsen_2__38
+  - first:
+      213: 3708812732996874277
+    second: tennsen_2__39
+  - first:
+      213: -902454874132205787
+    second: tennsen_2__40
+  - first:
+      213: -2222008359720147193
+    second: tennsen_2__41
+  - first:
+      213: 4643701174010733451
+    second: tennsen_2__42
+  - first:
+      213: 5108273913297999898
+    second: tennsen_2__43
+  - first:
+      213: 1921235619815645317
+    second: tennsen_2__44
+  - first:
+      213: 9092143916033806834
+    second: tennsen_2__45
+  - first:
+      213: 8268000212902969659
+    second: tennsen_2__46
+  - first:
+      213: 4620666247077010982
+    second: tennsen_2__47
+  - first:
+      213: -7633965702587480563
+    second: tennsen_2__48
+  - first:
+      213: 5944786046109826843
+    second: tennsen_2__49
+  - first:
+      213: -1598385450599094576
+    second: tennsen_2__50
+  - first:
+      213: 6321721293429929170
+    second: tennsen_2__51
+  - first:
+      213: -6944539810004686855
+    second: tennsen_2__52
+  - first:
+      213: 2400998581653109698
+    second: tennsen_2__53
+  - first:
+      213: -1808094285602472785
+    second: tennsen_2__54
+  - first:
+      213: -7798818584532537083
+    second: tennsen_2__55
+  - first:
+      213: 943702627036006948
+    second: tennsen_2__56
+  - first:
+      213: 6516847341262158600
+    second: tennsen_2__57
+  - first:
+      213: -1005918345261911693
+    second: tennsen_2__58
+  - first:
+      213: -861318576831203465
+    second: tennsen_2__59
+  - first:
+      213: -8813246263970861671
+    second: tennsen_2__60
+  - first:
+      213: 3888654920999386300
+    second: tennsen_2__61
+  - first:
+      213: 787934973455906075
+    second: tennsen_2__62
+  - first:
+      213: 2993372479290563879
+    second: tennsen_2__63
+  - first:
+      213: 6969370954396025380
+    second: tennsen_2__64
+  - first:
+      213: -439552199143837011
+    second: tennsen_2__65
+  - first:
+      213: -1014663036357116715
+    second: tennsen_2__66
+  - first:
+      213: 7205503309707288364
+    second: tennsen_2__67
+  - first:
+      213: 3538807127930617512
+    second: tennsen_2__68
+  - first:
+      213: -4251443684070822204
+    second: tennsen_2__69
+  - first:
+      213: 5124115686790072180
+    second: tennsen_2__70
+  - first:
+      213: -8192117952743924174
+    second: tennsen_2__71
+  - first:
+      213: -1820174484630912130
+    second: tennsen_2__72
+  - first:
+      213: 5556725084869924423
+    second: tennsen_2__73
+  - first:
+      213: -8627363015213911228
+    second: tennsen_2__74
+  - first:
+      213: -5760238748524937878
+    second: tennsen_2__75
+  - first:
+      213: 4046490133337470954
+    second: tennsen_2__76
+  - first:
+      213: -2232436936781128126
+    second: tennsen_2__77
+  - first:
+      213: -4014189310571014331
+    second: tennsen_2__78
+  - first:
+      213: -6859863215124284617
+    second: tennsen_2__79
+  - first:
+      213: -5261434399859751758
+    second: tennsen_2__80
+  - first:
+      213: -911425822560082691
+    second: tennsen_2__81
+  - first:
+      213: 3367305743989454343
+    second: tennsen_2__82
+  - first:
+      213: -3076760230243125949
+    second: tennsen_2__83
+  - first:
+      213: -6115353325647429876
+    second: tennsen_2__84
+  - first:
+      213: 1885765054738587651
+    second: tennsen_2__85
+  - first:
+      213: -271080758967295732
+    second: tennsen_2__86
+  - first:
+      213: -6917684208091648460
+    second: tennsen_2__87
+  - first:
+      213: -3498473333553577257
+    second: tennsen_2__88
+  - first:
+      213: -3033343071191570758
+    second: tennsen_2__89
+  - first:
+      213: 3713199034497235970
+    second: tennsen_2__90
+  - first:
+      213: -1694443900459647610
+    second: tennsen_2__91
+  - first:
+      213: 6168912145885515915
+    second: tennsen_2__92
+  - first:
+      213: -6830864860616534508
+    second: tennsen_2__93
+  - first:
+      213: 151549970895746933
+    second: tennsen_2__94
+  - first:
+      213: 1813752878500975573
+    second: tennsen_2__95
+  - first:
+      213: 2969239884741552909
+    second: tennsen_2__96
+  - first:
+      213: -109846580163769307
+    second: tennsen_2__97
+  - first:
+      213: -8899389078560326727
+    second: tennsen_2__98
+  - first:
+      213: -2991805107951688969
+    second: tennsen_2__99
+  - first:
+      213: -7001916163104429910
+    second: tennsen_2__100
+  - first:
+      213: 266032687143217544
+    second: tennsen_2__101
+  - first:
+      213: 1131495805202981121
+    second: tennsen_2__102
+  - first:
+      213: 8762051638032905849
+    second: tennsen_2__103
+  - first:
+      213: 660383389123563516
+    second: tennsen_2__104
+  - first:
+      213: -2713974458078318136
+    second: tennsen_2__105
+  - first:
+      213: 5375475045359170950
+    second: tennsen_2__106
+  - first:
+      213: 3238326339580166026
+    second: tennsen_2__107
+  - first:
+      213: 1261051105820583426
+    second: tennsen_2__108
+  - first:
+      213: 7040622184532329177
+    second: tennsen_2__109
+  - first:
+      213: 4287006736176211262
+    second: tennsen_2__110
+  - first:
+      213: -8559867420066918298
+    second: tennsen_2__111
+  - first:
+      213: -8056829941339692631
+    second: tennsen_2__112
+  - first:
+      213: 3594140455364727377
+    second: tennsen_2__113
+  - first:
+      213: 4875399306357961597
+    second: tennsen_2__114
+  - first:
+      213: -719210805682697639
+    second: tennsen_2__115
+  - first:
+      213: 5124428060569910617
+    second: tennsen_2__116
+  - first:
+      213: -3323645910318145892
+    second: tennsen_2__117
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tennsen_2__0
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 616362148eb9f1b10800000000000000
+      internalID: 1954452185129825814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__1
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 817fd8743938f5ca0800000000000000
+      internalID: -6025953107814516968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__2
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ae3e44ceab36ebb0800000000000000
+      internalID: -4907169122169766235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__3
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 229a0dfd613453bd0800000000000000
+      internalID: -2651139040114333406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__4
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4e25ed7d0cd4f5b0800000000000000
+      internalID: -5335397708022337973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__5
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3ffec4694b63c3e0800000000000000
+      internalID: -2034664643673260227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__6
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cabcd699c85df5f10800000000000000
+      internalID: 2260760337809525676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__7
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1010d2a551f5e3200800000000000000
+      internalID: 161671181943767297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__8
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b14764e5093bbb680800000000000000
+      internalID: -8738193219343977445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__9
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b958b2e16f061a50800000000000000
+      internalID: 6491392825991125426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__10
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a673399dd2a4a8db0800000000000000
+      internalID: -4788933692970813590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__11
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e34bcd73c6d2a080800000000000000
+      internalID: -9177536955510209559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__12
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a99a9d26db1ab210800000000000000
+      internalID: 1349421645052942761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__13
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 885168c9ad8cac470800000000000000
+      internalID: 8415759694949651848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__14
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d512adde21c0ff7a0800000000000000
+      internalID: -6341336474874928803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__15
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25e0a799206078270800000000000000
+      internalID: 8252571450414337618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__16
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66480f389b0561450800000000000000
+      internalID: 6059119106386330726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__17
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1150085880313b8e0800000000000000
+      internalID: -1678977308758637295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__18
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b072befd287193460800000000000000
+      internalID: 7221829328335218443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__19
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f5f997bdecbcfcd0800000000000000
+      internalID: -2522933962060728842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__20
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c5c78cd1828dd2a0800000000000000
+      internalID: -6711064375449893437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__21
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 761a815777a9b0d30800000000000000
+      internalID: 4398779298913755495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__22
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 368de420f81fb95c0800000000000000
+      internalID: -4207503830326257565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__23
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eafe028630c3f1fb0800000000000000
+      internalID: -4674951902857728082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__24
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d273e6b9846e851f0800000000000000
+      internalID: -1055840913098655955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__25
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b97d8478ff0f45e0800000000000000
+      internalID: -1923300956082177608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__26
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec527aee9dd8e9510800000000000000
+      internalID: 1557838488268121550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__27
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d1869c2fdea39a50800000000000000
+      internalID: 6526752558538981848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__28
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eefb091e002096620800000000000000
+      internalID: 2767745648803495918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__29
+      rect:
+        serializedVersion: 2
+        x: 1033
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e094ed5cbd685fa50800000000000000
+      internalID: 6554293111183264014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__30
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd211180e0275f850800000000000000
+      internalID: 6410155049222214365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__31
+      rect:
+        serializedVersion: 2
+        x: 1095
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac476f4c9d8c7c8d0800000000000000
+      internalID: -2826069403513752374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__32
+      rect:
+        serializedVersion: 2
+        x: 1126
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04441d5b67d076000800000000000000
+      internalID: 29006726108890176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__33
+      rect:
+        serializedVersion: 2
+        x: 1157
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e897752424dbfc040800000000000000
+      internalID: 4670159430885013902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__34
+      rect:
+        serializedVersion: 2
+        x: 1188
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d6efcb76a2188290800000000000000
+      internalID: -7888034241088330031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__35
+      rect:
+        serializedVersion: 2
+        x: 1219
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64185399ec8428ae0800000000000000
+      internalID: -1548595269691145914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__36
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d7fd4f6e5a143590800000000000000
+      internalID: -7695496870372706347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__37
+      rect:
+        serializedVersion: 2
+        x: 1281
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 256964da6ffea8220800000000000000
+      internalID: 2489065586823698002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__38
+      rect:
+        serializedVersion: 2
+        x: 1312
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01511de41da7f3c30800000000000000
+      internalID: 4341323605197526288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__39
+      rect:
+        serializedVersion: 2
+        x: 1343
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52079b0d789587330800000000000000
+      internalID: 3708812732996874277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__40
+      rect:
+        serializedVersion: 2
+        x: 1374
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52fa789c216d973f0800000000000000
+      internalID: -902454874132205787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__41
+      rect:
+        serializedVersion: 2
+        x: 1405
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 707aee66b27d921e0800000000000000
+      internalID: -2222008359720147193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__42
+      rect:
+        serializedVersion: 2
+        x: 1436
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8369f74d9db17040800000000000000
+      internalID: 4643701174010733451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__43
+      rect:
+        serializedVersion: 2
+        x: 1467
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1895813f0c34e640800000000000000
+      internalID: 5108273913297999898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__44
+      rect:
+        serializedVersion: 2
+        x: 1498
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58060f8fd9999aa10800000000000000
+      internalID: 1921235619815645317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__45
+      rect:
+        serializedVersion: 2
+        x: 1529
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f19ce928b8cd2e70800000000000000
+      internalID: 9092143916033806834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__46
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b318fec4366ddb270800000000000000
+      internalID: 8268000212902969659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__47
+      rect:
+        serializedVersion: 2
+        x: 1591
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62e99aa6877ef1040800000000000000
+      internalID: 4620666247077010982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__48
+      rect:
+        serializedVersion: 2
+        x: 1622
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0602c5d3a4be0690800000000000000
+      internalID: -7633965702587480563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__49
+      rect:
+        serializedVersion: 2
+        x: 1653
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1f3310896f108250800000000000000
+      internalID: 5944786046109826843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__50
+      rect:
+        serializedVersion: 2
+        x: 1684
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d663eab6e461d9e0800000000000000
+      internalID: -1598385450599094576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__51
+      rect:
+        serializedVersion: 2
+        x: 1715
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d4f9efb5044bb750800000000000000
+      internalID: 6321721293429929170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__52
+      rect:
+        serializedVersion: 2
+        x: 1746
+        y: 614
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f7ac1826d900af90800000000000000
+      internalID: -6944539810004686855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__53
+      rect:
+        serializedVersion: 2
+        x: 1777
+        y: 614
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cb76ad2d7f025120800000000000000
+      internalID: 2400998581653109698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__54
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 595
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fac3042b3db58e6e0800000000000000
+      internalID: -1808094285602472785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__55
+      rect:
+        serializedVersion: 2
+        x: 1796
+        y: 594
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 501393931d705c390800000000000000
+      internalID: -7798818584532537083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__56
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 564
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42a85121a84b81d00800000000000000
+      internalID: 943702627036006948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__57
+      rect:
+        serializedVersion: 2
+        x: 1796
+        y: 563
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80b316f012e707a50800000000000000
+      internalID: 6516847341262158600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__58
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 533
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3717d9538924a02f0800000000000000
+      internalID: -1005918345261911693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__59
+      rect:
+        serializedVersion: 2
+        x: 1796
+        y: 532
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 777f78d515bfb04f0800000000000000
+      internalID: -861318576831203465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__60
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 502
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99d6afda73f01b580800000000000000
+      internalID: -8813246263970861671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__61
+      rect:
+        serializedVersion: 2
+        x: 1796
+        y: 501
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbc3e343c0747f530800000000000000
+      internalID: 3888654920999386300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__62
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 471
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1532f60fae4fea00800000000000000
+      internalID: 787934973455906075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__63
+      rect:
+        serializedVersion: 2
+        x: 1796
+        y: 470
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72d5b8c09689a8920800000000000000
+      internalID: 2993372479290563879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__64
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42243bc25fd28b060800000000000000
+      internalID: 6969370954396025380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__65
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da23acd8a9566e9f0800000000000000
+      internalID: -439552199143837011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__66
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dcf63728513be1f0800000000000000
+      internalID: -1014663036357116715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__67
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2f110375171ff360800000000000000
+      internalID: 7205503309707288364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__68
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8aebcec555e5c1130800000000000000
+      internalID: 3538807127930617512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__69
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ce61649e76dff4c0800000000000000
+      internalID: -4251443684070822204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__70
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 477012381148c1740800000000000000
+      internalID: 5124115686790072180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__71
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23e199c2020cf4e80800000000000000
+      internalID: -8192117952743924174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__72
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e73485e23f07db6e0800000000000000
+      internalID: -1820174484630912130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__73
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7469c2e16047d1d40800000000000000
+      internalID: 5556725084869924423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__74
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 443f4d12c03754880800000000000000
+      internalID: -8627363015213911228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__75
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6dfab490658f00b0800000000000000
+      internalID: -5760238748524937878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__76
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae7f3b84655082830800000000000000
+      internalID: 4046490133337470954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__77
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24e13b71f6ac401e0800000000000000
+      internalID: -2232436936781128126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__78
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5479e32171cba48c0800000000000000
+      internalID: -4014189310571014331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__79
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73b7fbe30cedcc0a0800000000000000
+      internalID: -6859863215124284617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__80
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b4c6532a41abf6b0800000000000000
+      internalID: -5261434399859751758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__81
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df420371b07f953f0800000000000000
+      internalID: -911425822560082691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__82
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 706bf90cbb21bbe20800000000000000
+      internalID: 3367305743989454343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__83
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3453f493fd62d45d0800000000000000
+      internalID: -3076760230243125949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__84
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0ff7c40d86e12ba0800000000000000
+      internalID: -6115353325647429876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__85
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 300e98973559b2a10800000000000000
+      internalID: 1885765054738587651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__86
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c01af486c7dec3cf0800000000000000
+      internalID: -271080758967295732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__87
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43e2e5c3dd27fff90800000000000000
+      internalID: -6917684208091648460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__88
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d2cc51f90de27fc0800000000000000
+      internalID: -3498473333553577257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__89
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab6ebbf4c8667e5d0800000000000000
+      internalID: -3033343071191570758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__90
+      rect:
+        serializedVersion: 2
+        x: 934
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20cf78739dee78330800000000000000
+      internalID: 3713199034497235970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__91
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68d764500402c78e0800000000000000
+      internalID: -1694443900459647610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__92
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b80591299e06c9550800000000000000
+      internalID: 6168912145885515915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__93
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 416d04ac994e331a0800000000000000
+      internalID: -6830864860616534508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__94
+      rect:
+        serializedVersion: 2
+        x: 1058
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57736f445e96a1200800000000000000
+      internalID: 151549970895746933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__95
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d3946122aebb2910800000000000000
+      internalID: 1813752878500975573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__96
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0b21f681fbd43920800000000000000
+      internalID: 2969239884741552909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__97
+      rect:
+        serializedVersion: 2
+        x: 1151
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52c0c890e1fb97ef0800000000000000
+      internalID: -109846580163769307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__98
+      rect:
+        serializedVersion: 2
+        x: 1182
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bbbb66b8c40f7480800000000000000
+      internalID: -8899389078560326727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__99
+      rect:
+        serializedVersion: 2
+        x: 1213
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f227570b19fa76d0800000000000000
+      internalID: -2991805107951688969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__100
+      rect:
+        serializedVersion: 2
+        x: 1244
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa8281fe85234de90800000000000000
+      internalID: -7001916163104429910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__101
+      rect:
+        serializedVersion: 2
+        x: 1275
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88960d7c15321b300800000000000000
+      internalID: 266032687143217544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__102
+      rect:
+        serializedVersion: 2
+        x: 1306
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 101e7fd9071e3bf00800000000000000
+      internalID: 1131495805202981121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__103
+      rect:
+        serializedVersion: 2
+        x: 1337
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 976b49c9a8f099970800000000000000
+      internalID: 8762051638032905849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__104
+      rect:
+        serializedVersion: 2
+        x: 1368
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cff474c81372a2900800000000000000
+      internalID: 660383389123563516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__105
+      rect:
+        serializedVersion: 2
+        x: 1399
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c132c01c96065ad0800000000000000
+      internalID: -2713974458078318136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__106
+      rect:
+        serializedVersion: 2
+        x: 1430
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6853c91c216899a40800000000000000
+      internalID: 5375475045359170950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__107
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8f777106a8d0fc20800000000000000
+      internalID: 3238326339580166026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__108
+      rect:
+        serializedVersion: 2
+        x: 1492
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 206ac06ac47208110800000000000000
+      internalID: 1261051105820583426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__109
+      rect:
+        serializedVersion: 2
+        x: 1523
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d2c8c2f29055b160800000000000000
+      internalID: 7040622184532329177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__110
+      rect:
+        serializedVersion: 2
+        x: 1554
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e356d7bb9e18e7b30800000000000000
+      internalID: 4287006736176211262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__111
+      rect:
+        serializedVersion: 2
+        x: 1585
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 660d87efeed353980800000000000000
+      internalID: -8559867420066918298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__112
+      rect:
+        serializedVersion: 2
+        x: 1616
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a167b2fad3603090800000000000000
+      internalID: -8056829941339692631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__113
+      rect:
+        serializedVersion: 2
+        x: 1647
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15210ea93b3f0e130800000000000000
+      internalID: 3594140455364727377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__114
+      rect:
+        serializedVersion: 2
+        x: 1678
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d73f6a196d5e8a340800000000000000
+      internalID: 4875399306357961597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__115
+      rect:
+        serializedVersion: 2
+        x: 1709
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95a09a03599d406f0800000000000000
+      internalID: -719210805682697639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__116
+      rect:
+        serializedVersion: 2
+        x: 1740
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95d3053bb20ad1740800000000000000
+      internalID: 5124428060569910617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tennsen_2__117
+      rect:
+        serializedVersion: 2
+        x: 1771
+        y: 457
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9e9e4c67a900e1d0800000000000000
+      internalID: -3323645910318145892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
