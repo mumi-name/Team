@@ -148,12 +148,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95de427b9f4232645bdc1f681d4d84ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationSpeed: 0.03
   on: 0
   move: 0
   moveSpeed: 0.4
-  movestop: {x: 0, y: 0, z: 0}
   orizinalpos: {x: 0, y: 0, z: 0}
+  movestop: {x: 0, y: 0, z: 0}
+  moveSpeedVec: {x: 0, y: 0, z: 0}
   box: {fileID: 2395284883119588261}
   rb: {fileID: 232062648891100081}
   spr: {fileID: 461828663587657134}
@@ -174,7 +174,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2

@@ -73,6 +73,7 @@ public class IrisShot : MonoBehaviour
 
     public void ResetIris()
     {
+        if (unmask == null) return;//ƒ}ƒXƒN‚ªİ’è‚³‚ê‚Ä‚¢‚È‚©‚Á‚½‚çReturn
         hasOpened = false;
         unmask.localScale = IRIS_IN_SCALE;
     }

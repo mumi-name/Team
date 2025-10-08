@@ -1,3 +1,4 @@
+using DG.Tweening;
 using Unity.VisualScripting;
 using UnityEngine;
 using static Unity.Collections.AllocatorManager;
@@ -6,31 +7,39 @@ using static UnityEngine.GraphicsBuffer;
 
 public class OnOffBrock : MonoBehaviour
 {
-    public float animationSpeed = 0.03f;
-    public bool on = false;
-    public bool move = false;
-    //public Vector3 movevec = Vector3.zero;
-    public float moveSpeed=0.4f;//移動速度
-    public Vector3 movestop = Vector3.zero;
+    public bool on = false;//このブロックはonで判定がつくのかどうか
+    public bool move = false;//このブロックは動くのか
+    public bool loop = false;//往復する
+    public float moveSpeed = 0.4f;//移動速度
+    
     public Vector3 orizinalpos = Vector3.zero;
+    public Vector3 movestop = Vector3.zero;
+    //public Vector3 moveSpeedVec = Vector3.zero;
+    
     public BoxCollider2D box;
     public Rigidbody2D rb;
     public SpriteRenderer spr;
 
     public Sprite onSprite;
     public Sprite offSprite;
-    //public string defaultTag = "Selectable";//初期タグをここに保存
-    //public Sprite offSprite;//?_??(OFF?p)
 
+    float animationSpeed = 0.03f;
     bool moveFlag = false;
     bool fadeFlag = false;
     bool changed = false;
+    bool turn = false;
     bool invalid = false;//ブロックの判定を有効化するのを禁止する
 
 
     void Start()
     {
         if(orizinalpos==Vector3.zero)orizinalpos = transform.position;
+        //if (moveSpeedVec == Vector3.zero)
+        //{
+        //    if (Mathf.Approximately(orizinalpos.x, movestop.x)==false) moveSpeedVec.x = moveSpeed;
+        //    if (Mathf.Approximately(orizinalpos.y, movestop.y)==false) moveSpeedVec.y = moveSpeed;
+            
+        //}
         if (spr == null) spr = GetComponent<SpriteRenderer>();
     }
 
@@ -224,7 +233,48 @@ public class OnOffBrock : MonoBehaviour
     {
         //ONで動くブロックがOFFの時にも動いてしまわないようにmoveFlagを確認する
         if (!moveFlag) return;
-        if(move)transform.position = Vector3.MoveTowards(transform.position, movestop, Mathf.Abs(moveSpeed) * Time.deltaTime);
+        if (move)
+        {
+            if (loop && Mathf.Approximately(transform.position.x, movestop.x) && Mathf.Approximately(transform.position.y, movestop.y)) Invoke("OnTurn", 0.7f);
+            if (Mathf.Approximately(transform.position.x, orizinalpos.x) && Mathf.Approximately(transform.position.y, orizinalpos.y)) Invoke("OffTurn", 0.7f);
+
+            if (!turn)
+            {
+                transform.position = Vector3.MoveTowards
+                (transform.position, movestop, Mathf.Abs(moveSpeed) * Time.deltaTime);
+            }
+            else
+            {
+                transform.position = Vector3.MoveTowards(transform.position,orizinalpos, Mathf.Abs(moveSpeed) * Time.deltaTime);
+            }
+        }
+        
+    }
+
+    void OnTurn()
+    {
+        turn = true;
+    }
+
+    void OffTurn()
+    {
+        turn = false;
+    }
+
+    void MoveCheck()
+    {
+        //エレベータが停止位置を過ぎたら止める
+        if (transform.position.x >= movestop.x)
+        {
+            if (orizinalpos.x > movestop.x) return;
+            moveFlag = false;
+
+        }
+        if (transform.position.x <= movestop.x)
+        {
+            if (orizinalpos.x < movestop.x) return;
+            moveFlag = false;
+        }
     }
 
     void FadeAnimation()
@@ -247,16 +297,24 @@ public class OnOffBrock : MonoBehaviour
 
     }
 
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Player"))
+    //    {
+    //        if (!move) return;
+    //        if (collision.transform.parent != null) return;
+    //        collision.gameObject.transform.SetParent(transform, worldPositionStays: true);
+    //    }
+    //}
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            //transform.SetParent()
-        }
-    }
-
-
+    //private void OnCollisionExit2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Player"))
+    //    {
+    //        if (!move) return;
+    //        collision.gameObject.transform.SetParent(null, worldPositionStays:true);
+    //    }
+    //}
 
 
 }

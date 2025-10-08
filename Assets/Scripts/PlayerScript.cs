@@ -75,9 +75,9 @@ public class PlayerScript : MonoBehaviour
         if (num < 0) mode = -1;
 
         //左右キーが押されてない場合、止める
-        if (Mathf.Abs(num) < 0.5)
+        if (Mathf.Abs(num) < 1)
         {
-            rb.linearVelocity = new Vector2(0, rb.linearVelocityY);
+            rb.linearVelocity = new Vector3(0, rb.linearVelocityY,0);
             animator.speed = 0;
             return;
 
@@ -133,6 +133,8 @@ public class PlayerScript : MonoBehaviour
         //Debug.Log("移動"+Time.time);
         //左右キーを押した方向に力を掛けて移動させる
         rb.AddForce(transform.right * speed * mode * Time.deltaTime);
+        //rb.linearVelocity=transform.right*speed*mode*Time.deltaTime;
+
         //アニメーションのスピードを速度によって変更する
         float animeSpeed = 1;
         if (Mathf.Abs(rb.linearVelocityX) >= maxSpeed - 1.0f)
@@ -143,7 +145,7 @@ public class PlayerScript : MonoBehaviour
 
         animator.speed = Mathf.Abs(rb.linearVelocityX * animeSpeed);
         //プレイヤーの向きを変更する
-        transform.localScale = new Vector3(1 * mode, 1, 1);
+        transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x)* mode, transform.localScale.y, 1);
 
     }
 
@@ -166,7 +168,9 @@ public class PlayerScript : MonoBehaviour
     public int GetMode()
     {
         //return mode;
-        return (int)transform.localScale.x;
+        int muki = 1;
+        if (transform.localScale.x < 0) muki = -1;
+        return muki;
     }
     public bool GetJumpFlag()
     {
@@ -196,31 +200,7 @@ public class PlayerScript : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
-        //地面に着地した時に向きを更新する
-        /*if (collision.gameObject.CompareTag("Floor"))
-        {
-            if (pendingMode != 0 && pendingMode != beforeMode)
-            {
-                canPushJumpFlag = false;
-                countFlag = true;
-
-                if (pendingMode > 0)
-                {
-                    animator.SetBool("OnOffBool", true);
-                    GameManager.instance.ON();
-                }
-                else
-                {
-                    animator.SetBool("OnOffBool", false);
-                    GameManager.instance.OFF();
-                }
-
-                beforeMode = pendingMode;
-            }
-
-            pendingMode = 0;//?g?????????Z?b?g
-            OnOffJumpFlag(false);//???n???W?????v????????
-        }*/
+        
     }
 
 }

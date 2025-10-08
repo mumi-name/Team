@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6585864830510321745}
   m_Layer: 0
   m_Name: "floor10\u500D"
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

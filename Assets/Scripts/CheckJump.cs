@@ -13,6 +13,15 @@ public class CheckJump : MonoBehaviour
     {
 
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.TryGetComponent<OnOffBrock>(out var brock))
+        {
+            if (brock.move) PlayerScript.instance.transform.SetParent(collision.transform, worldPositionStays: true);
+
+        }
+    }
     private void OnCollisionStay2D(Collision2D collision)
     {
         //プレイヤー足元の判定が触れたのが、床であり
@@ -22,6 +31,7 @@ public class CheckJump : MonoBehaviour
             Vector2 vec = (collision.transform.position - this.transform.position);
             if (vec.y < 0) PlayerScript.instance.OnOffJumpFlag(false);
 
+           
         }
 
     }
@@ -30,6 +40,12 @@ public class CheckJump : MonoBehaviour
         if (collision.gameObject.CompareTag("Floor"))
         {
             PlayerScript.instance.OnOffJumpFlag(true);
+
+            if (collision.gameObject.TryGetComponent<OnOffBrock>(out var brock))
+            {
+                //動く床だった場合は親子関係を作る
+                if (brock.move) PlayerScript.instance.transform.SetParent(null);
+            }
         }
     }
 
