@@ -547,6 +547,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unmask: {fileID: 818057139}
+  IRIS_IN_SCALE: {x: 15, y: 15}
+  IRIS_MID_SCALE1: {x: 0.8, y: 0.8}
+  IRIS_MID_SCALE2: {x: 1.2, y: 1.2}
 --- !u!114 &652600811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -738,7 +741,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: -6904516743055090610, guid: ce6e271fbd8fc194795c2ea6d03d1378, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -786,6 +789,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unmask: {fileID: 0}
+  IRIS_IN_SCALE: {x: 15, y: 15}
+  IRIS_MID_SCALE1: {x: 0.8, y: 0.8}
+  IRIS_MID_SCALE2: {x: 1.2, y: 1.2}
 --- !u!4 &994659779
 Transform:
   m_ObjectHideFlags: 0

@@ -3179,6 +3179,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unmask: {fileID: 1648596779}
+  IRIS_IN_SCALE: {x: 15, y: 15}
+  IRIS_MID_SCALE1: {x: 0.8, y: 0.8}
+  IRIS_MID_SCALE2: {x: 1.2, y: 1.2}
 --- !u!4 &1010906952
 Transform:
   m_ObjectHideFlags: 0
@@ -3487,6 +3490,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unmask: {fileID: 1648596779}
+  IRIS_IN_SCALE: {x: 15, y: 15}
+  IRIS_MID_SCALE1: {x: 0.8, y: 0.8}
+  IRIS_MID_SCALE2: {x: 1.2, y: 1.2}
 --- !u!1001 &1281260169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4654,7 +4660,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 8368959632400809171, guid: 53a4607203c4886409507887f5ae0de4, type: 3}
+  m_Sprite: {fileID: -6904516743055090610, guid: ce6e271fbd8fc194795c2ea6d03d1378, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
