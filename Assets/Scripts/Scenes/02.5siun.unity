@@ -5482,6 +5482,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5866547833927730314, guid: 20c909a9626ec2243913924438d1fbf9, type: 3}
+      propertyPath: orizinalpos.x
+      value: 0.183
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866547833927730314, guid: 20c909a9626ec2243913924438d1fbf9, type: 3}
+      propertyPath: orizinalpos.y
+      value: 1.66
+      objectReference: {fileID: 0}
     - target: {fileID: 6439883546629807956, guid: 20c909a9626ec2243913924438d1fbf9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.18299997
@@ -6571,7 +6579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce6568ed6dc64eb40b18f640d2d78d02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: 02
+  sceneName: 03_honnke
 --- !u!58 &2016482927
 CircleCollider2D:
   m_ObjectHideFlags: 0
