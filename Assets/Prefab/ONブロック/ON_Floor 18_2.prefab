@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e076c65a2bf8e3c4eb71488d476f2932, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1268bb63c8832c149afbfc0e77a59d9e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -148,10 +148,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   on: 1
-  movevec: {x: 0, y: 0, z: 0}
-  movestop: {x: 0, y: 0, z: 0}
+  move: 0
+  loop: 0
+  moveSpeed: 0.4
   orizinalpos: {x: 0, y: 0, z: 0}
+  movestop: {x: 0, y: 0, z: 0}
   box: {fileID: 1025279280567809932}
+  rb: {fileID: 0}
   spr: {fileID: 3397225082732405823}
   onSprite: {fileID: 21300000, guid: e076c65a2bf8e3c4eb71488d476f2932, type: 3}
   offSprite: {fileID: 21300000, guid: 7922245629c5ccb4b872f774f8960962, type: 3}
