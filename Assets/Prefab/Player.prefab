@@ -223,6 +223,9 @@ MonoBehaviour:
   speed: 1000
   maxSpeed: 5
   jumpPower: 500
+  slowMaxSpeed: 0.1
+  slowGravity: 0.1
+  jumpMode: 1
   rb: {fileID: 7959834826640212820}
   animator: {fileID: 5898101005095971538}
 --- !u!114 &6540922609054406810
@@ -352,12 +355,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -3901777555541610920, guid: 410a332bfd0ef624ea1f662453963fac, type: 3}
+  m_Sprite: {fileID: 2547722274174985812, guid: 0fa9bfd92ce33b147b7fcbbf62af5173, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 7.73, y: 9.83}
+  m_Size: {x: 6.94, y: 9.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

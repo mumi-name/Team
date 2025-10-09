@@ -1781,6 +1781,7 @@ MonoBehaviour:
   jumpPower: 500
   slowMaxSpeed: 0.1
   slowGravity: 0.1
+  jumpMode: 1
   rb: {fileID: 440716439}
   animator: {fileID: 0}
 --- !u!1 &471712627
@@ -6189,6 +6190,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 3331534684152710804, guid: 1fc68a0202a14124ab3a55a828bd391d, type: 3}
+    - target: {fileID: 3681653992271183841, guid: 2049c70d94e43c5418c8d20ce42ce7cf, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7710228906333859497, guid: 2049c70d94e43c5418c8d20ce42ce7cf, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
