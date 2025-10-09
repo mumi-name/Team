@@ -75,9 +75,11 @@ public class PlayerScript : MonoBehaviour
         if (num < 0) mode = -1;
 
         //左右キーが押されてない場合、止める
+        //if (Mathf.Abs(num) < 0.1f) num = 0;
+
         if (Mathf.Abs(num) < 1)
         {
-            rb.linearVelocity = new Vector3(0, rb.linearVelocityY,0);
+            rb.linearVelocity = new Vector3(0, rb.linearVelocityY, 0);
             animator.speed = 0;
             return;
 
@@ -132,7 +134,7 @@ public class PlayerScript : MonoBehaviour
 
         //Debug.Log("移動"+Time.time);
         //左右キーを押した方向に力を掛けて移動させる
-        rb.AddForce(transform.right * speed * mode * Time.deltaTime);
+        rb.AddForce(transform.right * speed * mode *Mathf.Abs(num)* Time.deltaTime);
         //rb.linearVelocity=transform.right*speed*mode*Time.deltaTime;
 
         //アニメーションのスピードを速度によって変更する
