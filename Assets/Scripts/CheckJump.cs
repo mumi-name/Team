@@ -40,7 +40,6 @@ public class CheckJump : MonoBehaviour
             Vector2 vec = (collision.transform.position - this.transform.position);
             if (vec.y < 0) PlayerScript.instance.OnOffJumpFlag(false);
 
-           
         }
 
     }
@@ -52,9 +51,18 @@ public class CheckJump : MonoBehaviour
 
             if (collision.gameObject.TryGetComponent<OnOffBrock>(out var brock))
             {
-                //動く床だった場合は親子関係を作る
+                //離れたのが動く床だった場合は親子関係を切る
                 if (brock.move) PlayerScript.instance.transform.SetParent(null);
             }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.TryGetComponent<OnOffBrock>(out var brock))
+        {
+            //離れたのが動く床だった場合は親子関係を切る
+            if (brock.move) PlayerScript.instance.transform.SetParent(null);
         }
     }
 
