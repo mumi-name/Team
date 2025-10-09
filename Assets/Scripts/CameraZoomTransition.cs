@@ -71,11 +71,11 @@ public class CameraZoomTransition : MonoBehaviour
             if (brock.GetChanged() == true) return;
             
             brock.on = !brock.on;
-            brock.OnfadeAnimation();
-            brock.SetOnChanged();
             if (on) brock.ON(true);
             else brock.OFF(true);
-            
+            brock.OnfadeAnimation();
+            brock.SetOnChanged();
+
         }
     }
 
