@@ -23,6 +23,8 @@ public class OnOffBrock : MonoBehaviour
     public Sprite onSprite;
     public Sprite offSprite;
 
+    public Animator animator;
+
     float animationSpeed = 0.03f;
     bool moveFlag = false;
     bool fadeFlag = false;
@@ -67,6 +69,7 @@ public class OnOffBrock : MonoBehaviour
             box.enabled = true;
             if(GameManager.instance.GetWaveAnimation()==true)box.isTrigger = false;
             spr.sprite = onSprite;
+            //animator.SetTrigger("OnTrigger");
             Color color = spr.material.color;
             color.a = 1f;
             //波動アニメーションから呼び出されたら、a値を0.4にしとく（アニメーション時の演出用）
@@ -90,6 +93,7 @@ public class OnOffBrock : MonoBehaviour
                 box.isTrigger = true;
             }
             spr.sprite = offSprite;
+            //animator.SetTrigger("OffTrigger");
             Color color = spr.material.color;
             color.a = 0.4f;
             if (animation)
@@ -120,6 +124,7 @@ public class OnOffBrock : MonoBehaviour
                 box.isTrigger = true;
             }
             spr.sprite = offSprite;
+            //animator.SetTrigger("OffTrigger");
             Color color = spr.material.color;
             color.a = 0.4f;
             if (animation)
@@ -137,6 +142,7 @@ public class OnOffBrock : MonoBehaviour
             box.enabled = true;
             if (GameManager.instance.GetWaveAnimation()) box.isTrigger = false;
             spr.sprite = onSprite;
+            //animator.SetTrigger("OnTrigger");
             Color color = spr.material.color;
             color.a = 1f;
 
