@@ -58,6 +58,7 @@ public class PlayerScript : MonoBehaviour
         //スペースボタンが押されたらジャンプする
         if (Input.GetButtonDown("Jump") && canPushJumpFlag)
         {
+            AudioManager.instance.PlaySE("ジャンプ");
             if (jumpFlag) return;
             Debug.Log("ジャンプ" + Time.time);
             rb.linearVelocityY = 0;
@@ -82,7 +83,6 @@ public class PlayerScript : MonoBehaviour
             rb.linearVelocity = new Vector3(0, rb.linearVelocityY, 0);
             animator.speed = 0;
             return;
-
         }
 
         //FIX：バグ（コントローラーで操作すると、微妙な値が入って停止せず動いてしまう）
@@ -135,6 +135,7 @@ public class PlayerScript : MonoBehaviour
         //Debug.Log("移動"+Time.time);
         //左右キーを押した方向に力を掛けて移動させる
         rb.AddForce(transform.right * speed * mode *Mathf.Abs(num)* Time.deltaTime);
+        AudioManager.instance.PlaySEPartialOneShot("足音",0.1f,0.25f);
         //rb.linearVelocity=transform.right*speed*mode*Time.deltaTime;
 
         //アニメーションのスピードを速度によって変更する

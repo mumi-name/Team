@@ -36,6 +36,7 @@ public class CheckJump : MonoBehaviour
         //プレイヤー足元の判定が触れたのが、床であり
         if (collision.gameObject.CompareTag("Floor"))
         {
+            AudioManager.instance.PlaySEPartialOneShot("ジャンプの着地", 0.3f, 0.7f);
             //尚且つプレイヤーの”下”に床がある場合、ジャンプ可能にする
             Vector2 vec = (collision.transform.position - this.transform.position);
             if (vec.y < 0) PlayerScript.instance.OnOffJumpFlag(false);

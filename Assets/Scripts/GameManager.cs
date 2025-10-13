@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
         {
             IrisShot.instance.IrisIN();
         }
+        AudioManager.instance.PlayBGM("BGM3");
         //DontDestroyOnLoad(gameObject);
         ON();
     }

@@ -1644,6 +1644,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53a84fec1c555574dbed9ff9694e7d94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startTime: 0.5
+  duration: 0.2
   bgmSource: {fileID: 1246386047}
   seSource: {fileID: 1105506395}
   bgmList:
@@ -1651,9 +1653,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 254fe098e1150ef4f9feaf97611e8c1e, type: 3}
   - {fileID: 8300000, guid: 122b4f014e7ca2e4fa8cbaf83830676d, type: 3}
   seList:
-  - {fileID: 8300000, guid: 99c5fe2cd99d7ca46820fc935e0c4216, type: 3}
   - {fileID: 8300000, guid: 3987e744629f1c84ab358e522d5900be, type: 3}
-  - {fileID: 8300000, guid: 9cfc6442531c9fc45b0e73e6010661ab, type: 3}
+  - {fileID: 8300000, guid: 99c5fe2cd99d7ca46820fc935e0c4216, type: 3}
+  - {fileID: 8300000, guid: cdd2287202ab6b9409ae5f864d14867c, type: 3}
+  - {fileID: 8300000, guid: bcd54073a53bdfc41810d74e182d84df, type: 3}
   - {fileID: 8300000, guid: 2fd5bbea573ff8f4ba30199c6a983311, type: 3}
 --- !u!114 &432294127 stripped
 MonoBehaviour:
@@ -3387,7 +3390,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3725,7 +3728,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
