@@ -115,7 +115,7 @@ public class GameManager : MonoBehaviour
         {
             targetScale = 1;
             waveAnimation = false;
-            ChangeTriggerToEnabled();
+            
         }
     }
 

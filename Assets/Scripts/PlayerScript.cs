@@ -50,7 +50,9 @@ public class PlayerScript : MonoBehaviour
 
         //Debug.Log("velocity:" + rb.linearVelocityY);
 
-        if(jumpMode)Jump();
+        if (GameManager.instance.GetWaveAnimation() && Mathf.Abs(rb.linearVelocity.y)!=0) jumpFlag = true;
+
+        if (jumpMode)Jump();
         Move();
 
     }
@@ -70,6 +72,7 @@ public class PlayerScript : MonoBehaviour
             rb.linearVelocityX = 0;
             return;
         }
+
 
         //ƒWƒƒƒ“ƒv’†‚Éˆá‚¤•ûŒü‚ðŒü‚¯‚È‚¢‚æ‚¤‚É‚·‚é
         if (jumpFlag && mode != beforeMode)
@@ -183,6 +186,12 @@ public class PlayerScript : MonoBehaviour
     }
 
     
+    public void ignoreMove(bool mode)
+    {
+        //if (AnimationScript.instance.GetTutorialMode()) return;
+        ignoreInput = mode;
+        //if(mode)rb.linearVelocityX = 0;
+    }
 
     //“®‚¯‚È‚¢‚æ‚¤‚É‹ó’†‚ÉŒÅ’è
     public void cannotMoveMode()

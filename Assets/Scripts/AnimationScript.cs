@@ -9,6 +9,7 @@ public class AnimationScript : MonoBehaviour
     public GameObject brock;//ステージ中にあるONOFFブロック
     Vector3 orizinSize;
     CircleCollider2D circleCollider;
+    public static AnimationScript instance;
 
     bool on = false;
     bool tutorial = false;
@@ -16,6 +17,7 @@ public class AnimationScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        instance = this;
         orizinSize = transform.localScale;
         circleCollider = GetComponent<CircleCollider2D>();
         if (CameraZoomTransition.instance!=null&&CameraZoomTransition.instance.zoomCamera != null) tutorial = true;
@@ -45,7 +47,7 @@ public class AnimationScript : MonoBehaviour
             transform.localScale = orizinSize;
             circleCollider.enabled = false;
             GameManager.instance.OnOffSlow(false);
-            
+            if (tutorial) GameManager.instance.ChangeTriggerToEnabled();
             if (CameraZoomTransition.instance!=null&&CameraZoomTransition.instance.zoomCamera != null)
             {
                 CameraZoomTransition.instance.StartZoom();
@@ -67,6 +69,8 @@ public class AnimationScript : MonoBehaviour
             OnOffBrock brock = collision.gameObject.GetComponent<OnOffBrock>();
             //OnOffが既に切り替わっていた場合は、処理を終了
             if (brock.GetChanged() == true) return;
+            brock.SetOnChanged();
+
             //OnOffの属性を切り替え
             brock.on = !brock.on;
 
@@ -81,10 +85,12 @@ public class AnimationScript : MonoBehaviour
             if (on) brock.ON(true);
             else brock.OFF(true);
 
+
             //brock.ChangeTriggerToEnabled();
 
             brock.OnfadeAnimation();
-            brock.SetOnChanged();
+            //brock.SetOnChanged();
+
 
 
             Debug.Log("On??Off?????]");
@@ -92,6 +98,11 @@ public class AnimationScript : MonoBehaviour
 
 
 
+    }
+
+    public bool GetTutorialMode()
+    {
+        return tutorial;
     }
 
 
