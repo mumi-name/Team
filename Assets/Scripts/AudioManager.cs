@@ -125,6 +125,37 @@ public class AudioManager : MonoBehaviour
         }
         */
     }
+    public void PlaySE2(string name)
+    {
+
+        if (!seDict.ContainsKey(name))
+        {
+            Debug.Log($"SE'{name}'が見つかりません。");
+            return;
+        }
+        seSource.PlayOneShot(seDict[name]);
+        
+        /*この部分はプレイヤーに書く
+        if (name.Contains("足音"))
+        {
+            if (Time.time - lastFootstepTime < footstepCooldown) return;
+            lastFootstepTime = Time.time;
+        }
+        */
+
+
+        /*旧バージョン
+        if(seSource.isPlaying)
+        {
+            seSource.PlayOneShot(seDict[name]);
+        }
+        else
+        {
+            Debug.LogWarning($"SE'{name}'が見つかりません。");
+            return;
+        }
+        */
+    }
     //--------------------------------
     // SE(部分再生)
     //--------------------------------
