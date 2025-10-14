@@ -4,12 +4,14 @@ using UnityEngine.SceneManagement;
 public class PlayerScript : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-
+    [Header("Player")]
     public float speed = 1000f;//移動速度
     public float maxSpeed = 5f;//最大速度
     public float jumpPower = 300f;//ジャンプ力
     public float slowMaxSpeed = 0.1f;
     public float slowGravity = 0.1f;
+    public float footstepCooldown = 0.25f;//足音の間隔
+    private float lastFootstepTime = 0f;   //最後に鳴らした時間
     public bool jumpMode = true;//ジャンプのアリ・ナシ
     public Rigidbody2D rb;
     public Animator animator;
@@ -135,7 +137,13 @@ public class PlayerScript : MonoBehaviour
         //Debug.Log("移動"+Time.time);
         //左右キーを押した方向に力を掛けて移動させる
         rb.AddForce(transform.right * speed * mode *Mathf.Abs(num)* Time.deltaTime);
-        AudioManager.instance.PlaySEPartialOneShot("足音",0.1f,0.25f);
+        AudioManager.instance.PlaySE("足音1");
+        //if(Time.time - lastFootstepTime > footstepCooldown)
+        //{
+        //    AudioManager.instance.PlaySE("足音1");
+        //    lastFootstepTime = Time.time;
+        //}
+
         //rb.linearVelocity=transform.right*speed*mode*Time.deltaTime;
 
         //アニメーションのスピードを速度によって変更する

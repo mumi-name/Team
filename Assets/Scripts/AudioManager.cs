@@ -91,13 +91,20 @@ public class AudioManager : MonoBehaviour
     //--------------------------------
     public void PlaySE(string name)
     {
-        if (!seDict.ContainsKey(name))
-        {
-            Debug.Log($"SE'{name}'‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñB");
-            return;
-        }
-
-        seSource.PlayOneShot(seDict[name]);
+        //if (!seDict.ContainsKey(name))
+        //{
+        //    Debug.Log($"SE'{name}'‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñB");
+        //    return;
+        //}
+        //if(seSource.isPlaying)
+        //{
+        //    seSource.PlayOneShot(seDict[name]);
+        //}
+        //else
+        //{
+        //    Debug.LogWarning($"SE'{name}'‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñB");
+        //    return;
+        //}
     }
     //--------------------------------
     // SE(•”•ªÄ¶)
