@@ -24,7 +24,7 @@ public class SceneTransition : MonoBehaviour
             IrisShot.instance.IrisOut();
             TimerManager.instance.StopTimer();
             //ŽO•bŒã‚ÉƒV[ƒ“‘JˆÚ
-            DOVirtual.DelayedCall(2.0f, () =>
+            DOVirtual.DelayedCall(3.0f, () =>
             {
                 TimerManager.instance.StartTimer();
                 SceneManager.LoadScene(sceneName);

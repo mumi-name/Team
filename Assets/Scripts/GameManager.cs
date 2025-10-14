@@ -90,7 +90,6 @@ public class GameManager : MonoBehaviour
         {
             brock.OFF();
         }
-        AudioManager.instance.PlaySE("ONOFF");
     }
 
     public void OFFChanged()
@@ -100,6 +99,7 @@ public class GameManager : MonoBehaviour
 
             brock.SetOffChanged();
         }
+        AudioManager.instance.PlaySE("ONOFF");
     }
 
     //スローモーションの切り替え
