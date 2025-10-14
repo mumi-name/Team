@@ -69,7 +69,7 @@ public class OnOffBrock : MonoBehaviour
             box.enabled = true;
             if(GameManager.instance.GetWaveAnimation()==true)box.isTrigger = false;
             spr.sprite = onSprite;
-            animator.SetBool("OnOffBool", true);
+            //animator.SetBool("OnOffBool", true);
             Color color = spr.material.color;
             color.a = 1f;
             //波動アニメーションから呼び出されたら、a値を0.4にしとく（アニメーション時の演出用）
@@ -93,7 +93,7 @@ public class OnOffBrock : MonoBehaviour
                 box.isTrigger = true;
             }
             spr.sprite = offSprite;
-            animator.SetBool("OnOffBool", false);
+            //animator.SetBool("OnOffBool", false);
             Color color = spr.material.color;
             color.a = 0.4f;
             if (animation)
@@ -124,7 +124,7 @@ public class OnOffBrock : MonoBehaviour
                 box.isTrigger = true;
             }
             spr.sprite = offSprite;
-            animator.SetBool("OnOffBool", false);
+            //animator.SetBool("OnOffBool", false);
             Color color = spr.material.color;
             color.a = 0.4f;
             if (animation)
@@ -142,7 +142,7 @@ public class OnOffBrock : MonoBehaviour
             box.enabled = true;
             if (GameManager.instance.GetWaveAnimation()) box.isTrigger = false;
             spr.sprite = onSprite;
-            animator.SetBool("OnOffBool", true);
+            //animator.SetBool("OnOffBool", true);
             Color color = spr.material.color;
             color.a = 1f;
 
