@@ -32,6 +32,8 @@ public class OnOffBrock : MonoBehaviour
     bool turn = false;
     bool invalid = false;//ブロックの判定を有効化するのを禁止する
 
+    bool animeBrock = false;//アニメーションするブロックかどうか？
+
 
     void Start()
     {
@@ -43,6 +45,7 @@ public class OnOffBrock : MonoBehaviour
             
         //}
         if (spr == null) spr = GetComponent<SpriteRenderer>();
+        if (animator != null) animeBrock = true;
     }
 
     void Update()
@@ -69,7 +72,7 @@ public class OnOffBrock : MonoBehaviour
             box.enabled = true;
             if(GameManager.instance.GetWaveAnimation()==true)box.isTrigger = false;
             spr.sprite = onSprite;
-            //animator.SetBool("OnOffBool", true);
+            if(animeBrock)animator.SetBool("OnOffBool", true);
             Color color = spr.material.color;
             color.a = 1f;
             //波動アニメーションから呼び出されたら、a値を0.4にしとく（アニメーション時の演出用）
@@ -93,7 +96,7 @@ public class OnOffBrock : MonoBehaviour
                 box.isTrigger = true;
             }
             spr.sprite = offSprite;
-            //animator.SetBool("OnOffBool", false);
+            if (animeBrock) animator.SetBool("OnOffBool", false);
             Color color = spr.material.color;
             color.a = 0.4f;
             if (animation)
@@ -124,7 +127,7 @@ public class OnOffBrock : MonoBehaviour
                 box.isTrigger = true;
             }
             spr.sprite = offSprite;
-            //animator.SetBool("OnOffBool", false);
+            if (animeBrock) animator.SetBool("OnOffBool", false);
             Color color = spr.material.color;
             color.a = 0.4f;
             if (animation)
@@ -142,7 +145,7 @@ public class OnOffBrock : MonoBehaviour
             box.enabled = true;
             if (GameManager.instance.GetWaveAnimation()) box.isTrigger = false;
             spr.sprite = onSprite;
-            //animator.SetBool("OnOffBool", true);
+            if (animeBrock) animator.SetBool("OnOffBool", true);
             Color color = spr.material.color;
             color.a = 1f;
 
