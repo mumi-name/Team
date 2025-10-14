@@ -19,8 +19,8 @@ public class SceneTransition : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            AudioManager.instance.PlaySE("ゴール時音声");
             PlayerScript.instance.cannotMoveMode();//プレイヤーが動かないように
+            AudioManager.instance.PlaySE2("ゴール時音声");
             IrisShot.instance.IrisOut();
             TimerManager.instance.StopTimer();
             //三秒後にシーン遷移
