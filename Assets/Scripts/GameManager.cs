@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
 
     public void ON()
     {
-        if (waveAnimation && Mathf.Abs(PlayerScript.instance.rb.linearVelocity.y) > 0.5) return;
+        //if (waveAnimation && Mathf.Abs(PlayerScript.instance.rb.linearVelocity.y) > 0.5) return;
         foreach (var brock in brocks)
         {
             brock.ON();
@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour
     }
     public void OFF()
     {
-        if (waveAnimation && Mathf.Abs(PlayerScript.instance.rb.linearVelocity.y) > 0.5) return;
+        //if (waveAnimation && Mathf.Abs(PlayerScript.instance.rb.linearVelocity.y) > 0.5) return;
         foreach (var brock in brocks)
         {
             brock.OFF();

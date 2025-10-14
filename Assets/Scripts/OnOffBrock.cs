@@ -80,6 +80,7 @@ public class OnOffBrock : MonoBehaviour
             {
                 color.a = 0.1f;
                 if (animationSpeed < 0) animationSpeed *= -1;
+                
             }
 
             spr.material.color = color;
@@ -89,7 +90,7 @@ public class OnOffBrock : MonoBehaviour
             
             box.enabled = false;
             //waveAnimation’†‚Ìê‡‚Í“–‚½‚è”»’è‚ÌŽæ‚è•û‚ðˆêŽž“I‚ÉTrigger‚ÅŽæ‚éB(enabled‚¾‚ÆOnOff”½“]‚µ‚È‚¢‚½‚ß)
-            if (GameManager.instance.GetWaveAnimation()==true||animation)
+            if ((GameManager.instance.GetWaveAnimation()==true||animation)&&!changed)
             {
                 Debug.Log("True‚É‚È‚Á‚Ä‚¢‚é‚¾‚Æ?");
                 box.enabled = true;
@@ -104,6 +105,8 @@ public class OnOffBrock : MonoBehaviour
                 spr.sprite = onSprite;
                 color.a = 1f;
                 if (animationSpeed > 0) animationSpeed *= -1;
+                
+                
             }
             spr.material.color = color;
 
@@ -135,6 +138,7 @@ public class OnOffBrock : MonoBehaviour
                 spr.sprite = onSprite;
                 color.a = 1f;
                 if (animationSpeed > 0) animationSpeed *= -1;
+                
             }
             spr.material.color = color;
 
@@ -154,6 +158,7 @@ public class OnOffBrock : MonoBehaviour
             {
                 color.a = 0.1f; 
                 if (animationSpeed < 0) animationSpeed *= -1;
+                
             }
             spr.material.color = color;
 
@@ -225,7 +230,22 @@ public class OnOffBrock : MonoBehaviour
     //trigger”»’è‚©‚çenabled”»’è‚ÖØ‚è‘Ö‚¦‚é(‚±‚ê‚ª–³‚¢‚ÆAOnOffØ‚è‘Ö‚¦Žž‚ß‚èž‚Ý‚ª”­¶‚·‚é)
     public void ChangeTriggerToEnabled()
     {
+        if (box.isTrigger)
+        {
+            box.enabled = false;
+            box.isTrigger = false;
+        }
         if (box.isTrigger == false)
+        {
+            box.enabled = true;
+        }
+       /* else
+        {
+            //box.enabled = true;
+            box.enabled = false;
+        }*/
+
+        /*if (box.isTrigger == false)
         {
             box.enabled = true;
         }
@@ -233,7 +253,7 @@ public class OnOffBrock : MonoBehaviour
         {
             box.enabled = false;
             box.isTrigger = false;
-        }
+        }*/
     }
 
     //--------------------------------------------------------------------------

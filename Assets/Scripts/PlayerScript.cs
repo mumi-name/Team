@@ -127,8 +127,6 @@ public class PlayerScript : MonoBehaviour
             return;
         }
 
-
-
         //ƒWƒƒƒ“ƒv’†‚Éˆá‚¤•ûŒü‚ðŒü‚¯‚È‚¢‚æ‚¤‚É‚·‚é
         if (jumpFlag && mode != beforeMode)
         {
@@ -236,6 +234,8 @@ public class PlayerScript : MonoBehaviour
             TimerManager.instance.AddDeath();
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+
+        //if()
 
         
     }
