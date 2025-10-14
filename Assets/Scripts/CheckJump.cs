@@ -73,7 +73,6 @@ public class CheckJump : MonoBehaviour
             if (brock.move) PlayerScript.instance.transform.SetParent(null);
         }
     }
-
     /*private void OnTriggerStay2D(Collider2D collision)
     {
       

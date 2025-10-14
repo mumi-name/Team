@@ -153,14 +153,16 @@ public class PlayerScript : MonoBehaviour
                 GameManager.instance.OFF();
             }
             beforeMode = mode;
-
         }
 
-        //Debug.Log("ˆÚ“®"+Time.time);
+
+        if(!jumpFlag)
+        {
+            AudioManager.instance.PlaySE("‘«‰¹");
+        }
 
         //¶‰EƒL[‚ð‰Ÿ‚µ‚½•ûŒü‚É—Í‚ðŠ|‚¯‚ÄˆÚ“®‚³‚¹‚é
         //rb.AddForce(transform.right * speed * mode *Mathf.Abs(num)* Time.deltaTime);
-        AudioManager.instance.PlaySE("‘«‰¹");
         //if(Time.time - lastFootstepTime > footstepCooldown)
         //{
         //    AudioManager.instance.PlaySE("‘«‰¹");
@@ -174,7 +176,6 @@ public class PlayerScript : MonoBehaviour
         if (Mathf.Abs(rb.linearVelocityX) >= maxSpeed - 1.0f)
         {
             animeSpeed = 0.3f;
-
         }
 
         animator.speed = Mathf.Abs(rb.linearVelocityX * animeSpeed);

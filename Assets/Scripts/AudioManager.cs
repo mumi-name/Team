@@ -134,14 +134,6 @@ public class AudioManager : MonoBehaviour
             return;
         }
         seSource.PlayOneShot(seDict[name]);
-        
-        /*この部分はプレイヤーに書く
-        if (name.Contains("足音"))
-        {
-            if (Time.time - lastFootstepTime < footstepCooldown) return;
-            lastFootstepTime = Time.time;
-        }
-        */
 
 
         /*旧バージョン

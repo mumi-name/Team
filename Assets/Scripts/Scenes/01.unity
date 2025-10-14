@@ -1661,6 +1661,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 69d3c053ea5ffa944966b8c7c61b6d5a, type: 3}
   - {fileID: 8300000, guid: a874e29d7abef6f45b0e426ee0a33ce9, type: 3}
   - {fileID: 8300000, guid: a41d57e2681e1744e9c31925f31e6b59, type: 3}
+  - {fileID: 8300000, guid: a874e29d7abef6f45b0e426ee0a33ce9, type: 3}
 --- !u!114 &432294127 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5866547833927730314, guid: 20c909a9626ec2243913924438d1fbf9, type: 3}
@@ -1844,7 +1845,6 @@ MonoBehaviour:
   jumpPower: 500
   slowMaxSpeed: 0.1
   slowGravity: 0.1
-  footstepCooldown: 0.25
   jumpMode: 1
   rb: {fileID: 440716439}
   animator: {fileID: 0}
@@ -3703,7 +3703,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1246386046
 Transform:
   m_ObjectHideFlags: 0
@@ -3732,7 +3732,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -5026,13 +5026,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1670091342}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.008492407, w: 0.99996394}
   m_LocalPosition: {x: 12.266546, y: -5.153754, z: 0}
   m_LocalScale: {x: 0.28, y: 0.28, z: 0.28}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 718401}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.973}
 --- !u!212 &1670091344
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5986,6 +5986,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: 02
+  locked: 0
 --- !u!58 &2016482927
 CircleCollider2D:
   m_ObjectHideFlags: 0
