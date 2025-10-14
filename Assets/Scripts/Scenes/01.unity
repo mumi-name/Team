@@ -1662,6 +1662,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a874e29d7abef6f45b0e426ee0a33ce9, type: 3}
   - {fileID: 8300000, guid: a41d57e2681e1744e9c31925f31e6b59, type: 3}
   - {fileID: 8300000, guid: a874e29d7abef6f45b0e426ee0a33ce9, type: 3}
+  - {fileID: 8300000, guid: 3a8c7050fe917cf4ea19ce6a8ef33b2e, type: 3}
 --- !u!114 &432294127 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5866547833927730314, guid: 20c909a9626ec2243913924438d1fbf9, type: 3}
@@ -3703,7 +3704,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1246386046
 Transform:
   m_ObjectHideFlags: 0
