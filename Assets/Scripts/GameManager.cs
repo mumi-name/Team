@@ -169,7 +169,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator ResetSceneWithSE()
     {
         // リセット音を鳴らす
-        AudioManager.instance.PlaySE("リセット");
+        AudioManager.instance.PlaySE2("リセット");
 
         // スローモーションを即座に終了
         Time.timeScale = 1f;
