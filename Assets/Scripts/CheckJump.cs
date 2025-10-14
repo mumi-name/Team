@@ -4,6 +4,7 @@ using UnityEngine;
 public class CheckJump : MonoBehaviour
 {
     public PlayerScript playerScript;
+    private bool wasGrounded = false;
     void Start()
     {
         //if(playerScript == null)playerScript=transform.parent.GetComponent<PlayerScript>();
@@ -36,11 +37,16 @@ public class CheckJump : MonoBehaviour
         //プレイヤー足元の判定が触れたのが、床であり
         if (collision.gameObject.CompareTag("Floor"))
         {
-            //AudioManager.instance.PlaySE("ジャンプの着地");
+            
             //尚且つプレイヤーの”下”に床がある場合、ジャンプ可能にする
             Vector2 vec = (collision.transform.position - this.transform.position);
             if (vec.y < 0) PlayerScript.instance.OnOffJumpFlag(false);
-
+            
+            if (!wasGrounded)
+            {
+                AudioManager.instance.PlaySE("ジャンプの着地");
+                wasGrounded = true;
+            }
         }
 
     }
@@ -49,10 +55,11 @@ public class CheckJump : MonoBehaviour
         if (collision.gameObject.CompareTag("Floor"))
         {
             PlayerScript.instance.OnOffJumpFlag(true);
+            wasGrounded = false;
 
             if (collision.gameObject.TryGetComponent<OnOffBrock>(out var brock))
             {
-                //離れたのが動く床だった場合は親子関係を切る
+                //親子関係を切る
                 if (brock.move) PlayerScript.instance.transform.SetParent(null);
             }
         }
