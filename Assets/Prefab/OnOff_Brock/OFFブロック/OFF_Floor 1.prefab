@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 461828663587657134}
   - component: {fileID: 2395284883119588261}
   - component: {fileID: 5866547833927730314}
+  - component: {fileID: -1341617151524295214}
   m_Layer: 0
   m_Name: OFF_Floor 1
   m_TagString: Floor
@@ -158,4 +159,26 @@ MonoBehaviour:
   spr: {fileID: 461828663587657134}
   onSprite: {fileID: 21300000, guid: 1268bb63c8832c149afbfc0e77a59d9e, type: 3}
   offSprite: {fileID: 21300000, guid: 1629508f4500ec7459be4aad7954efdc, type: 3}
-  animator: {fileID: 0}
+  animator: {fileID: -1341617151524295214}
+--- !u!95 &-1341617151524295214
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8225937056063140339}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 366f1d93ebf7b594089f594ebd92f752, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
