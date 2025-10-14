@@ -588,6 +588,10 @@ PrefabInstance:
       value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 5146328632892571555, guid: 2049c70d94e43c5418c8d20ce42ce7cf, type: 3}
+      propertyPath: jumpMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5146328632892571555, guid: 2049c70d94e43c5418c8d20ce42ce7cf, type: 3}
       propertyPath: jumpPower
       value: 500
       objectReference: {fileID: 0}
@@ -4194,6 +4198,10 @@ PrefabInstance:
     - target: {fileID: 4221331216478161424, guid: fedcff6ee17473042bee3ef5917c744f, type: 3}
       propertyPath: m_Name
       value: Circle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221331216478161424, guid: fedcff6ee17473042bee3ef5917c744f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4317902863523885173, guid: fedcff6ee17473042bee3ef5917c744f, type: 3}
       propertyPath: m_Enabled
