@@ -7,6 +7,9 @@ public class AudioManager : MonoBehaviour
     public float startTime = 0.5f;
     public float duration = 0.2f;
 
+    public float footstepCooldown = 0.25f;
+    private float lastFootstepTime = 0f;
+
     private bool isPlaying = false;
 
     [Header("BGMAudioSource")]
@@ -43,7 +46,6 @@ public class AudioManager : MonoBehaviour
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -91,28 +93,45 @@ public class AudioManager : MonoBehaviour
     //--------------------------------
     public void PlaySE(string name)
     {
-        //if (!seDict.ContainsKey(name))
-        //{
-        //    Debug.Log($"SE'{name}'が見つかりません。");
-        //    return;
-        //}
-        //if(seSource.isPlaying)
-        //{
-        //    seSource.PlayOneShot(seDict[name]);
-        //}
-        //else
-        //{
-        //    Debug.LogWarning($"SE'{name}'が見つかりません。");
-        //    return;
-        //}
+        
+        if (!seDict.ContainsKey(name))
+        {
+            Debug.Log($"SE'{name}'が見つかりません。");
+            return;
+        }
+        else if(Time.time - lastFootstepTime > footstepCooldown)
+        {
+            seSource.PlayOneShot(seDict[name]);
+            lastFootstepTime = Time.time;
+        }
+        /*この部分はプレイヤーに書く
+        if (name.Contains("足音"))
+        {
+            if (Time.time - lastFootstepTime < footstepCooldown) return;
+            lastFootstepTime = Time.time;
+        }
+        */
+        
+        
+        /*旧バージョン
+        if(seSource.isPlaying)
+        {
+            seSource.PlayOneShot(seDict[name]);
+        }
+        else
+        {
+            Debug.LogWarning($"SE'{name}'が見つかりません。");
+            return;
+        }
+        */
     }
     //--------------------------------
     // SE(部分再生)
     //--------------------------------
     public void PlaySEPartialOneShot(string name,float startTime,float duration)
     {
-        //旧バージョン
-        /*
+
+        /*旧バージョン
         if (seDict.ContainsKey(name))
         {
             seSource.PlayOneShot(seDict[name]);

@@ -15,6 +15,7 @@ public class ChangeButton : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            AudioManager.instance.PlaySE("スイッチと衝撃波");
             //スローモードにする
             GameManager.instance.OnOffSlow(true);
             GameManager.instance.ChangeEnabledToTrigger();

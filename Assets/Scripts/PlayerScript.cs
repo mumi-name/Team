@@ -11,7 +11,7 @@ public class PlayerScript : MonoBehaviour
     public float slowMaxSpeed = 0.1f;
     public float slowGravity = 0.1f;
     //public float footstepCooldown = 0.25f;//足音の間隔
-    private float lastFootstepTime = 0f;   //最後に鳴らした時間
+    //private float lastFootstepTime = 0f;   //最後に鳴らした時間
     public bool jumpMode = true;//ジャンプのアリ・ナシ
     public Rigidbody2D rb;
     public Animator animator;
@@ -84,9 +84,9 @@ public class PlayerScript : MonoBehaviour
     {
         //スペースボタンが押されたらジャンプする
         if (Input.GetButtonDown("Jump") && canPushJumpFlag)
-        {
-            AudioManager.instance.PlaySE("ジャンプ");
+        {   
             if (jumpFlag) return;
+            AudioManager.instance.PlaySE("ジャンプ");
             Debug.Log("ジャンプ" + Time.time);
             rb.linearVelocityY = 0;
             rb.AddForce(transform.up * jumpPower);
@@ -160,11 +160,10 @@ public class PlayerScript : MonoBehaviour
 
         //左右キーを押した方向に力を掛けて移動させる
         //rb.AddForce(transform.right * speed * mode *Mathf.Abs(num)* Time.deltaTime);
-
-        AudioManager.instance.PlaySE("足音1");
+        AudioManager.instance.PlaySE("足音");
         //if(Time.time - lastFootstepTime > footstepCooldown)
         //{
-        //    AudioManager.instance.PlaySE("足音1");
+        //    AudioManager.instance.PlaySE("足音");
         //    lastFootstepTime = Time.time;
         //}
 

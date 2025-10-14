@@ -1644,20 +1644,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53a84fec1c555574dbed9ff9694e7d94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTime: 0.5
-  duration: 0.2
+  startTime: 0
+  duration: 0.24
+  footstepCooldown: 0.25
   bgmSource: {fileID: 1246386047}
   seSource: {fileID: 1105506395}
   bgmList:
   - {fileID: 8300000, guid: 45fb439d7c6b5234d9c6c596b627cd7a, type: 3}
-  - {fileID: 8300000, guid: 254fe098e1150ef4f9feaf97611e8c1e, type: 3}
+  - {fileID: 8300000, guid: ad24b44561aca3348b04f94a98370c0a, type: 3}
   - {fileID: 8300000, guid: 122b4f014e7ca2e4fa8cbaf83830676d, type: 3}
   seList:
   - {fileID: 8300000, guid: 3987e744629f1c84ab358e522d5900be, type: 3}
-  - {fileID: 8300000, guid: 99c5fe2cd99d7ca46820fc935e0c4216, type: 3}
+  - {fileID: 8300000, guid: f4cee99b66782fa48a6bebb5b6d8f607, type: 3}
   - {fileID: 8300000, guid: cdd2287202ab6b9409ae5f864d14867c, type: 3}
   - {fileID: 8300000, guid: bcd54073a53bdfc41810d74e182d84df, type: 3}
-  - {fileID: 8300000, guid: 0f627e4e45adc56489b38396ea6a1145, type: 3}
+  - {fileID: 8300000, guid: 69d3c053ea5ffa944966b8c7c61b6d5a, type: 3}
+  - {fileID: 8300000, guid: a874e29d7abef6f45b0e426ee0a33ce9, type: 3}
+  - {fileID: 8300000, guid: a41d57e2681e1744e9c31925f31e6b59, type: 3}
 --- !u!114 &432294127 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5866547833927730314, guid: 20c909a9626ec2243913924438d1fbf9, type: 3}
@@ -3700,7 +3703,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1246386046
 Transform:
   m_ObjectHideFlags: 0
@@ -3723,7 +3726,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1246386045}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -4940,8 +4943,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0009663899, y: -0.0009663899}
-  m_SizeDelta: {x: 800, y: 450}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 401.2923, y: 391.8553}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1648596780
 MonoBehaviour:

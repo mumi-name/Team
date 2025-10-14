@@ -1,5 +1,6 @@
+using System.Collections;
 using System.Collections.Generic;
-using NUnit.Framework;
+//using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -43,9 +44,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //リセットボタンが押されたらゲームシーンをリセット
+
+        /*リセットボタンが押されたらゲームシーンをリセット
         if (Input.GetButtonDown("Reset"))
         {
+            AudioManager.instance.PlaySE("リセット");
             //スローモーションを即座に終了
             //slow = false;
             Time.timeScale = 1f;
@@ -60,7 +63,12 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         changeSlow(targetScale);
-
+        */
+        if (Input.GetButtonDown("Reset"))
+        {
+            StartCoroutine(ResetSceneWithSE());
+        }
+        changeSlow(targetScale);
     }
 
     //追加分---------------------------------------------------------------------
@@ -73,6 +81,7 @@ public class GameManager : MonoBehaviour
             brock.ON();
         }
 
+        AudioManager.instance.PlaySE("ONOFF");
     }
     public void OFF()
     {
@@ -82,6 +91,7 @@ public class GameManager : MonoBehaviour
 
             brock.OFF();
         }
+        AudioManager.instance.PlaySE("ONOFF");
     }
 
     public void OFFChanged()
@@ -155,7 +165,33 @@ public class GameManager : MonoBehaviour
     {
         return waveAnimation;
     }
-    
+
+    //リセット処理のコルーチン
+    private IEnumerator ResetSceneWithSE()
+    {
+        // リセット音を鳴らす
+        AudioManager.instance.PlaySE("リセット");
+
+        // スローモーションを即座に終了
+        Time.timeScale = 1f;
+        Time.fixedDeltaTime = 0.02f;
+
+        // 死亡カウントとIrisShotのリセット
+        TimerManager.instance?.AddDeath();
+        IrisShot.instance?.ResetIris();
+
+        if (IrisShot.instance != null)
+        {
+            Destroy(IrisShot.instance.gameObject); // 古いものを削除
+        }
+
+        // SEが少しだけ鳴る時間を待つ（例: 0.2秒）
+        yield return new WaitForSeconds(0.2f);
+
+        // シーンをリロード
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
 }
 
 
