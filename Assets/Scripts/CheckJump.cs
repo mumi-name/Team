@@ -19,6 +19,10 @@ public class CheckJump : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent<OnOffBrock>(out var brock))
         {
+            //尚且つプレイヤーの”下”に床がある場合、ジャンプ可能にする
+            Vector2 vec = (collision.transform.position - PlayerScript.instance.transform.position);
+            if (vec.y < 0) return;
+            Debug.Log("vec.yの値は=" + vec.y);
             if (brock.move) PlayerScript.instance.transform.SetParent(collision.transform, worldPositionStays: true);
 
         }
@@ -28,6 +32,9 @@ public class CheckJump : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent<OnOffBrock>(out var brock))
         {
+            //尚且つプレイヤーの”下”に床がある場合、ジャンプ可能にする
+            //Vector2 vec = (collision.transform.position - this.transform.position);
+            //if (vec.y < 0) return;
             if (brock.move) PlayerScript.instance.transform.SetParent(collision.transform, worldPositionStays: true);
 
         }
