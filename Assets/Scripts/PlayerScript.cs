@@ -188,8 +188,13 @@ public class PlayerScript : MonoBehaviour
     
     public void ignoreMove(bool mode)
     {
-        //if (AnimationScript.instance.GetTutorialMode()) return;
+        if (mode == false && AnimationScript.instance.GetTutorialMode())
+        {
+            Debug.Log("はじく処理が出来ているぜーーー2");
+            return;
+        }
         ignoreInput = mode;
+        Debug.Log("はじく処理って動いているのか・・な？");
         //if(mode)rb.linearVelocityX = 0;
     }
 

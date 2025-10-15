@@ -343,6 +343,7 @@ public class OnOffBrock : MonoBehaviour
             spr.sprite = offSprite;
             color.a = 0.4f;
             spr.material.color = color;
+            PlayerScript.instance.ignoreMove(false);
         }
 
     }

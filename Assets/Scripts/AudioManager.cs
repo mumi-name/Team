@@ -96,7 +96,7 @@ public class AudioManager : MonoBehaviour
         
         if (!seDict.ContainsKey(name))
         {
-            Debug.Log($"SE'{name}'‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñB");
+            //Debug.Log($"SE'{name}'‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñB");
             return;
         }
         else if(Time.time - lastFootstepTime > footstepCooldown)
