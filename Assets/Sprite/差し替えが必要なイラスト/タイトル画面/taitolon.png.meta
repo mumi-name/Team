@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      taitolon_0: -6237544499288479420
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
