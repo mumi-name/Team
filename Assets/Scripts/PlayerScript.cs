@@ -32,11 +32,13 @@ public class PlayerScript : MonoBehaviour
     
     //private OnOffBrock onoffBrock;
     //FIX:ƒoƒO
-
+    void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
         rb.GetComponent<Rigidbody2D>();
-        instance = this;
 
     }
 
