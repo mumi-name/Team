@@ -241,6 +241,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScript: {fileID: 0}
+  elevatorLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!70 &1137385066896589402
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -480,3 +483,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScript: {fileID: 5146328632892571555}
+  elevatorLayer:
+    serializedVersion: 2
+    m_Bits: 64
