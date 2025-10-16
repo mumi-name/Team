@@ -4,40 +4,40 @@ using DG.Tweening;
 public class SceneTransition : MonoBehaviour
 {
     public string sceneName = "";
+    public bool locked = false;//鍵が掛かっているかどうか?
+
+    public static SceneTransition instance;
+
     //private bool SceneFlag = false;
+    private void Start()
+    {
+        instance = this;
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (locked) return;//鍵が掛かっている場合処理を終了
 
         if (collision.gameObject.CompareTag("Player"))
         {
             PlayerScript.instance.cannotMoveMode();//プレイヤーが動かないように
+            AudioManager.instance.PlaySE2("ゴール時音声");
             IrisShot.instance.IrisOut();
             TimerManager.instance.StopTimer();
             //三秒後にシーン遷移
-            DOVirtual.DelayedCall(2.0f, () =>
+            DOVirtual.DelayedCall(3.0f, () =>
             {
                 TimerManager.instance.StartTimer();
                 SceneManager.LoadScene(sceneName);
             });
-            //IrisShot.instance.IrisOut();
-            /*IrisShot.instance.IrisIN();
-            SceneFlag = true;
-            Debug.Log("Flagが真になりました！");
-            if (IrisShot.instance != null)
-            {
-                //IrisShot.instance.IrisIN(() => {
-                //    SceneManager.LoadScene(sceneName);
-                //});
-
-            }
-            else
-            {
-                Debug.Log("Flagが null　です。");
-            }
-            */
-
-
+            
         }
     }
+
+    public void OnOffLocked(bool lockMode)
+    {
+        locked = false;
+    }
+
+    
     
 }

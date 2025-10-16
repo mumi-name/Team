@@ -70,7 +70,11 @@ public class OnOffBrock : MonoBehaviour
         {
             
             box.enabled = true;
-            if(GameManager.instance.GetWaveAnimation()==true)box.isTrigger = false;
+            if (GameManager.instance.GetWaveAnimation() == true && !changed)
+            {
+                box.isTrigger = false;
+               
+            }
             spr.sprite = onSprite;
             if(animeBrock)animator.SetBool("OnOffBool", true);
             Color color = spr.material.color;
@@ -80,6 +84,7 @@ public class OnOffBrock : MonoBehaviour
             {
                 color.a = 0.1f;
                 if (animationSpeed < 0) animationSpeed *= -1;
+                
             }
 
             spr.material.color = color;
@@ -89,11 +94,18 @@ public class OnOffBrock : MonoBehaviour
             
             box.enabled = false;
             //waveAnimation中の場合は当たり判定の取り方を一時的にTriggerで取る。(enabledだとOnOff反転しないため)
-            if (GameManager.instance.GetWaveAnimation()==true||animation)
+            if ((GameManager.instance.GetWaveAnimation()==true||animation)&&!changed)
             {
-                Debug.Log("Trueになっているだと?");
                 box.enabled = true;
                 box.isTrigger = true;
+
+               
+                //既に切り替えていた場合
+                /*if (changed)
+                {
+                    box.enabled = false;
+                    box.isTrigger = false;
+                }*/
             }
             spr.sprite = offSprite;
             if (animeBrock) animator.SetBool("OnOffBool", false);
@@ -104,10 +116,13 @@ public class OnOffBrock : MonoBehaviour
                 spr.sprite = onSprite;
                 color.a = 1f;
                 if (animationSpeed > 0) animationSpeed *= -1;
+                
+                
             }
             spr.material.color = color;
 
         }
+        //PlayerScript.instance.canMoveMode();
         OnMove();
     }
 
@@ -120,11 +135,12 @@ public class OnOffBrock : MonoBehaviour
         {
             box.enabled = false;
             //waveAnimation中の場合は当たり判定の取り方を一時的にTriggerで取る。(enabledだとOnOff反転しないため)
-            if (GameManager.instance.GetWaveAnimation()||animation)
+            if ((GameManager.instance.GetWaveAnimation()||animation)&&!changed)
             {
                 Debug.Log("Trueになっているだと?");
                 box.enabled = true;
                 box.isTrigger = true;
+               
             }
             spr.sprite = offSprite;
             if (animeBrock) animator.SetBool("OnOffBool", false);
@@ -135,6 +151,7 @@ public class OnOffBrock : MonoBehaviour
                 spr.sprite = onSprite;
                 color.a = 1f;
                 if (animationSpeed > 0) animationSpeed *= -1;
+                
             }
             spr.material.color = color;
 
@@ -143,7 +160,10 @@ public class OnOffBrock : MonoBehaviour
         {
      
             box.enabled = true;
-            if (GameManager.instance.GetWaveAnimation()) box.isTrigger = false;
+            if (GameManager.instance.GetWaveAnimation() && !changed)
+            {
+                box.isTrigger = false;
+            }
             spr.sprite = onSprite;
             if (animeBrock) animator.SetBool("OnOffBool", true);
             Color color = spr.material.color;
@@ -154,11 +174,12 @@ public class OnOffBrock : MonoBehaviour
             {
                 color.a = 0.1f; 
                 if (animationSpeed < 0) animationSpeed *= -1;
+                
             }
             spr.material.color = color;
 
         }
-
+        //PlayerScript.instance.canMoveMode();
         OffMove();
 
     }
@@ -199,6 +220,7 @@ public class OnOffBrock : MonoBehaviour
     {
         //一度の衝撃波に2回当たっても変わらないようにフラグを立てておく
         changed = true;
+        ChangeTriggerToEnabled();
     }
 
     public void SetOffChanged()
@@ -215,7 +237,7 @@ public class OnOffBrock : MonoBehaviour
         {
             box.isTrigger = false;
         }
-        else
+        else if(box.enabled == false)
         {
             box.enabled = true;
             box.isTrigger = true;
@@ -225,7 +247,22 @@ public class OnOffBrock : MonoBehaviour
     //trigger判定からenabled判定へ切り替える(これが無いと、OnOff切り替え時めり込みが発生する)
     public void ChangeTriggerToEnabled()
     {
-        if (box.isTrigger == false)
+        if (box.isTrigger)
+        {
+            box.enabled = false;
+            box.isTrigger = false;
+        }
+        else if(box.isTrigger == false)
+        {
+            box.enabled = true;
+        }
+       /* else
+        {
+            //box.enabled = true;
+            box.enabled = false;
+        }*/
+
+        /*if (box.isTrigger == false)
         {
             box.enabled = true;
         }
@@ -233,7 +270,7 @@ public class OnOffBrock : MonoBehaviour
         {
             box.enabled = false;
             box.isTrigger = false;
-        }
+        }*/
     }
 
     //--------------------------------------------------------------------------
@@ -294,7 +331,11 @@ public class OnOffBrock : MonoBehaviour
         spr.material.color = color;
 
         //透明度が１以上になったらアニメーションを終了させる
-        if (color.a >= 1f && animationSpeed > 0) fadeFlag = false;
+        if (color.a >= 1f && animationSpeed > 0)
+        {
+            fadeFlag = false;
+            PlayerScript.instance.ignoreMove(false);
+        }
         //OFF状態で透明度が0.4を切ったら画像を差し替えてアニメーション終了
         if (color.a <= 0.1f && animationSpeed < 0)
         {
@@ -302,6 +343,7 @@ public class OnOffBrock : MonoBehaviour
             spr.sprite = offSprite;
             color.a = 0.4f;
             spr.material.color = color;
+            PlayerScript.instance.ignoreMove(false);
         }
 
     }

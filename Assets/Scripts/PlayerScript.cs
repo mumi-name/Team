@@ -10,8 +10,8 @@ public class PlayerScript : MonoBehaviour
     public float jumpPower = 300f;//ジャンプ力
     public float slowMaxSpeed = 0.1f;
     public float slowGravity = 0.1f;
-    public float footstepCooldown = 0.25f;//足音の間隔
-    private float lastFootstepTime = 0f;   //最後に鳴らした時間
+    //public float footstepCooldown = 0.25f;//足音の間隔
+    //private float lastFootstepTime = 0f;   //最後に鳴らした時間
     public bool jumpMode = true;//ジャンプのアリ・ナシ
     public Rigidbody2D rb;
     public Animator animator;
@@ -50,8 +50,36 @@ public class PlayerScript : MonoBehaviour
 
         //Debug.Log("velocity:" + rb.linearVelocityY);
 
-        if(jumpMode)Jump();
+        if (GameManager.instance.GetWaveAnimation() && Mathf.Abs(rb.linearVelocity.y)!=0) jumpFlag = true;
+
+        if (jumpMode)Jump();
         Move();
+
+    }
+
+    private void FixedUpdate()
+    {
+        if (ignoreInput) return;//入力を無視し、処理を行わない
+
+        //プレイヤーの速度が最大速度を超えたら加速を中止
+        if (Mathf.Abs(rb.linearVelocity.x) > maxSpeed) return;
+        //左右キーを押した方向に力を掛けて移動させる
+        rb.linearVelocityX = speed * mode * Mathf.Abs(num) * Time.deltaTime;
+
+        //プレイヤーの向きと逆方向に力が掛かっている場合はreturn
+        if (Mathf.Sign(beforeMode) != Mathf.Sign(rb.linearVelocityX) && rb.linearVelocityX != 0)
+        {
+            rb.linearVelocityX = 0;
+            return;
+        }
+
+
+        //ジャンプ中に違う方向を向けないようにする
+        if (jumpFlag && mode != beforeMode)
+        {
+            pendingMode = mode;
+            return;
+        }
 
     }
 
@@ -59,9 +87,9 @@ public class PlayerScript : MonoBehaviour
     {
         //スペースボタンが押されたらジャンプする
         if (Input.GetButtonDown("Jump") && canPushJumpFlag)
-        {
-            AudioManager.instance.PlaySE("ジャンプ");
+        {   
             if (jumpFlag) return;
+            AudioManager.instance.PlaySE("ジャンプ");
             Debug.Log("ジャンプ" + Time.time);
             rb.linearVelocityY = 0;
             rb.AddForce(transform.up * jumpPower);
@@ -73,38 +101,33 @@ public class PlayerScript : MonoBehaviour
         //左右キーの入力を検知
         num = Input.GetAxisRaw("Horizontal");
 
-
         if (num > 0) mode = 1;
         if (num < 0) mode = -1;
 
-        //左右キーが押されてない場合、止める
-        //if (Mathf.Abs(num) < 0.1f) num = 0;
-
-        if (Mathf.Abs(num) < 1)
+        //ジャンプ中に違う方向に入力されたら垂直落下させる
+        if (jumpFlag && mode != beforeMode)
         {
-            rb.linearVelocity = new Vector3(0, rb.linearVelocityY, 0);
+            num = 0;
+            rb.linearVelocity = new Vector2(0, rb.linearVelocityY);
+            return;
+        }
+
+        //左右キーが押されてない場合、止める
+        if (Mathf.Abs(num) < 0.1f)
+        {
+            num = 0;
+            rb.linearVelocity = new Vector2(0, rb.linearVelocityY);
             animator.speed = 0;
             return;
         }
 
-        //FIX：バグ（コントローラーで操作すると、微妙な値が入って停止せず動いてしまう）
-        /*if (num == 0)
-        {
-            rb.linearVelocity = new Vector2(0, rb.linearVelocityY);
-            animator.speed = 0;
-            return;
-
-        }*/
-
         //ジャンプ中に別方向に力が掛かっている場合（オブジェクトの端を使ったバグ対策）
-        if (jumpFlag)
+
+        //velocityを0にしてreturnする
+        if (Mathf.Sign(beforeMode) != Mathf.Sign(rb.linearVelocityX) && rb.linearVelocityX != 0)
         {
-            //velocityを0にしてreturnする
-            if (Mathf.Sign(beforeMode) != Mathf.Sign(rb.linearVelocityX) && rb.linearVelocityX != 0)
-            {
-                rb.linearVelocityX = 0;
-                return;
-            }
+            rb.linearVelocityX = 0;
+            return;
         }
 
         //ジャンプ中に違う方向を向けないようにする
@@ -115,7 +138,7 @@ public class PlayerScript : MonoBehaviour
         }
 
         //プレイヤーの速度が最大速度を超えたら加速を中止
-        if (Mathf.Abs(rb.linearVelocity.x) > maxSpeed) return;
+        //if (Mathf.Abs(rb.linearVelocity.x) > maxSpeed) return;
 
         //入力方向が変わった場合、ONとOFFを切り替える
         if (beforeMode != mode)
@@ -131,16 +154,19 @@ public class PlayerScript : MonoBehaviour
                 GameManager.instance.OFF();
             }
             beforeMode = mode;
-
         }
 
-        //Debug.Log("移動"+Time.time);
+
+        if(!jumpFlag)
+        {
+            AudioManager.instance.PlaySE("足音");
+        }
+
         //左右キーを押した方向に力を掛けて移動させる
-        rb.AddForce(transform.right * speed * mode *Mathf.Abs(num)* Time.deltaTime);
-        AudioManager.instance.PlaySE("足音1");
+        //rb.AddForce(transform.right * speed * mode *Mathf.Abs(num)* Time.deltaTime);
         //if(Time.time - lastFootstepTime > footstepCooldown)
         //{
-        //    AudioManager.instance.PlaySE("足音1");
+        //    AudioManager.instance.PlaySE("足音");
         //    lastFootstepTime = Time.time;
         //}
 
@@ -151,13 +177,25 @@ public class PlayerScript : MonoBehaviour
         if (Mathf.Abs(rb.linearVelocityX) >= maxSpeed - 1.0f)
         {
             animeSpeed = 0.3f;
-
         }
 
         animator.speed = Mathf.Abs(rb.linearVelocityX * animeSpeed);
         //プレイヤーの向きを変更する
         transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x)* mode, transform.localScale.y, 1);
 
+    }
+
+    
+    public void ignoreMove(bool mode)
+    {
+        if (mode == false && AnimationScript.instance.GetTutorialMode())
+        {
+            Debug.Log("はじく処理が出来ているぜーーー2");
+            return;
+        }
+        ignoreInput = mode;
+        Debug.Log("はじく処理って動いているのか・・な？");
+        //if(mode)rb.linearVelocityX = 0;
     }
 
     //動けないように空中に固定
@@ -210,6 +248,8 @@ public class PlayerScript : MonoBehaviour
             TimerManager.instance.AddDeath();
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+
+        //if()
 
         
     }
