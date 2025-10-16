@@ -247,6 +247,7 @@ public class PlayerScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Trap") && !isDead)
         {
             isDead = true;
+            AudioManager.instance.PlaySE("Š„‚ê‚é");
             TimerManager.instance.AddDeath();
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
