@@ -33,6 +33,18 @@ EditorBuildSettings:
     path: Assets/Scripts/Scenes/05 honnke.unity
     guid: 71fb0faea4b717e40ba363f7458113cb
   - enabled: 1
+    path: Assets/Scripts/Scenes/06siun.unity
+    guid: 2a266841ad061aa4f9612194c32194cc
+  - enabled: 1
+    path: Assets/Scripts/Scenes/07siun.unity
+    guid: e37a8537f783d6d41a6fc4eed0d64ff1
+  - enabled: 1
+    path: Assets/Scripts/Scenes/07siun 1.unity
+    guid: fb157a8b84e032642bb14c1692f83e69
+  - enabled: 1
+    path: Assets/Scripts/Scenes/08siun.unity
+    guid: a5908e10c78cb6048a065d31c003d15c
+  - enabled: 1
     path: Assets/Scripts/Scenes/OverScene.unity
     guid: 726b9bfc92daa8c4dab859b38a956230
   - enabled: 1
