@@ -76,7 +76,11 @@ public class OnOffBrock : MonoBehaviour
                
             }
             spr.sprite = onSprite;
-            if(animeBrock)animator.SetBool("OnOffBool", true);
+            if (animeBrock)
+            {
+                animator.SetBool("OnOffBool", true);
+                animator.speed = 2;
+            }
             Color color = spr.material.color;
             color.a = 1f;
             //波動アニメーションから呼び出されたら、a値を0.4にしとく（アニメーション時の演出用）
@@ -108,7 +112,11 @@ public class OnOffBrock : MonoBehaviour
                 }*/
             }
             spr.sprite = offSprite;
-            if (animeBrock) animator.SetBool("OnOffBool", false);
+            if (animeBrock)
+            {
+                animator.SetBool("OnOffBool", false);
+                animator.speed = 2;
+            }
             Color color = spr.material.color;
             color.a = 0.4f;
             if (animation)
@@ -143,7 +151,11 @@ public class OnOffBrock : MonoBehaviour
                
             }
             spr.sprite = offSprite;
-            if (animeBrock) animator.SetBool("OnOffBool", false);
+            if (animeBrock)
+            {
+                animator.SetBool("OnOffBool", false);
+                animator.speed = 1;
+            }
             Color color = spr.material.color;
             color.a = 0.4f;
             if (animation)
@@ -165,7 +177,11 @@ public class OnOffBrock : MonoBehaviour
                 box.isTrigger = false;
             }
             spr.sprite = onSprite;
-            if (animeBrock) animator.SetBool("OnOffBool", true);
+            if (animeBrock)
+            {
+                animator.SetBool("OnOffBool", true);
+                animator.speed = 2;
+            }
             Color color = spr.material.color;
             color.a = 1f;
 

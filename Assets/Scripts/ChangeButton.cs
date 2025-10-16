@@ -16,7 +16,7 @@ public class ChangeButton : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             //スローモードにする
-            PlayerScript.instance.ignoreMove(true);
+            //PlayerScript.instance.ignoreMove(true);
             GameManager.instance.OnOffSlow(true);
             AudioManager.instance.PlaySE2("スイッチと衝撃波");
             //AusioManager.instance.PlaySEPartialOneShot("スイッチと衝撃波",1.0f,1.5f);

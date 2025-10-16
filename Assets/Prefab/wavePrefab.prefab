@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f68f311ba2866143960c1645519f5a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  performanceSpeed: 2.3
+  performanceSpeed: 10
   doAnimation: 1
   brock: {fileID: 0}
 --- !u!58 &7335450512898375555
