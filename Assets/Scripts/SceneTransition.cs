@@ -16,7 +16,7 @@ public class SceneTransition : MonoBehaviour
         if (sceneName == "") sceneName = SceneManager.GetActiveScene().name;
 
         //ƒƒbƒN‚ªŠ|‚©‚Á‚Ä‚¢‚È‚¢ê‡“ì‹žù‚ð”ñ•\Ž¦
-        if (!locked&&transform.childCount>0) transform.GetChild(0).gameObject.SetActive(false);
+        if (!locked && transform.childCount > 0) transform.GetChild(0).gameObject.SetActive(false);
         instance = this;
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -35,7 +35,7 @@ public class SceneTransition : MonoBehaviour
                 TimerManager.instance.StartTimer();
                 SceneManager.LoadScene(sceneName);
             });
-            
+
         }
     }
 
@@ -61,6 +61,6 @@ public class SceneTransition : MonoBehaviour
         locked = false;
     }
 
-    
-    
+
+
 }

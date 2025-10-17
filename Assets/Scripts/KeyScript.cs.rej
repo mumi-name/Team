@@ -1,0 +1,16 @@
+diff a/Assets/Scripts/KeyScript.cs b/Assets/Scripts/KeyScript.cs	(rejected hunks)
+@@ -6,11 +6,12 @@
+     public float moveSpeed=1.0f;
+     bool moveFlag = false;
+ 
+-    private Vector3 MoveStop;
++    private GameObject MoveStop;
+ 
+     void Start()
+     {
+-        MoveStop = GameObject.Find("Goal").gameObject.transform.position;
++        MoveStop = GameObject.Find("Goal").gameObject;
++        
+     }
+ 
+     // Update is called once per frame

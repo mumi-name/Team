@@ -3,7 +3,7 @@ using UnityEngine;
 public class KeyScript : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public float moveSpeed=1.0f;
+    public float moveSpeed = 1.0f;
     bool moveFlag = false;
 
     private GameObject MoveStop;
@@ -11,7 +11,7 @@ public class KeyScript : MonoBehaviour
     void Start()
     {
         MoveStop = GameObject.Find("Goal").gameObject;
-        
+
     }
 
     // Update is called once per frame
@@ -22,7 +22,7 @@ public class KeyScript : MonoBehaviour
             transform.position = Vector3.MoveTowards
                 (transform.position, MoveStop.transform.position, Mathf.Abs(moveSpeed) * Time.deltaTime);
         }
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
