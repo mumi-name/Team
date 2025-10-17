@@ -248,6 +248,7 @@ public class PlayerScript : MonoBehaviour
         {
             isDead = true;
             cannotMoveMode();
+            animator.speed = 1;
             animator.SetTrigger("DeathTrigger");
             Debug.Log("€–SŒã‚Ìˆ—‚ÍŒÄ‚Ño‚³‚ê‚Ä‚¢‚é?");
             AudioManager.instance.PlaySE("Š„‚ê‚é");
