@@ -13,6 +13,7 @@ public class PlayerScript : MonoBehaviour
     //public float footstepCooldown = 0.25f;//足音の間隔
     //private float lastFootstepTime = 0f;   //最後に鳴らした時間
     public bool jumpMode = true;//ジャンプのアリ・ナシ
+    public bool backJump = true;
     public Rigidbody2D rb;
     public Animator animator;
     public static PlayerScript instance;
@@ -71,8 +72,12 @@ public class PlayerScript : MonoBehaviour
         //プレイヤーの向きと逆方向に力が掛かっている場合はreturn
         if (Mathf.Sign(beforeMode) != Mathf.Sign(rb.linearVelocityX) && rb.linearVelocityX != 0)
         {
-            rb.linearVelocityX = 0;
-            return;
+            if (!backJump)
+            {
+                rb.linearVelocityX = 0;
+                return;
+            }
+            
         }
 
 
@@ -109,9 +114,9 @@ public class PlayerScript : MonoBehaviour
         //ジャンプ中に違う方向に入力されたら垂直落下させる
         if (jumpFlag && mode != beforeMode)
         {
-            num = 0;
-            rb.linearVelocity = new Vector2(0, rb.linearVelocityY);
-            return;
+            //num = 0;
+            //rb.linearVelocity = new Vector2(0, rb.linearVelocityY);
+            //return;
         }
 
         //左右キーが押されてない場合、止める
@@ -124,12 +129,15 @@ public class PlayerScript : MonoBehaviour
         }
 
         //ジャンプ中に別方向に力が掛かっている場合（オブジェクトの端を使ったバグ対策）
-
         //velocityを0にしてreturnする
         if (Mathf.Sign(beforeMode) != Mathf.Sign(rb.linearVelocityX) && rb.linearVelocityX != 0)
         {
-            rb.linearVelocityX = 0;
-            return;
+            if (!backJump)
+            {
+                rb.linearVelocityX = 0;
+                return;
+            }
+           
         }
 
         //ジャンプ中に違う方向を向けないようにする
@@ -139,8 +147,6 @@ public class PlayerScript : MonoBehaviour
             return;
         }
 
-        //プレイヤーの速度が最大速度を超えたら加速を中止
-        //if (Mathf.Abs(rb.linearVelocity.x) > maxSpeed) return;
 
         //入力方向が変わった場合、ONとOFFを切り替える
         if (beforeMode != mode)
@@ -163,16 +169,6 @@ public class PlayerScript : MonoBehaviour
         {
             AudioManager.instance.PlaySE("足音");
         }
-
-        //左右キーを押した方向に力を掛けて移動させる
-        //rb.AddForce(transform.right * speed * mode *Mathf.Abs(num)* Time.deltaTime);
-        //if(Time.time - lastFootstepTime > footstepCooldown)
-        //{
-        //    AudioManager.instance.PlaySE("足音");
-        //    lastFootstepTime = Time.time;
-        //}
-
-        //rb.linearVelocity=transform.right*speed*mode*Time.deltaTime;
 
         //アニメーションのスピードを速度によって変更する
         float animeSpeed = 1;
@@ -256,7 +252,6 @@ public class PlayerScript : MonoBehaviour
             //シーン遷移は死亡アニメーションが終了後に再生するため処理を別スクリプトに移行(10/17)
             //アニメーションイベントでSceneTransitionのTransition()を呼ぶ
 
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         //if()
