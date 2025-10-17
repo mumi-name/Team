@@ -98,7 +98,7 @@ Animator:
   m_GameObject: {fileID: 3056893123922420258}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 93d8d725b38326a469ba8f5fd911f031, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -216,6 +216,7 @@ MonoBehaviour:
   sceneName: 
   transitionTime: 1
   locked: 0
+  padlockAnimator: {fileID: 6671823605205743248}
 --- !u!95 &4279030001772687542
 Animator:
   serializedVersion: 7

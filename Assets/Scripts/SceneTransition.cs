@@ -17,14 +17,11 @@ public class SceneTransition : MonoBehaviour
 
         //ƒƒbƒN‚ªŠ|‚©‚Á‚Ä‚¢‚È‚¢ê‡“ì‹žù‚ð”ñ•\Ž¦
         if (!locked && transform.childCount > 0) transform.GetChild(0).gameObject.SetActive(false);
-        if (instance == null)
+        if (instance == null||!instance.locked)
         {
             instance = this;
         }
-        else if (!instance.locked)
-        {
-            instance = this;
-        }
+        
         
     }
     private void OnTriggerEnter2D(Collider2D collision)

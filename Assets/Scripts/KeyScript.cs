@@ -27,11 +27,10 @@ public class KeyScript : MonoBehaviour
         if (transform.position == SceneTransition.instance.transform.position + new Vector3(0, 1.2f, 0))
         {
             //ゴールのロックを解除する
-            var goal = MoveStop.GetComponent<SceneTransition>();
-            goal.OnOffLocked(false);
+            SceneTransition.instance.OnOffLocked(false);
             //ここに南京錠アニメーションをさせる処理をかく
-            //SceneTransitionの方に南京錠の関数をかく
-            goal.StartAnimation();
+            SceneTransition.instance.StartAnimation();
+       
             Destroy(gameObject, 0.1f);
         }
 
