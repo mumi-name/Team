@@ -41,20 +41,6 @@ public class SceneTransition : MonoBehaviour
         }
     }
 
-    /*private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (locked) return;//Œ®‚ªŠ|‚©‚Á‚Ä‚¢‚éê‡ˆ—‚ðI—¹
-
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            PlayerScript.instance.cannotMoveMode();//ƒvƒŒƒCƒ„[‚ª“®‚©‚È‚¢‚æ‚¤‚É
-            AudioManager.instance.PlaySE2("ƒS[ƒ‹Žž‰¹º");
-
-            PlayerScript.instance.gameObject.SetActive(false);
-            animator.SetTrigger("GoalTrigger");
-
-        }
-    }*/
 
     public void Transition()
     {
@@ -67,7 +53,6 @@ public class SceneTransition : MonoBehaviour
         //n•bŒã‚ÉƒV[ƒ“‘JˆÚ
         DOVirtual.DelayedCall(transitionTime, () =>
         {
-            //TimerManager.instance.StartTimer();
             SceneManager.LoadScene(sceneName);
         });
     }

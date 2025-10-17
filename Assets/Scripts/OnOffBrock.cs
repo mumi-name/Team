@@ -364,24 +364,5 @@ public class OnOffBrock : MonoBehaviour
 
     }
 
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Player"))
-    //    {
-    //        if (!move) return;
-    //        if (collision.transform.parent != null) return;
-    //        collision.gameObject.transform.SetParent(transform, worldPositionStays: true);
-    //    }
-    //}
-
-    //private void OnCollisionExit2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Player"))
-    //    {
-    //        if (!move) return;
-    //        collision.gameObject.transform.SetParent(null, worldPositionStays:true);
-    //    }
-    //}
-
 
 }
