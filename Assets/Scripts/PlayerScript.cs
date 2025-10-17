@@ -45,15 +45,13 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //spriteRenderer = GetComponent<SpriteRenderer>();
-        //-------------------------------------------------------------------------------------------
-        if (ignoreInput) return;//入力を無視し、処理を行わない
-        //-------------------------------------------------------------------------------------------
-
-        //Debug.Log("velocity:" + rb.linearVelocityY);
+        
+        //入力を無視し、処理を行わない
+        if (ignoreInput) return;
+        //if(isDead ) return;
+        
 
         if (GameManager.instance.GetWaveAnimation() && Mathf.Abs(rb.linearVelocity.y)!=0) jumpFlag = true;
-
         if (jumpMode)Jump();
         Move();
 
@@ -61,7 +59,9 @@ public class PlayerScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (ignoreInput) return;//入力を無視し、処理を行わない
+        //入力を無視し、処理を行わない
+        if (ignoreInput) return;
+        //if (isDead) return;
 
         //プレイヤーの速度が最大速度を超えたら加速を中止
         if (Mathf.Abs(rb.linearVelocity.x) > maxSpeed) return;
@@ -183,7 +183,7 @@ public class PlayerScript : MonoBehaviour
 
         animator.speed = Mathf.Abs(rb.linearVelocityX * animeSpeed);
         //プレイヤーの向きを変更する
-        transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x)* mode, transform.localScale.y, 1);
+        transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x)* mode*-1.0f, transform.localScale.y, 1);
 
     }
 
@@ -220,7 +220,7 @@ public class PlayerScript : MonoBehaviour
     {
         //return mode;
         int muki = 1;
-        if (transform.localScale.x < 0) muki = -1;
+        if (transform.localScale.x*-1.0f < 0) muki = -1;
         return muki;
     }
     public bool GetJumpFlag()
@@ -247,9 +247,15 @@ public class PlayerScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Trap") && !isDead)
         {
             isDead = true;
+            cannotMoveMode();
+            animator.SetTrigger("DeathTrigger");
+            Debug.Log("死亡後の処理は呼び出されている?");
             AudioManager.instance.PlaySE("割れる");
             TimerManager.instance.AddDeath();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            //シーン遷移は死亡アニメーションが終了後に再生するため処理を別スクリプトに移行(10/17)
+            //アニメーションイベントでSceneTransitionのTransition()を呼ぶ
+
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         //if()

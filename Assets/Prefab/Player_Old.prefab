@@ -97,12 +97,12 @@ GameObject:
   m_Component:
   - component: {fileID: 7710228906333859497}
   - component: {fileID: 8832554231365286008}
+  - component: {fileID: 7959834826640212820}
   - component: {fileID: 5146328632892571555}
   - component: {fileID: 6540922609054406810}
   - component: {fileID: 1137385066896589402}
-  - component: {fileID: 5702273232700857616}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Player_Old
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -181,6 +181,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &7959834826640212820
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333434741914360326}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1.7
+  m_Material: {fileID: 6200000, guid: 87e893ca7773c594d85a2acd4c09adef, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!114 &5146328632892571555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,7 +226,7 @@ MonoBehaviour:
   slowMaxSpeed: 0.1
   slowGravity: 0.1
   jumpMode: 1
-  rb: {fileID: 5702273232700857616}
+  rb: {fileID: 7959834826640212820}
   animator: {fileID: 5898101005095971538}
 --- !u!114 &6540922609054406810
 MonoBehaviour:
@@ -254,33 +281,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0050848722, y: 0.36}
   m_Size: {x: 0.5846946, y: 1.6797917}
   m_Direction: 0
---- !u!50 &5702273232700857616
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 333434741914360326}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 1.7
-  m_Material: {fileID: 6200000, guid: 87e893ca7773c594d85a2acd4c09adef, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!1 &5576390717543148237
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,7 +292,6 @@ GameObject:
   - component: {fileID: 4689764230590491736}
   - component: {fileID: 3681653992271183841}
   - component: {fileID: 5898101005095971538}
-  - component: {fileID: 6720876822260560981}
   m_Layer: 0
   m_Name: "\u30D7\u30EC\u30A4\u30E4\u30FCON_\u79FB\u52D51_0"
   m_TagString: Untagged
@@ -359,12 +358,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 6ae25d247b803bc40bd8819a2503472e, type: 3}
+  m_Sprite: {fileID: 2547722274174985812, guid: 0fa9bfd92ce33b147b7fcbbf62af5173, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 10, y: 10}
+  m_Size: {x: 6.94, y: 9.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -380,7 +379,7 @@ Animator:
   m_GameObject: {fileID: 5576390717543148237}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3f39b878a8676cb4bb1553e4a37b8158, type: 2}
+  m_Controller: {fileID: 9100000, guid: 255ad2d83a60a324bb5b4c79fb545845, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -392,21 +391,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6720876822260560981
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5576390717543148237}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce6568ed6dc64eb40b18f640d2d78d02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: 
-  transitionTime: 1
-  locked: 0
 --- !u!1 &8095516166243363674
 GameObject:
   m_ObjectHideFlags: 0

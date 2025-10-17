@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AnimationScript : MonoBehaviour
 {
-    public float performanceSpeed = 0.1f;//アニメーションの演出を行うスピード
+    public float performanceSpeed = 10f;//アニメーションの演出を行うスピード
     public bool doAnimation = true;
     public GameObject brock;//ステージ中にあるONOFFブロック
     Vector3 orizinSize;

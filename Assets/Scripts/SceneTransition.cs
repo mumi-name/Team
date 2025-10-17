@@ -4,6 +4,7 @@ using DG.Tweening;
 public class SceneTransition : MonoBehaviour
 {
     public string sceneName = "";
+    public float transitionTime = 1.0f;
     public bool locked = false;//鍵が掛かっているかどうか?
 
     public static SceneTransition instance;
@@ -11,6 +12,8 @@ public class SceneTransition : MonoBehaviour
     //private bool SceneFlag = false;
     private void Start()
     {
+        //読み込むシーンが設定されてない場合、現在のシーンを設定
+        if (sceneName == "") sceneName = SceneManager.GetActiveScene().name;
         instance = this;
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -24,13 +27,30 @@ public class SceneTransition : MonoBehaviour
             IrisShot.instance.IrisOut();
             TimerManager.instance.StopTimer();
             //三秒後にシーン遷移
-            DOVirtual.DelayedCall(3.0f, () =>
+            DOVirtual.DelayedCall(transitionTime, () =>
             {
                 TimerManager.instance.StartTimer();
                 SceneManager.LoadScene(sceneName);
             });
             
         }
+    }
+
+    public void Transition()
+    {
+        IrisShot.instance.IrisOut();
+        TimerManager.instance.StopTimer();
+
+        //読み込むシーンが設定されてない場合、現在のシーンを設定
+        if (sceneName == "") sceneName = SceneManager.GetActiveScene().name;
+        Debug.Log("シーンをロードしちゃうぜ");
+
+        //n秒後にシーン遷移
+        DOVirtual.DelayedCall(transitionTime, () =>
+        {
+            //TimerManager.instance.StartTimer();
+            SceneManager.LoadScene(sceneName);
+        });
     }
 
     public void OnOffLocked(bool lockMode)

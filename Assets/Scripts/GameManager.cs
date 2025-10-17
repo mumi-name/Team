@@ -8,7 +8,7 @@ using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
-    public float slowSpeed = 0.2f;
+    public float slowSpeed = 1f;
     public List<OnOffBrock> brocks;//ステージ中にあるONOFFブロック
     public static GameManager instance;
 

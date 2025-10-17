@@ -421,9 +421,17 @@ PrefabInstance:
       propertyPath: jumpPower
       value: 500
       objectReference: {fileID: 0}
+    - target: {fileID: 6720876822260560981, guid: 2049c70d94e43c5418c8d20ce42ce7cf, type: 3}
+      propertyPath: sceneName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6720876822260560981, guid: 2049c70d94e43c5418c8d20ce42ce7cf, type: 3}
+      propertyPath: transitionTime
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7710228906333859497, guid: 2049c70d94e43c5418c8d20ce42ce7cf, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7710228906333859497, guid: 2049c70d94e43c5418c8d20ce42ce7cf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4336,7 +4344,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1627309386
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5576,6 +5584,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: 04
+  transitionTime: 1
   locked: 0
 --- !u!58 &2016482927
 CircleCollider2D:

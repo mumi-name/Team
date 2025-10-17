@@ -44,7 +44,7 @@ public class IrisShot : MonoBehaviour
 
         //unmask.DOScale(new Vector3(0, 0, 0), SCALE_DURATION).SetEase(Ease.OutCubic);
         
-        DOVirtual.DelayedCall(1.0f, () =>
+        DOVirtual.DelayedCall(0.2f, () =>
         {
             unmask.DOScale(IRIS_MID_SCALE2, 0.4f).SetEase(Ease.InCubic);
             unmask.DOScale(IRIS_MID_SCALE1, 0.2f).SetDelay(0.4f).SetEase(Ease.OutCubic);
@@ -65,7 +65,7 @@ public class IrisShot : MonoBehaviour
     {
         //unmask.DOScale(IRIS_IN_SCALE, SCALE_DURATION).SetEase(Ease.InCubic);
         //unmask.DOScale(IRIS_IN_SCALE, SCALE_DURATION).SetEase(Ease.InCubic).OnComplete(() => unmask.localScale = Vector3.zero);
-        DOVirtual.DelayedCall(1.0f, () =>
+        DOVirtual.DelayedCall(0.2f, () =>
         {
             unmask.DOScale(IRIS_MID_SCALE1, 0.2f).SetEase(Ease.InCubic);
             unmask.DOScale(IRIS_MID_SCALE2, 0.2f).SetDelay(0.2f).SetEase(Ease.OutCubic);
