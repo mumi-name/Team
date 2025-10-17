@@ -14,6 +14,9 @@ public class SceneTransition : MonoBehaviour
     {
         //読み込むシーンが設定されてない場合、現在のシーンを設定
         if (sceneName == "") sceneName = SceneManager.GetActiveScene().name;
+
+        //ロックが掛かっていない場合南京錠を非表示
+        if (!locked&&transform.childCount>0) transform.GetChild(0).gameObject.SetActive(false);
         instance = this;
     }
     private void OnTriggerEnter2D(Collider2D collision)

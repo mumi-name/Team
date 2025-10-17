@@ -6,11 +6,12 @@ public class KeyScript : MonoBehaviour
     public float moveSpeed=1.0f;
     bool moveFlag = false;
 
-    private Vector3 MoveStop;
+    private GameObject MoveStop;
 
     void Start()
     {
-        MoveStop = GameObject.Find("Goal").gameObject.transform.position;
+        MoveStop = GameObject.Find("Goal").gameObject;
+        
     }
 
     // Update is called once per frame
@@ -19,7 +20,7 @@ public class KeyScript : MonoBehaviour
         if (moveFlag)
         {
             transform.position = Vector3.MoveTowards
-                (transform.position, MoveStop, Mathf.Abs(moveSpeed) * Time.deltaTime);
+                (transform.position, MoveStop.transform.position, Mathf.Abs(moveSpeed) * Time.deltaTime);
         }
         
     }
@@ -30,10 +31,10 @@ public class KeyScript : MonoBehaviour
         {
             moveFlag = true;
             //ÉSÅ[ÉãÇÃÉçÉbÉNÇâèúÇ∑ÇÈ
-            SceneTransition.instance.OnOffLocked(false);
+            MoveStop.GetComponent<SceneTransition>().OnOffLocked(false);
+            //SceneTransition.instance.OnOffLocked(false);
         }
     }
 
-   
 
 }
