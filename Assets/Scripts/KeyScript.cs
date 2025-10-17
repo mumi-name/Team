@@ -10,7 +10,7 @@ public class KeyScript : MonoBehaviour
 
     void Start()
     {
-        MoveStop = GameObject.Find("Goal").gameObject;
+        //MoveStop = GameObject.Find("Goal").gameObject;
 
     }
 
@@ -20,7 +20,19 @@ public class KeyScript : MonoBehaviour
         if (moveFlag)
         {
             transform.position = Vector3.MoveTowards
-                (transform.position, MoveStop.transform.position, Mathf.Abs(moveSpeed) * Time.deltaTime);
+                (transform.position, SceneTransition.instance.transform.position + new Vector3(0, 1.2f, 0), Mathf.Abs(moveSpeed) * Time.deltaTime);
+        }
+
+        //鍵が南京錠に到達したら削除   MoveStop.transform.position + new Vector3(0, 1.2f, 0)
+        if (transform.position == SceneTransition.instance.transform.position + new Vector3(0, 1.2f, 0))
+        {
+            //ゴールのロックを解除する
+            var goal = MoveStop.GetComponent<SceneTransition>();
+            goal.OnOffLocked(false);
+            //ここに南京錠アニメーションをさせる処理をかく
+            //SceneTransitionの方に南京錠の関数をかく
+            goal.StartAnimation();
+            Destroy(gameObject, 0.1f);
         }
 
     }
@@ -31,7 +43,7 @@ public class KeyScript : MonoBehaviour
         {
             moveFlag = true;
             //ゴールのロックを解除する
-            MoveStop.GetComponent<SceneTransition>().OnOffLocked(false);
+            //MoveStop.GetComponent<SceneTransition>().OnOffLocked(false);
             //SceneTransition.instance.OnOffLocked(false);
         }
     }

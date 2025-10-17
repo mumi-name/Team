@@ -6,7 +6,7 @@ public class SceneTransition : MonoBehaviour
     public string sceneName = "";
     public float transitionTime = 1.0f;
     public bool locked = false;//鍵が掛かっているかどうか?
-
+    public Animator padlockAnimator;//南京錠アニメーション
     public static SceneTransition instance;
 
     //private bool SceneFlag = false;
@@ -17,7 +17,15 @@ public class SceneTransition : MonoBehaviour
 
         //ロックが掛かっていない場合南京錠を非表示
         if (!locked && transform.childCount > 0) transform.GetChild(0).gameObject.SetActive(false);
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (!instance.locked)
+        {
+            instance = this;
+        }
+        
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -27,6 +35,8 @@ public class SceneTransition : MonoBehaviour
         {
             PlayerScript.instance.cannotMoveMode();//プレイヤーが動かないように
             AudioManager.instance.PlaySE2("ゴール時音声");
+
+
             IrisShot.instance.IrisOut();
             TimerManager.instance.StopTimer();
             //三秒後にシーン遷移
@@ -46,8 +56,7 @@ public class SceneTransition : MonoBehaviour
 
         //読み込むシーンが設定されてない場合、現在のシーンを設定
         if (sceneName == "") sceneName = SceneManager.GetActiveScene().name;
-        Debug.Log("シーンをロードしちゃうぜ");
-
+        
         //n秒後にシーン遷移
         DOVirtual.DelayedCall(transitionTime, () =>
         {
@@ -59,6 +68,11 @@ public class SceneTransition : MonoBehaviour
     public void OnOffLocked(bool lockMode)
     {
         locked = false;
+    }
+
+    public void StartAnimation()
+    {
+        padlockAnimator.SetTrigger("Cancellation");
     }
 
 
