@@ -36,6 +36,7 @@ public class SceneTransition : MonoBehaviour
             AudioManager.instance.PlaySE2("ƒS[ƒ‹‰¹º");
 
             PlayerScript.instance.gameObject.SetActive(false);
+            animator.speed = 1;
             animator.SetTrigger("GoalTrigger");
 
         }
