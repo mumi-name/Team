@@ -4,11 +4,13 @@ public class KeyScript : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public float moveSpeed=1.0f;
-
     bool moveFlag = false;
+
+    private Vector3 MoveStop;
+
     void Start()
     {
-        
+        MoveStop = GameObject.Find("Goal").gameObject.transform.position;
     }
 
     // Update is called once per frame
@@ -17,7 +19,7 @@ public class KeyScript : MonoBehaviour
         if (moveFlag)
         {
             transform.position = Vector3.MoveTowards
-                (transform.position, SceneTransition.instance.transform.position, Mathf.Abs(moveSpeed) * Time.deltaTime);
+                (transform.position, MoveStop, Mathf.Abs(moveSpeed) * Time.deltaTime);
         }
         
     }
