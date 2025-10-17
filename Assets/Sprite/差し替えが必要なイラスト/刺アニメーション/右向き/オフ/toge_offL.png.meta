@@ -1,0 +1,715 @@
+fileFormatVersion: 2
+guid: cd47522b8ba595241a6d3f05bde8d435
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4338215858465300326
+    second: toge_offL_0
+  - first:
+      213: -310667134232442633
+    second: toge_offL_1
+  - first:
+      213: 8619623485478971082
+    second: toge_offL_2
+  - first:
+      213: -2947736452320469064
+    second: toge_offL_3
+  - first:
+      213: 3829023749402863865
+    second: toge_offL_4
+  - first:
+      213: 5955820581856903748
+    second: toge_offL_5
+  - first:
+      213: -277264246185060037
+    second: toge_offL_6
+  - first:
+      213: -4655484002852277167
+    second: toge_offL_7
+  - first:
+      213: 3491612293307849486
+    second: toge_offL_8
+  - first:
+      213: 3633049543673375041
+    second: toge_offL_9
+  - first:
+      213: -3249868780368224631
+    second: toge_offL_10
+  - first:
+      213: -2808961238999794480
+    second: toge_offL_11
+  - first:
+      213: -8553709979588835815
+    second: toge_offL_12
+  - first:
+      213: -8023551234112341487
+    second: toge_offL_13
+  - first:
+      213: -3244028638032837573
+    second: toge_offL_14
+  - first:
+      213: -1958273136659828065
+    second: toge_offL_15
+  - first:
+      213: 8381322354395234685
+    second: toge_offL_16
+  - first:
+      213: -836932293459335747
+    second: toge_offL_17
+  - first:
+      213: 408304778806906015
+    second: toge_offL_18
+  - first:
+      213: -6450662487263353634
+    second: toge_offL_19
+  - first:
+      213: -6447202871426637649
+    second: toge_offL_20
+  - first:
+      213: 5525130788483501602
+    second: toge_offL_21
+  - first:
+      213: -5011193345435367179
+    second: toge_offL_22
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: toge_offL_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 102
+        width: 12
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66f5ac2a650743c30800000000000000
+      internalID: 4338215858465300326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toge_offL_1
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 279
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f8cfac23e940bbf0800000000000000
+      internalID: -310667134232442633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toge_offL_2
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 289
+        width: 19
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac6a69d24ed0f9770800000000000000
+      internalID: 8619623485478971082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toge_offL_3
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 266
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bfd7fb70598717d0800000000000000
+      internalID: -2947736452320469064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toge_offL_4
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 254
+        width: 20
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f821b320dc632530800000000000000
+      internalID: 3829023749402863865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toge_offL_5
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 241
+        width: 30
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4428a8f834357a250800000000000000
+      internalID: 5955820581856903748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toge_offL_6
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 229
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b39193913a5f62cf0800000000000000
+      internalID: -277264246185060037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toge_offL_7
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 216
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 154f97817f5646fb0800000000000000
+      internalID: -4655484002852277167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toge_offL_8
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 204
+        width: 19
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0b5004a1e2b47030800000000000000
+      internalID: 3491612293307849486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toge_offL_9
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 191
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 149eb0eaf4f2b6230800000000000000
+      internalID: 3633049543673375041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toge_offL_10
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 179
+        width: 20
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98e1583109526e2d0800000000000000
+      internalID: -3249868780368224631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toge_offL_11
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 169
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dc7399b2a09409d0800000000000000
+      internalID: -2808961238999794480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toge_offL_12
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 145
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 916c4e2d71e1b4980800000000000000
+      internalID: -8553709979588835815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toge_offL_13
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 158
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11a3695c9ae96a090800000000000000
+      internalID: -8023551234112341487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toge_offL_14
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 120
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b34cbdc2425eaf2d0800000000000000
+      internalID: -3244028638032837573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toge_offL_15
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 133
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f92733425f0d2d4e0800000000000000
+      internalID: -1958273136659828065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toge_offL_16
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 88
+        width: 31
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d71c4c17640705470800000000000000
+      internalID: 8381322354395234685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toge_offL_17
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 108
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db5ad4b638e9264f0800000000000000
+      internalID: -836932293459335747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toge_offL_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 34
+        width: 10
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9c41e478079aa500800000000000000
+      internalID: 408304778806906015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toge_offL_19
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 70
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed4eab815a4aa76a0800000000000000
+      internalID: -6450662487263353634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toge_offL_20
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 82
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa0acbda52fe686a0800000000000000
+      internalID: -6447202871426637649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toge_offL_21
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 58
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22e0221cd253dac40800000000000000
+      internalID: 5525130788483501602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toge_offL_22
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 57
+        width: 19
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f80688e33aa47ab0800000000000000
+      internalID: -5011193345435367179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      toge_offL_0: 4338215858465300326
+      toge_offL_1: -310667134232442633
+      toge_offL_10: -3249868780368224631
+      toge_offL_11: -2808961238999794480
+      toge_offL_12: -8553709979588835815
+      toge_offL_13: -8023551234112341487
+      toge_offL_14: -3244028638032837573
+      toge_offL_15: -1958273136659828065
+      toge_offL_16: 8381322354395234685
+      toge_offL_17: -836932293459335747
+      toge_offL_18: 408304778806906015
+      toge_offL_19: -6450662487263353634
+      toge_offL_2: 8619623485478971082
+      toge_offL_20: -6447202871426637649
+      toge_offL_21: 5525130788483501602
+      toge_offL_22: -5011193345435367179
+      toge_offL_3: -2947736452320469064
+      toge_offL_4: 3829023749402863865
+      toge_offL_5: 5955820581856903748
+      toge_offL_6: -277264246185060037
+      toge_offL_7: -4655484002852277167
+      toge_offL_8: 3491612293307849486
+      toge_offL_9: 3633049543673375041
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

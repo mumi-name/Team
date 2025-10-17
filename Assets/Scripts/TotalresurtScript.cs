@@ -13,11 +13,11 @@ public class TotalResultScript : MonoBehaviour
     {
         if (TimerManager.instance != null) TimerManager.instance.StopTimer();
         // 最初は黒幕とテキスト非表示
-        resultPanel.SetActive(false);
-        resultText.gameObject.SetActive(false);
-
+        //resultPanel.SetActive(false);
+        //resultText.gameObject.SetActive(false);
+        resultText.gameObject.SetActive(true);
         // delayTime秒後にリザルトを表示
-        Invoke("ShowResult", delayTime);
+        //Invoke("ShowResult", delayTime);
     }
 
     void ShowResult()

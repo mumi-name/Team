@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 {
     public float slowSpeed = 1f;
     public List<OnOffBrock> brocks;//ステージ中にあるONOFFブロック
+    public List<TrapController> traps;//棘リスト
     public static GameManager instance;
 
     public Sprite onSprite;
@@ -80,8 +81,12 @@ public class GameManager : MonoBehaviour
         {
             brock.ON();
         }
-
-        AudioManager.instance.PlaySE("ONOFF");
+        foreach(var trap in traps)
+        {
+            trap.isActive = true;
+            trap.ToggleTrap();
+        }
+        AudioManager.instance.PlaySE2("ONOFF");
     }
     public void OFF()
     {
@@ -90,6 +95,12 @@ public class GameManager : MonoBehaviour
         {
             brock.OFF();
         }
+        foreach(var trap in traps)
+        {
+            trap.isActive = false;
+            trap.ToggleTrap();
+        }
+        //AudioManager.instance.PlaySE2("ONOFF");
     }
 
     public void OFFChanged()
@@ -99,7 +110,7 @@ public class GameManager : MonoBehaviour
 
             brock.SetOffChanged();
         }
-        AudioManager.instance.PlaySE("ONOFF");
+        AudioManager.instance.PlaySE2("ONOFF");
     }
 
     //スローモーションの切り替え
