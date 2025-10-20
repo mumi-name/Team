@@ -1595,6 +1595,7 @@ MonoBehaviour:
   slowMaxSpeed: 0.1
   slowGravity: 0.1
   jumpMode: 1
+  backJump: 1
   rb: {fileID: 440716439}
   animator: {fileID: 0}
 --- !u!1001 &471081546
@@ -2598,6 +2599,7 @@ MonoBehaviour:
   - {fileID: 261526631}
   - {fileID: 977982587}
   - {fileID: 1559707806}
+  traps: []
   onSprite: {fileID: 21300000, guid: e076c65a2bf8e3c4eb71488d476f2932, type: 3}
   offSprite: {fileID: 21300000, guid: 7922245629c5ccb4b872f774f8960962, type: 3}
   finalTime: 0
@@ -6447,7 +6449,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: 02
+  transitionTime: 1
   locked: 0
+  animator: {fileID: 0}
+  padlockAnimator: {fileID: 0}
 --- !u!58 &2016482927
 CircleCollider2D:
   m_ObjectHideFlags: 0
