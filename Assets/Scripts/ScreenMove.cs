@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class ScreenMove : MonoBehaviour
 {
+    public static ScreenMove instance;
     [System.Serializable]
     public class Background
     {
@@ -10,31 +11,86 @@ public class ScreenMove : MonoBehaviour
         public float topLimit;       //上方向の移動限界
         public float bottomLimit;       //下方向の移動限界
         [HideInInspector] public int direction = 1;        //1 = 上方向,-1 = 下方向
+        public bool isLeft = false;
     }
 
     public Background[] backgrounds;
+    [HideInInspector] public bool isOn = true; // ON/OFF反転フラグ
+
     void Start()
     {
-        
+
+        instance = this;
+        // 初期設定
+        foreach (var bg in backgrounds)
+        {
+            bg.direction = isOn ? (bg.isLeft ? -1 : 1) : (bg.isLeft ? 1 : -1);
+        }
     }
 
     
     void Update()
     {
+        foreach (var bg in backgrounds)
+        {
+            // 移動
+            bg.bgTransform.position += new Vector3(0f, bg.speed * bg.direction * Time.deltaTime, 0f);
+
+            // 上下限で方向反転
+            if (bg.bgTransform.position.y >= bg.topLimit)
+                bg.direction = -1;
+            else if (bg.bgTransform.position.y <= bg.bottomLimit)
+                bg.direction = 1;
+        }
+        /*
         foreach (Background bg in backgrounds)
         {
-            // 縦方向に移動
-            bg.bgTransform.position += new Vector3(0f, bg.speed * bg.direction * Time.deltaTime, 0f);
-            
-            //上下限チェックして方向反転
-            if(bg.bgTransform.position.y >= bg.topLimit)
-            {
+            int moveDir = isReversed ? -bg.direction : bg.direction;
+            bg.bgTransform.position += new Vector3(0f, bg.speed * moveDir * Time.deltaTime, 0f);
+        
+            // 上下限で方向反転
+            if (bg.bgTransform.position.y >= bg.topLimit)
                 bg.direction = -1;
-            }
-            else if(bg.bgTransform.position.y <= bg.bottomLimit)
-            {
+            else if (bg.bgTransform.position.y <= bg.bottomLimit)
                 bg.direction = 1;
-            }
         }
+        */
+        /*
+        foreach (Background bg in backgrounds)
+        {
+            int dir = 0;
+
+            if (isOn)
+            {
+                dir = bg.isLeft ? -1 : 1; // 左は下(-1)、右は上(1)
+            }
+            else
+            {
+                dir = bg.isLeft ? 1 : -1; // 左は上(1)、右は下(-1)
+            }
+
+            bg.bgTransform.position += new Vector3(0f, bg.speed * dir * Time.deltaTime, 0f);
+
+            // 上下限チェック（必要に応じて）
+            if (bg.bgTransform.position.y >= bg.topLimit)
+            {
+                bg.bgTransform.position = new Vector3(bg.bgTransform.position.x, bg.topLimit, bg.bgTransform.position.z);
+            }
+            else if (bg.bgTransform.position.y <= bg.bottomLimit)
+            {
+                bg.bgTransform.position = new Vector3(bg.bgTransform.position.x, bg.bottomLimit, bg.bgTransform.position.z);
+            }
+        
+        }
+        */
+    }
+    public void Toggle()
+    {
+        isOn = !isOn;
+        foreach (var bg in backgrounds)
+        {
+            bg.direction = isOn ? (bg.isLeft ? -1 : 1) : (bg.isLeft ? 1 : -1);
+        }
+        //isOn = !isOn;
     }
 }

@@ -21,10 +21,12 @@ public class GameManager : MonoBehaviour
     //bool slow = false;
     public float finalTime;//タイマーマネージャー用変数
 
+    void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
-        
-        instance = this;
         //ステージ01に入ったらカウントを全てリセット
         if (SceneManager.GetActiveScene().name == "01")
         {
@@ -80,6 +82,7 @@ public class GameManager : MonoBehaviour
         foreach (var brock in brocks)
         {
             brock.ON();
+            
         }
         foreach(var trap in traps)
         {
@@ -88,6 +91,7 @@ public class GameManager : MonoBehaviour
             trap.ToggleTrap();
         }
         AudioManager.instance.PlaySE2("ONOFF");
+        ScreenMove.instance.Toggle();
     }
     public void OFF()
     {
@@ -102,7 +106,8 @@ public class GameManager : MonoBehaviour
             //trap.ToggleTrap();
             trap.ToggleTrap();
         }
-        //AudioManager.instance.PlaySE2("ONOFF");
+        AudioManager.instance.PlaySE2("ONOFF");
+        ScreenMove.instance.Toggle();
     }
 
     public void OFFChanged()
