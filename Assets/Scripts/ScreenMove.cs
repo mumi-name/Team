@@ -16,11 +16,17 @@ public class ScreenMove : MonoBehaviour
 
     public Background[] backgrounds;
     [HideInInspector] public bool isOn = true; // ON/OFF”½“]ƒtƒ‰ƒO
-
+    void Awake()
+    {
+        if(instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
+    }
     void Start()
     {
-
-        instance = this;
         // ‰Šúİ’è
         foreach (var bg in backgrounds)
         {
