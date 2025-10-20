@@ -7475,6 +7475,7 @@ MonoBehaviour:
   slowMaxSpeed: 0.1
   slowGravity: 0.1
   jumpMode: 1
+  backJump: 1
   rb: {fileID: 440716439}
   animator: {fileID: 0}
 --- !u!114 &440716444
@@ -10796,6 +10797,7 @@ MonoBehaviour:
   - {fileID: 355040719}
   - {fileID: 613537622}
   - {fileID: 700780854}
+  traps: []
   onSprite: {fileID: 21300000, guid: e076c65a2bf8e3c4eb71488d476f2932, type: 3}
   offSprite: {fileID: 21300000, guid: 7922245629c5ccb4b872f774f8960962, type: 3}
   finalTime: 0
@@ -13135,11 +13137,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8144149933229020196, guid: fda23340a0585d9498419516baf21b52, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.27
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 8144149933229020196, guid: fda23340a0585d9498419516baf21b52, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.118
+      value: -1.0719904
       objectReference: {fileID: 0}
     - target: {fileID: 8144149933229020196, guid: fda23340a0585d9498419516baf21b52, type: 3}
       propertyPath: m_LocalPosition.z

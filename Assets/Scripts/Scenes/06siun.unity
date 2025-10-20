@@ -1593,6 +1593,7 @@ MonoBehaviour:
   slowMaxSpeed: 0.1
   slowGravity: 0.1
   jumpMode: 1
+  backJump: 1
   rb: {fileID: 440716439}
   animator: {fileID: 0}
 --- !u!1 &471712627
@@ -2155,6 +2156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slowSpeed: 0.2
   brocks: []
+  traps: []
   onSprite: {fileID: 21300000, guid: e076c65a2bf8e3c4eb71488d476f2932, type: 3}
   offSprite: {fileID: 21300000, guid: 7922245629c5ccb4b872f774f8960962, type: 3}
   finalTime: 0
@@ -3000,11 +3002,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8144149933229020196, guid: fda23340a0585d9498419516baf21b52, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.6216288
+      value: -7.5
       objectReference: {fileID: 0}
     - target: {fileID: 8144149933229020196, guid: fda23340a0585d9498419516baf21b52, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.5243287
+      value: -3.7721543
       objectReference: {fileID: 0}
     - target: {fileID: 8144149933229020196, guid: fda23340a0585d9498419516baf21b52, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3337,8 +3339,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unmask: {fileID: 1648596779}
   IRIS_IN_SCALE: {x: 15, y: 15}
-  IRIS_MID_SCALE1: {x: 0.8, y: 0.8}
-  IRIS_MID_SCALE2: {x: 1.2, y: 1.2}
+  IRIS_MID_SCALE1: {x: 0.3, y: 0.3}
+  IRIS_MID_SCALE2: {x: 0.6, y: 0.6}
 --- !u!1 &1286058115
 GameObject:
   m_ObjectHideFlags: 0
@@ -4302,15 +4304,15 @@ RectTransform:
   m_GameObject: {fileID: 1648596778}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1198189268}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.0009663899, y: -0.0009663899}
-  m_SizeDelta: {x: 800, y: 450}
+  m_SizeDelta: {x: 746, y: 951.99994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1648596780
 MonoBehaviour:
@@ -5249,6 +5251,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScript: {fileID: 0}
+  elevatorLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &2096690881
 GameObject:
   m_ObjectHideFlags: 0
@@ -5745,7 +5750,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7710228906333859497, guid: 2049c70d94e43c5418c8d20ce42ce7cf, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7710228906333859497, guid: 2049c70d94e43c5418c8d20ce42ce7cf, type: 3}
       propertyPath: m_LocalPosition.x
