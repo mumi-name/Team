@@ -6,8 +6,8 @@ public class AnimationScript : MonoBehaviour
 {
     public float performanceSpeed = 10f;//アニメーションの演出を行うスピード
     public bool doAnimation = true;
-    public GameObject brock;//ステージ中にあるONOFFブロック
-    Vector3 orizinSize;
+    //public GameObject brock;//ステージ中にあるONOFFブロック
+    public Vector3 orizinSize;
     CircleCollider2D circleCollider;
     public static AnimationScript instance;
 
@@ -18,7 +18,7 @@ public class AnimationScript : MonoBehaviour
     void Start()
     {
         instance = this;
-        orizinSize = transform.localScale;
+        //orizinSize = transform.localScale;
         circleCollider = GetComponent<CircleCollider2D>();
         if (CameraZoomTransition.instance!=null&&CameraZoomTransition.instance.zoomCamera != null) tutorial = true;
 
@@ -28,7 +28,7 @@ public class AnimationScript : MonoBehaviour
     void Update()
     {
         //波動が画面外に出たらアニメーションをストップする
-        if (transform.localScale.x >= 8f)
+        if (transform.localScale.x >= 2f)
         {
             doAnimation = false;
         }
