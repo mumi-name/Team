@@ -968,54 +968,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ce4e77b7475c164490483fb7970b9ca, type: 3}
---- !u!1 &300420293
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 300420295}
-  - component: {fileID: 300420294}
-  m_Layer: 0
-  m_Name: IrisIn&IrisOut
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &300420294
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 300420293}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bebc541dba2f9440918f8b6995cb231, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  unmask: {fileID: 0}
-  IRIS_IN_SCALE: {x: 15, y: 15}
-  IRIS_MID_SCALE1: {x: 0.8, y: 0.8}
-  IRIS_MID_SCALE2: {x: 1.2, y: 1.2}
---- !u!4 &300420295
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 300420293}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 621.1081, y: 544.69684, z: -15.263943}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &331450436
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1911,6 +1863,7 @@ MonoBehaviour:
   brocks:
   - {fileID: 435215418}
   - {fileID: 1539233949}
+  traps: []
   onSprite: {fileID: 21300000, guid: e076c65a2bf8e3c4eb71488d476f2932, type: 3}
   offSprite: {fileID: 21300000, guid: 7922245629c5ccb4b872f774f8960962, type: 3}
   finalTime: 0
@@ -3409,7 +3362,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1331132189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5870,7 +5823,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 619394802}
-  - {fileID: 300420295}
   - {fileID: 1331132192}
   - {fileID: 774463602}
   - {fileID: 630619976}

@@ -86,7 +86,7 @@ SpriteRenderer:
   m_Size: {x: 4, y: 4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &2395284883119588261
@@ -127,8 +127,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 4, y: 4}
+    oldSize: {x: 8, y: 4}
+    newSize: {x: 8, y: 4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -149,10 +149,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   on: 0
   move: 0
-  movevec: {x: 0, y: 0, z: 0}
-  movestop: {x: 0, y: 0, z: 0}
+  loop: 0
+  moveSpeed: 0.4
   orizinalpos: {x: 0, y: 0, z: 0}
+  movestop: {x: 0, y: 0, z: 0}
   box: {fileID: 2395284883119588261}
+  rb: {fileID: 0}
   spr: {fileID: 461828663587657134}
   onSprite: {fileID: -7365593208591039550, guid: e076c65a2bf8e3c4eb71488d476f2932, type: 3}
   offSprite: {fileID: -6373972758247592290, guid: 7922245629c5ccb4b872f774f8960962, type: 3}
+  animator: {fileID: 0}

@@ -2323,6 +2323,7 @@ MonoBehaviour:
   - {fileID: 1279230904}
   - {fileID: 460507962}
   - {fileID: 561834885}
+  traps: []
   onSprite: {fileID: 21300000, guid: e076c65a2bf8e3c4eb71488d476f2932, type: 3}
   offSprite: {fileID: 21300000, guid: 7922245629c5ccb4b872f774f8960962, type: 3}
   finalTime: 0
@@ -5593,7 +5594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9714b62a114d45b65f30fc946ea5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TargetUnmask: {fileID: 0}
+  m_TargetUnmask: {fileID: 1181299025}
 --- !u!114 &1892909565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6562,7 +6563,7 @@ PrefabInstance:
       objectReference: {fileID: 3331534684152710804, guid: 1fc68a0202a14124ab3a55a828bd391d, type: 3}
     - target: {fileID: 7710228906333859497, guid: 2049c70d94e43c5418c8d20ce42ce7cf, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7710228906333859497, guid: 2049c70d94e43c5418c8d20ce42ce7cf, type: 3}
       propertyPath: m_LocalPosition.x

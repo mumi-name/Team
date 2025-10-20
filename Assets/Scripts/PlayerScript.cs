@@ -112,12 +112,12 @@ public class PlayerScript : MonoBehaviour
         if (num < 0) mode = -1;
 
         //ジャンプ中に違う方向に入力されたら垂直落下させる
-        if (jumpFlag && mode != beforeMode)
+        /*if (jumpFlag && mode != beforeMode)
         {
             //num = 0;
             //rb.linearVelocity = new Vector2(0, rb.linearVelocityY);
             //return;
-        }
+        }*/
 
         //左右キーが押されてない場合、止める
         if (Mathf.Abs(num) < 0.1f)

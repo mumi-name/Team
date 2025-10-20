@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6359609584306910022, guid: 22bd57b589dd7f849b735127281fc2da, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 67db3c8bbd936c74199016e7514d14ca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,6 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wavePrefab: {fileID: 7514425272762012655, guid: ddd928c60141aef4a8fd3dc77876c3ee, type: 3}
+  animator: {fileID: -2009581590343455061}
 --- !u!58 &4317902863523885173
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -147,7 +148,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4221331216478161424}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 59c0a144335d2f34298fa19624093e32, type: 2}
   m_CullingMode: 0
