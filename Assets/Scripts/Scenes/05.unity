@@ -519,6 +519,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 228138458739761544, guid: c4bbf040510c5724a92649b1736c04d3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8497e496300da1a4d81c81332ba16c3f, type: 3}
     - target: {fileID: 2599570734389887974, guid: c4bbf040510c5724a92649b1736c04d3, type: 3}
       propertyPath: m_Name
       value: Pole (2)
@@ -7806,6 +7810,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 228138458739761544, guid: c4bbf040510c5724a92649b1736c04d3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8497e496300da1a4d81c81332ba16c3f, type: 3}
     - target: {fileID: 2599570734389887974, guid: c4bbf040510c5724a92649b1736c04d3, type: 3}
       propertyPath: m_Name
       value: Pole (3)
@@ -8784,6 +8792,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 228138458739761544, guid: c4bbf040510c5724a92649b1736c04d3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8497e496300da1a4d81c81332ba16c3f, type: 3}
     - target: {fileID: 2599570734389887974, guid: c4bbf040510c5724a92649b1736c04d3, type: 3}
       propertyPath: m_Name
       value: Pole (1)
