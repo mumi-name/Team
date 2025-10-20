@@ -2,47 +2,76 @@ using UnityEngine;
 
 public class TrapController : MonoBehaviour
 {
+    public enum TrapDirection { Up, Down, Left, Right }
+    public TrapDirection trapDirection;
+
     private Animator anim;
-    public bool isActive = false;//ONかどうか
+    public bool isActive = false;
+
     void Start()
     {
         anim = GetComponent<Animator>();
-
-    }
-
-    public void ToggleTrap()
-    {
-       isActive = !isActive;
-        //初期状態反映
-
-    }
-    private void UpDateTrapAnimation()
-    {
-        if (anim == null) return;
-
-        if (isActive)
+        if (anim != null)
         {
             anim.SetBool("on_toge", isActive);
         }
     }
-    void Update()
+
+    public void ToggleTrap()
     {
-        
+        isActive = !isActive;
+        UpdateTrapAnimation();
+        if (AudioManager.instance != null)
+        {
+            AudioManager.instance.PlaySE("ONOFF");
+        }
+    }
+
+    private void UpdateTrapAnimation()
+    {
+        if (anim == null) return;
+
+        //anim.SetBool("on_toge", isActive);
+
+        switch (trapDirection)
+        {
+            case TrapDirection.Up:
+                anim.SetBool("on_upper", isActive);
+                break;
+            case TrapDirection.Down:
+                anim.SetBool("on_under", isActive);
+                break;
+            case TrapDirection.Left:
+                anim.SetBool("on_left", isActive);
+                break;
+            case TrapDirection.Right:
+                anim.SetBool("on_right", isActive);
+                break;
+        }
+
     }
     /*
+    public void SetTrap(bool on)
+    {
+        isActive = on;
+        if(anim != null)
+        {
+            anim.SetBool("on_toge", isActive);
+        }
+        if(AudioManager.instance != null)
+        {
+            AudioManager.instance.PlaySE2("ONOFF");
+        }
+    }
+    */
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!isActive) return;//オフの時は当たらない
+        if (!isActive) return;
 
-        if (collision.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            if(GameManager.instance != null)
-            {
-                Debug.Log("棘に当たった");
-                //GameManagerに通知
-                //GameManager.instance.
-            }
-
+            Debug.Log($"プレイヤーが {trapDirection} のトラップに当たった！");
         }
-    }*/
+    }
+
 }

@@ -83,7 +83,8 @@ public class GameManager : MonoBehaviour
         }
         foreach(var trap in traps)
         {
-            trap.isActive = true;
+            //trap.isActive = true;
+            //trap.ToggleTrap();
             trap.ToggleTrap();
         }
         AudioManager.instance.PlaySE2("ONOFF");
@@ -98,6 +99,7 @@ public class GameManager : MonoBehaviour
         foreach(var trap in traps)
         {
             trap.isActive = false;
+            //trap.ToggleTrap();
             trap.ToggleTrap();
         }
         //AudioManager.instance.PlaySE2("ONOFF");
