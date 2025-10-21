@@ -845,6 +845,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6097547811025956829, guid: 5f7d1f828ac1b7d449e842f0230d398c, type: 3}
+      propertyPath: orizinalpos.x
+      value: -3.470564
+      objectReference: {fileID: 0}
+    - target: {fileID: 6097547811025956829, guid: 5f7d1f828ac1b7d449e842f0230d398c, type: 3}
+      propertyPath: orizinalpos.y
+      value: 4.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -858,6 +866,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5866547833927730314, guid: f9323636033d04d4a9e625366f7aefba, type: 3}
+      propertyPath: orizinalpos.x
+      value: 0.02943611
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866547833927730314, guid: f9323636033d04d4a9e625366f7aefba, type: 3}
+      propertyPath: orizinalpos.y
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6439883546629807956, guid: f9323636033d04d4a9e625366f7aefba, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.029436111
@@ -2394,6 +2410,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ON_Floor 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6097547811025956829, guid: 48d13756a7be9684fb8a09138336d485, type: 3}
+      propertyPath: orizinalpos.x
+      value: 6.20003
+      objectReference: {fileID: 0}
+    - target: {fileID: 6097547811025956829, guid: 48d13756a7be9684fb8a09138336d485, type: 3}
+      propertyPath: orizinalpos.y
+      value: -3.2619
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2482,6 +2506,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5866547833927730314, guid: 20c909a9626ec2243913924438d1fbf9, type: 3}
+      propertyPath: orizinalpos.x
+      value: 7.70003
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866547833927730314, guid: 20c909a9626ec2243913924438d1fbf9, type: 3}
+      propertyPath: orizinalpos.y
+      value: -1.2619
+      objectReference: {fileID: 0}
     - target: {fileID: 6439883546629807956, guid: 20c909a9626ec2243913924438d1fbf9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.7000303
@@ -5340,6 +5372,14 @@ PrefabInstance:
     - target: {fileID: 5375345231543845921, guid: 70bc8b2236c9fff4b9369498364c8bbc, type: 3}
       propertyPath: m_Name
       value: ON_Floor 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6097547811025956829, guid: 70bc8b2236c9fff4b9369498364c8bbc, type: 3}
+      propertyPath: orizinalpos.x
+      value: 3.70003
+      objectReference: {fileID: 0}
+    - target: {fileID: 6097547811025956829, guid: 70bc8b2236c9fff4b9369498364c8bbc, type: 3}
+      propertyPath: orizinalpos.y
+      value: -1.2619
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
