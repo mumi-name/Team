@@ -6,14 +6,22 @@ public class TrapController : MonoBehaviour
     public TrapDirection trapDirection;
 
     private Animator anim;
+    private Collider2D trapCollider;
     public bool isActive = false;
 
     void Start()
     {
         anim = GetComponent<Animator>();
+        trapCollider = GetComponent<Collider2D>();
+
         if (anim != null)
         {
             anim.SetBool("on_toge", isActive);
+        }
+
+        if(trapCollider != null)
+        {
+            trapCollider.enabled = isActive;
         }
     }
 
@@ -21,6 +29,13 @@ public class TrapController : MonoBehaviour
     {
         isActive = !isActive;
         UpdateTrapAnimation();
+
+        //“–‚½‚è”»’è‚ðON/OFF
+        if(trapCollider != null)
+        {
+            trapCollider.enabled = isActive;
+        }
+
         if (AudioManager.instance != null)
         {
             AudioManager.instance.PlaySE("ONOFF");
