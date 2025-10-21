@@ -4565,7 +4565,7 @@ MonoBehaviour:
     topLimit: 3
     bottomLimit: -2.2
     direction: 1
-    isLeft: 0
+    isLeft: 1
   isOn: 1
 --- !u!4 &906224973
 Transform:
@@ -7179,8 +7179,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Time:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1a48ff4c60b905a4d9e8bd77a59c3a3e, type: 2}
+  m_sharedMaterial: {fileID: 580465409356535621, guid: 1a48ff4c60b905a4d9e8bd77a59c3a3e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
