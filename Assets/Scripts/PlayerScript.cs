@@ -82,11 +82,11 @@ public class PlayerScript : MonoBehaviour
 
 
         //ƒWƒƒƒ“ƒv’†‚Éˆá‚¤•ûŒü‚ðŒü‚¯‚È‚¢‚æ‚¤‚É‚·‚é
-        if (jumpFlag && mode != beforeMode)
-        {
-            pendingMode = mode;
-            return;
-        }
+        //if (jumpFlag && mode != beforeMode)
+        //{
+        //    pendingMode = mode;
+        //    return;
+        //}
 
     }
 

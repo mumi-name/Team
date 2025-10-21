@@ -41,6 +41,7 @@ public class KeyScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             moveFlag = true;
+            transform.GetChild(0).gameObject.SetActive(true);
             //ƒS[ƒ‹‚ÌƒƒbƒN‚ğ‰ğœ‚·‚é
             //MoveStop.GetComponent<SceneTransition>().OnOffLocked(false);
             //SceneTransition.instance.OnOffLocked(false);
