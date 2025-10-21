@@ -24,6 +24,12 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         instance = this;
+
+        // traps リストが空の場合、自動でシーン内の TrapController を取得
+        //if (traps == null || traps.Count == 0)
+        //{
+        //    traps = new List<TrapController>(FindObjectsOfType<TrapController>());
+        //}
     }
     void Start()
     {
@@ -87,8 +93,8 @@ public class GameManager : MonoBehaviour
         foreach(var trap in traps)
         {
             //trap.isActive = true;
-            //trap.ToggleTrap();
             trap.ToggleTrap();
+            
         }
         AudioManager.instance.PlaySE2("ONOFF");
         ScreenMove.instance.Toggle();
@@ -102,9 +108,9 @@ public class GameManager : MonoBehaviour
         }
         foreach(var trap in traps)
         {
-            trap.isActive = false;
-            //trap.ToggleTrap();
+            //trap.isActive = false;
             trap.ToggleTrap();
+            
         }
         AudioManager.instance.PlaySE2("ONOFF");
         ScreenMove.instance.Toggle();

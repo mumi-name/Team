@@ -14,11 +14,15 @@ public class TrapController : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         trapCollider = GetComponent<Collider2D>();
-
-        if (anim != null)
+        if(trapCollider == null)
         {
-            anim.SetBool("on_toge", isActive);
+            Debug.Log($"{gameObject.name}に　collider2Dがアタッチされていません。");
         }
+        UpdateCollider();
+        //if (anim != null)
+        //{
+        //    anim.SetBool("on_toge", isActive);
+        //}
     }
 
     public void ToggleTrap()
@@ -34,6 +38,7 @@ public class TrapController : MonoBehaviour
     // スイッチで反転したときに呼ぶ
     public void ToggleTrapAndLock()
     {
+        if(locked) return;
         isActive = !isActive;
         locked = true; // この状態で固定
         UpdateCollider();
@@ -45,7 +50,6 @@ public class TrapController : MonoBehaviour
     {
         if(trapCollider != null)trapCollider.enabled = isActive;
         if (anim == null) return;
-        //anim.SetBool("on_toge", isActive);
 
         switch (trapDirection)
         {
@@ -88,6 +92,7 @@ public class TrapController : MonoBehaviour
     public void SetActive(bool on)
     {
         isActive = on;
+        locked = false;
         UpdateCollider();
     }
 
