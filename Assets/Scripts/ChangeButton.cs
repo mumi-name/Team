@@ -35,7 +35,8 @@ public class ChangeButton : MonoBehaviour
             
             foreach (var trap in GameManager.instance.traps)
             {
-                trap.ToggleTrapAndLock();
+                trap.ToggleTrap();
+                //GameManager.instance.ToggleTrap();
             }
             //GameManager.instance.ToggleTraps();
         }

@@ -222,7 +222,7 @@ public class GameManager : MonoBehaviour
             {
                 if (!trap.locked)
                 {
-                    //trap.isActive = !trap.isActive;  // ON/OFF 反転
+                    trap.isActive = !trap.isActive;  // ON/OFF 反転
                     trap.ToggleTrap();              // 実際の動作・表示を更新
                 }
             }
