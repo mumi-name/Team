@@ -18,6 +18,7 @@ public class ChangeButton : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (on) return;
+
         if (collision.gameObject.CompareTag("Player"))
         {
             //スローモードにする
@@ -29,10 +30,14 @@ public class ChangeButton : MonoBehaviour
             AudioManager.instance.PlaySE2("スイッチと衝撃波");
             //AusioManager.instance.PlaySEPartialOneShot("スイッチと衝撃波",1.0f,1.5f);
             GameManager.instance.ChangeEnabledToTrigger();
+            
             Instantiate(wavePrefab, position: new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-            GameManager.instance.ToggleTraps();
-
-
+            
+            foreach (var trap in GameManager.instance.traps)
+            {
+                trap.ToggleTrapAndLock();
+            }
+            //GameManager.instance.ToggleTraps();
         }
 
     }

@@ -8,6 +8,7 @@ public class TrapController : MonoBehaviour
     private Animator anim;
     private Collider2D trapCollider;
     public bool isActive = false;
+    public bool locked = false;
 
     void Start()
     {
@@ -18,34 +19,32 @@ public class TrapController : MonoBehaviour
         {
             anim.SetBool("on_toge", isActive);
         }
-
-        if(trapCollider != null)
-        {
-            trapCollider.enabled = !isActive;
-        }
     }
 
     public void ToggleTrap()
     {
+        if (locked) return;
         isActive = !isActive;
-        UpdateTrapAnimation();
-
-        //当たり判定をON/OFF
-        if(trapCollider != null)
-        {
-            trapCollider.enabled = !isActive;
-        }
-
+        UpdateCollider();
         if (AudioManager.instance != null)
         {
             AudioManager.instance.PlaySE("ONOFF");
         }
     }
-
-    private void UpdateTrapAnimation()
+    // スイッチで反転したときに呼ぶ
+    public void ToggleTrapAndLock()
     {
-        if (anim == null) return;
+        isActive = !isActive;
+        locked = true; // この状態で固定
+        UpdateCollider();
+        if (AudioManager.instance != null)
+            AudioManager.instance.PlaySE("ONOFF");
+    }
 
+    private void UpdateCollider()
+    {
+        if(trapCollider != null)trapCollider.enabled = isActive;
+        if (anim == null) return;
         //anim.SetBool("on_toge", isActive);
 
         switch (trapDirection)
@@ -79,6 +78,20 @@ public class TrapController : MonoBehaviour
         }
     }
     */
+
+    //public void UpdateVisual()
+    //{
+    //    if (spr != null) spr.enabled = isActive;
+    //    if (col != null) col.enabled = isActive;
+    //}
+
+    public void SetActive(bool on)
+    {
+        isActive = on;
+        UpdateCollider();
+    }
+
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (!isActive) return;
