@@ -242,19 +242,18 @@ public class PlayerScript : MonoBehaviour
         //罠に触れたらリセットする
         if (collision.gameObject.CompareTag("Trap") && !isDead)
         {
+            isDead = true;
+            cannotMoveMode();
+            animator.speed = 1;
+            animator.SetTrigger("DeathTrigger");
+            Debug.Log("死亡後の処理は呼び出されている?");
+            AudioManager.instance.PlaySE("割れる");
+            TimerManager.instance.AddDeath();
             TrapController trap = collision.gameObject.GetComponent<TrapController>();
-            if (trap != null && trap.isActive)
-            {
-                isDead = true;
-                cannotMoveMode();
-                animator.speed = 1;
-                animator.SetTrigger("DeathTrigger");
-                Debug.Log("死亡後の処理は呼び出されている?");
-                AudioManager.instance.PlaySE("割れる");
-                TimerManager.instance.AddDeath();
-                //シーン遷移は死亡アニメーションが終了後に再生するため処理を別スクリプトに移行(10/17)
-                //アニメーションイベントでSceneTransitionのTransition()を呼ぶ
-            }
+            
+            //シーン遷移は死亡アニメーションが終了後に再生するため処理を別スクリプトに移行(10/17)
+            //アニメーションイベントでSceneTransitionのTransition()を呼ぶ
+            
         }
 
         //if()

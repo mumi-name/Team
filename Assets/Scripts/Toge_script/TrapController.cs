@@ -48,7 +48,7 @@ public class TrapController : MonoBehaviour
 
     private void UpdateCollider()
     {
-        if(trapCollider != null)trapCollider.enabled = isActive;
+        if(trapCollider != null)trapCollider.enabled = !isActive;
         if (anim == null) return;
 
         switch (trapDirection)
