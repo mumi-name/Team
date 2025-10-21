@@ -21,7 +21,7 @@ public class TrapController : MonoBehaviour
 
         if(trapCollider != null)
         {
-            trapCollider.enabled = isActive;
+            trapCollider.enabled = !isActive;
         }
     }
 
@@ -33,7 +33,7 @@ public class TrapController : MonoBehaviour
         //“–‚½‚è”»’è‚ðON/OFF
         if(trapCollider != null)
         {
-            trapCollider.enabled = isActive;
+            trapCollider.enabled = !isActive;
         }
 
         if (AudioManager.instance != null)
