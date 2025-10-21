@@ -32,7 +32,7 @@ public class OnOffBrock : MonoBehaviour
     bool turn = false;
     bool invalid = false;//ブロックの判定を有効化するのを禁止する
 
-    bool animeBrock = false;//アニメーションするブロックかどうか？
+    //bool animeBrock = false;//アニメーションするブロックかどうか？ //Startで初期化されてない時にバグが起きる
 
 
     void Start()
@@ -45,7 +45,7 @@ public class OnOffBrock : MonoBehaviour
             
         //}
         if (spr == null) spr = GetComponent<SpriteRenderer>();
-        if (animator != null) animeBrock = true;
+        //if (animator != null) animeBrock = true;
     }
 
     void Update()
@@ -76,7 +76,12 @@ public class OnOffBrock : MonoBehaviour
                
             }
             spr.sprite = onSprite;
-            if (animeBrock)
+            /*if (animeBrock)
+            {
+                animator.SetBool("OnOffBool", true);
+                animator.speed = 2;
+            }*/
+            if (animator != null)
             {
                 animator.SetBool("OnOffBool", true);
                 animator.speed = 2;
@@ -112,10 +117,15 @@ public class OnOffBrock : MonoBehaviour
                 }*/
             }
             spr.sprite = offSprite;
-            if (animeBrock)
+            /*if (animeBrock)
             {
                 animator.SetBool("OnOffBool", false);
                 animator.speed = 2;
+            }*/
+            if (animator != null)
+            {
+                animator.SetBool("OnOffBool", false);
+                animator.speed = 1;
             }
             Color color = spr.material.color;
             color.a = 0.4f;
@@ -151,7 +161,12 @@ public class OnOffBrock : MonoBehaviour
                
             }
             spr.sprite = offSprite;
-            if (animeBrock)
+            /*if (animeBrock)
+            {
+                animator.SetBool("OnOffBool", false);
+                animator.speed = 1;
+            }*/
+            if (animator != null)
             {
                 animator.SetBool("OnOffBool", false);
                 animator.speed = 1;
@@ -177,7 +192,12 @@ public class OnOffBrock : MonoBehaviour
                 box.isTrigger = false;
             }
             spr.sprite = onSprite;
-            if (animeBrock)
+            /*if (animeBrock)
+            {
+                animator.SetBool("OnOffBool", true);
+                animator.speed = 2;
+            }*/
+            if (animator != null)
             {
                 animator.SetBool("OnOffBool", true);
                 animator.speed = 2;
