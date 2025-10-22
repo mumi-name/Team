@@ -1,0 +1,12 @@
+diff a/Assets/Scripts/PlayerScript.cs b/Assets/Scripts/PlayerScript.cs	(rejected hunks)
+@@ -242,9 +242,9 @@
+         //㩂ɐG�ꂽ�烊�Z�b�g����
+         if (collision.gameObject.CompareTag("Trap") && !isDead)
+         {
++            animator.speed = 1;
+             isDead = true;
+             cannotMoveMode();
+-            animator.speed = 1;
+             animator.SetTrigger("DeathTrigger");
+             Debug.Log("���S��̏����͌Ăяo����Ă���?");
+             AudioManager.instance.PlaySE("�����");

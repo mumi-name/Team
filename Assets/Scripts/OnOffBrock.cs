@@ -128,7 +128,8 @@ public class OnOffBrock : MonoBehaviour
                 animator.speed = 1;
             }
             Color color = spr.material.color;
-            color.a = 0.4f;
+            //color.a = 0.4f;
+            color.a = 1f;
             if (animation)
             {
                 spr.sprite = onSprite;
@@ -172,7 +173,8 @@ public class OnOffBrock : MonoBehaviour
                 animator.speed = 1;
             }
             Color color = spr.material.color;
-            color.a = 0.4f;
+            //color.a = 0.4f;
+            color.a = 1f;
             if (animation)
             {
                 spr.sprite = onSprite;

@@ -49,7 +49,7 @@ public class PlayerScript : MonoBehaviour
         
         //入力を無視し、処理を行わない
         if (ignoreInput) return;
-        //if(isDead ) return;
+        if(isDead ) return;
         
 
         if (GameManager.instance.GetWaveAnimation() && Mathf.Abs(rb.linearVelocity.y)!=0) jumpFlag = true;
@@ -62,7 +62,7 @@ public class PlayerScript : MonoBehaviour
     {
         //入力を無視し、処理を行わない
         if (ignoreInput) return;
-        //if (isDead) return;
+        if (isDead) return;
 
         //プレイヤーの速度が最大速度を超えたら加速を中止
         if (Mathf.Abs(rb.linearVelocity.x) > maxSpeed) return;
@@ -178,6 +178,7 @@ public class PlayerScript : MonoBehaviour
         }
 
         animator.speed = Mathf.Abs(rb.linearVelocityX * animeSpeed);
+        //animator.speed = 1;
         //プレイヤーの向きを変更する
         transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x)* mode*-1.0f, transform.localScale.y, 1);
 
@@ -197,12 +198,13 @@ public class PlayerScript : MonoBehaviour
     }
 
     //動けないように空中に固定
-    public void cannotMoveMode()
+    public void cannotMoveMode(bool gravity = false)
     {
         ignoreInput = true;
         rb.linearVelocityX = 0;
         rb.linearVelocityY = 0;
         rb.gravityScale = 0;
+        if (gravity) rb.gravityScale = 1;
     }
 
     public void canMoveMode()
@@ -219,6 +221,11 @@ public class PlayerScript : MonoBehaviour
         if (transform.localScale.x*-1.0f < 0) muki = -1;
         return muki;
     }
+
+    public float GetNum()
+    {
+        return num;
+    }
     public bool GetJumpFlag()
     {
         return jumpFlag;
@@ -231,7 +238,7 @@ public class PlayerScript : MonoBehaviour
     public void OnOffJumpFlag(bool flag)
     {
         //ジャンプ中にフラグをfalseにしようとした場合リターンする
-        if (flag == false && Mathf.Abs(rb.linearVelocityY) > 0) return;
+        //if (flag == false && Mathf.Abs(rb.linearVelocityY) > 0) return;
         jumpFlag = flag;
         animator.SetBool("JumpBool", flag);
 
@@ -242,9 +249,9 @@ public class PlayerScript : MonoBehaviour
         //罠に触れたらリセットする
         if (collision.gameObject.CompareTag("Trap") && !isDead)
         {
-            isDead = true;
-            cannotMoveMode();
             animator.speed = 1;
+            isDead = true;
+            cannotMoveMode(true);
             animator.SetTrigger("DeathTrigger");
             Debug.Log("死亡後の処理は呼び出されている?");
             AudioManager.instance.PlaySE("割れる");

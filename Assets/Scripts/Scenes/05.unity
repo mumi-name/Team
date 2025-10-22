@@ -498,8 +498,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Time:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1a48ff4c60b905a4d9e8bd77a59c3a3e, type: 2}
+  m_sharedMaterial: {fileID: 580465409356535621, guid: 1a48ff4c60b905a4d9e8bd77a59c3a3e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1830,6 +1830,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 461828663587657134, guid: a576c472fb386114792bb32331b2b81f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5866547833927730314, guid: a576c472fb386114792bb32331b2b81f, type: 3}
       propertyPath: move
       value: 1
@@ -1852,7 +1856,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5866547833927730314, guid: a576c472fb386114792bb32331b2b81f, type: 3}
       propertyPath: orizinalpos.y
-      value: -2.95357
+      value: -2.93
       objectReference: {fileID: 0}
     - target: {fileID: 6439883546629807956, guid: a576c472fb386114792bb32331b2b81f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3835,6 +3839,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6097547811025956829, guid: 826549f986d420e498cd1b08d11ee7d8, type: 3}
+      propertyPath: orizinalpos.x
+      value: 0.9784756
+      objectReference: {fileID: 0}
+    - target: {fileID: 6097547811025956829, guid: 826549f986d420e498cd1b08d11ee7d8, type: 3}
+      propertyPath: orizinalpos.y
+      value: -0.2664297
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3861,11 +3873,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5866547833927730314, guid: f0009a4cb3419484eb246bee812efc5b, type: 3}
       propertyPath: orizinalpos.x
-      value: 6.478475
+      value: 6.459213
       objectReference: {fileID: 0}
     - target: {fileID: 5866547833927730314, guid: f0009a4cb3419484eb246bee812efc5b, type: 3}
       propertyPath: orizinalpos.y
-      value: 3.733571
+      value: 4.733571
       objectReference: {fileID: 0}
     - target: {fileID: 6439883546629807956, guid: f0009a4cb3419484eb246bee812efc5b, type: 3}
       propertyPath: m_LocalScale.x
@@ -4308,7 +4320,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5146328632892571555, guid: 2049c70d94e43c5418c8d20ce42ce7cf, type: 3}
       propertyPath: backJump
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5146328632892571555, guid: 2049c70d94e43c5418c8d20ce42ce7cf, type: 3}
       propertyPath: jumpMode
@@ -5453,7 +5465,7 @@ GameObject:
   - component: {fileID: 1857321346}
   - component: {fileID: 1857321345}
   - component: {fileID: 1857321344}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Floor
   m_TagString: Floor
   m_Icon: {fileID: 0}

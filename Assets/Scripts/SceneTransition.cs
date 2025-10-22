@@ -56,6 +56,8 @@ public class SceneTransition : MonoBehaviour
         {
             SceneManager.LoadScene(sceneName);
         });
+
+        Destroy(PlayerScript.instance.gameObject,transitionTime);
     }
 
     public void OnOffLocked(bool lockMode)

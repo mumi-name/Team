@@ -3527,6 +3527,14 @@ PrefabInstance:
       propertyPath: on
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6097547811025956829, guid: 48d13756a7be9684fb8a09138336d485, type: 3}
+      propertyPath: orizinalpos.x
+      value: -6.226667
+      objectReference: {fileID: 0}
+    - target: {fileID: 6097547811025956829, guid: 48d13756a7be9684fb8a09138336d485, type: 3}
+      propertyPath: orizinalpos.y
+      value: 2.85
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5225,6 +5233,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 461828663587657134, guid: a576c472fb386114792bb32331b2b81f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5866547833927730314, guid: a576c472fb386114792bb32331b2b81f, type: 3}
       propertyPath: on
       value: 1
@@ -5235,7 +5247,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5866547833927730314, guid: a576c472fb386114792bb32331b2b81f, type: 3}
       propertyPath: moveSpeed
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5866547833927730314, guid: a576c472fb386114792bb32331b2b81f, type: 3}
       propertyPath: movestop.x
@@ -8314,7 +8326,7 @@ GameObject:
   - component: {fileID: 1857321346}
   - component: {fileID: 1857321345}
   - component: {fileID: 1857321344}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Floor
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -9348,6 +9360,9 @@ MonoBehaviour:
   elevatorLayer:
     serializedVersion: 2
     m_Bits: 0
+  floorLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1001 &1970253734
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10368,7 +10383,7 @@ PrefabInstance:
       objectReference: {fileID: 3331534684152710804, guid: 1fc68a0202a14124ab3a55a828bd391d, type: 3}
     - target: {fileID: 5146328632892571555, guid: 2049c70d94e43c5418c8d20ce42ce7cf, type: 3}
       propertyPath: backJump
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5146328632892571555, guid: 2049c70d94e43c5418c8d20ce42ce7cf, type: 3}
       propertyPath: jumpMode

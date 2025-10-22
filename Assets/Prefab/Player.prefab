@@ -199,6 +199,7 @@ MonoBehaviour:
   slowMaxSpeed: 0.1
   slowGravity: 0.1
   jumpMode: 1
+  backJump: 1
   rb: {fileID: 5702273232700857616}
   animator: {fileID: 5898101005095971538}
 --- !u!114 &6540922609054406810
@@ -215,6 +216,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerScript: {fileID: 0}
   elevatorLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  floorLayer:
     serializedVersion: 2
     m_Bits: 0
 --- !u!70 &1137385066896589402
@@ -407,6 +411,8 @@ MonoBehaviour:
   sceneName: 
   transitionTime: 1
   locked: 0
+  animator: {fileID: 0}
+  padlockAnimator: {fileID: 0}
 --- !u!1 &8095516166243363674
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,3 +508,6 @@ MonoBehaviour:
   elevatorLayer:
     serializedVersion: 2
     m_Bits: 64
+  floorLayer:
+    serializedVersion: 2
+    m_Bits: 128
