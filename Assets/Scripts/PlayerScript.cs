@@ -242,9 +242,9 @@ public class PlayerScript : MonoBehaviour
         //罠に触れたらリセットする
         if (collision.gameObject.CompareTag("Trap") && !isDead)
         {
-            animator.speed = 1;
             isDead = true;
             cannotMoveMode();
+            animator.speed = 1;
             animator.SetTrigger("DeathTrigger");
             Debug.Log("死亡後の処理は呼び出されている?");
             AudioManager.instance.PlaySE("割れる");
