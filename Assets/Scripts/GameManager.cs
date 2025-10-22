@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     bool waveAnimation = false;//波動アニメーションの最中かどうか?
     //bool slow = false;
     public float finalTime;//タイマーマネージャー用変数
-
+    private bool resetFlag  = false;
     void Awake()
     {
         instance = this;
@@ -74,10 +74,26 @@ public class GameManager : MonoBehaviour
         }
         changeSlow(targetScale);
         */
+        
+        if (!resetFlag)
+        {
+            if (Input.GetButtonDown("Reset"))
+            {
+                if (PlayerScript.instance != null && PlayerScript.instance.isDead) return;
+
+                resetFlag = true;
+                StartCoroutine(ResetSceneWithSE());
+            }
+        }
+        /*
+        旧バージョン
         if (Input.GetButtonDown("Reset"))
         {
+            //if (resetFlag) return;
+            //resetFlag = true;
             StartCoroutine(ResetSceneWithSE());
         }
+        */
         changeSlow(targetScale);
     }
 

@@ -24,7 +24,7 @@ public class PlayerScript : MonoBehaviour
     float num;
     bool jumpFlag = true;//現在ジャンプ中か
     bool canPushJumpFlag = true;//ジャンプボタンを押せるかどうか
-    private bool isDead = false;
+    public bool isDead = false;
     //-------------------------------------------------------------------------------------------
     bool ignoreInput = false;//入力を全て無視する
     //-------------------------------------------------------------------------------------------
