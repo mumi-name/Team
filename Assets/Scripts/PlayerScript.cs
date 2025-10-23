@@ -120,7 +120,7 @@ public class PlayerScript : MonoBehaviour
         //}
 
         //左右キーが押されてない場合、止める
-        if (Mathf.Abs(num) < 0.1f)
+        if (Mathf.Abs(num) < 0.2f)
         {
             num = 0;
             rb.linearVelocity = new Vector2(0, rb.linearVelocityY);

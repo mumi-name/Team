@@ -3,7 +3,9 @@ using UnityEngine;
 public class CameraZoomTransition : MonoBehaviour
 {
     public Camera mainCamera;         // メインカメラ
+    public Camera itemZoomCamera;    //最初にズームするカメラ
     public Camera zoomCamera;         // ズームカメラ（最終的な位置・サイズだけ使う）
+    
     public float transitionTime = 1f; // ズームにかける秒数
     public float projectionTime = 1f;//カメラ遷移後映す時間
     public static CameraZoomTransition instance;
@@ -19,6 +21,7 @@ public class CameraZoomTransition : MonoBehaviour
     void Start()
     {
         instance = this;
+        SceneStartZoom();
     }
     void Update()
     {
@@ -43,9 +46,11 @@ public class CameraZoomTransition : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
             ReturnZoom();
+
     }
 
-    public void StartZoom()
+    //突貫工事で設定。アイテムがあるシーンは2点間のカメラをアニメーションさせる
+    public void SceneStartZoom()
     {
         startPos = mainCamera.transform.position;
         startSize = mainCamera.orthographicSize;
@@ -53,9 +58,60 @@ public class CameraZoomTransition : MonoBehaviour
         endSize = zoomCamera.orthographicSize;
         timer = 0f;
         isZooming = true;
-        Invoke("ChangeAnimation", transitionTime);
-        Invoke("ReturnZoom", projectionTime + transitionTime);
+        Invoke("SceneStartZoom2", projectionTime + transitionTime-1f);
+
     }
+
+    public void SceneStartZoom2()
+    {
+        startPos = zoomCamera.transform.position;
+        startSize = zoomCamera.orthographicSize;
+        endPos = itemZoomCamera.transform.position;
+        endSize = itemZoomCamera.orthographicSize;
+        timer = 0f;
+        isZooming = true;
+
+        Invoke("ReturnZoom2", projectionTime + transitionTime-1f);
+    }
+
+    public void ReturnZoom2()
+    {
+        startPos= itemZoomCamera.transform.position;
+        startSize= itemZoomCamera.orthographicSize;
+        endPos = new Vector3(0, 0, -10);
+        endSize = 5;
+        timer = 0f;
+        isZooming = true;
+
+        Invoke("canMove", transitionTime);
+    }
+
+
+    public void StartZoom(bool change=false)
+    {
+        
+        Camera zoom;
+        if (change) zoom = zoomCamera;
+        else zoom = itemZoomCamera;
+
+        startPos = mainCamera.transform.position;
+        startSize = mainCamera.orthographicSize;
+        endPos = zoom.transform.position;
+        endSize = zoom.orthographicSize;
+        timer = 0f;
+        isZooming = true;
+        if (change)
+        {
+            Invoke("ChangeAnimation", transitionTime);
+            Invoke("ReturnZoom", projectionTime + transitionTime);
+        }
+        else
+        {
+            Invoke("ReturnZoom", projectionTime + transitionTime);
+        }
+
+    }
+
 
     //チュートリアル時は、カメラ遷移後にアニメーションが起きる
     void ChangeAnimation()
@@ -82,10 +138,14 @@ public class CameraZoomTransition : MonoBehaviour
     public void ReturnZoom()
     {
         //判定を元に戻す
-        foreach (var brock in GameManager.instance.brocks)
+        if (endPos != itemZoomCamera.gameObject.transform.position)
         {
-            brock.ChangeTriggerToEnabled();
+            foreach (var brock in GameManager.instance.brocks)
+            {
+                brock.ChangeTriggerToEnabled();
+            }
         }
+        
         Vector3 tempPos = startPos;
         float tempSize = startSize;
         startPos = endPos;

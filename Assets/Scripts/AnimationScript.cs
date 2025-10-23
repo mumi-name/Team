@@ -50,7 +50,7 @@ public class AnimationScript : MonoBehaviour
             if (tutorial) GameManager.instance.ChangeTriggerToEnabled();
             if (CameraZoomTransition.instance!=null&&CameraZoomTransition.instance.zoomCamera != null)
             {
-                CameraZoomTransition.instance.StartZoom();
+                CameraZoomTransition.instance.StartZoom(true);
                 //プレイヤー位置固定と入力はじきの処理を呼び出す
                 PlayerScript.instance.cannotMoveMode();
             }
