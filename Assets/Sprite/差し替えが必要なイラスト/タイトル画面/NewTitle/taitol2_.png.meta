@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: cebe41b1f50836a4ea60fcdad98139f0
+guid: b0c5740ce923395488473163c9f1e8f3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7352339073622421304
-    second: Title_0
+      213: -2657721595316398505
+    second: taitol2__0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Title_0
+      name: taitol2__0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8c0d280219e37f990800000000000000
-      internalID: -7352339073622421304
+      spriteID: 756184f4a40ed1bd0800000000000000
+      internalID: -2657721595316398505
       vertices: []
       indices: 
       edges: []
