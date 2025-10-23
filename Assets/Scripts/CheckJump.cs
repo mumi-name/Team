@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using static Unity.Collections.AllocatorManager;
 
 public class CheckJump : MonoBehaviour
 {
@@ -13,8 +14,12 @@ public class CheckJump : MonoBehaviour
         Vector2 underEnd = transform.position - new Vector3(0, 3, 0);
         RaycastHit2D underHit = Physics2D.Linecast(transform.position, underEnd, elevatorLayer);
 
-        
-        if(underHit)PlayerScript.instance.transform.SetParent(collision.transform, worldPositionStays: true);
+        if (underHit)
+        {
+            //親子関係を切る
+            if (PlayerScript.instance.gameObject.transform.parent != null) PlayerScript.instance.transform.SetParent(null);
+            PlayerScript.instance.transform.SetParent(collision.transform, worldPositionStays: true);
+        }
         //Debug.Log("判定が取れたよ");
 
         Debug.DrawLine(transform.position, underEnd, Color.blue);
@@ -25,8 +30,13 @@ public class CheckJump : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent<OnOffBrock>(out var brock))
         {
-            
-            if (brock.move) PlayerScript.instance.transform.SetParent(collision.transform, worldPositionStays: true);
+
+            if (brock.move)
+            {
+                //親子関係を切る
+                if (PlayerScript.instance.gameObject.transform.parent != null) PlayerScript.instance.transform.SetParent(null);
+                PlayerScript.instance.transform.SetParent(collision.transform, worldPositionStays: true);
+            }
 
         }
     }
