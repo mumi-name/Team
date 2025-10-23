@@ -576,11 +576,11 @@ MonoBehaviour:
   seSource: {fileID: 1297659563}
   bgmList:
   - {fileID: 8300000, guid: 45fb439d7c6b5234d9c6c596b627cd7a, type: 3}
-  - {fileID: 8300000, guid: 254fe098e1150ef4f9feaf97611e8c1e, type: 3}
+  - {fileID: 8300000, guid: ad24b44561aca3348b04f94a98370c0a, type: 3}
   - {fileID: 8300000, guid: 122b4f014e7ca2e4fa8cbaf83830676d, type: 3}
   seList:
   - {fileID: 8300000, guid: 3987e744629f1c84ab358e522d5900be, type: 3}
-  - {fileID: 8300000, guid: 99c5fe2cd99d7ca46820fc935e0c4216, type: 3}
+  - {fileID: 8300000, guid: a41d57e2681e1744e9c31925f31e6b59, type: 3}
   - {fileID: 8300000, guid: cdd2287202ab6b9409ae5f864d14867c, type: 3}
   - {fileID: 8300000, guid: bcd54073a53bdfc41810d74e182d84df, type: 3}
   - {fileID: 8300000, guid: 2fd5bbea573ff8f4ba30199c6a983311, type: 3}
