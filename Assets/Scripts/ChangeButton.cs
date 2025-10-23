@@ -27,7 +27,8 @@ public class ChangeButton : MonoBehaviour
             on = true;
             //ToggleTrap();
             GameManager.instance.OnOffSlow(true);
-            AudioManager.instance.PlaySE2("スイッチと衝撃波");
+            //AudioManager.instance.PlaySE2("スイッチと衝撃波");
+            AudioManager.instance.PlaySE2("スイッチ(衝撃波)");
             //AusioManager.instance.PlaySEPartialOneShot("スイッチと衝撃波",1.0f,1.5f);
             GameManager.instance.ChangeEnabledToTrigger();
             
