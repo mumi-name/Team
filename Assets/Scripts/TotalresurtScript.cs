@@ -16,6 +16,9 @@ public class TotalResultScript : MonoBehaviour
         //resultPanel.SetActive(false);
         //resultText.gameObject.SetActive(false);
         resultText.gameObject.SetActive(true);
+        AudioManager.instance.PlayBGM("BGM3");
+        AudioManager.instance.PlaySE2("BGM_last");
+
         // delayTime•bŒã‚ÉƒŠƒUƒ‹ƒg‚ð•\Ž¦
         //Invoke("ShowResult", delayTime);
     }

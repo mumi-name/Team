@@ -2606,6 +2606,7 @@ MonoBehaviour:
   backJump: 1
   rb: {fileID: 440716439}
   animator: {fileID: 0}
+  isDead: 0
 --- !u!114 &460507962 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5866547833927730314, guid: a576c472fb386114792bb32331b2b81f, type: 3}
@@ -4098,6 +4099,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3a8c7050fe917cf4ea19ce6a8ef33b2e, type: 3}
   - {fileID: 8300000, guid: 98798d080da31054dbe245abba0eb044, type: 3}
   - {fileID: 8300000, guid: 7c30060e283ebea4291dad1ada52400f, type: 3}
+  - {fileID: 8300000, guid: ab789163368df0747aeb7527519ffbfb, type: 3}
 --- !u!4 &725806898
 Transform:
   m_ObjectHideFlags: 0
@@ -5832,7 +5834,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &1240391046
 AudioSource:
   m_ObjectHideFlags: 0
