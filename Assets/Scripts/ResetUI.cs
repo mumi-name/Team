@@ -25,6 +25,14 @@ public class ResetUI : MonoBehaviour
             {
                 uiObject.SetActive(true);
             }
+            else
+            {
+                Debug.Log("uiObject‚ª‚È‚¢‚¨(^¤^)");
+            }
+        }
+        else
+        {
+            Debug.Log("Player‚ÉG‚ê‚Ä‚È‚¢‚æ");
         }
     }
     private void OnTriggerExit2D(Collider2D collider)
