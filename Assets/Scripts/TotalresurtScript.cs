@@ -5,6 +5,7 @@ public class TotalResultScript : MonoBehaviour
 {
     public GameObject resultPanel;      // 黒幕パネル
     public TextMeshProUGUI resultText;  // 時間表示テキスト
+    public TextMeshProUGUI deathText;
 
     public float delayTime = 3f;         // 黒幕が出るまでの待ち時間
     private bool resultShown = false;   // 一度だけ表示するフラグ
@@ -36,7 +37,9 @@ public class TotalResultScript : MonoBehaviour
         int deaths = TimerManager.instance != null ? TimerManager.instance.GetDeathCount() : 0;
         // リザルトテキストを表示
         resultText.gameObject.SetActive(true);
-        resultText.text = "Time: " + FormatTime(currentTime)+"\n"+ "Deaths" + FormatTime(deaths);
+        resultText.text = "Time: " + FormatTime(currentTime);
+        deathText.text = "Deaths" + deaths.ToString();
+        //resultText.text = "Time: " + FormatTime(currentTime)+"\n"+ "Deaths" + deaths.ToString();
 
         
     }

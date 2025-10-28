@@ -7,6 +7,7 @@ public class TimerManager : MonoBehaviour
 
     [Header("UI")]
     public TextMeshProUGUI timerText;
+    public TextMeshProUGUI deathText;
 
     public float elapsedTime = 0f; // 経過時間
     private bool isRunning = false;  // タイマーが動いているか
@@ -41,9 +42,13 @@ public class TimerManager : MonoBehaviour
         // UI表示更新
         if (timerText != null)
         {
-            timerText.text = "Time: " + FormatTime(elapsedTime)+"\n"+"Deaths:"+deathCount;
+            timerText.text = "Time: " + FormatTime(elapsedTime);
         }
 
+        if (deathText != null)
+        {
+            deathText.text = "Deaths:" + deathCount.ToString();
+        }
         // デバッグ用キー操作
         //if (Input.GetKeyDown(KeyCode.T)) StartTimer();
         //if (Input.GetKeyDown(KeyCode.S)) StopTimer();

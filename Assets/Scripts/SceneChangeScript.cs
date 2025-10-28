@@ -13,10 +13,6 @@ public class SceneChangeScript : MonoBehaviour
     {
         if (Input.GetButtonDown("Title"))
         {
-            if(TimerManager.instance != null)
-            {
-                TimerManager.instance.AllCountReset();           
-            }
                 SceneManager.LoadScene(sceneName);
         }
     }
