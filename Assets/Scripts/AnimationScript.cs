@@ -67,7 +67,7 @@ public class AnimationScript : MonoBehaviour
         {
             if (tutorial) return;
             if(GameManager.instance.douziOsi==false)CallCanMoveMode();
-            else Invoke("CallCanMoveMode", 0.05f);//同時押し仕様を無くすために、当たったら動けるようにする
+            else Invoke("CallCanMoveMode", 0.032f);//同時押し仕様を無くすために、当たったら動けるようにする
 
             OnOffBrock brock = collision.gameObject.GetComponent<OnOffBrock>();
             //OnOffが既に切り替わっていた場合は、処理を終了
