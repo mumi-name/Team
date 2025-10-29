@@ -85,6 +85,8 @@ public class CheckJump : MonoBehaviour
         }
         else PlayerScript.instance.OnOffJumpFlag(false);//このコードを消すと、切り替えの手触りが悪くなるよ
 
+        //万が一ステージ2が気持ち悪いて言われたらelse if(!underHit)にしましょう。ただし手触り感は減少
+
         //エレベーターに接触したら
         if (underHit2)
         {

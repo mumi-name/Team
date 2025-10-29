@@ -67,7 +67,7 @@ public class OnOffBrock : MonoBehaviour
         //透明度変化アニメーション中に呼び出されたら、アニメを停止
         fadeFlag = false;
 
-        if (PlayerScript.instance.bagTaisyo5 && PlayerScript.instance.gameObject.transform.parent != null) PlayerScript.instance.transform.SetParent(null);
+        /*if (PlayerScript.instance.bagTaisyo5 && PlayerScript.instance.gameObject.transform.parent != null)*/ PlayerScript.instance.transform.SetParent(null);
 
         if (on)
         {
@@ -153,7 +153,7 @@ public class OnOffBrock : MonoBehaviour
         //透明度変化アニメーション中に呼び出されたら、アニメを停止
         fadeFlag = false;
 
-        if (PlayerScript.instance.bagTaisyo5&&PlayerScript.instance.gameObject.transform.parent != null) PlayerScript.instance.transform.SetParent(null);
+        /*if (PlayerScript.instance.bagTaisyo5&&PlayerScript.instance.gameObject.transform.parent != null)*/ PlayerScript.instance.transform.SetParent(null);
 
         if (on)
         {

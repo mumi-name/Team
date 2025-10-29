@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public Sprite onSprite;
     public Sprite offSprite;
 
+    public bool douziOsi = false;//同時押しの仕様が出るステージでチェックを入れてね
+
     float targetScale = 1;
     bool waveAnimation = false;//波動アニメーションの最中かどうか?
     //bool slow = false;
@@ -101,6 +103,7 @@ public class GameManager : MonoBehaviour
 
     public void ON()
     {
+        if (PlayerScript.instance.GetIngoreInput()) return;
         //if (waveAnimation && Mathf.Abs(PlayerScript.instance.rb.linearVelocity.y) > 0.5) return;
         foreach (var brock in brocks)
         {
@@ -118,6 +121,7 @@ public class GameManager : MonoBehaviour
     }
     public void OFF()
     {
+        if (PlayerScript.instance.GetIngoreInput()) return;
         //if (waveAnimation && Mathf.Abs(PlayerScript.instance.rb.linearVelocity.y) > 0.5) return;
         foreach (var brock in brocks)
         {

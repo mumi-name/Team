@@ -2401,6 +2401,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 461828663587657134, guid: a576c472fb386114792bb32331b2b81f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5866547833927730314, guid: a576c472fb386114792bb32331b2b81f, type: 3}
       propertyPath: move
       value: 1
@@ -3412,7 +3416,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: -7876821109706890219, guid: a2881ba921f88104cb6d90c903471181, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5027,6 +5031,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 8497e496300da1a4d81c81332ba16c3f, type: 3}
+    - target: {fileID: 228138458739761544, guid: c4bbf040510c5724a92649b1736c04d3, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2599570734389887974, guid: c4bbf040510c5724a92649b1736c04d3, type: 3}
       propertyPath: m_Name
       value: Pole (1)
@@ -6238,6 +6246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 130246380}
+  deathText: {fileID: 0}
   elapsedTime: 0
   deathCount: 0
 --- !u!4 &2079345798

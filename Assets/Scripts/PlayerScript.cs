@@ -14,6 +14,7 @@ public class PlayerScript : MonoBehaviour
     //private float lastFootstepTime = 0f;   //最後に鳴らした時間
     public bool jumpMode = true;//ジャンプのアリ・ナシ
     public bool backJump = true;
+    
     public Rigidbody2D rb;
     public Animator animator;
     public static PlayerScript instance;
@@ -249,6 +250,11 @@ public class PlayerScript : MonoBehaviour
     public bool GetJumpFlag()
     {
         return jumpFlag;
+    }
+
+    public bool GetIngoreInput()
+    {
+        return ignoreInput;
     }
     //--------------------------------------------------------------------------
 
