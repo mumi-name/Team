@@ -3901,6 +3901,10 @@ PrefabInstance:
       propertyPath: jumpMode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5146328632892571555, guid: 2049c70d94e43c5418c8d20ce42ce7cf, type: 3}
+      propertyPath: bagTaisyo5
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6540922609054406810, guid: 2049c70d94e43c5418c8d20ce42ce7cf, type: 3}
       propertyPath: elevatorLayer.m_Bits
       value: 64

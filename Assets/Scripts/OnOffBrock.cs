@@ -11,6 +11,7 @@ public class OnOffBrock : MonoBehaviour
     public bool move = false;//このブロックは動くのか
     public bool loop = false;//往復する
     public float moveSpeed = 0.4f;//移動速度
+
     
     public Vector3 orizinalpos = Vector3.zero;
     public Vector3 movestop = Vector3.zero;
@@ -65,6 +66,8 @@ public class OnOffBrock : MonoBehaviour
     {
         //透明度変化アニメーション中に呼び出されたら、アニメを停止
         fadeFlag = false;
+
+        if (PlayerScript.instance.bagTaisyo5 && PlayerScript.instance.gameObject.transform.parent != null) PlayerScript.instance.transform.SetParent(null);
 
         if (on)
         {
@@ -149,6 +152,8 @@ public class OnOffBrock : MonoBehaviour
     {
         //透明度変化アニメーション中に呼び出されたら、アニメを停止
         fadeFlag = false;
+
+        if (PlayerScript.instance.bagTaisyo5&&PlayerScript.instance.gameObject.transform.parent != null) PlayerScript.instance.transform.SetParent(null);
 
         if (on)
         {

@@ -22,7 +22,7 @@ public class ChangeButton : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             //スローモードにする
-            //PlayerScript.instance.ignoreMove(true);
+            PlayerScript.instance.ignoreMove(true);//同時押し仕様を無くすために復活させたよ(10/29)企業審査後
             animator.SetTrigger("SwitchTrigger");
             on = true;
             //ToggleTrap();

@@ -18,6 +18,9 @@ public class PlayerScript : MonoBehaviour
     public Animator animator;
     public static PlayerScript instance;
 
+
+    public bool bagTaisyo5 = false;
+
     int beforeMode = 1;//以前の向き（ONかOFFか）
     int mode = 1;//現在の向き（ONかOFFか）
     int pendingMode = 0;//記録用
@@ -46,7 +49,8 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //Debug.Log("VeloX：" + rb.linearVelocityX.ToString());
+        Debug.Log("VeloX：" + rb.linearVelocityX.ToString() + "  num：" + num.ToString() + "  mode:" + mode.ToString());
         //入力を無視し、処理を行わない
         if (ignoreInput) return;
         if(isDead ) return;
@@ -77,7 +81,8 @@ public class PlayerScript : MonoBehaviour
                 rb.linearVelocityX = 0;
                 return;
             }
-            
+            //rb.linearVelocityX *= -1.0f;
+
         }
 
 
@@ -108,6 +113,7 @@ public class PlayerScript : MonoBehaviour
         //左右キーの入力を検知
         num = Input.GetAxisRaw("Horizontal");
 
+
         if (num > 0) mode = 1;
         if (num < 0) mode = -1;
 
@@ -120,7 +126,7 @@ public class PlayerScript : MonoBehaviour
         //}
 
         //左右キーが押されてない場合、止める
-        if (Mathf.Abs(num) < 0.2f)
+        if (Mathf.Abs(num) < 0.2f)//0.2fに戻しとく 10/24
         {
             num = 0;
             rb.linearVelocity = new Vector2(0, rb.linearVelocityY);
@@ -137,13 +143,22 @@ public class PlayerScript : MonoBehaviour
                 rb.linearVelocityX = 0;
                 return;
             }
-           
+
+           rb.linearVelocityX *= -1.0f;
         }
 
         //ジャンプ中に違う方向を向けないようにする
         if (jumpFlag && mode != beforeMode)
         {
             pendingMode = mode;
+            //垂直落下させたい場合はコメントアウト
+            //num = 0;
+
+            //入力方向と反対方向に力が掛かっていたら反転
+            if (Mathf.Sign(mode) == Mathf.Sign(num))
+            {
+                if (Mathf.Sign(rb.linearVelocityX) != Mathf.Sign(num)) rb.linearVelocityX *= -1.0f;
+            }
             return;
         }
 

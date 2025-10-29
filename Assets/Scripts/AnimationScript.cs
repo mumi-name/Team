@@ -66,6 +66,7 @@ public class AnimationScript : MonoBehaviour
         if (collision.gameObject.GetComponent<OnOffBrock>() != null)
         {
             if (tutorial) return;
+            PlayerScript.instance.canMoveMode();//同時押し仕様を無くすために、当たったら動けるようにする
             OnOffBrock brock = collision.gameObject.GetComponent<OnOffBrock>();
             //OnOffが既に切り替わっていた場合は、処理を終了
             if (brock.GetChanged() == true) return;
