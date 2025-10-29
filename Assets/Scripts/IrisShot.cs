@@ -41,6 +41,7 @@ public class IrisShot : MonoBehaviour
     {
         if (hasOpened) return;
         hasOpened = true;
+        Invoke("CallResetFlag", 0.65f);//リセットボタンの連打禁止
 
         //unmask.DOScale(new Vector3(0, 0, 0), SCALE_DURATION).SetEase(Ease.OutCubic);
         
@@ -51,7 +52,7 @@ public class IrisShot : MonoBehaviour
             unmask.DOScale(IRIS_IN_SCALE, 0.2f).SetDelay(0.6f).SetEase(Ease.InCubic);
             AudioManager.instance.PlaySE2("スワイプ");
         });
-        
+
         
         /*unmask.DOScale(IRIS_IN_SCALE, SCALE_DURATION)
           .SetEase(Ease.InCubic)
@@ -65,6 +66,8 @@ public class IrisShot : MonoBehaviour
     {
         //unmask.DOScale(IRIS_IN_SCALE, SCALE_DURATION).SetEase(Ease.InCubic);
         //unmask.DOScale(IRIS_IN_SCALE, SCALE_DURATION).SetEase(Ease.InCubic).OnComplete(() => unmask.localScale = Vector3.zero);
+        Invoke("CallResetFlag", 0.65f);//リセットボタンの連打禁止
+
         DOVirtual.DelayedCall(0.2f, () =>
         {
             unmask.DOScale(IRIS_MID_SCALE1, 0.2f).SetEase(Ease.InCubic);
@@ -72,8 +75,9 @@ public class IrisShot : MonoBehaviour
             unmask.DOScale(new Vector2(0, 0), 0.4f).SetDelay(0.4f).SetEase(Ease.InCubic);
             AudioManager.instance.PlaySE2("スワイプ");
         });
+
         
-        
+
         /*
         unmask.DOScale(Vector3.zero, SCALE_DURATION)
           .SetEase(Ease.OutCubic)
@@ -88,6 +92,11 @@ public class IrisShot : MonoBehaviour
         if (unmask == null) return;//マスクが設定されていなかったらReturn
         hasOpened = false;
         unmask.localScale = IRIS_IN_SCALE;
+    }
+
+    void CallResetFlag()
+    {
+        GameManager.instance.ResetFlag();
     }
     void Update()
     {

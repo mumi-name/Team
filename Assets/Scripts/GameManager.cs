@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 //using NUnit.Framework;
 using UnityEngine;
+using UnityEngine.Animations.Rigging;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
@@ -22,7 +23,9 @@ public class GameManager : MonoBehaviour
     bool waveAnimation = false;//波動アニメーションの最中かどうか?
     //bool slow = false;
     public float finalTime;//タイマーマネージャー用変数
-    private bool resetFlag  = false;
+    private bool resetFlag = true;
+    private bool goalFlag = false;
+
     void Awake()
     {
         instance = this;
@@ -33,6 +36,17 @@ public class GameManager : MonoBehaviour
         //    traps = new List<TrapController>(FindObjectsOfType<TrapController>());
         //}
     }
+
+    public void ResetFlag(bool flag=false)
+    {
+        resetFlag = flag;
+    }
+
+    public void GoalFlag()
+    {
+        goalFlag = true;
+    }
+
     void Start()
     {
         TimerManager.instance.StartTimer();
@@ -77,7 +91,7 @@ public class GameManager : MonoBehaviour
         changeSlow(targetScale);
         */
         
-        if (!resetFlag)
+        if (!resetFlag&&!goalFlag)
         {
             if (Input.GetButtonDown("Reset"))
             {

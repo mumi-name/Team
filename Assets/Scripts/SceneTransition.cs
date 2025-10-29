@@ -34,6 +34,7 @@ public class SceneTransition : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
+            GameManager.instance.GoalFlag();
             PlayerScript.instance.cannotMoveMode();//プレイヤーが動かないように
             AudioManager.instance.PlaySE2("ゴール時音声");
 
