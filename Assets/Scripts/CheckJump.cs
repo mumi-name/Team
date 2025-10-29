@@ -8,6 +8,8 @@ public class CheckJump : MonoBehaviour
     public LayerMask elevatorLayer;  //エレベーターレイヤー
     public LayerMask floorLayer;
     private bool wasGrounded = false;
+
+    private float underSize = 0.1f;//rayを飛ばす長さ
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -66,15 +68,19 @@ public class CheckJump : MonoBehaviour
 
         //----------------------------------------------------------------------------------------
 
+        //ジャンプ中かそうでないかで飛ばすrayの長さを変える(ピョンピョンバグ&切り替えの不便さ)
+        if (PlayerScript.instance.GetJumpFlag()) underSize = 0.4f;
+        else underSize = 0.1f;
+
         //プレイヤーより下の判定をチェック
-        Vector2 underEnd = transform.position - new Vector3(0, 0.1f, 0);
+        Vector2 underEnd = transform.position - new Vector3(0, underSize, 0);
         RaycastHit2D underHit = Physics2D.Linecast(transform.position, underEnd, floorLayer);
         RaycastHit2D underHit2 = Physics2D.Linecast(transform.position, underEnd, elevatorLayer);
 
         //何にも触れてない時
         if (!underHit && !underHit2)
         {
-            PlayerScript.instance.OnOffJumpFlag(true);
+            //PlayerScript.instance.OnOffJumpFlag(true);
             wasGrounded = false;
         }
         

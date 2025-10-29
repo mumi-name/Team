@@ -213,19 +213,24 @@ public class PlayerScript : MonoBehaviour
     }
 
     //“®‚¯‚È‚¢‚æ‚¤‚É‹ó’†‚ÉŒÅ’è
-    public void cannotMoveMode(bool gravity = false)
+    public void cannotMoveMode(bool death = false)
     {
         ignoreInput = true;
         rb.linearVelocityX = 0;
         rb.linearVelocityY = 0;
         rb.gravityScale = 0;
-        if (gravity) rb.gravityScale = 1;
+        if (death)
+        {
+            rb.gravityScale = 1;
+            rb.constraints |= RigidbodyConstraints2D.FreezePositionX;//€–SŒãAŸè‚É“®‚­ƒoƒO‘Îô
+        }
     }
 
     public void canMoveMode()
     {
         ignoreInput = false;
         rb.gravityScale = 1.7f;
+        rb.constraints &= ~RigidbodyConstraints2D.FreezePositionX;//FreezePositionX‚ğ‰ğœ
     }
 
     //Œ»İ‚ÌŒü‚«‚ğ•Ô‚·
