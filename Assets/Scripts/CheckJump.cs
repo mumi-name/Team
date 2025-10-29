@@ -80,15 +80,16 @@ public class CheckJump : MonoBehaviour
         //何にも触れてない時
         if (!underHit && !underHit2)
         {
-            //PlayerScript.instance.OnOffJumpFlag(true);
+            PlayerScript.instance.OnOffJumpFlag(true);//このコードを消すとカチャカチャで空中にずっといるバグが起きる
             wasGrounded = false;
         }
-        
+        else PlayerScript.instance.OnOffJumpFlag(false);//このコードを消すと、切り替えの手触りが悪くなるよ
+
         //エレベーターに接触したら
         if (underHit2)
         {
             //親子関係を切る
-            if (PlayerScript.instance.gameObject.transform.parent != null)PlayerScript.instance.transform.SetParent(null);
+            if (PlayerScript.instance.gameObject.transform.parent != null) PlayerScript.instance.transform.SetParent(null);
             PlayerScript.instance.transform.SetParent(underHit2.transform, worldPositionStays: true);
         }
         else
