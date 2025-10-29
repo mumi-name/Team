@@ -18,7 +18,7 @@ public class TotalResultScript : MonoBehaviour
         resultText.gameObject.SetActive(true);
         AudioManager.instance.PlayBGM("BGM3");
         AudioManager.instance.PlaySE2("BGM_last");
-
+        ShowResult();
         // delayTime秒後にリザルトを表示
         //Invoke("ShowResult", delayTime);
     }
@@ -29,7 +29,7 @@ public class TotalResultScript : MonoBehaviour
         resultShown = true;
 
             // 黒幕パネルを表示
-            resultPanel.SetActive(true);
+            //resultPanel.SetActive(true);
 
         // ステージの総経過時間を取得
         float currentTime = TimerManager.instance != null ? TimerManager.instance.GetElapsedTime() : 0f;
@@ -37,19 +37,19 @@ public class TotalResultScript : MonoBehaviour
         // リザルトテキストを表示
         resultText.gameObject.SetActive(true);
         resultText.text = "Time: " + FormatTime(currentTime);
-        deathText.text = "Deaths" + deaths.ToString();
-        //resultText.text = "Time: " + FormatTime(currentTime)+"\n"+ "Deaths" + deaths.ToString();
+        deathText.text = "Death:" + deaths.ToString();
+        //resultText.text = "Time: " + FormatTime(currentTime)+"\n"+ "Deaths:" + deaths.ToString();
 
         
     }
-    public void HideResult()//リザルトを閉じる
-    {
-        resultPanel.SetActive(false);
-        resultText.gameObject.SetActive(false);
-
-        //タイマー再開
-        if (TimerManager.instance != null) TimerManager.instance.StartTimer();
-    }
+    //public void HideResult()//リザルトを閉じる
+    //{
+    //    resultPanel.SetActive(false);
+    //    resultText.gameObject.SetActive(false);
+    //
+    //    //タイマー再開
+    //    if (TimerManager.instance != null) TimerManager.instance.StartTimer();
+    //}
 
     private string FormatTime(float timeInSeconds)
     {

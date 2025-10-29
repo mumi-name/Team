@@ -29,7 +29,7 @@ public class TimerManager : MonoBehaviour
     void Start()
     {
         if (instance != null) StartTimer();
-        deathText.gameObject.SetActive(false);
+        //deathText.gameObject.SetActive(false);
     }
     void Update()
     {
@@ -48,7 +48,7 @@ public class TimerManager : MonoBehaviour
 
         if (deathText != null)
         {
-            deathText.text = "Deaths:" + deathCount.ToString();
+            deathText.text = "Deaths:" + FormatTime(deathCount);
         }
         // デバッグ用キー操作
         //if (Input.GetKeyDown(KeyCode.T)) StartTimer();
