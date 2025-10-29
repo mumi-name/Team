@@ -1369,7 +1369,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &229259614
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1401,7 +1401,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7966785eecd9131478ff1dcab3b66e64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerText: {fileID: 229259616}
+  timerText: {fileID: 1533330914}
+  deathCount: {fileID: 229259616}
 --- !u!114 &229259616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7158,6 +7159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 1533330914}
+  deathCount: {fileID: 0}
 --- !u!1001 &1543623342
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -544,7 +544,7 @@ GameObject:
   - component: {fileID: 343904344}
   - component: {fileID: 343904343}
   m_Layer: 5
-  m_Name: ClearTime (1)
+  m_Name: DeathCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -582,6 +582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 343904344}
+  deathCount: {fileID: 0}
 --- !u!114 &343904344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -968,6 +969,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 916127907}
+  deathCount: {fileID: 0}
 --- !u!1 &970972861
 GameObject:
   m_ObjectHideFlags: 0
@@ -1325,6 +1327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resultPanel: {fileID: 143944418}
   resultText: {fileID: 916127907}
+  deathText: {fileID: 343904344}
   delayTime: 3
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

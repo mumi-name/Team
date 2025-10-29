@@ -13,9 +13,8 @@ public class TotalResultScript : MonoBehaviour
     void Start()
     {
         if (TimerManager.instance != null) TimerManager.instance.StopTimer();
-        // 最初は黒幕とテキスト非表示
-        //resultPanel.SetActive(false);
-        //resultText.gameObject.SetActive(false);
+        // 最初にテキスト表示
+        deathText.gameObject.SetActive(true);
         resultText.gameObject.SetActive(true);
         AudioManager.instance.PlayBGM("BGM3");
         AudioManager.instance.PlaySE2("BGM_last");

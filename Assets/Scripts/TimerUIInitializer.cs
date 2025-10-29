@@ -4,11 +4,12 @@ using UnityEngine;
 public class TimerUIInitializer : MonoBehaviour
 {
     public TextMeshProUGUI timerText; // ÇªÇÃÉVÅ[ÉìÇÃText
+    public TextMeshProUGUI deathCount;
     void Start()
     {
         if (TimerManager.instance != null)
         {
-            TimerManager.instance.SetTimerText(timerText);
+            TimerManager.instance.SetText(timerText, deathCount);
         }
     }
 

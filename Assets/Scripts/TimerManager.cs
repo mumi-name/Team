@@ -29,6 +29,7 @@ public class TimerManager : MonoBehaviour
     void Start()
     {
         if (instance != null) StartTimer();
+        deathText.gameObject.SetActive(false);
     }
     void Update()
     {
@@ -92,9 +93,10 @@ public class TimerManager : MonoBehaviour
     }
 
     // 新しいシーンでUIを再アサインする場合
-    public void SetTimerText(TextMeshProUGUI newText)
+    public void SetText(TextMeshProUGUI newText, TextMeshProUGUI newDeath)
     {
         timerText = newText;
+        if (newDeath != null) deathText = newDeath;
     }
 
     // 他のスクリプトから時間・回数を取得可能
