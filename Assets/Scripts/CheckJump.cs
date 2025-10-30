@@ -8,65 +8,49 @@ public class CheckJump : MonoBehaviour
     public LayerMask elevatorLayer;  //エレベーターレイヤー
     public LayerMask floorLayer;
     private bool wasGrounded = false;
-
     private float underSize = 0.1f;//rayを飛ばす長さ
-    
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Vector2 underEnd = transform.position - new Vector3(0, 3, 0);
-        RaycastHit2D underHit = Physics2D.Linecast(transform.position, underEnd, elevatorLayer);
-
-        if (underHit)
+        //床に触れた時
+        if (collision.gameObject.CompareTag("Floor"))
         {
-            //親子関係を切る
-            //if (PlayerScript.instance.gameObject.transform.parent != null) PlayerScript.instance.transform.SetParent(null);
-            //PlayerScript.instance.transform.SetParent(collision.transform, worldPositionStays: true);
-        }
-        //Debug.Log("判定が取れたよ");
+            
 
-        //Debug.DrawLine(transform.position, underEnd, Color.blue);
-
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.TryGetComponent<OnOffBrock>(out var brock))
-        {
-
-            if (brock.move)
-            {
-                //親子関係を切る
-                //if (PlayerScript.instance.gameObject.transform.parent != null) PlayerScript.instance.transform.SetParent(null);
-                //PlayerScript.instance.transform.SetParent(collision.transform, worldPositionStays: true);
-            }
+            
 
         }
     }
+
 
     private void Update()
     {
-
-        //<段差に突っかからないプログラム>---------------------------------------------------------
-
         //プレイヤーの足元からRayを飛ばして横の判定をチェック
-        /*float weight= (PlayerScript.instance.GetMode() / PlayerScript.instance.GetMode()) - 0.3f;
-        if (PlayerScript.instance.GetMode() < 0) weight *= -1;
-        Vector2 besideEnd = transform.position + new Vector3(weight, 0, 0);
-        RaycastHit2D besideHit = Physics2D.Linecast(transform.position,besideEnd, elevatorLayer);
+        //float weight = (PlayerScript.instance.GetMode() / PlayerScript.instance.GetMode()) - 0.3f;
+        //if (PlayerScript.instance.GetMode() < 0) weight = -1;
+        //Vector2 besideEnd = transform.position + new Vector3(weight, 0, 0);
+        //RaycastHit2D besideHit = Physics2D.Linecast(transform.position, besideEnd, floorLayer);
 
-        //エレベーターにヒットしたら
-        if (besideHit)
-        {
-            //力を少し加えて、段差を登る補助をする
-            if (Mathf.Abs(PlayerScript.instance.GetNum())< 1) return;
-            //if (Mathf.Abs(PlayerScript.instance.rb.linearVelocityX) < 1.5) return;
-            PlayerScript.instance.rb.AddForceY(10); 
-            PlayerScript.instance.rb.AddForceX(10);
-            Debug.Log("少しの段差なら登れるようにしています");
-        }
-        Debug.DrawLine(transform.position, besideEnd, Color.green);*/
+        ////エレベーターにヒットしたら
+        //if (besideHit)
+        //{
+        //    //力を少し加えて、段差を登る補助をする
+        //    if (Mathf.Abs(PlayerScript.instance.GetNum()) < 1) return;
+        //    //if (Mathf.Abs(PlayerScript.instance.rb.linearVelocityX) < 1.5) return;
+        //    PlayerScript.instance.rb.AddForceY(10);
+        //    PlayerScript.instance.rb.AddForceX(10);
+        //    Debug.Log("少しの段差なら登れるようにしています");
+        //}
+        //Debug.DrawLine(transform.position, besideEnd, Color.green); 
 
         //----------------------------------------------------------------------------------------
+
+
+        
+
+
+
+        //<プレイヤーの足元判定>-------------------------------------------------------------------------------------
 
         //ジャンプ中かそうでないかで飛ばすrayの長さを変える(ピョンピョンバグ&切り替えの不便さ)
         if (PlayerScript.instance.GetJumpFlag()) underSize = 0.4f;
@@ -101,6 +85,27 @@ public class CheckJump : MonoBehaviour
         //Debug.Log("判定が取れたよ");
         Debug.DrawLine(transform.position, underEnd, Color.red);
 
+        //-------------------------------------------------------------------------------------------------------------
+        //プレイヤーの上方向に床があるかどうかを調べて
+        Vector3 pPos = PlayerScript.instance.gameObject.transform.position+new Vector3(0,1.08f,0);
+        Vector3 aboveEnd = pPos + new Vector3(0, 0.1f, 0);
+        RaycastHit2D aboveHit = Physics2D.Linecast(pPos, aboveEnd, floorLayer);
+
+        //床とエレベーターに挟まれて圧死しないように
+        if (aboveHit && underHit2)
+        {
+            //エレベーターを停止
+            GameManager.instance.SetStopFloor(true);
+        }
+        else
+        {
+            GameManager.instance.SetStopFloor(false);
+        }
+
+
+            Debug.DrawLine(pPos, aboveEnd, Color.blue);
+
+
     }
 
 
@@ -124,12 +129,6 @@ public class CheckJump : MonoBehaviour
 
         Vector2 underEnd = transform.position - new Vector3(0, 1f, 0);
         RaycastHit2D underHit = Physics2D.Linecast(transform.position, underEnd, elevatorLayer);
-
-        //if (underHit) PlayerScript.instance.transform.SetParent(collision.transform, worldPositionStays: true);
-        //Debug.Log("判定が取れたよ");
-
-        //Debug.DrawLine(transform.position, underEnd, Color.blue);
-
 
     }
 

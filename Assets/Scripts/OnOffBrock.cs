@@ -31,7 +31,10 @@ public class OnOffBrock : MonoBehaviour
     bool fadeFlag = false;
     bool changed = false;
     bool turn = false;
+    bool stop = false;
+
     bool invalid = false;//ブロックの判定を有効化するのを禁止する
+   
 
     //bool animeBrock = false;//アニメーションするブロックかどうか？ //Startで初期化されてない時にバグが起きる
 
@@ -324,6 +327,7 @@ public class OnOffBrock : MonoBehaviour
         if (!moveFlag) return;
         if (move)
         {
+            if (stop) return;//停止命令が出ていたら停止
             if (loop && Mathf.Approximately(transform.position.x, movestop.x) && Mathf.Approximately(transform.position.y, movestop.y)) Invoke("OnTurn", 0.7f);
             if (Mathf.Approximately(transform.position.x, orizinalpos.x) && Mathf.Approximately(transform.position.y, orizinalpos.y)) Invoke("OffTurn", 0.7f);
 
@@ -348,6 +352,11 @@ public class OnOffBrock : MonoBehaviour
     void OffTurn()
     {
         turn = false;
+    }
+
+    public void setStopFlag(bool flag)
+    {
+        stop = flag;
     }
 
     void MoveCheck()
