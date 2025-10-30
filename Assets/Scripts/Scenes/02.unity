@@ -425,6 +425,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 45fb439d7c6b5234d9c6c596b627cd7a, type: 3}
   - {fileID: 8300000, guid: ad24b44561aca3348b04f94a98370c0a, type: 3}
   - {fileID: 8300000, guid: 122b4f014e7ca2e4fa8cbaf83830676d, type: 3}
+  - {fileID: 8300000, guid: d86ddea7ad970674f8453bd3b60d4931, type: 3}
   seList:
   - {fileID: 8300000, guid: 3987e744629f1c84ab358e522d5900be, type: 3}
   - {fileID: 8300000, guid: f4cee99b66782fa48a6bebb5b6d8f607, type: 3}
@@ -1894,6 +1895,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 1386927305}
+  deathCount: {fileID: 0}
 --- !u!1 &1479059189
 GameObject:
   m_ObjectHideFlags: 0

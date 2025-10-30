@@ -42,6 +42,11 @@ public class TotalResultScript : MonoBehaviour
 
         
     }
+
+    void ResultRank()
+    {
+
+    }
     //public void HideResult()//ƒŠƒUƒ‹ƒg‚ð•Â‚¶‚é
     //{
     //    resultPanel.SetActive(false);
