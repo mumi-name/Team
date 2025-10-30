@@ -71,45 +71,15 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
-        /*リセットボタンが押されたらゲームシーンをリセット
-        if (Input.GetButtonDown("Reset"))
-        {
-            AudioManager.instance.PlaySE("リセット");
-            //スローモーションを即座に終了
-            //slow = false;
-            Time.timeScale = 1f;
-            Time.fixedDeltaTime = 0.02f;
-            TimerManager.instance.AddDeath();
-            IrisShot.instance.ResetIris();
-            if(IrisShot.instance != null)
-            {
-                Destroy(IrisShot.instance.gameObject);//古いものを削除
-            }
-            //シーンを遷移させる
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
-        changeSlow(targetScale);
-        */
-        
         if (!resetFlag&&!goalFlag)
         {
             if (Input.GetButtonDown("Reset"))
             {
                 if (PlayerScript.instance != null && PlayerScript.instance.isDead) return;
-
                 resetFlag = true;
                 StartCoroutine(ResetSceneWithSE());
             }
         }
-        /*
-        旧バージョン
-        if (Input.GetButtonDown("Reset"))
-        {
-            //if (resetFlag) return;
-            //resetFlag = true;
-            StartCoroutine(ResetSceneWithSE());
-        }
-        */
         changeSlow(targetScale);
     }
 
@@ -186,8 +156,6 @@ public class GameManager : MonoBehaviour
         //物理演算がカクつかないように周期の倍率を合わせる
         Time.fixedDeltaTime = 0.02f * Time.timeScale;
     }
-
-
     //------------------------------------------------------------------------------
 
     public void ChangeOnOff(bool on)
@@ -216,6 +184,14 @@ public class GameManager : MonoBehaviour
         foreach (var brock in brocks)
         {
             brock.ChangeTriggerToEnabled();
+        }
+    }
+
+    public void SetStopFloor(bool flag)
+    {
+        foreach (var brock in brocks)
+        {
+            if (brock.move) brock.setStopFlag(flag);
         }
     }
 
@@ -265,25 +241,3 @@ public class GameManager : MonoBehaviour
     }
 }
 
-
-
-//<???????????????????????R?????g??>
-
-/*public BoxCollider2D box;
-    public SpriteRenderer spr;
-    bool jumpFlag = false;*/
-
-//<Update???????????????R?????g??>
-/*if (Input.GetKey(KeyCode.RightArrow))
-{
-    if (jumpFlag) return;
-    box.enabled = false;
-    spr.color = new Color(255, 255, 255, 0);
-}
-if (Input.GetKey(KeyCode.LeftArrow))
-{
-    if (jumpFlag) return;
-    box.enabled = true;
-    spr.color = new Color(255, 255, 255, 255);
-}
-*/
