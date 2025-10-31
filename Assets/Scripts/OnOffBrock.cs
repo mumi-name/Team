@@ -47,155 +47,13 @@ public class OnOffBrock : MonoBehaviour
         Move();
     }
 
-
-    public void ON(bool animation = false)
-    {
-        //透明度変化アニメーション中に呼び出されたら、アニメを停止
-        fadeFlag = false;
-
-        PlayerScript.instance.transform.SetParent(null);
-
-        if (on)
-        {
-            //当たり判定を有効化
-            box.enabled = true;
-            if (GameManager.instance.GetWaveAnimation() == true && !changed)
-            {
-                box.isTrigger = false;
-            }
-
-            //画像・アニメーションを変更
-            spr.sprite = onSprite;
-            if (animator != null)
-            {
-                animator.SetBool("OnOffBool", true);
-                animator.speed = 2;
-            }
-            Color color = spr.material.color;
-            color.a = 1f;
-            //波動アニメーションから呼び出されたら、a値を0.4にしとく（アニメーション時の演出用）
-            if (animation)
-            {
-                color.a = 0.1f;
-                if (animationSpeed < 0) animationSpeed *= -1;
-                
-            }
-            spr.material.color = color;
-
-        }
-        else
-        {
-            //当たり判定を無効化
-            box.enabled = false;
-            //waveAnimation中の場合は当たり判定の取り方を一時的にTriggerで取る。(enabledだとOnOff反転しないため)
-            if ((GameManager.instance.GetWaveAnimation()==true||animation)&&!changed)
-            {
-                box.enabled = true;
-                box.isTrigger = true;
-            }
-
-            //画像・アニメーションを変更
-            spr.sprite = offSprite;
-            if (animator != null)
-            {
-                animator.SetBool("OnOffBool", false);
-                animator.speed = 1;
-            }
-            Color color = spr.material.color;
-            color.a = 1f;
-            if (animation)
-            {
-                spr.sprite = onSprite;
-                color.a = 1f;
-                if (animationSpeed > 0) animationSpeed *= -1;
-            }
-            spr.material.color = color;
-
-        }
-        OnMove();
-    }
-
-    public void OFF(bool animation = false)
-    {
-        //透明度変化アニメーション中に呼び出されたら、アニメを停止
-        fadeFlag = false;
-
-        PlayerScript.instance.transform.SetParent(null);
-
-        if (on)
-        {
-            //当たり判定を無効化
-            box.enabled = false;
-            //waveAnimation中の場合は当たり判定の取り方を一時的にTriggerで取る。(enabledだとOnOff反転しないため)
-            if ((GameManager.instance.GetWaveAnimation()||animation)&&!changed)
-            {
-                Debug.Log("Trueになっているだと?");
-                box.enabled = true;
-                box.isTrigger = true;
-               
-            }
-
-            //画像・アニメーションを変更
-            spr.sprite = offSprite;
-            if (animator != null)
-            {
-                animator.SetBool("OnOffBool", false);
-                animator.speed = 1;
-            }
-            Color color = spr.material.color;
-            color.a = 1f;
-            if (animation)
-            {
-                spr.sprite = onSprite;
-                color.a = 1f;
-                if (animationSpeed > 0) animationSpeed *= -1;
-                
-            }
-            spr.material.color = color;
-
-        }
-        else
-        {
-            //当たり判定を有効化
-            box.enabled = true;
-            if (GameManager.instance.GetWaveAnimation() && !changed)
-            {
-                box.isTrigger = false;
-            }
-
-            //画像・アニメーションを変更
-            spr.sprite = onSprite;
-            if (animator != null)
-            {
-                animator.SetBool("OnOffBool", true);
-                animator.speed = 2;
-            }
-            Color color = spr.material.color;
-            color.a = 1f;
-            //波動アニメーションから呼び出されたら、a値を0.4にしとく（アニメーション時の演出用）
-            if (animation)
-            {
-                color.a = 0.1f; 
-                if (animationSpeed < 0) animationSpeed *= -1;
-                
-            }
-            spr.material.color = color;
-
-        }
-        OffMove();
-
-    }
-
-    public void OnOff(bool animation = false)
+    public void OnOff(bool OnOff,bool animation = false)
     {
         //透明度変化アニメーション中に呼び出されたら、アニメを停止
         fadeFlag = false;
 
         //親子関係を切る
         PlayerScript.instance.transform.SetParent(null);
-
-        //プレイヤーの向きからONかOFFか判定
-        bool OnOff = (PlayerScript.instance.GetMode() == 1) ? false : true;
 
         //プレイヤーの向き(On・Off)とブロックのOn・Offが一緒の時
         if (on == OnOff)
@@ -261,34 +119,13 @@ public class OnOffBrock : MonoBehaviour
             spr.material.color = color;
 
         }
-        //OnOffMove(OnOff);
+        OnOffMove(OnOff);
 
     }
-
-
 
     public void OnfadeAnimation()
     {
         fadeFlag = true;
-    }
-
-    public void OnMove()
-    {
-        moveFlag = true;
-        //モードがOFFで動く場合
-        if (!on)
-        {
-            moveFlag = false;
-            transform.position = orizinalpos;//元の場所に戻す
-        }
-
-    }
-
-    public void OffMove()
-    {
-        moveFlag = false;
-        transform.position = orizinalpos;//元の場所に戻す
-        if (!on) moveFlag = true;
     }
 
     public void OnOffMove(bool mode)
@@ -355,7 +192,6 @@ public class OnOffBrock : MonoBehaviour
     {
         return changed;
     }
-
 
     void Move()
     {

@@ -27,12 +27,6 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         instance = this;
-
-        // traps リストが空の場合、自動でシーン内の TrapController を取得
-        //if (traps == null || traps.Count == 0)
-        //{
-        //    traps = new List<TrapController>(FindObjectsOfType<TrapController>());
-        //}
     }
 
     public void ResetFlag(bool flag=false)
@@ -61,8 +55,8 @@ public class GameManager : MonoBehaviour
             IrisShot.instance.IrisIN();
         }
         AudioManager.instance.PlayBGM("BGM3");
-        //DontDestroyOnLoad(gameObject);
-        ON();
+        //ON();
+        OnOff(true);
     }
 
     // Update is called once per frame
@@ -81,43 +75,21 @@ public class GameManager : MonoBehaviour
         changeSlow(targetScale);
     }
 
-    //追加分---------------------------------------------------------------------
+    public void OnOff(bool OnOff)
+    {
+        if (PlayerScript.instance.GetIngoreInput()) return;
+        foreach (var brock in brocks)
+        {
+            brock.OnOff(OnOff);
+        }
+        foreach(var trap in traps)
+        {
+            trap.ToggleTrap();
+        }
+        AudioManager.instance.PlaySE2("ONOFF");
+        ScreenMove.instance.Toggle();
+    }
 
-    public void ON()
-    {
-        if (PlayerScript.instance.GetIngoreInput()) return;
-        //if (waveAnimation && Mathf.Abs(PlayerScript.instance.rb.linearVelocity.y) > 0.5) return;
-        foreach (var brock in brocks)
-        {
-            brock.ON();
-            
-        }
-        foreach(var trap in traps)
-        {
-            //trap.isActive = true;
-            trap.ToggleTrap();
-            
-        }
-        AudioManager.instance.PlaySE2("ONOFF");
-        ScreenMove.instance.Toggle();
-    }
-    public void OFF()
-    {
-        if (PlayerScript.instance.GetIngoreInput()) return;
-        //if (waveAnimation && Mathf.Abs(PlayerScript.instance.rb.linearVelocity.y) > 0.5) return;
-        foreach (var brock in brocks)
-        {
-            brock.OFF();
-        }
-        foreach(var trap in traps)
-        {
-            //trap.isActive = false;
-            trap.ToggleTrap();
-            
-        }
-        AudioManager.instance.PlaySE2("ONOFF");
-        ScreenMove.instance.Toggle();
-    }
 
     public void OFFChanged()
     {
@@ -154,7 +126,6 @@ public class GameManager : MonoBehaviour
         //物理演算がカクつかないように周期の倍率を合わせる
         Time.fixedDeltaTime = 0.02f * Time.timeScale;
     }
-    //------------------------------------------------------------------------------
 
     public void ChangeOnOff(bool on)
     {
@@ -163,8 +134,11 @@ public class GameManager : MonoBehaviour
             //brock.on = !brock.on;
             brock.on = !brock.on;
         }
-        if (on) ON();
-        else OFF();
+        //if (on) ON();
+        //else OFF();
+
+        OnOff(on);
+
     }
 
     //enabled判定からtrigger判定へ切り替える(これが無いと、OnOff切り替えが上手くいかない)

@@ -110,12 +110,14 @@ public class PlayerScript : MonoBehaviour
             if (mode > 0)
             {
                 animator.SetBool("OnOffBool", true);
-                GameManager.instance.ON();
+                //GameManager.instance.ON();
+                GameManager.instance.OnOff(true);
             }
             else if (mode < 0)
             {
                 animator.SetBool("OnOffBool", false);
-                GameManager.instance.OFF();
+                //GameManager.instance.OFF();
+                GameManager.instance.OnOff(false);
             }
             beforeMode = mode;
         }

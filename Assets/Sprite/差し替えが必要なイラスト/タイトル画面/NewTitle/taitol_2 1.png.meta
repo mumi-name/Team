@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      taitol_2 1_0: 9207035057630160985
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
