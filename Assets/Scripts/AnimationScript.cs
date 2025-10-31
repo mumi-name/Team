@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class AnimationScript : MonoBehaviour
 {
+    public static AnimationScript instance;
     public float performanceSpeed = 10f;//アニメーションの演出を行うスピード
     public bool doAnimation = true;
-    //public GameObject brock;//ステージ中にあるONOFFブロック
     public Vector3 orizinSize;
-    CircleCollider2D circleCollider;
-    public static AnimationScript instance;
 
-    bool on = false;
-    bool tutorial = false;
+    private bool on = false;
+    private bool tutorial = false;
+    private CircleCollider2D circleCollider;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

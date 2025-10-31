@@ -5,37 +5,25 @@ public class PlayerScript : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [Header("Player")]
+    public static PlayerScript instance;
     public float speed = 1000f;//移動速度
     public float maxSpeed = 5f;//最大速度
     public float jumpPower = 300f;//ジャンプ力
-    public float slowMaxSpeed = 0.1f;
-    public float slowGravity = 0.1f;
-    //public float footstepCooldown = 0.25f;//足音の間隔
-    //private float lastFootstepTime = 0f;   //最後に鳴らした時間
     public bool jumpMode = true;//ジャンプのアリ・ナシ
-    public bool backJump = true;
-    
+    public bool backJump = true;//バックジャンプのアリ・ナシ
+    public bool isDead = false;
+
     public Rigidbody2D rb;
     public Animator animator;
-    public static PlayerScript instance;
 
+    private int mode = 1;//現在の向き（ONかOFFか）
+    private int beforeMode = 1;//以前の向き（ONかOFFか）
+    private int pendingMode = 0;//記録用
+    private float num;
+    private bool jumpFlag = true;//現在ジャンプ中か
+    private bool canPushJumpFlag = true;//ジャンプボタンを押せるかどうか
+    private bool ignoreInput = false;//入力を全て無視する
 
-    public bool bagTaisyo5 = false;
-
-    int beforeMode = 1;//以前の向き（ONかOFFか）
-    int mode = 1;//現在の向き（ONかOFFか）
-    int pendingMode = 0;//記録用
-    float num;
-    bool jumpFlag = true;//現在ジャンプ中か
-    bool canPushJumpFlag = true;//ジャンプボタンを押せるかどうか
-    public bool isDead = false;
-    //-------------------------------------------------------------------------------------------
-    bool ignoreInput = false;//入力を全て無視する
-    //-------------------------------------------------------------------------------------------
-
-    
-    
-    //private OnOffBrock onoffBrock;
     //FIX:バグ
     void Awake()
     {

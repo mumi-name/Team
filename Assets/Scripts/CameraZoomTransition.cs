@@ -2,21 +2,22 @@ using UnityEngine;
 
 public class CameraZoomTransition : MonoBehaviour
 {
-    public Camera mainCamera;         // メインカメラ
-    public Camera itemZoomCamera;    //最初にズームするカメラ
-    public Camera zoomCamera;         // ズームカメラ（最終的な位置・サイズだけ使う）
-    
+
+    public static CameraZoomTransition instance;
     public float transitionTime = 1f; // ズームにかける秒数
     public float projectionTime = 1f;//カメラ遷移後映す時間
-    public static CameraZoomTransition instance;
 
-    float timer = 0f;
-    float startSize;
-    float endSize;
-    Vector3 startPos;
-    Vector3 endPos;
-    bool isZooming = false;
+    public Camera mainCamera;         // メインカメラ
+    public Camera itemZoomCamera;    //最初にズームするカメラ
+    public Camera zoomCamera;         // ズームカメラ（最終的な位置・サイズだけ使う
 
+    private Vector3 startPos;
+    private Vector3 endPos;
+
+    private float timer = 0f;
+    private float startSize;
+    private float endSize;
+    private bool isZooming = false;
 
     void Start()
     {

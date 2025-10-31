@@ -4,8 +4,8 @@ public class KeyScript : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public float moveSpeed = 1.0f;
-    bool moveFlag = false;
 
+    private bool moveFlag = false;
     private GameObject MoveStop;
 
     void Start()

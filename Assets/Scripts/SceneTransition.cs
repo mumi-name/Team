@@ -3,12 +3,15 @@ using UnityEngine.SceneManagement;
 using DG.Tweening;
 public class SceneTransition : MonoBehaviour
 {
+    public static SceneTransition instance;
+
     public string sceneName = "";
     public float transitionTime = 1.0f;
     public bool locked = false;//鍵が掛かっているかどうか?
+
     public Animator animator;
     public Animator padlockAnimator;//南京錠アニメーション
-    public static SceneTransition instance;
+    
 
     //private bool SceneFlag = false;
     private void Start()

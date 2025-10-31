@@ -7,8 +7,10 @@ public class CheckJump : MonoBehaviour
     public PlayerScript playerScript;
     public LayerMask elevatorLayer;  //エレベーターレイヤー
     public LayerMask floorLayer;
-    private bool wasGrounded = false;
+
     private float underSize = 0.1f;//rayを飛ばす長さ
+    private bool wasGrounded = false;
+    
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

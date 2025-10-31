@@ -7,33 +7,29 @@ using static UnityEngine.GraphicsBuffer;
 
 public class OnOffBrock : MonoBehaviour
 {
+    public float moveSpeed = 0.4f;//移動速度
     public bool on = false;//このブロックはonで判定がつくのかどうか
     public bool move = false;//このブロックは動くのか
     public bool loop = false;//往復する
-    public float moveSpeed = 0.4f;//移動速度
-
     
     public Vector3 orizinalpos = Vector3.zero;
     public Vector3 movestop = Vector3.zero;
-    //public Vector3 moveSpeedVec = Vector3.zero;
-    
+    //コンポーネント
     public BoxCollider2D box;
     public Rigidbody2D rb;
     public SpriteRenderer spr;
-
+    public Animator animator;
+    //スプライト
     public Sprite onSprite;
     public Sprite offSprite;
-
-    public Animator animator;
-
-    float animationSpeed = 0.03f;
-    bool moveFlag = false;
-    bool fadeFlag = false;
-    bool changed = false;
-    bool turn = false;
-    bool stop = false;
-
-    bool invalid = false;//ブロックの判定を有効化するのを禁止する
+    //内部参照
+    private float animationSpeed = 0.03f;
+    private bool moveFlag = false;
+    private bool fadeFlag = false;
+    private bool changed = false;
+    private bool turn = false;
+    private bool stop = false;
+    private bool invalid = false;//ブロックの判定を有効化するのを禁止する
    
 
     //bool animeBrock = false;//アニメーションするブロックかどうか？ //Startで初期化されてない時にバグが起きる

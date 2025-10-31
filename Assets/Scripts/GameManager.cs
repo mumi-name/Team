@@ -9,20 +9,18 @@ using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
     public float slowSpeed = 1f;
+    public float finalTime;//タイマーマネージャー用変数
+    public bool douziOsi = false;//バグ対策(同時押しを禁止)
     public List<OnOffBrock> brocks;//ステージ中にあるONOFFブロック
     public List<TrapController> traps;//棘リスト
-    public static GameManager instance;
-
+    
     public Sprite onSprite;
     public Sprite offSprite;
 
-    public bool douziOsi = false;//同時押しの仕様が出るステージでチェックを入れてね
-
-    float targetScale = 1;
-    bool waveAnimation = false;//波動アニメーションの最中かどうか?
-    //bool slow = false;
-    public float finalTime;//タイマーマネージャー用変数
+    private float targetScale = 1;
+    private bool waveAnimation = false;//波動アニメーションの最中かどうか?
     private bool resetFlag = true;
     private bool goalFlag = false;
 
