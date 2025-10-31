@@ -32,22 +32,20 @@ public class PlayerScript : MonoBehaviour
     void Start()
     {
         rb.GetComponent<Rigidbody2D>();
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log("VeloX：" + rb.linearVelocityX.ToString());
-        Debug.Log("VeloX：" + rb.linearVelocityX.ToString() + "  num：" + num.ToString() + "  mode:" + mode.ToString());
+     
         //入力を無視し、処理を行わない
         if (ignoreInput) return;
         if(isDead ) return;
         
-
         if (GameManager.instance.GetWaveAnimation() && Mathf.Abs(rb.linearVelocity.y)!=0) jumpFlag = true;
         if (jumpMode)Jump();
-        Move();
+
+        Move_Input();
 
     }
 
@@ -57,65 +55,23 @@ public class PlayerScript : MonoBehaviour
         if (ignoreInput) return;
         if (isDead) return;
 
-        //プレイヤーの速度が最大速度を超えたら加速を中止
+        //速度が最大速度を超えたら加速を中止
         if (Mathf.Abs(rb.linearVelocity.x) > maxSpeed) return;
         //左右キーを押した方向に力を掛けて移動させる
         rb.linearVelocityX = speed * mode * Mathf.Abs(num) * Time.deltaTime;
 
-        //プレイヤーの向きと逆方向に力が掛かっている場合はreturn
-        if (Mathf.Sign(beforeMode) != Mathf.Sign(rb.linearVelocityX) && rb.linearVelocityX != 0)
-        {
-            if (!backJump)
-            {
-                rb.linearVelocityX = 0;
-                return;
-            }
-            //rb.linearVelocityX *= -1.0f;
-
-        }
-
-
-        //ジャンプ中に違う方向を向けないようにする
-        //if (jumpFlag && mode != beforeMode)
-        //{
-        //    pendingMode = mode;
-        //    return;
-        //}
-
     }
 
-    void Jump()
-    {
-        //スペースボタンが押されたらジャンプする
-        if (Input.GetButtonDown("Jump") && canPushJumpFlag)
-        {   
-            if (jumpFlag) return;
-            AudioManager.instance.PlaySE("ジャンプ");
-            Debug.Log("ジャンプ" + Time.time);
-            rb.linearVelocityY = 0;
-            rb.AddForce(transform.up * jumpPower);
-            OnOffJumpFlag(true);
-        }
-    }
-    void Move()
+    void Move_Input()
     {
         //左右キーの入力を検知
         num = Input.GetAxisRaw("Horizontal");
 
-
         if (num > 0) mode = 1;
         if (num < 0) mode = -1;
 
-        ////ジャンプ中に違う方向に入力されたら垂直落下させる
-        //if (jumpFlag && mode != beforeMode)
-        //{
-        //    num = 0;
-        //    rb.linearVelocity = new Vector2(0, rb.linearVelocityY);
-        //    return;
-        //}
-
         //左右キーが押されてない場合、止める
-        if (Mathf.Abs(num) < 0.2f)//0.2fに戻しとく 10/24
+        if (Mathf.Abs(num) < 0.2f)
         {
             num = 0;
             rb.linearVelocity = new Vector2(0, rb.linearVelocityY);
@@ -123,7 +79,7 @@ public class PlayerScript : MonoBehaviour
             return;
         }
 
-        //ジャンプ中に別方向に力が掛かっている場合（オブジェクトの端を使ったバグ対策）
+        //空中にいるとき別方向に力が掛かっている場合（オブジェクトの端を使ったバグ対策）
         //velocityを0にしてreturnする
         if (Mathf.Sign(beforeMode) != Mathf.Sign(rb.linearVelocityX) && rb.linearVelocityX != 0)
         {
@@ -132,17 +88,13 @@ public class PlayerScript : MonoBehaviour
                 rb.linearVelocityX = 0;
                 return;
             }
-
-           rb.linearVelocityX *= -1.0f;
+            rb.linearVelocityX *= -1.0f;
         }
 
-        //ジャンプ中に違う方向を向けないようにする
+        //空中で違う方向を向かないようにする
         if (jumpFlag && mode != beforeMode)
         {
             pendingMode = mode;
-            //垂直落下させたい場合はコメントアウト
-            //num = 0;
-
             //入力方向と反対方向に力が掛かっていたら反転
             if (Mathf.Sign(mode) == Mathf.Sign(num))
             {
@@ -150,7 +102,6 @@ public class PlayerScript : MonoBehaviour
             }
             return;
         }
-
 
         //入力方向が変わった場合、ONとOFFを切り替える
         if (beforeMode != mode)
@@ -168,7 +119,6 @@ public class PlayerScript : MonoBehaviour
             beforeMode = mode;
         }
 
-
         if(!jumpFlag)
         {
             AudioManager.instance.PlaySE("足音");
@@ -180,25 +130,44 @@ public class PlayerScript : MonoBehaviour
         {
             animeSpeed = 0.3f;
         }
-
         animator.speed = Mathf.Abs(rb.linearVelocityX * animeSpeed);
-        //animator.speed = 1;
+
         //プレイヤーの向きを変更する
         transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x)* mode*-1.0f, transform.localScale.y, 1);
 
     }
+    void Jump()
+    {
+        //スペースボタンが押されたらジャンプする
+        if (Input.GetButtonDown("Jump") && canPushJumpFlag)
+        {
+            if (jumpFlag) return;
+            AudioManager.instance.PlaySE("ジャンプ");
+            Debug.Log("ジャンプ" + Time.time);
+            rb.linearVelocityY = 0;
+            rb.AddForce(transform.up * jumpPower);
+            OnOffJumpFlag(true);
+        }
+    }
 
-    
+    //ジャンプ状態を切り替える
+    public void OnOffJumpFlag(bool flag)
+    {
+        jumpFlag = flag;
+        animator.SetBool("JumpBool", flag);
+
+    }
+
+    //入力禁止状態の切り替え
     public void ignoreMove(bool mode)
     {
         if (mode == false && AnimationScript.instance.GetTutorialMode())
         {
-            Debug.Log("はじく処理が出来ているぜーーー2");
+            Debug.Log("ignoreInputへの代入が中止されました");
             return;
         }
         ignoreInput = mode;
-        Debug.Log("はじく処理って動いているのか・・な？");
-        //if(mode)rb.linearVelocityX = 0;
+        
     }
 
     //動けないように空中に固定
@@ -215,6 +184,7 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
+    //プレイヤーの行動可能に
     public void canMoveMode()
     {
         ignoreInput = false;
@@ -231,33 +201,22 @@ public class PlayerScript : MonoBehaviour
         return muki;
     }
 
+    //現在の入力状況を返す
     public float GetNum()
     {
         return num;
     }
+    //プレイヤーが空中にいるかどうかを返す
     public bool GetJumpFlag()
     {
         return jumpFlag;
     }
-
+    //入力禁止状態かどうか判断する
     public bool GetIngoreInput()
     {
         return ignoreInput;
     }
-    //--------------------------------------------------------------------------
-
-
-
-    //ジャンプ状態を切り替える
-    public void OnOffJumpFlag(bool flag)
-    {
-        //ジャンプ中にフラグをfalseにしようとした場合リターンする
-        //if (flag == false && Mathf.Abs(rb.linearVelocityY) > 0) return;
-        jumpFlag = flag;
-        animator.SetBool("JumpBool", flag);
-
-    }
-
+   
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //罠に触れたらリセットする
@@ -271,14 +230,8 @@ public class PlayerScript : MonoBehaviour
             AudioManager.instance.PlaySE("割れる");
             TimerManager.instance.AddDeath();
             TrapController trap = collision.gameObject.GetComponent<TrapController>();
-            
-            //シーン遷移は死亡アニメーションが終了後に再生するため処理を別スクリプトに移行(10/17)
-            //アニメーションイベントでSceneTransitionのTransition()を呼ぶ
-            
+
         }
-
-        //if()
-
         
     }
 
