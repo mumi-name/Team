@@ -9,6 +9,7 @@ public class PlayerScript : MonoBehaviour
     public float speed = 1000f;//移動速度
     public float maxSpeed = 5f;//最大速度
     public float jumpPower = 300f;//ジャンプ力
+    public float deadZone = 0.7f;//コントローラーのデッドゾーン
     public bool jumpMode = true;//ジャンプのアリ・ナシ
     public bool backJump = true;//バックジャンプのアリ・ナシ
     public bool isDead = false;
@@ -71,7 +72,7 @@ public class PlayerScript : MonoBehaviour
         if (num < 0) mode = -1;
 
         //左右キーが押されてない場合、止める
-        if (Mathf.Abs(num) < 0.2f)
+        if (Mathf.Abs(num) < deadZone)
         {
             num = 0;
             rb.linearVelocity = new Vector2(0, rb.linearVelocityY);
