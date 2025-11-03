@@ -1639,6 +1639,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 1533330914}
   deathCount: {fileID: 229259616}
+  rankText: {fileID: 0}
 --- !u!114 &229259616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2316,10 +2317,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6826f3a9494ed84d86ddef8adffbe02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stagesPerGroup: 3
   timerText: {fileID: 1533330914}
   deathText: {fileID: 229259616}
   elapsedTime: 0
   deathCount: 0
+  stageClearTimes:
+  - 0
+  - 0
+  - 0
+  stageCleared: 000000
 --- !u!4 &471712629
 Transform:
   m_ObjectHideFlags: 0
@@ -7663,6 +7670,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 1533330914}
   deathCount: {fileID: 0}
+  rankText: {fileID: 0}
 --- !u!1001 &1543623342
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10897,6 +10905,10 @@ PrefabInstance:
     - target: {fileID: 3681653992271183841, guid: 2049c70d94e43c5418c8d20ce42ce7cf, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4611452511714007768, guid: 2049c70d94e43c5418c8d20ce42ce7cf, type: 3}
+      propertyPath: startingPoint
+      value: -0.4
       objectReference: {fileID: 0}
     - target: {fileID: 5146328632892571555, guid: 2049c70d94e43c5418c8d20ce42ce7cf, type: 3}
       propertyPath: jumpMode

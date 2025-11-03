@@ -4,12 +4,15 @@ using static Unity.Collections.AllocatorManager;
 
 public class CheckJump : MonoBehaviour
 {
-    public PlayerScript playerScript;
+
+    public float startingPoint = 0;
     public LayerMask elevatorLayer;  //エレベーターレイヤー
     public LayerMask floorLayer;
 
     private float underSize = 0.1f;//rayを飛ばす長さ
     private bool wasGrounded = false;
+
+
     
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -89,7 +92,9 @@ public class CheckJump : MonoBehaviour
 
         //-------------------------------------------------------------------------------------------------------------
         //プレイヤーの上方向に床があるかどうかを調べて
-        Vector3 pPos = PlayerScript.instance.gameObject.transform.position+new Vector3(0,1.08f,0);
+
+
+        Vector3 pPos = PlayerScript.instance.gameObject.transform.position+new Vector3(0,1.08f+startingPoint,0);
         Vector3 aboveEnd = pPos + new Vector3(0, 0.1f, 0);
         RaycastHit2D aboveHit = Physics2D.Linecast(pPos, aboveEnd, floorLayer);
 
