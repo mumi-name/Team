@@ -102,7 +102,8 @@ public class CheckJump : MonoBehaviour
         if (aboveHit && underHit2)
         {
             //エレベーターを停止
-            GameManager.instance.SetStopFloor(true);
+            //GameManager.instance.SetStopFloor(true);
+            PlayerScript.instance.transform.parent.GetComponent<OnOffBrock>().setStopFlag(true);
         }
         else
         {
