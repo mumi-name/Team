@@ -1,17 +1,23 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
-public class TotalResultScript : MonoBehaviour
+public class TotalResultScript_kyuu : MonoBehaviour
 {
     public GameObject resultPanel;      // 黒幕パネル
     public TextMeshProUGUI resultText;  // 時間表示テキスト
     public TextMeshProUGUI deathText;
     public TextMeshProUGUI rankText;
+    public Image rankImage;
 
     public float delayTime = 3f;         // 黒幕が出るまでの待ち時間
     private bool resultShown = false;   // 一度だけ表示するフラグ
     private string rank;
 
+    public Sprite rankS;
+    public Sprite rankA;
+    public Sprite rankB;
+    public Sprite rankC;
     void Start()
     {
         if (TimerManager.instance != null) TimerManager.instance.StopTimer();
@@ -54,6 +60,7 @@ public class TotalResultScript : MonoBehaviour
     void ResultRank(string rank)
     {
         //画像を入れるやつ
+        /*
         switch (rank)
         {
             case "S":
@@ -72,6 +79,7 @@ public class TotalResultScript : MonoBehaviour
                 rankImage.sprite = null;
                 break;
         }
+        */
     }
     //public void HideResult()//リザルトを閉じる
     //{

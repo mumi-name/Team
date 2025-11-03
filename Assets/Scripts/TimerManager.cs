@@ -5,6 +5,8 @@ public class TimerManager : MonoBehaviour
 {
     public static TimerManager instance;
 
+    [Header("設定")]
+    public int stagesPerGroup = 3;
     [Header("UI")]
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI deathText;
@@ -13,6 +15,8 @@ public class TimerManager : MonoBehaviour
     private bool isRunning = false;  // タイマーが動いているか
 
     public int deathCount = 0;     //死亡、リセット回数
+    public float[] stageClearTimes = new float[3]; // 1,2,3ステージ分
+    public bool[] stageCleared = new bool[3];
 
     void Awake()
     {
@@ -25,6 +29,14 @@ public class TimerManager : MonoBehaviour
         //初回生成時
         instance = this;
         DontDestroyOnLoad(gameObject);
+
+        // 初期化はここで1度だけ
+        if (stageClearTimes == null || stageClearTimes.Length == 0)
+        {
+            int totalStages = 6; // 例: 2グループ×3ステージ
+            stageClearTimes = new float[totalStages];
+            stageCleared = new bool[totalStages];
+        }
     }
     void Start()
     {
@@ -93,7 +105,7 @@ public class TimerManager : MonoBehaviour
     }
 
     // 新しいシーンでUIを再アサインする場合
-    public void SetText(TextMeshProUGUI newText, TextMeshProUGUI newDeath)
+    public void SetText(TextMeshProUGUI newText, TextMeshProUGUI newDeath, TextMeshProUGUI newRank)
     {
         timerText = newText;
         if (newDeath != null) deathText = newDeath;
@@ -108,5 +120,33 @@ public class TimerManager : MonoBehaviour
     public int GetDeathCount()
     {
         return deathCount;
+    }
+
+    public void SaveStageTime(int stageIndex)
+    {
+        if (stageClearTimes == null || stageIndex < 0 || stageIndex >= stageClearTimes.Length)
+        {
+            Debug.LogError($"SaveStageTime: stageIndex {stageIndex} が配列範囲外です");
+            return;
+        }
+        stageClearTimes[stageIndex] = elapsedTime;
+        stageCleared[stageIndex] = true;
+    }
+
+    public float GetTotalClearTime(int groupIndex)
+    {
+        float total = 0;
+        int startIndex = groupIndex * 3; // 1グループ3ステージ
+        for (int i = 0; i < 3; i++)
+        {
+            if (startIndex + i < stageClearTimes.Length && stageCleared[startIndex + i])
+                total += stageClearTimes[startIndex + i];
+        }
+        return total;
+    }
+
+    public bool IsAllStageCleared()
+    {
+        return stageCleared[0] && stageCleared[1] && stageCleared[2];
     }
 }
