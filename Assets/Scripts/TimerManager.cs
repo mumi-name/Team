@@ -5,70 +5,52 @@ public class TimerManager : MonoBehaviour
 {
     public static TimerManager instance;
 
-    [Header("設定")]
-    public int stagesPerGroup = 3;
     [Header("UI")]
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI deathText;
 
-    public float elapsedTime = 0f; // 経過時間
-    private bool isRunning = false;  // タイマーが動いているか
+    [Header("設定値")]
+    public int stagesPerGroup = 3; // ←★1グループ内のステージ数
+    public int totalGroups = 2;    // ←★グループ数（ステージ数 = stagesPerGroup × totalGroups）
 
-    public int deathCount = 0;     //死亡、リセット回数
-    public float[] stageClearTimes = new float[3]; // 1,2,3ステージ分
-    public bool[] stageCleared = new bool[3];
+    [Header("タイム・死亡管理")]
+    public float elapsedTime = 0f;
+    private bool isRunning = false;
+    public int deathCount = 0;
+
+    public float[] stageClearTimes; // ステージごとのクリア時間
+    public bool[] stageCleared;
+
+    [SerializeField] private float[] stageTimes = new float[3]; // 3ステージの時間
+    [SerializeField] private int[] deathCounts = new int[3];    // 3ステージの死亡数
 
     void Awake()
     {
-        // シングルトン設定
-        if (instance != null&& instance != this)
+        if (instance != null && instance != this)
         {
             Destroy(gameObject);
             return;
         }
-        //初回生成時
         instance = this;
         DontDestroyOnLoad(gameObject);
 
-        // 初期化はここで1度だけ
-        if (stageClearTimes == null || stageClearTimes.Length == 0)
-        {
-            int totalStages = 6; // 例: 2グループ×3ステージ
-            stageClearTimes = new float[totalStages];
-            stageCleared = new bool[totalStages];
-        }
+        int totalStages = stagesPerGroup * totalGroups;
+        stageClearTimes = new float[totalStages];
+        stageCleared = new bool[totalStages];
     }
-    void Start()
-    {
-        if (instance != null) StartTimer();
-        //deathText.gameObject.SetActive(false);
-    }
+
     void Update()
     {
-        // タイマーが動いている場合、経過時間を加算
         if (isRunning)
-        {
-            //elapsedTime += Time.deltaTime;
             elapsedTime += Time.unscaledDeltaTime;
-        }
 
-        // UI表示更新
         if (timerText != null)
-        {
             timerText.text = "Time: " + FormatTime(elapsedTime);
-        }
 
         if (deathText != null)
-        {
-            deathText.text = "Deaths:" + FormatTime(deathCount);
-        }
-        // デバッグ用キー操作
-        //if (Input.GetKeyDown(KeyCode.T)) StartTimer();
-        //if (Input.GetKeyDown(KeyCode.S)) StopTimer();
-        //if (Input.GetKeyDown(KeyCode.R)) ResetTimer();
+            deathText.text = "Deaths: " + deathCount;
     }
 
-    // タイマー操作
     public void StartTimer()
     {
         isRunning = true;
@@ -77,76 +59,69 @@ public class TimerManager : MonoBehaviour
     {
         isRunning = false;
     }
-
-    // タイマーリセット＋死亡回数カウント
     public void AllCountReset()
     {
-        deathCount = 0;
         elapsedTime = 0f;
-        if (timerText != null)
-            timerText.text = "Time: 0:00.00";
+        deathCount = 0;
         isRunning = true;
     }
+    public void AddDeath() => deathCount++;
 
-    //外部から死亡を通知する関数
-    public void AddDeath()
+    // ■ クリア時に呼ぶ（ステージ保存）
+    public void SaveStageTime(int group, int stageInGroup)
     {
-        deathCount++;
+        int index = (group - 1) * stagesPerGroup + (stageInGroup - 1);
+        stageClearTimes[index] = elapsedTime;
+        stageCleared[index] = true;
     }
 
-    // フォーマット変換 (分:秒.ミリ秒)
-    private string FormatTime(float timeInSeconds)
+    // ■グループの総合クリアタイム
+    public float GetTotalClearTime(int group)
     {
-        int minutes = Mathf.FloorToInt(timeInSeconds / 60f);
-        int seconds = Mathf.FloorToInt(timeInSeconds % 60f);
-        int milliseconds = Mathf.FloorToInt((timeInSeconds * 100f) % 100f);
-
-        return string.Format("{0}:{1:00}.{2:00}", minutes, seconds, milliseconds);
-    }
-
-    // 新しいシーンでUIを再アサインする場合
-    public void SetText(TextMeshProUGUI newText, TextMeshProUGUI newDeath, TextMeshProUGUI newRank)
-    {
-        timerText = newText;
-        if (newDeath != null) deathText = newDeath;
-    }
-
-    // 他のスクリプトから時間・回数を取得可能
-    public float GetElapsedTime()
-    {
-        return elapsedTime;
-    }
-
-    public int GetDeathCount()
-    {
-        return deathCount;
-    }
-
-    public void SaveStageTime(int stageIndex)
-    {
-        if (stageClearTimes == null || stageIndex < 0 || stageIndex >= stageClearTimes.Length)
+        float total = 0f;
+        for (int i = 0; i < stagesPerGroup; i++)
         {
-            Debug.LogError($"SaveStageTime: stageIndex {stageIndex} が配列範囲外です");
-            return;
-        }
-        stageClearTimes[stageIndex] = elapsedTime;
-        stageCleared[stageIndex] = true;
-    }
-
-    public float GetTotalClearTime(int groupIndex)
-    {
-        float total = 0;
-        int startIndex = groupIndex * 3; // 1グループ3ステージ
-        for (int i = 0; i < 3; i++)
-        {
-            if (startIndex + i < stageClearTimes.Length && stageCleared[startIndex + i])
-                total += stageClearTimes[startIndex + i];
+            int index = (group - 1) * stagesPerGroup + i;
+            if (!stageCleared[index])
+                return -1f; // まだ埋まってない → 表示しない
+            total += stageClearTimes[index];
         }
         return total;
     }
 
+    private string FormatTime(float t)
+    {
+        int m = Mathf.FloorToInt(t / 60f);
+        int s = Mathf.FloorToInt(t % 60f);
+        int ms = Mathf.FloorToInt((t * 100f) % 100f);
+        return $"{m}:{s:00}.{ms:00}";
+    }
+
+    // すべてのステージ（全グループ含む）をクリア済みかどうか判定
     public bool IsAllStageCleared()
     {
-        return stageCleared[0] && stageCleared[1] && stageCleared[2];
+        foreach (bool cleared in stageCleared)
+        {
+            if (!cleared) return false;
+        }
+        return true;
+    }
+
+    public float GetElapsedTime(int stageIndex)
+    {
+        if (stageIndex >= 0 && stageIndex < stageTimes.Length)
+        {
+            return stageTimes[stageIndex];
+        }
+        return 0f;
+    }
+
+    public int GetDeathCount(int stageIndex)
+    {
+        if (stageIndex >= 0 && stageIndex < deathCounts.Length)
+        {
+            return deathCounts[stageIndex];
+        }
+        return 0;
     }
 }

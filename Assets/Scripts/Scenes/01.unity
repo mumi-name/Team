@@ -2790,8 +2790,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 1533330914}
   deathText: {fileID: 0}
+  stagesPerGroup: 4
+  totalGroups: 3
   elapsedTime: 0
   deathCount: 0
+  stageClearTimes:
+  - 0
+  - 0
+  - 0
+  - 0
+  stageCleared: 00000000
+  stageTimes:
+  - 0
+  - 0
+  - 0
+  - 0
+  deathCounts: 00000000000000000000000000000000
 --- !u!4 &471712629
 Transform:
   m_ObjectHideFlags: 0
@@ -7690,7 +7704,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 1533330914}
-  deathCount: {fileID: 0}
+  deathText: {fileID: 0}
+  rankText: {fileID: 0}
 --- !u!1001 &1538925833
 PrefabInstance:
   m_ObjectHideFlags: 0

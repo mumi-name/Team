@@ -583,6 +583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 343904344}
   deathCount: {fileID: 0}
+  rankText: {fileID: 0}
 --- !u!114 &343904344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1045,6 +1046,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 916127907}
   deathCount: {fileID: 0}
+  rankText: {fileID: 0}
 --- !u!1 &970972861
 GameObject:
   m_ObjectHideFlags: 0
@@ -1402,6 +1404,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 2076830040}
   deathCount: {fileID: 0}
+  rankText: {fileID: 0}
 --- !u!114 &2076830040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1512,7 +1515,6 @@ GameObject:
   - component: {fileID: 2083129730}
   - component: {fileID: 2083129731}
   - component: {fileID: 2083129732}
-  - component: {fileID: 2083129733}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -1555,15 +1557,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2083129729}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e708214cc314c264f8edda81806855d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resultPanel: {fileID: 143944418}
-  resultText: {fileID: 916127907}
-  deathText: {fileID: 343904344}
-  rankText: {fileID: 2076830040}
+  resultPanel: {fileID: 0}
+  resultText: {fileID: 0}
+  deathText: {fileID: 0}
+  rankText: {fileID: 0}
   rankImage: {fileID: 0}
   delayTime: 3
   rankS: {fileID: 0}
@@ -1572,29 +1574,6 @@ MonoBehaviour:
   rankC: {fileID: 0}
   groupNumber: 1
   stageNumber: 1
---- !u!114 &2083129733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2083129729}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 626e29ed673b1324f8a6c5401d0f212e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resultPanel: {fileID: 1406532528}
-  resultText: {fileID: 916127907}
-  deathText: {fileID: 343904344}
-  rankText: {fileID: 2076830040}
-  rankImage: {fileID: 697826671}
-  rankS: {fileID: 21300000, guid: 1629508f4500ec7459be4aad7954efdc, type: 3}
-  rankA: {fileID: 21300000, guid: 1629508f4500ec7459be4aad7954efdc, type: 3}
-  rankB: {fileID: 21300000, guid: 1629508f4500ec7459be4aad7954efdc, type: 3}
-  rankC: {fileID: 21300000, guid: 1629508f4500ec7459be4aad7954efdc, type: 3}
-  groupNumber: 3
-  stageNumber: 3
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

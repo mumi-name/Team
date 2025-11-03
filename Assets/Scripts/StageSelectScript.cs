@@ -12,7 +12,7 @@ public class StageSelectScript : MonoBehaviour
 
     [Header("右側UI（情報表示）")]
     public Image previewImage;           // ステージのプレビュー
-    public TextMeshProUGUI clearTimeText; // 総クリア時間（全ステージ合計）
+    public TextMeshProUGUI clearTimeText; // 総クリア時間（グループ全体）
 
     [Header("データ")]
     public Sprite[] previewSprites;      // プレビュー画像（ステージ1〜）
@@ -20,6 +20,7 @@ public class StageSelectScript : MonoBehaviour
 
     [Header("アニメーター")]
     public Animator[] stageAnimators;
+
     private int currentIndex = 0;
 
     void Start()
@@ -44,7 +45,6 @@ public class StageSelectScript : MonoBehaviour
         // スペースでステージへ
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            // カーソルがあるアイコンだけ光らせる
             for (int i = 0; i < stageAnimators.Length; i++)
             {
                 if (stageAnimators[i] != null)
@@ -52,17 +52,14 @@ public class StageSelectScript : MonoBehaviour
                     stageAnimators[i].SetBool("Icon", (i == currentIndex));
                 }
             }
-            //if (stageAnimators.Length > currentIndex && stageAnimators[currentIndex] != null)
-            //{
-            //    stageAnimators[0].SetBool("Icon",true);
-            //}
+
             if (stageSceneName.Length > currentIndex)
             {
                 SceneManager.LoadScene(stageSceneName[currentIndex]);
             }
             else
             {
-                Debug.Log($"stageSceneName にシーン名が入っていません index={currentIndex}");
+                Debug.LogWarning($"stageSceneName にシーン名が入っていません index={currentIndex}");
             }
         }
     }
@@ -72,28 +69,15 @@ public class StageSelectScript : MonoBehaviour
     /// </summary>
     void UpdateSelection()
     {
-        //if (currentIndex < previewSprites.Length && previewSprites[currentIndex] != null) return;
-
-        // 親が違っても確実に同じ場所に移動できる
-        //selectorFrame.position = stageIcons[currentIndex].position;
-        //selectorFrame.localScale = Vector3.one; // 念のためスケールを戻す
-
-        if (stageIcons == null || stageIcons.Length == 0)
-        {
-            Debug.LogError("stageIcons が空または未設定です");
-            return;
-        }
-        if (previewSprites == null || previewSprites.Length == 0)
-        {
-            Debug.LogError("previewSprites が空または未設定です");
-            return;
-        }
+        if (stageIcons == null || stageIcons.Length == 0) return;
+        if (previewSprites == null || previewSprites.Length == 0) return;
 
         if (currentIndex < 0) currentIndex = stageIcons.Length - 1;
         if (currentIndex >= stageIcons.Length) currentIndex = 0;
+
         // 枠をステージアイコン位置へ
-        //selectorFrame.position = stageIcons[currentIndex].position;
-        selectorFrame.anchoredPosition = stageIcons[currentIndex].anchoredPosition;
+        if (selectorFrame != null)
+            selectorFrame.anchoredPosition = stageIcons[currentIndex].anchoredPosition;
 
         // 右側にプレビュー画像表示
         if (currentIndex < previewSprites.Length && previewSprites[currentIndex] != null)
@@ -105,14 +89,18 @@ public class StageSelectScript : MonoBehaviour
         {
             previewImage.gameObject.SetActive(false);
         }
-        //総クリア時間だけ表示（ステージごとのタイムではない）
-        float totalTime = 0f;
-        int groupIndex = currentIndex / TimerManager.instance.stagesPerGroup;
+
+        // 総合クリア時間表示
         if (TimerManager.instance != null)
         {
-            totalTime = TimerManager.instance.GetTotalClearTime(groupIndex); // ← 全ステージの合計時間
+            int groupIndex = currentIndex / TimerManager.instance.stagesPerGroup; // 0始まり
+            float totalTime = TimerManager.instance.GetTotalClearTime(groupIndex);
+            clearTimeText.text = "Total Time: " + FormatTime(totalTime);
         }
-        clearTimeText.text = "Total Time: " + FormatTime(totalTime);
+        else
+        {
+            clearTimeText.text = "Total Time: --:--.--";
+        }
     }
 
     string FormatTime(float time)

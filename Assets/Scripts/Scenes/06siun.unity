@@ -1621,14 +1621,12 @@ MonoBehaviour:
   speed: 1000
   maxSpeed: 10
   jumpPower: 500
-  slowMaxSpeed: 0.1
-  slowGravity: 0.1
+  deadZone: 0.7
   jumpMode: 1
   backJump: 1
+  isDead: 0
   rb: {fileID: 440716439}
   animator: {fileID: 0}
-  bagTaisyo5: 0
-  isDead: 0
 --- !u!1 &466795652
 GameObject:
   m_ObjectHideFlags: 0
@@ -1689,54 +1687,6 @@ Transform:
   - {fileID: 1522898973}
   - {fileID: 847174528}
   - {fileID: 715059462}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &471712627
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 471712629}
-  - component: {fileID: 471712628}
-  m_Layer: 0
-  m_Name: TimeManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &471712628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 471712627}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6826f3a9494ed84d86ddef8adffbe02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timerText: {fileID: 1533330914}
-  deathText: {fileID: 0}
-  elapsedTime: 0
-  deathCount: 0
---- !u!4 &471712629
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 471712627}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1267.4553, y: 734.1226, z: -5.1461177}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &502874295
@@ -2506,6 +2456,68 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &636232018
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 636232020}
+  - component: {fileID: 636232019}
+  m_Layer: 0
+  m_Name: TimeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &636232019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636232018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6826f3a9494ed84d86ddef8adffbe02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerText: {fileID: 1533330914}
+  deathText: {fileID: 0}
+  stagesPerGroup: 4
+  totalGroups: 3
+  elapsedTime: 0
+  deathCount: 0
+  stageClearTimes:
+  - 0
+  - 0
+  - 0
+  - 0
+  stageCleared: 00000000
+  stageTimes:
+  - 0
+  - 0
+  - 0
+  - 0
+  deathCounts: 00000000000000000000000000000000
+--- !u!4 &636232020
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636232018}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1267.4553, y: 734.1226, z: -5.1461177}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &685783116
 GameObject:
   m_ObjectHideFlags: 0
@@ -2536,12 +2548,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slowSpeed: 0.2
+  finalTime: 0
+  douziOsi: 0
   brocks: []
   traps: []
   onSprite: {fileID: 21300000, guid: e076c65a2bf8e3c4eb71488d476f2932, type: 3}
   offSprite: {fileID: 21300000, guid: 7922245629c5ccb4b872f774f8960962, type: 3}
-  douziOsi: 0
-  finalTime: 0
 --- !u!4 &685783118
 Transform:
   m_ObjectHideFlags: 0
@@ -5064,7 +5076,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 1533330914}
-  deathCount: {fileID: 0}
+  deathText: {fileID: 0}
+  rankText: {fileID: 0}
 --- !u!1 &1648596778
 GameObject:
   m_ObjectHideFlags: 0
@@ -6613,8 +6626,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 619394802}
-  - {fileID: 471712629}
   - {fileID: 1010906952}
+  - {fileID: 636232020}
   - {fileID: 920768163}
   - {fileID: 130071340}
   - {fileID: 1479059192}
