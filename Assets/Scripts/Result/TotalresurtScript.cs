@@ -46,27 +46,19 @@ public class TotalResultScript : MonoBehaviour
         int stageIndex = (groupNumber - 1) * TimerManager.instance.stagesPerGroup + (stageNumber - 1);
 
         // ステージ内インデックス
-        int stageInGroup = stageNumber - 1;
+        //int stageInGroup = stageNumber - 1;
 
-        // 現在のステージタイムを取得
-        float currentTime = TimerManager.instance.GetElapsedTime(stageIndex);
         int deaths = TimerManager.instance.GetDeathCount(stageIndex);
 
         // ステージタイムを保存
-        TimerManager.instance.SaveStageTime(stageIndex, stageInGroup);
+        TimerManager.instance.SaveStageTime(groupNumber, stageNumber);
 
-        // ステージタイム・死亡回数表示
-        resultText.text = "Time: " + FormatTime(currentTime);
-        deathText.text = "Death: " + deaths;
-
-        // ランク表示
-        string rank = GetRank(currentTime);
-        rankText.text = "RANK: " + rank;
-        ResultRank(rank);
-
-        // グループ全ステージクリア済みなら総合タイム表示
+        // ステージタイム・死亡回数表示・ランク表示
         float totalTime = TimerManager.instance.GetTotalClearTime(groupNumber - 1);
-        resultText.text += "\nTotal Time: " + FormatTime(totalTime);
+        resultText.text += "ClearTime: " + FormatTime(totalTime);
+        deathText.text = "Death: " + deaths;
+        ShowRank(totalTime);
+
     }
 
     string GetRank(float time)
@@ -89,6 +81,19 @@ public class TotalResultScript : MonoBehaviour
             case "C": rankImage.sprite = rankC; break;
             default: rankImage.sprite = null; break;
         }
+    }
+    public void ShowRank(float clearTime)
+    {
+        if (clearTime <= 0)
+        {
+            rankText.text = "--";
+            rankImage.sprite = null;
+            Debug.Log("クリア時間がありません。");
+            return;
+        }
+        string rank = GetRank(clearTime);
+        rankText.text = rank;
+        ResultRank(rank);
     }
 
     private string FormatTime(float timeInSeconds)

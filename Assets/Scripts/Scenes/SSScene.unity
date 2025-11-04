@@ -904,6 +904,62 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &584274514
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 584274516}
+  - component: {fileID: 584274515}
+  m_Layer: 0
+  m_Name: Timer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &584274515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584274514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6826f3a9494ed84d86ddef8adffbe02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerText: {fileID: 1095557294}
+  deathText: {fileID: 0}
+  stagesPerGroup: 3
+  totalGroups: 2
+  deathCount: 0
+  stageClearTimes: []
+  stageCleared: 
+  stageTimes:
+  - 0
+  - 0
+  - 0
+  deathCounts: 000000000000000000000000
+--- !u!4 &584274516
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584274514}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 594.5146, y: 549.80334, z: 4.813705}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &644103158
 GameObject:
   m_ObjectHideFlags: 0
@@ -1396,9 +1452,9 @@ MonoBehaviour:
   previewImage: {fileID: 1893821891}
   clearTimeText: {fileID: 1095557294}
   previewSprites:
-  - {fileID: -7696931477724054025, guid: 9955f818fd5468d4ba372899748e686e, type: 3}
-  - {fileID: -3324005228605124480, guid: 737fcf6cafaef6f4db4a3550d706fccb, type: 3}
-  - {fileID: -3935531025487923894, guid: 57612dd3b0e58bc4690830d08f9f220f, type: 3}
+  - {fileID: -8586693324203152019, guid: 5ebe92b849b2b124dba8c2aed8be0fc1, type: 3}
+  - {fileID: -3324005228605124480, guid: a002648123ebcc74aa52f71f8c782e81, type: 3}
+  - {fileID: 9185550979427784230, guid: a23f60ab9bdec2440bee730db4129866, type: 3}
   stageSceneName:
   - 01
   - 03.5kairi
@@ -1505,3 +1561,4 @@ SceneRoots:
   - {fileID: 1690593949}
   - {fileID: 766222171}
   - {fileID: 135773610}
+  - {fileID: 584274516}

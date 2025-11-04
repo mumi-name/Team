@@ -70,17 +70,13 @@ public class StageSelectScript : MonoBehaviour
     void UpdateSelection()
     {
         if (stageIcons == null || stageIcons.Length == 0) return;
-        if (previewSprites == null || previewSprites.Length == 0) return;
 
-        if (currentIndex < 0) currentIndex = stageIcons.Length - 1;
-        if (currentIndex >= stageIcons.Length) currentIndex = 0;
-
-        // 枠をステージアイコン位置へ
+        // 枠をステージアイコン位置に
         if (selectorFrame != null)
             selectorFrame.anchoredPosition = stageIcons[currentIndex].anchoredPosition;
 
-        // 右側にプレビュー画像表示
-        if (currentIndex < previewSprites.Length && previewSprites[currentIndex] != null)
+        // プレビュー画像
+        if (previewSprites != null && currentIndex < previewSprites.Length && previewSprites[currentIndex] != null)
         {
             previewImage.sprite = previewSprites[currentIndex];
             previewImage.gameObject.SetActive(true);
@@ -93,15 +89,18 @@ public class StageSelectScript : MonoBehaviour
         // 総合クリア時間表示
         if (TimerManager.instance != null)
         {
-            int groupIndex = currentIndex / TimerManager.instance.stagesPerGroup; // 0始まり
+            int groupIndex = currentIndex / TimerManager.instance.stagesPerGroup;
+            //float totalTime = TimerManager.instance.GetElapsedTime(groupIndex); 
             float totalTime = TimerManager.instance.GetTotalClearTime(groupIndex);
-            clearTimeText.text = "Total Time: " + FormatTime(totalTime);
+            //clearTimeText.text = totalTime < 0 ? "Total Time: --:--.--" : "Total Time: " + FormatTime(totalTime);
+            clearTimeText.text = "ClearTime:" + FormatTime(totalTime);
         }
         else
         {
             clearTimeText.text = "Total Time: --:--.--";
         }
     }
+
 
     string FormatTime(float time)
     {

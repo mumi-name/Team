@@ -590,7 +590,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4712945695039586591, guid: fda23340a0585d9498419516baf21b52, type: 3}
       propertyPath: sceneName
-      value: 04
+      value: ClearScene
       objectReference: {fileID: 0}
     - target: {fileID: 8144149933229020196, guid: fda23340a0585d9498419516baf21b52, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2060,7 +2060,6 @@ MonoBehaviour:
   deathText: {fileID: 0}
   stagesPerGroup: 4
   totalGroups: 3
-  elapsedTime: 0
   deathCount: 0
   stageClearTimes:
   - 0
@@ -3214,7 +3213,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1533330913
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4378,7 +4377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53e8274ccabeb2a4584fd9fdb5817f81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerScript: {fileID: 0}
+  startingPoint: 0
   elevatorLayer:
     serializedVersion: 2
     m_Bits: 0
