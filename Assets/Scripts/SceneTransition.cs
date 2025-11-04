@@ -52,8 +52,8 @@ public class SceneTransition : MonoBehaviour
 
     public void Transition()
     {
-        IrisShot.instance.IrisOut();
-        TimerManager.instance.StopTimer();
+        if(IrisShot.instance!=null)IrisShot.instance.IrisOut();
+        if(IrisShot.instance!=null)TimerManager.instance.StopTimer();
 
         //読み込むシーンが設定されてない場合、現在のシーンを設定
         if (sceneName == "") sceneName = SceneManager.GetActiveScene().name;

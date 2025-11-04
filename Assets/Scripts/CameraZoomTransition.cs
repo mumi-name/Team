@@ -23,6 +23,7 @@ public class CameraZoomTransition : MonoBehaviour
     {
         instance = this;
         SceneStartZoom();
+        PlayerScript.instance.cannotMoveMode();
     }
     void Update()
     {
@@ -53,6 +54,7 @@ public class CameraZoomTransition : MonoBehaviour
     //突貫工事で設定。アイテムがあるシーンは2点間のカメラをアニメーションさせる
     public void SceneStartZoom()
     {
+        
         startPos = mainCamera.transform.position;
         startSize = mainCamera.orthographicSize;
         endPos = zoomCamera.transform.position;
@@ -73,18 +75,20 @@ public class CameraZoomTransition : MonoBehaviour
         isZooming = true;
 
         Invoke("ReturnZoom2", projectionTime + transitionTime-1f);
+        Invoke("canMove", transitionTime);
     }
 
     public void ReturnZoom2()
     {
-        startPos= itemZoomCamera.transform.position;
+        
+        startPos = itemZoomCamera.transform.position;
         startSize= itemZoomCamera.orthographicSize;
         endPos = new Vector3(0, 0, -10);
         endSize = 5;
         timer = 0f;
         isZooming = true;
 
-        Invoke("canMove", transitionTime);
+        
     }
 
 

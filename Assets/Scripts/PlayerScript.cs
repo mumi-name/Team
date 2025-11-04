@@ -192,7 +192,7 @@ public class PlayerScript : MonoBehaviour
     {
         ignoreInput = false;
         rb.gravityScale = 1.7f;
-        rb.constraints &= ~RigidbodyConstraints2D.FreezePositionX;//FreezePositionX‚ğ‰ğœ
+        if((rb.constraints & RigidbodyConstraints2D.FreezePositionX) != 0)rb.constraints &= ~RigidbodyConstraints2D.FreezePositionX;//FreezePositionX‚ğ‰ğœ
     }
 
     //Œ»İ‚ÌŒü‚«‚ğ•Ô‚·

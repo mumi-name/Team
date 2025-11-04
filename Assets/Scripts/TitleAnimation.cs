@@ -1,39 +1,60 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class TitleAnimation : MonoBehaviour
 {
-    public SpriteRenderer playerSpr;
-    public Sprite onSprite;
-    public Sprite offSprite;
-
-    public float interval = 1f;
-
-    float timer = 0f;
-    bool on = true;
     
+    public Animator animator;
+    public Animator playerAnimator;
+
+    private bool on = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        playerSpr.sprite =offSprite;
+        AudioManager.instance.PlayBGM("BGM2");
     }
 
     // Update is called once per frame
     void Update()
     {
-        playerSpr.transform.Rotate(0, 1, 0);
 
-        if(playerSpr.transform.rotation.y >= -90) playerSpr.sprite = onSprite;
-        if(playerSpr.transform.rotation.y <= 90) playerSpr.sprite = offSprite;
+        //AudioManager.instance.PlayBGM("BGM1");
+        if (Input.GetButtonDown("Title"))
+        {
+            if (on)
+            {
+                animator.SetTrigger("ButtonTrigger");
+                OnPlayer();
+            }
+            else
+            {
+                animator.SetTrigger("OffButtonTrigger");
+                OffPlayer();
+            }
+        }
 
-
-        //timer += Time.deltaTime;
-        //if (timer >= interval)
-        //{
-        //    on=!on;
-        //    if(on) playerSpr.sprite = onSprite;
-        //    else playerSpr.sprite = offSprite;
-        //    timer = 0f;
-        //}
     }
+
+    public void On()
+    {
+        on = true;
+    }
+
+    public void Off()
+    {
+        on = false;
+    }
+
+    public void OnPlayer()
+    {
+        playerAnimator.SetTrigger("OnTrigger");
+    }
+
+    public void OffPlayer()
+    {
+        playerAnimator.SetTrigger("OffTrigger");
+    }
+
 }
