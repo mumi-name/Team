@@ -117,7 +117,7 @@ public class CameraZoomTransition : MonoBehaviour
     //チュートリアル時は、カメラ遷移後にアニメーションが起きる
     void ChangeAnimation()
     {
-        int num = PlayerScript.instance.GetMode();//????????????????
+        int num = PlayerScript.instance.GetMode();
         bool on = false;
 
         if (num > 0) on = true;

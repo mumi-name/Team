@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 57612dd3b0e58bc4690830d08f9f220f
+guid: 9386bd9038defc54cace01435373ca57
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3935531025487923894
-    second: select3_0
+      213: 4988103661179294207
+    second: OFF_Button_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: select3_0
+      name: OFF_Button_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 750
-        height: 530
+        width: 1200
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a457347326f2269c0800000000000000
-      internalID: -3935531025487923894
+      spriteID: ff1da6b0add493540800000000000000
+      internalID: 4988103661179294207
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      select3_0: -3935531025487923894
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

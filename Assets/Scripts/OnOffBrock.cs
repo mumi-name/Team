@@ -29,6 +29,7 @@ public class OnOffBrock : MonoBehaviour
     private bool changed = false;
     private bool turn = false;
     private bool stop = false;
+    private bool switching = false;//OnOffの切り替え中かどうか？
     private bool invalid = false;//ブロックの判定を有効化するのを禁止する
 
     void Start()
@@ -49,6 +50,7 @@ public class OnOffBrock : MonoBehaviour
 
     public void OnOff(bool OnOff,bool animation = false)
     {
+
         //透明度変化アニメーション中に呼び出されたら、アニメを停止
         fadeFlag = false;
 
@@ -130,6 +132,7 @@ public class OnOffBrock : MonoBehaviour
 
     public void OnOffMove(bool mode)
     {
+
         //プレイヤーの向き(On・Off)とブロックのOn・Offが一緒の時
         if (mode == on)
         {
@@ -141,6 +144,7 @@ public class OnOffBrock : MonoBehaviour
             moveFlag = false;
             transform.position = orizinalpos;
         }
+        
     }
 
     public void SetOnChanged()
@@ -218,12 +222,41 @@ public class OnOffBrock : MonoBehaviour
 
     void OnTurn()
     {
+        
         turn = true;
+
+        if (!loop) return;
+
+        //エレベーターと折り返し地点の距離を比較
+        var distance1 = orizinalpos - transform.position;
+        var distance2 = movestop - transform.position;
+
+        //開始位置に近い場合
+        if (Mathf.Abs(distance1.x) < Mathf.Abs(distance2.x) || Mathf.Abs(distance1.y) < Mathf.Abs(distance2.y))
+        {
+            turn = false;
+        }
+
     }
 
     void OffTurn()
     {
         turn = false;
+
+        if (!loop) return;
+
+        //エレベーターと折り返し地点の距離を比較
+        var distance1 = orizinalpos - transform.position;
+        var distance2 = movestop - transform.position;
+
+        //折り返し地点に近い場合
+        if (Mathf.Abs(distance2.x) < Mathf.Abs(distance1.x) || Mathf.Abs(distance2.y) < Mathf.Abs(distance1.y))
+        {
+            turn = true;
+        }
+
+
+        //if (Mathf.Approximately(transform.position.x, movestop.x) && Mathf.Approximately(transform.position.y, movestop.y)) turn = true;
     }
 
     void FadeAnimation()
