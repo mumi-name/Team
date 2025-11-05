@@ -68,9 +68,9 @@ public class TimerManager : MonoBehaviour
     public void AddDeath() => deathCount++;
 
     // ■ クリア時に呼ぶ（ステージ保存）
-    public void SaveStageTime(int groupNumber, int stageNumber)
+    public void SaveStageTime(int groupIndex, int stageIndex)
     {
-        int index = groupNumber * stagesPerGroup + stageNumber;
+        int index = groupIndex * stagesPerGroup + stageIndex;
         if (index < 0 || index >= stageClearTimes.Length)
         {
             Debug.LogError($"SaveStageTime: index {index} が範囲外です");
@@ -99,13 +99,22 @@ public class TimerManager : MonoBehaviour
 
     public float GetTotalClearTime(int groupIndex)
     {
-        groupIndex = Mathf.Clamp(groupIndex, 0, totalGroups - 1);
         float total = 0f;
         bool anyCleared = false;
 
+        // groupIndex が 0～(totalGroups-1) かチェック
+        if (groupIndex < 0 || groupIndex >= totalGroups)
+        {
+            Debug.LogError($"グループ番号 {groupIndex} は存在しません（0～{totalGroups - 1}）");
+            return 0f;
+        }
+
         for (int i = 0; i < stagesPerGroup; i++)
         {
-            int idx = groupIndex * stagesPerGroup + i;
+            int idx = groupIndex * stagesPerGroup + i;  // ←1次元配列に変換
+
+            if (idx >= stageClearTimes.Length) continue;
+
             if (stageCleared[idx])
             {
                 total += stageClearTimes[idx];
@@ -113,8 +122,9 @@ public class TimerManager : MonoBehaviour
             }
         }
 
-        return anyCleared ? total : -1f; // 未クリアなら -1
+        return anyCleared ? total : -1f; // クリアしてないなら -1を返す
     }
+
 
     private string FormatTime(float t)
     {

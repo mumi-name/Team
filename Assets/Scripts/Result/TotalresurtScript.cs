@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class TotalResultScript : MonoBehaviour
 {
     [Header("UI関連")]
-    public GameObject resultPanel;
     public TextMeshProUGUI resultText;
     public TextMeshProUGUI deathText;
     public TextMeshProUGUI rankText;
@@ -29,40 +28,43 @@ public class TotalResultScript : MonoBehaviour
         if (TimerManager.instance != null)
             TimerManager.instance.StopTimer();
 
-        resultText.gameObject.SetActive(true);
-        deathText.gameObject.SetActive(true);
+        //resultText.gameObject.SetActive(true);
+        //deathText.gameObject.SetActive(true);
 
         ShowResult();
     }
 
     void ShowResult()
     {
-        if (resultShown) return;
+        if (resultShown || TimerManager.instance == null) return;
         resultShown = true;
 
-        if (TimerManager.instance == null) return;
+        int groupIndex = groupNumber - 1;
+        int stageInGroup = stageNumber - 1;
 
-        // 現在のステージインデックス
-        int stageIndex = (groupNumber - 1) * TimerManager.instance.stagesPerGroup + (stageNumber - 1);
+        //ステージタイム保存（0始まりで渡す）
+        TimerManager.instance.SaveStageTime(groupIndex, stageInGroup);
 
-        // ステージ内インデックス
-        //int stageInGroup = stageNumber - 1;
+        //グループ合計タイム取得
+        float totalTime = TimerManager.instance.GetTotalClearTime(groupIndex);
 
-        int deaths = TimerManager.instance.GetDeathCount(stageIndex);
+        //-1（まだデータなし）は0扱い
+        if (totalTime < 0) totalTime = 0;
 
-        // ステージタイムを保存
-        TimerManager.instance.SaveStageTime(groupNumber, stageNumber);
+        //UI 表示
+        resultText.text = "ClearTime: " + FormatTime(totalTime);
 
-        // ステージタイム・死亡回数表示・ランク表示
-        float totalTime = TimerManager.instance.GetTotalClearTime(groupNumber - 1);
-        resultText.text += "ClearTime: " + FormatTime(totalTime);
+        int deaths = TimerManager.instance.GetDeathCount(groupIndex * TimerManager.instance.stagesPerGroup + stageInGroup);
         deathText.text = "Death: " + deaths;
-        ShowRank(totalTime);
 
+        //ランク表示
+        ShowRank(totalTime);
     }
+
 
     string GetRank(float time)
     {
+        if (time <= 0) return "--";
         if (time < 60f) return "S";
         if (time < 120f) return "A";
         if (time < 180f) return "B";
@@ -71,7 +73,12 @@ public class TotalResultScript : MonoBehaviour
 
     void ResultRank(string rank)
     {
-        if (rankImage == null) return;
+        if (rank == null)
+        {
+            Debug.Log("変数　rankに何も入ってません");
+            return;
+        }
+            
 
         switch (rank)
         {
@@ -82,18 +89,29 @@ public class TotalResultScript : MonoBehaviour
             default: rankImage.sprite = null; break;
         }
     }
-    public void ShowRank(float clearTime)
+    public void ShowRank(float totalTime)
     {
-        if (clearTime <= 0)
+        Debug.Log($"[ShowRank] totalTime = {totalTime}");
+
+        if (rankText == null) Debug.Log("rankText がセットされていません。");
+        if (rankImage == null) Debug.Log("rankImage がセットされていません。");
+
+        if (totalTime <= 0)
         {
+            Debug.Log("クリア時間がありません。（totalTime <= 0）");
             rankText.text = "--";
             rankImage.sprite = null;
-            Debug.Log("クリア時間がありません。");
             return;
         }
-        string rank = GetRank(clearTime);
+
+        string rank = GetRank(totalTime);
+        Debug.Log($"[ShowRank] rank = {rank}");
+        //テキストと画像セット
         rankText.text = rank;
         ResultRank(rank);
+
+        Debug.Log($"rankText.text = {rankText.text}");
+        Debug.Log($"rankImage.sprite = {rankImage?.sprite}");
     }
 
     private string FormatTime(float timeInSeconds)

@@ -11,7 +11,9 @@ public class SceneTransition : MonoBehaviour
 
     public Animator animator;
     public Animator padlockAnimator;//南京錠アニメーション
-    
+
+    public int groupNumber = 1;//1グループ目なら1
+    public int stageNumber = 1;//グループ内の1ステージ目なら1
 
     //private bool SceneFlag = false;
     private void Start()
@@ -39,6 +41,7 @@ public class SceneTransition : MonoBehaviour
         {
             GameManager.instance.GoalFlag();
             TimerManager.instance.StopTimer();
+            TimerManager.instance.SaveStageTime(groupNumber -1,stageNumber - 1);
             PlayerScript.instance.cannotMoveMode();//プレイヤーが動かないように
             AudioManager.instance.PlaySE2("ゴール時音声");
 
