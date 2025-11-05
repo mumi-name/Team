@@ -21,7 +21,7 @@ public class TitleAnimation : MonoBehaviour
     {
 
         //AudioManager.instance.PlayBGM("BGM1");
-        if (Input.GetButtonDown("Title"))
+        if (Input.GetButtonDown("Title")||Input.anyKeyDown)
         {
             if (on)
             {

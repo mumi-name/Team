@@ -1,6 +1,7 @@
 using DG.Tweening;
 using Unity.VisualScripting;
 using UnityEngine;
+using static Unity.Cinemachine.CinemachineTargetGroup;
 using static Unity.Collections.AllocatorManager;
 using static UnityEngine.GraphicsBuffer;
 
@@ -27,10 +28,16 @@ public class OnOffBrock : MonoBehaviour
     private bool moveFlag = false;
     private bool fadeFlag = false;
     private bool changed = false;
-    private bool turn = false;
+    //private bool turn = false;
+    public bool turn = false;
+
     private bool stop = false;
     private bool switching = false;//OnOffの切り替え中かどうか？
     private bool invalid = false;//ブロックの判定を有効化するのを禁止する
+
+
+    float waitTimer = 0f;
+    bool waiting = false;
 
     void Start()
     {
@@ -200,60 +207,108 @@ public class OnOffBrock : MonoBehaviour
     void Move()
     {
         //ONで動くブロックがOFFの時にも動いてしまわないようにmoveFlagを確認する
-        if (!moveFlag) return;
-        if (move)
-        {
-            if (stop) return;//停止命令が出ていたら停止
-            if (loop && Mathf.Approximately(transform.position.x, movestop.x) && Mathf.Approximately(transform.position.y, movestop.y)) Invoke("OnTurn", 0.7f);
-            if (Mathf.Approximately(transform.position.x, orizinalpos.x) && Mathf.Approximately(transform.position.y, orizinalpos.y)) Invoke("OffTurn", 0.7f);
+        //if (!moveFlag) return;
+        //if (move)
+        //{
+        //    if (stop) return;//停止命令が出ていたら停止
 
-            if (!turn)
+        //    if (!turn && Mathf.Approximately(transform.position.x, movestop.x) && Mathf.Approximately(transform.position.y, movestop.y))
+        //    {
+        //        Invoke("OnTurn", 0.7f);
+        //    }
+        //    if (turn && Mathf.Approximately(transform.position.x, orizinalpos.x) && Mathf.Approximately(transform.position.y, orizinalpos.y))
+        //    {
+        //        Invoke("OffTurn", 0.7f);
+        //    }
+
+        //    if (!turn)
+        //    {
+        //        transform.position = Vector3.MoveTowards
+        //        (transform.position, movestop, Mathf.Abs(moveSpeed) * Time.deltaTime);
+        //    }
+        //    else
+        //    {
+        //        transform.position = Vector3.MoveTowards(transform.position, orizinalpos, Mathf.Abs(moveSpeed) * Time.deltaTime);
+        //    }
+        //}
+
+        if (!moveFlag || stop) return;
+        if (!move) return;
+
+        if (!waiting)
+        {
+            Vector3 target = turn ? orizinalpos : movestop;
+            transform.position = Vector3.MoveTowards(transform.position, target, Mathf.Abs(moveSpeed) * Time.deltaTime);
+
+            if (Vector3.Distance(transform.position, target) < 0.01f)
             {
-                transform.position = Vector3.MoveTowards
-                (transform.position, movestop, Mathf.Abs(moveSpeed) * Time.deltaTime);
-            }
-            else
-            {
-                transform.position = Vector3.MoveTowards(transform.position,orizinalpos, Mathf.Abs(moveSpeed) * Time.deltaTime);
+                waiting = true;
+                waitTimer = 0f;
             }
         }
-        
+        else
+        {
+            waitTimer += Time.deltaTime;
+            if (waitTimer >= 0.7f)
+            {
+                waiting = false;
+                if (loop) turn = !turn;
+            }
+        }
+
+
     }
+
 
     void OnTurn()
     {
-        
+        if (!loop) return;
         turn = true;
 
-        if (!loop) return;
-
         //エレベーターと折り返し地点の距離を比較
-        var distance1 = orizinalpos - transform.position;
-        var distance2 = movestop - transform.position;
+        //var distance1 = orizinalpos - transform.position;
+        //var distance2 = movestop - transform.position;
 
-        //開始位置に近い場合
-        if (Mathf.Abs(distance1.x) < Mathf.Abs(distance2.x) || Mathf.Abs(distance1.y) < Mathf.Abs(distance2.y))
+        float distance = Vector3.Distance(transform.position, orizinalpos);
+        float distance2 = Vector3.Distance(transform.position, movestop);
+
+        if(distance < distance2)
         {
             turn = false;
         }
+
+
+        //開始位置に近い場合
+        //if (Mathf.Abs(distance1.x) < Mathf.Abs(distance2.x) || Mathf.Abs(distance1.y) < Mathf.Abs(distance2.y))
+        //{
+        //    turn = false;
+        //}
 
     }
 
     void OffTurn()
     {
-        turn = false;
 
         if (!loop) return;
+        turn = false;
 
         //エレベーターと折り返し地点の距離を比較
-        var distance1 = orizinalpos - transform.position;
-        var distance2 = movestop - transform.position;
+        //var distance1 = orizinalpos - transform.position;
+        //var distance2 = movestop - transform.position;
 
-        //折り返し地点に近い場合
-        if (Mathf.Abs(distance2.x) < Mathf.Abs(distance1.x) || Mathf.Abs(distance2.y) < Mathf.Abs(distance1.y))
+        float distance = Vector3.Distance(transform.position, orizinalpos);
+        float distance2 = Vector3.Distance(transform.position, movestop);
+
+        if (distance2 < distance)
         {
             turn = true;
         }
+
+        //折り返し地点に近い場合
+        //if (Mathf.Abs(distance2.x) < Mathf.Abs(distance1.x) || Mathf.Abs(distance2.y) < Mathf.Abs(distance1.y))
+        //{
+        //    turn = true;
+        //}
 
 
         //if (Mathf.Approximately(transform.position.x, movestop.x) && Mathf.Approximately(transform.position.y, movestop.y)) turn = true;
