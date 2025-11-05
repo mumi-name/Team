@@ -243,6 +243,7 @@ public class OnOffBrock : MonoBehaviour
             //–Ú“I’n‚É“ž’…‚µ‚½‚ç
             if (Vector3.Distance(transform.position, target) < 0.01f)
             {
+                if (!loop) return;
                 waiting = true;
                 waitTimer = 0f;
             }
@@ -253,12 +254,11 @@ public class OnOffBrock : MonoBehaviour
             if (waitTimer >= 0.7f)
             {
                 waiting = false;
-                //if (loop) turn = !turn;
-                if (turn) OffTurn();
-                else OnTurn();
+                if (loop) turn = !turn;
+                //if (turn) OffTurn();
+                //else OnTurn();
             }
         }
-
 
     }
 
