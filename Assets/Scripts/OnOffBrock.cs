@@ -240,6 +240,7 @@ public class OnOffBrock : MonoBehaviour
             Vector3 target = turn ? orizinalpos : movestop;
             transform.position = Vector3.MoveTowards(transform.position, target, Mathf.Abs(moveSpeed) * Time.deltaTime);
 
+            //目的地に到着したら
             if (Vector3.Distance(transform.position, target) < 0.01f)
             {
                 waiting = true;
@@ -252,7 +253,9 @@ public class OnOffBrock : MonoBehaviour
             if (waitTimer >= 0.7f)
             {
                 waiting = false;
-                if (loop) turn = !turn;
+                //if (loop) turn = !turn;
+                if (turn) OffTurn();
+                else OnTurn();
             }
         }
 
@@ -272,7 +275,8 @@ public class OnOffBrock : MonoBehaviour
         float distance = Vector3.Distance(transform.position, orizinalpos);
         float distance2 = Vector3.Distance(transform.position, movestop);
 
-        if(distance < distance2)
+        //開始位置に近い場合
+        if (distance < distance2)
         {
             turn = false;
         }
@@ -299,6 +303,7 @@ public class OnOffBrock : MonoBehaviour
         float distance = Vector3.Distance(transform.position, orizinalpos);
         float distance2 = Vector3.Distance(transform.position, movestop);
 
+        //折り返し地点に近い場合
         if (distance2 < distance)
         {
             turn = true;
