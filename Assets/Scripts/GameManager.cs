@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         TimerManager.instance.StartTimer();
+        Debug.Log("ステージ開始 Timer = " + TimerManager.instance.elapsedTime);
         //ステージ01に入ったらカウントを全てリセット
         if (SceneManager.GetActiveScene().name == "TitleScene")
         {

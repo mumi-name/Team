@@ -566,8 +566,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -420, y: -43.92502}
-  m_SizeDelta: {x: 723.8367, y: 120.92}
+  m_AnchoredPosition: {x: -390.96, y: -43.92502}
+  m_SizeDelta: {x: 781.92, y: 120.92}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &343904343
 MonoBehaviour:
@@ -576,14 +576,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 343904341}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7966785eecd9131478ff1dcab3b66e64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 343904344}
-  deathText: {fileID: 0}
-  rankText: {fileID: 0}
+  deathText: {fileID: 343904344}
+  rankText: {fileID: 1323074035}
 --- !u!114 &343904344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -855,8 +855,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 407.63, y: -0.0000047684}
-  m_SizeDelta: {x: 815.2674, y: 605.81}
+  m_AnchoredPosition: {x: 635.09, y: -0.0000038147}
+  m_SizeDelta: {x: 1270.1743, y: 692.459}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &697826671
 MonoBehaviour:
@@ -878,7 +878,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1629508f4500ec7459be4aad7954efdc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 596f619c6dabd2d4c83c522c6043fd7f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -953,8 +953,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -420, y: 245}
-  m_SizeDelta: {x: 751.92, y: 326.77}
+  m_AnchoredPosition: {x: -380, y: 317}
+  m_SizeDelta: {x: 875.549, y: 326.77}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &916127907
 MonoBehaviour:
@@ -976,7 +976,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: text
+  m_text: cleartime
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1a48ff4c60b905a4d9e8bd77a59c3a3e, type: 2}
   m_sharedMaterial: {fileID: 580465409356535621, guid: 1a48ff4c60b905a4d9e8bd77a59c3a3e, type: 2}
@@ -1062,14 +1062,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 916127905}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7966785eecd9131478ff1dcab3b66e64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 916127907}
-  deathText: {fileID: 0}
-  rankText: {fileID: 0}
+  deathText: {fileID: 343904344}
+  rankText: {fileID: 1323074035}
 --- !u!1 &970972861
 GameObject:
   m_ObjectHideFlags: 0
@@ -1236,9 +1236,9 @@ RectTransform:
   - {fileID: 1406532529}
   - {fileID: 916127906}
   - {fileID: 343904342}
+  - {fileID: 1323074034}
   - {fileID: 697826670}
   - {fileID: 143944419}
-  - {fileID: 1323074034}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1257,6 +1257,7 @@ GameObject:
   - component: {fileID: 1323074034}
   - component: {fileID: 1323074036}
   - component: {fileID: 1323074035}
+  - component: {fileID: 1323074037}
   m_Layer: 5
   m_Name: RankText
   m_TagString: Untagged
@@ -1280,8 +1281,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -546.34, y: -224}
-  m_SizeDelta: {x: 471.1611, y: 141.8449}
+  m_AnchoredPosition: {x: -390.96, y: -224}
+  m_SizeDelta: {x: 781.92, y: 141.8449}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1323074035
 MonoBehaviour:
@@ -1382,6 +1383,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1323074033}
   m_CullTransparentMesh: 1
+--- !u!114 &1323074037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323074033}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7966785eecd9131478ff1dcab3b66e64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerText: {fileID: 916127907}
+  deathText: {fileID: 343904344}
+  rankText: {fileID: 1323074035}
 --- !u!1 &1406532528
 GameObject:
   m_ObjectHideFlags: 0
@@ -1490,7 +1506,7 @@ MonoBehaviour:
   deathText: {fileID: 343904344}
   stagesPerGroup: 3
   totalGroups: 2
-  elapsedTime: 10
+  elapsedTime: 50
   deathCount: 0
   stageClearTimes:
   - 10
