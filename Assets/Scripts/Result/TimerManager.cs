@@ -10,8 +10,8 @@ public class TimerManager : MonoBehaviour
     public TextMeshProUGUI deathText;
 
     //[Header("設定値")]
-    public int stagesPerGroup = 4; // ←★1グループ内のステージ数
-    public int totalGroups = 3;    // ←★グループ数（ステージ数 = stagesPerGroup × totalGroups）
+    public int stagesPerGroup = 11; // ←★1グループ内のステージ数
+    public int totalGroups = 11;    // ←★グループ数（ステージ数 = stagesPerGroup × totalGroups）
 
     [Header("タイム・死亡管理")]
     public float elapsedTime = 0f;

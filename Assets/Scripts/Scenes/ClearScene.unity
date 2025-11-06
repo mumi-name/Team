@@ -832,6 +832,7 @@ GameObject:
   - component: {fileID: 697826672}
   - component: {fileID: 697826671}
   - component: {fileID: 697826673}
+  - component: {fileID: 697826674}
   m_Layer: 5
   m_Name: Rank
   m_TagString: Untagged
@@ -918,6 +919,24 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &697826674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697826669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac64592b18b24784280552e3e6e8aa72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rankText: {fileID: 1323074035}
+  rankImage: {fileID: 697826671}
+  rankS: {fileID: 21300000, guid: 3b5722e90c844ef43a8291ceae9a3f6c, type: 3}
+  rankA: {fileID: 21300000, guid: 12467b8667ad4484f8a82fe596ea5408, type: 3}
+  rankB: {fileID: 21300000, guid: 1a7047acd7762f24a935cb2cf56520f7, type: 3}
+  rankC: {fileID: 21300000, guid: aabf66eb00e032f40b73f7fbe3060a75, type: 3}
 --- !u!1 &916127905
 GameObject:
   m_ObjectHideFlags: 0

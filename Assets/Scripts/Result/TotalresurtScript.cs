@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-
+using System.Collections;
 public class TotalResultScript : MonoBehaviour
 {
     [Header("UI関連")]
@@ -70,7 +70,8 @@ public class TotalResultScript : MonoBehaviour
         int deaths = TimerManager.instance.GetDeathCount(groupIndex * TimerManager.instance.stagesPerGroup + stageInGroup);
         deathText.text = "Death: " + deaths; 
         //ランク表示
-        ShowRank(totalTime); 
+        ShowRank(totalTime);
+        
     }
     string GetRank(float time)
     {
@@ -81,15 +82,14 @@ public class TotalResultScript : MonoBehaviour
     }
     void ResultRank(string rank)
     {
-        PlayRankAnimation(rank);
         switch (rank)
         {
             case "S": rankImage.sprite = rankS; break;
             case "A": rankImage.sprite = rankA; break;
             case "B": rankImage.sprite = rankB; break;
             case "C": rankImage.sprite = rankC; break;
-            default: rankImage.sprite = null; break;
         }
+        PlayRankAnimation(rank);
     }
     void ShowRank(float totalTime)
     {
@@ -116,21 +116,10 @@ public class TotalResultScript : MonoBehaviour
         rankAnimator.ResetTrigger("A");
         rankAnimator.ResetTrigger("B");
         rankAnimator.ResetTrigger("C");
+
         rankAnimator.SetTrigger(rank);
         Debug.Log("ランクアニメーション再生: " + rank);
-        //koteiSprite(rank);
     }
-    //public void koteiSprite(string rank)
-    //{
-    //    switch (rank)
-    //    {
-    //        case "S": rankImage.sprite = rankS; break;
-    //        case "A": rankImage.sprite = rankA; break;
-    //        case "B": rankImage.sprite = rankB; break;
-    //        case "C": rankImage.sprite = rankC; break;
-    //        default: rankImage.sprite = null; break;
-    //    }
-    //}
     private string FormatTime(float t)
     {
         int m = Mathf.FloorToInt(t / 60f);

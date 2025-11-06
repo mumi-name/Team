@@ -7678,8 +7678,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 1533330914}
   deathText: {fileID: 0}
-  stagesPerGroup: 4
-  totalGroups: 3
+  stagesPerGroup: 1
+  totalGroups: 1
   elapsedTime: 0
   deathCount: 0
   stageClearTimes:
