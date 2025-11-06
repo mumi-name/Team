@@ -41,9 +41,6 @@ public class TotalResultScript : MonoBehaviour
         int groupIndex = groupNumber - 1;
         int stageInGroup = stageNumber - 1;
 
-        // ステージタイム保存
-        TimerManager.instance.SaveStageTime(groupIndex, stageInGroup);
-
         float totalTime = TimerManager.instance.GetTotalClearTime(groupIndex);
         if (totalTime < 0) totalTime = 0;
 

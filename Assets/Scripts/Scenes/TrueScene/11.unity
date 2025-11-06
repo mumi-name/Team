@@ -1956,6 +1956,14 @@ PrefabInstance:
       propertyPath: sceneName
       value: ClearScene
       objectReference: {fileID: 0}
+    - target: {fileID: 4712945695039586591, guid: fda23340a0585d9498419516baf21b52, type: 3}
+      propertyPath: groupNumber
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4712945695039586591, guid: fda23340a0585d9498419516baf21b52, type: 3}
+      propertyPath: stageNumber
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8144149933229020196, guid: fda23340a0585d9498419516baf21b52, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.15
@@ -2378,8 +2386,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 1533330914}
   deathText: {fileID: 229259616}
-  stagesPerGroup: 3
-  totalGroups: 2
+  stagesPerGroup: 4
+  totalGroups: 3
   elapsedTime: 0
   deathCount: 0
   stageClearTimes:

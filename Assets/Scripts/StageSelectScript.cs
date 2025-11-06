@@ -109,8 +109,8 @@ public class StageSelectScript : MonoBehaviour
         // 総合クリア時間表示
         if (TimerManager.instance != null)
         {
-            int groupIndex = currentIndex / TimerManager.instance.stagesPerGroup;
-            //float totalTime = TimerManager.instance.GetElapsedTime(groupIndex); 
+            //int groupIndex = currentIndex / TimerManager.instance.stagesPerGroup;
+            int groupIndex = Mathf.Clamp(currentIndex / TimerManager.instance.stagesPerGroup,0, TimerManager.instance.totalGroups);
             float totalTime = TimerManager.instance.GetTotalClearTime(groupIndex);
             //clearTimeText.text = totalTime < 0 ? "Total Time: --:--.--" : "Total Time: " + FormatTime(totalTime);
             clearTimeText.text = "ClearTime:" + FormatTime(totalTime);

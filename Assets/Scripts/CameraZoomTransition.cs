@@ -24,6 +24,7 @@ public class CameraZoomTransition : MonoBehaviour
     {
         instance = this;
         PlayerScript.instance.animator.speed = 0;
+        projectionTime +=0.4f;
         Invoke("SceneStartZoom", waitTime);
         PlayerScript.instance.cannotMoveMode();
     }
@@ -39,11 +40,9 @@ public class CameraZoomTransition : MonoBehaviour
             // サイズ補間（2Dの場合はorthographicSizeでズーム）
             mainCamera.orthographicSize = Mathf.Lerp(startSize, endSize, t);
 
-
             if (t >= 1f)
             {
                 isZooming = false;
-
             }
         }
 
@@ -100,6 +99,7 @@ public class CameraZoomTransition : MonoBehaviour
     {
         
         Camera zoom;
+        projectionTime -=0.4f;
         if (change) zoom = zoomCamera;
         else zoom = itemZoomCamera;
 
