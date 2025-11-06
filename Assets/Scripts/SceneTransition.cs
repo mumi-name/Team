@@ -36,9 +36,10 @@ public class SceneTransition : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
+            Debug.Log("ゴール時点の時間 = " + TimerManager.instance.elapsedTime);
             GameManager.instance.GoalFlag();
-            TimerManager.instance.StopTimer();
             TimerManager.instance.SaveStageTime(groupNumber -1,stageNumber - 1);
+            TimerManager.instance.StopTimer();
             PlayerScript.instance.cannotMoveMode();//プレイヤーが動かないように
             AudioManager.instance.PlaySE2("ゴール時音声");
 
@@ -57,7 +58,9 @@ public class SceneTransition : MonoBehaviour
 
         //読み込むシーンが設定されてない場合、現在のシーンを設定
         if (sceneName == "") sceneName = SceneManager.GetActiveScene().name;
-        
+
+        //TimerManager.instance.SaveStageTime(groupNumber - 1, stageNumber - 1);
+
         //n秒後にシーン遷移
         DOVirtual.DelayedCall(transitionTime, () =>
         {

@@ -20,32 +20,37 @@ public class TotalResultScript : MonoBehaviour
     public int groupNumber = 1;
     public int stageNumber = 1;
 
-    private bool resultShown = false;
+    //private bool resultShown = false;
 
     [Header("ランクアニメーション")]
     public Animator rankAnimator;
 
     void Start()
     {
-        if (TimerManager.instance != null)
-            TimerManager.instance.StopTimer();
-
         ShowResult();
     }
 
     void ShowResult()
     {
-        if (resultShown || TimerManager.instance == null) return;
-        resultShown = true;
+        if (TimerManager.instance == null) return;
 
         int groupIndex = groupNumber - 1;
         int stageInGroup = stageNumber - 1;
+        //int groupIndex = Mathf.Max(0, groupNumber - 1);
+        //int stageInGroup = Mathf.Max(0, stageNumber - 1);
 
         float totalTime = TimerManager.instance.GetTotalClearTime(groupIndex);
-        if (totalTime < 0) totalTime = 0;
+        //totalTime = Mathf.Max(0, totalTime);        //if (totalTime < 0) totalTime = 0;
+        Debug.Log($"Result画面 totalTime={totalTime}");
 
+        if(totalTime <= 0)
+        {
+            resultText.text = "ClearTime: --:--.--";
+            rankText.text = "--";
+            Debug.Log("トータルタイムにマイナスが入ってます。");
+            return;
+        }
         resultText.text = "ClearTime: " + FormatTime(totalTime);
-
         int deaths = TimerManager.instance.GetDeathCount(groupIndex * TimerManager.instance.stagesPerGroup + stageInGroup);
         deathText.text = "Death: " + deaths;
 
@@ -60,15 +65,12 @@ public class TotalResultScript : MonoBehaviour
         if (time < 60f) return "S";
         if (time < 120f) return "A";
         if (time < 180f) return "B";
-        return "C";
+        else return "C";
     }
 
     // ランク画像セット
     void ResultRank(string rank)
     {
-        //if (rankAnimator != null)
-        //    rankAnimator.enabled = false;  // 一旦止める
-
         switch (rank)
         {
             case "S": rankImage.sprite = rankS; break;
@@ -77,6 +79,8 @@ public class TotalResultScript : MonoBehaviour
             case "C": rankImage.sprite = rankC; break;
             default: rankImage.sprite = null; break;
         }
+        //Debug.Log("ランクイメージに評価が入りました。");
+        if (rankImage.sprite == null) Debug.Log("ランクイメージにスプライトが設定されていません。");
     }
 
     public void ShowRank(float totalTime)
@@ -85,12 +89,13 @@ public class TotalResultScript : MonoBehaviour
         {
             rankText.text = "--";
             rankImage.sprite = null;
+            Debug.Log("[ShowRank] totalTimeが0以下 → ランク判定スキップ");
             return;
         }
-
+        Debug.Log("TotalTime" + totalTime);
         string rank = GetRank(totalTime);
         rankText.text = rank;
-
+        Debug.Log($"[ShowRank] 判定されたランク: {rank}");
         // 画像を適用
         ResultRank(rank);
 
@@ -102,7 +107,7 @@ public class TotalResultScript : MonoBehaviour
     {
         if (rankAnimator == null) return;
 
-        //rankAnimator.enabled = true; // 復活させて…
+
        //rankAnimator.ResetTrigger("S");
        //rankAnimator.ResetTrigger("A");
        //rankAnimator.ResetTrigger("B");
