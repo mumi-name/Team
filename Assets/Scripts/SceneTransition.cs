@@ -39,6 +39,7 @@ public class SceneTransition : MonoBehaviour
             Debug.Log("ゴール時点の時間 = " + TimerManager.instance.elapsedTime);
             GameManager.instance.GoalFlag();
             TimerManager.instance.SaveStageTime(groupNumber -1,stageNumber - 1);
+            //TimerManager.instance.SaveStageTimeAndUpdateTotal(groupNumber - 1, stageNumber - 1);
             TimerManager.instance.StopTimer();
             PlayerScript.instance.cannotMoveMode();//プレイヤーが動かないように
             AudioManager.instance.PlaySE2("ゴール時音声");

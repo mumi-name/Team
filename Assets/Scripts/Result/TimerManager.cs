@@ -21,8 +21,8 @@ public class TimerManager : MonoBehaviour
     public float[] stageClearTimes = new float[3]; // ステージごとのクリア時間
     public bool[] stageCleared;
 
-    [SerializeField] private float[] stageTimes = new float[3]; // 3ステージの時間
-    [SerializeField] private int[] deathCounts = new int[3];    // 3ステージの死亡数
+    [SerializeField] public float[] stageTimes = new float[3]; // 3ステージの時間
+    [SerializeField] public int[] deathCounts = new int[3];    // 3ステージの死亡数
 
     void Awake()
     {
@@ -37,8 +37,7 @@ public class TimerManager : MonoBehaviour
         int totalStages = stagesPerGroup * totalGroups;
         stageClearTimes = new float[totalStages];
         stageCleared = new bool[totalStages];
-        deathCounts = new int[totalStages];
-        stageTimes = new float[totalStages];
+        
     }
 
     void Update()
@@ -70,38 +69,67 @@ public class TimerManager : MonoBehaviour
     public void AddDeath() => deathCount++;
 
     // ■ クリア時に呼ぶ（ステージ保存）
+    //public void SaveStageTime(int groupIndex, int stageIndex)
+    //{
+    //    int index = groupIndex * stagesPerGroup + stageIndex;
+    //    Debug.Log($"SaveStageTime 呼ばれた: group={groupIndex}, stage={stageIndex}, index={index}, time={elapsedTime}");
+    //    if (index < 0 || index >= stageClearTimes.Length)
+    //    {
+    //        Debug.LogError($"SaveStageTime: index {index} が範囲外です");
+    //        return;
+    //    }
+    //    if(stageTimes == null || stageTimes.Length == 0)
+    //    {
+    //        int totalStages = totalGroups * stagesPerGroup;
+    //        stageTimes = new float[totalStages];
+    //        deathCounts = new int[totalStages];
+    //    }
+    //
+    //    stageTimes[index] = elapsedTime;
+    //    deathCounts[index] = deathCount;
+    //    stageCleared[index] = true;
+    //    GetTotalClearTime(groupIndex);
+    //}
     public void SaveStageTime(int groupIndex, int stageIndex)
     {
         int index = groupIndex * stagesPerGroup + stageIndex;
-        Debug.Log($"SaveStageTime 呼ばれた: group={groupIndex}, stage={stageIndex}, index={index}, time={elapsedTime}");
-        if (index < 0 || index >= stageClearTimes.Length)
-        {
-            Debug.LogError($"SaveStageTime: index {index} が範囲外です");
-            return;
-        }
+        if (index < 0 || index >= stageClearTimes.Length) return;
 
-        stageClearTimes[index] = elapsedTime;
+        // ★ステージ単体のタイムではなく、グループ合計にするなら↓
+        //float total = GetTotalClearTime(groupIndex);
+        stageClearTimes[index] = elapsedTime;  // ←ここを変更(total)
         deathCounts[index] = deathCount;
         stageCleared[index] = true;
+
         GetTotalClearTime(groupIndex);
+        Debug.Log($"【SaveStageTime】Group={groupIndex} Stage={stageIndex} Total={elapsedTime}");//total
+    }
+    public void SaveStageTimeAndUpdateTotal(int groupIndex, int stageIndex)
+    {
+        // まず今のステージ時間を保存
+        //SaveStageTime(groupIndex, stageIndex);
+        GetTotalClearTime(groupIndex);
+        // ここで「このグループの合計タイム」を再計算する
+        float total = GetTotalClearTime(groupIndex);
+
+        Debug.Log($"【合計タイム更新】Group {groupIndex + 1} の合計 = {total}");
     }
 
     // ■グループの総合クリアタイム
-    /*
-    public float GetTotalClearTime(int group)
-    {
-        float total = 0f;
-        for (int i = 0; i < stagesPerGroup; i++)
-        {
-            int index = (group - 1) * stagesPerGroup + i;
-            if (!stageCleared[index])
-                return -1f; // まだ埋まってない → 表示しない
-            total += stageClearTimes[index];
-        }
-        return total;
-    }
-    */
+    //public float GetTotalClearTime(int groupindex)
+    //{
+    //    float total = elapsedTime;
+    //    for (int i = 0; i < stagesPerGroup; i++)
+    //    {
+    //        int index = (group - 1) * stagesPerGroup + i;
+    //
+    //        if (!stageCleared[index])return -1f; // まだ埋まってない → 表示しない
+    //        total += stageClearTimes[index];
+    //    }
+    //    return total;
+    //}
 
+    
     public float GetTotalClearTime(int groupIndex)
     {
         float total = elapsedTime;
@@ -121,16 +149,17 @@ public class TimerManager : MonoBehaviour
 
             if (idx >= stageClearTimes.Length) continue;
 
+            if (!stageCleared[idx]) return elapsedTime;
+
             if (stageCleared[idx])
             {
                 total += stageClearTimes[idx];
-                //anyCleared = true;
+                anyCleared = true;
             }
         }
-        //Debug.Log($"Total time={total}");
-        return anyCleared ? total : -1f; // クリアしてないなら -1を返す
+        Debug.Log($"Total time={total}");
+        return total; // クリアしてないなら -1を返す
     }
-
 
     private string FormatTime(float t)
     {

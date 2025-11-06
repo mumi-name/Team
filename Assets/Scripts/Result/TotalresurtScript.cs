@@ -16,61 +16,72 @@ public class TotalResultScript : MonoBehaviour
     public Sprite rankB;
     public Sprite rankC;
 
-    [Header("ステージ情報")]
+    [Header("ステージ情報 (1始まり)")]
     public int groupNumber = 1;
     public int stageNumber = 1;
-
-    //private bool resultShown = false;
 
     [Header("ランクアニメーション")]
     public Animator rankAnimator;
 
+    string rank;
     void Start()
     {
         ShowResult();
     }
 
-    void ShowResult()
+    /*void ShowResult()
     {
         if (TimerManager.instance == null) return;
 
+        int groupIndex = Mathf.Max(0, groupNumber - 1);
+        int stageInGroup = Mathf.Max(0, stageNumber - 1);
+
+        // ★ 個別ステージのタイムを取得
+        //int index = groupIndex * TimerManager.instance.stagesPerGroup + stageInGroup;
+        //float stageTime = TimerManager.instance.stageClearTimes[index];
+        // ★ ここをあなたのコードに置き換える
+        float totalTime = TimerManager.instance.stageClearTimes[groupIndex * TimerManager.instance.stagesPerGroup + stageInGroup];
+        if (totalTime <= 0)
+        {
+            resultText.text = "ClearTime: --:--.--";
+            rankText.text = "--";
+            deathText.text = "Death: --";
+            Debug.Log("まだこのステージはクリアされていません。");
+            return;
+        }
+
+        resultText.text = "ClearTime: " + FormatTime(totalTime);
+        deathText.text = "Death: " + TimerManager.instance.deathCounts[groupIndex * TimerManager.instance.stagesPerGroup + stageInGroup];
+
+        ShowRank(totalTime);
+    }*/
+
+    void ShowResult()
+    {
+        if (TimerManager.instance == null) return;
         int groupIndex = groupNumber - 1;
         int stageInGroup = stageNumber - 1;
         //int groupIndex = Mathf.Max(0, groupNumber - 1);
         //int stageInGroup = Mathf.Max(0, stageNumber - 1);
-
         float totalTime = TimerManager.instance.GetTotalClearTime(groupIndex);
-        //totalTime = Mathf.Max(0, totalTime);        //if (totalTime < 0) totalTime = 0;
+        totalTime = Mathf.Max(0, totalTime); //if (totalTime < 0) totalTime = 0;
         Debug.Log($"Result画面 totalTime={totalTime}");
-
-        if(totalTime <= 0)
-        {
-            resultText.text = "ClearTime: --:--.--";
-            rankText.text = "--";
-            Debug.Log("トータルタイムにマイナスが入ってます。");
-            return;
-        }
         resultText.text = "ClearTime: " + FormatTime(totalTime);
         int deaths = TimerManager.instance.GetDeathCount(groupIndex * TimerManager.instance.stagesPerGroup + stageInGroup);
-        deathText.text = "Death: " + deaths;
-
-        // ランク表示
-        ShowRank(totalTime);
+        deathText.text = "Death: " + deaths; 
+        //ランク表示
+        ShowRank(totalTime); 
     }
-
-    // ランク判定
     string GetRank(float time)
     {
-        if (time <= 0) return "--";
         if (time < 60f) return "S";
         if (time < 120f) return "A";
         if (time < 180f) return "B";
-        else return "C";
+        return "C";
     }
-
-    // ランク画像セット
     void ResultRank(string rank)
     {
+        PlayRankAnimation(rank);
         switch (rank)
         {
             case "S": rankImage.sprite = rankS; break;
@@ -79,13 +90,8 @@ public class TotalResultScript : MonoBehaviour
             case "C": rankImage.sprite = rankC; break;
             default: rankImage.sprite = null; break;
         }
-        //Debug.Log("ランクイメージに評価が入りました。");
-        if (rankImage.sprite == null) Debug.Log("ランクイメージにスプライトが設定されていません。");
-        //アニメ再生
-        PlayRankAnimation(rank);
     }
-
-    public void ShowRank(float totalTime)
+    void ShowRank(float totalTime)
     {
         if (totalTime <= 0)
         {
@@ -94,35 +100,42 @@ public class TotalResultScript : MonoBehaviour
             Debug.Log("[ShowRank] totalTimeが0以下 → ランク判定スキップ");
             return;
         }
-        Debug.Log("TotalTime" + totalTime);
-        string rank = GetRank(totalTime);
+
+        // ランク判定
+        rank = GetRank(totalTime);
         rankText.text = rank;
         Debug.Log($"[ShowRank] 判定されたランク: {rank}");
-        // 画像を適用
+
+        // ランク画像表示
         ResultRank(rank);
-
-        // アニメ再生
-        
     }
-
     public void PlayRankAnimation(string rank)
     {
         if (rankAnimator == null) return;
-
-
-       rankAnimator.ResetTrigger("S");
-       rankAnimator.ResetTrigger("A");
-       rankAnimator.ResetTrigger("B");
-       rankAnimator.ResetTrigger("C");
-       rankAnimator.SetTrigger(rank);
-        Debug.Log("ランクアニメーションが起動しました。"　+ rank);
+        rankAnimator.ResetTrigger("S");
+        rankAnimator.ResetTrigger("A");
+        rankAnimator.ResetTrigger("B");
+        rankAnimator.ResetTrigger("C");
+        rankAnimator.SetTrigger(rank);
+        Debug.Log("ランクアニメーション再生: " + rank);
+        koteiSprite(rank);
     }
-
-    private string FormatTime(float timeInSeconds)
+    //public void koteiSprite(string rank)
+    //{
+    //    switch (rank)
+    //    {
+    //        case "S": rankImage.sprite = rankS; break;
+    //        case "A": rankImage.sprite = rankA; break;
+    //        case "B": rankImage.sprite = rankB; break;
+    //        case "C": rankImage.sprite = rankC; break;
+    //        default: rankImage.sprite = null; break;
+    //    }
+    //}
+    private string FormatTime(float t)
     {
-        int minutes = Mathf.FloorToInt(timeInSeconds / 60f);
-        int seconds = Mathf.FloorToInt(timeInSeconds % 60f);
-        int milliseconds = Mathf.FloorToInt((timeInSeconds * 100f) % 100f);
-        return string.Format("{0}:{1:00}.{2:00}", minutes, seconds, milliseconds);
+        int m = Mathf.FloorToInt(t / 60f);
+        int s = Mathf.FloorToInt(t % 60f);
+        int ms = Mathf.FloorToInt((t * 100f) % 100f);
+        return $"{m}:{s:00}.{ms:00}";
     }
 }
