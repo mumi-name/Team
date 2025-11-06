@@ -22,6 +22,8 @@ public class StageSelectScript : MonoBehaviour
     public Animator[] stageAnimators;
 
     private int currentIndex = 0;
+    private float inputDelay = 0.2f;  // 連続入力防止用
+    private float inputTimer = 0f;
 
     void Start()
     {
@@ -30,20 +32,38 @@ public class StageSelectScript : MonoBehaviour
 
     void Update()
     {
+        inputTimer += Time.deltaTime;
+
+        float vertical = Input.GetAxisRaw("Vertical");
         // 上移動
-        if (Input.GetKeyDown(KeyCode.W))
+        if (inputTimer >= inputDelay)
         {
-            currentIndex = Mathf.Max(0, currentIndex - 1);
-            UpdateSelection();
+            if (Input.GetKeyDown(KeyCode.W) || vertical > 0.5f) // 上
+            {
+                currentIndex = Mathf.Max(0, currentIndex - 1);
+                UpdateSelection();
+                inputTimer = 0f;
+            }
+            if (Input.GetKeyDown(KeyCode.S) || vertical < -0.5f) // 下
+            {
+                currentIndex = Mathf.Min(stageIcons.Length - 1, currentIndex + 1);
+                UpdateSelection();
+                inputTimer = 0f;
+            }
         }
+        //if (Input.GetKeyDown(KeyCode.W))
+        //{
+        //    currentIndex = Mathf.Max(0, currentIndex - 1);
+        //    UpdateSelection();
+        //}
         // 下移動
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            currentIndex = Mathf.Min(stageIcons.Length - 1, currentIndex + 1);
-            UpdateSelection();
-        }
+        //if (Input.GetKeyDown(KeyCode.S))
+        //{
+        //    currentIndex = Mathf.Min(stageIcons.Length - 1, currentIndex + 1);
+        //    UpdateSelection();
+        //}
         // スペースでステージへ
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Select"))
         {
             for (int i = 0; i < stageAnimators.Length; i++)
             {

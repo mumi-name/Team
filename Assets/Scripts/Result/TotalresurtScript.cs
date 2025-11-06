@@ -1,7 +1,6 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class TotalResultScript : MonoBehaviour
 {
@@ -23,13 +22,13 @@ public class TotalResultScript : MonoBehaviour
 
     private bool resultShown = false;
 
+    [Header("ランクアニメーション")]
+    public Animator rankAnimator;
+
     void Start()
     {
         if (TimerManager.instance != null)
             TimerManager.instance.StopTimer();
-
-        //resultText.gameObject.SetActive(true);
-        //deathText.gameObject.SetActive(true);
 
         ShowResult();
     }
@@ -42,26 +41,22 @@ public class TotalResultScript : MonoBehaviour
         int groupIndex = groupNumber - 1;
         int stageInGroup = stageNumber - 1;
 
-        //ステージタイム保存（0始まりで渡す）
+        // ステージタイム保存
         TimerManager.instance.SaveStageTime(groupIndex, stageInGroup);
 
-        //グループ合計タイム取得
         float totalTime = TimerManager.instance.GetTotalClearTime(groupIndex);
-
-        //-1（まだデータなし）は0扱い
         if (totalTime < 0) totalTime = 0;
 
-        //UI 表示
         resultText.text = "ClearTime: " + FormatTime(totalTime);
 
         int deaths = TimerManager.instance.GetDeathCount(groupIndex * TimerManager.instance.stagesPerGroup + stageInGroup);
         deathText.text = "Death: " + deaths;
 
-        //ランク表示
+        // ランク表示
         ShowRank(totalTime);
     }
 
-
+    // ランク判定
     string GetRank(float time)
     {
         if (time <= 0) return "--";
@@ -71,14 +66,11 @@ public class TotalResultScript : MonoBehaviour
         return "C";
     }
 
+    // ランク画像セット
     void ResultRank(string rank)
     {
-        if (rank == null)
-        {
-            Debug.Log("変数　rankに何も入ってません");
-            return;
-        }
-            
+        //if (rankAnimator != null)
+        //    rankAnimator.enabled = false;  // 一旦止める
 
         switch (rank)
         {
@@ -89,29 +81,38 @@ public class TotalResultScript : MonoBehaviour
             default: rankImage.sprite = null; break;
         }
     }
+
     public void ShowRank(float totalTime)
     {
-        Debug.Log($"[ShowRank] totalTime = {totalTime}");
-
-        if (rankText == null) Debug.Log("rankText がセットされていません。");
-        if (rankImage == null) Debug.Log("rankImage がセットされていません。");
-
         if (totalTime <= 0)
         {
-            Debug.Log("クリア時間がありません。（totalTime <= 0）");
             rankText.text = "--";
             rankImage.sprite = null;
             return;
         }
 
         string rank = GetRank(totalTime);
-        Debug.Log($"[ShowRank] rank = {rank}");
-        //テキストと画像セット
         rankText.text = rank;
+
+        // 画像を適用
         ResultRank(rank);
 
-        Debug.Log($"rankText.text = {rankText.text}");
-        Debug.Log($"rankImage.sprite = {rankImage?.sprite}");
+        // アニメ再生
+        PlayRankAnimation(rank);
+    }
+
+    public void PlayRankAnimation(string rank)
+    {
+        if (rankAnimator == null) return;
+
+        //rankAnimator.enabled = true; // 復活させて…
+       //rankAnimator.ResetTrigger("S");
+       //rankAnimator.ResetTrigger("A");
+       //rankAnimator.ResetTrigger("B");
+       //rankAnimator.ResetTrigger("C");
+
+        rankAnimator.SetTrigger(rank);
+        Debug.Log("ランクアニメーションが起動しました。");
     }
 
     private string FormatTime(float timeInSeconds)
