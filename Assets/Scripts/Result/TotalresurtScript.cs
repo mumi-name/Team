@@ -81,6 +81,8 @@ public class TotalResultScript : MonoBehaviour
         }
         //Debug.Log("ランクイメージに評価が入りました。");
         if (rankImage.sprite == null) Debug.Log("ランクイメージにスプライトが設定されていません。");
+        //アニメ再生
+        PlayRankAnimation(rank);
     }
 
     public void ShowRank(float totalTime)
@@ -100,7 +102,7 @@ public class TotalResultScript : MonoBehaviour
         ResultRank(rank);
 
         // アニメ再生
-        PlayRankAnimation(rank);
+        
     }
 
     public void PlayRankAnimation(string rank)
@@ -108,13 +110,12 @@ public class TotalResultScript : MonoBehaviour
         if (rankAnimator == null) return;
 
 
-       //rankAnimator.ResetTrigger("S");
-       //rankAnimator.ResetTrigger("A");
-       //rankAnimator.ResetTrigger("B");
-       //rankAnimator.ResetTrigger("C");
-
-        rankAnimator.SetTrigger(rank);
-        Debug.Log("ランクアニメーションが起動しました。");
+       rankAnimator.ResetTrigger("S");
+       rankAnimator.ResetTrigger("A");
+       rankAnimator.ResetTrigger("B");
+       rankAnimator.ResetTrigger("C");
+       rankAnimator.SetTrigger(rank);
+        Debug.Log("ランクアニメーションが起動しました。"　+ rank);
     }
 
     private string FormatTime(float timeInSeconds)

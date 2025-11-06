@@ -37,6 +37,8 @@ public class TimerManager : MonoBehaviour
         int totalStages = stagesPerGroup * totalGroups;
         stageClearTimes = new float[totalStages];
         stageCleared = new bool[totalStages];
+        deathCounts = new int[totalStages];
+        stageTimes = new float[totalStages];
     }
 
     void Update()
@@ -103,7 +105,7 @@ public class TimerManager : MonoBehaviour
     public float GetTotalClearTime(int groupIndex)
     {
         float total = elapsedTime;
-        //bool anyCleared = false;
+        bool anyCleared = false;
 
         groupIndex = Mathf.Clamp(groupIndex, 0, totalGroups - 1);
         // groupIndex が 0～(totalGroups-1) かチェック
@@ -126,7 +128,7 @@ public class TimerManager : MonoBehaviour
             }
         }
         //Debug.Log($"Total time={total}");
-        return total; // クリアしてないなら -1を返す
+        return anyCleared ? total : -1f; // クリアしてないなら -1を返す
     }
 
 

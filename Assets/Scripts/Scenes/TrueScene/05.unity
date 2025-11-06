@@ -2063,7 +2063,7 @@ MonoBehaviour:
   timerText: {fileID: 1533330914}
   deathText: {fileID: 0}
   stagesPerGroup: 4
-  totalGroups: 3
+  totalGroups: 2
   elapsedTime: 0
   deathCount: 0
   stageClearTimes:
