@@ -937,6 +937,7 @@ MonoBehaviour:
   deathText: {fileID: 0}
   stagesPerGroup: 3
   totalGroups: 2
+  elapsedTime: 0
   deathCount: 0
   stageClearTimes: []
   stageCleared: 
@@ -1452,9 +1453,9 @@ MonoBehaviour:
   previewImage: {fileID: 1893821891}
   clearTimeText: {fileID: 1095557294}
   previewSprites:
-  - {fileID: -8586693324203152019, guid: 5ebe92b849b2b124dba8c2aed8be0fc1, type: 3}
-  - {fileID: -3324005228605124480, guid: a002648123ebcc74aa52f71f8c782e81, type: 3}
-  - {fileID: 9185550979427784230, guid: a23f60ab9bdec2440bee730db4129866, type: 3}
+  - {fileID: -8586693324203152019, guid: 2d2db388544e74146af4ab5098a0fc55, type: 3}
+  - {fileID: 4921383511498712678, guid: 58392c58eb1d5934daf2edc6fee31c0f, type: 3}
+  - {fileID: -3935531025487923894, guid: 6a064192a4a89e4498ae067d23e93199, type: 3}
   stageSceneName:
   - 01
   - 03.5kairi
