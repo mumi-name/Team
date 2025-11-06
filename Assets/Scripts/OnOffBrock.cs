@@ -39,6 +39,8 @@ public class OnOffBrock : MonoBehaviour
     float waitTimer = 0f;
     bool waiting = false;
 
+    Vector3 target;
+
     void Start()
     {
         if(orizinalpos==Vector3.zero)orizinalpos = transform.position;
@@ -129,6 +131,9 @@ public class OnOffBrock : MonoBehaviour
 
         }
         OnOffMove(OnOff);
+        waiting = false;
+        turn = false;
+        
 
     }
 
@@ -206,34 +211,9 @@ public class OnOffBrock : MonoBehaviour
 
     void Move()
     {
-        //ONで動くブロックがOFFの時にも動いてしまわないようにmoveFlagを確認する
-        //if (!moveFlag) return;
-        //if (move)
-        //{
-        //    if (stop) return;//停止命令が出ていたら停止
-
-        //    if (!turn && Mathf.Approximately(transform.position.x, movestop.x) && Mathf.Approximately(transform.position.y, movestop.y))
-        //    {
-        //        Invoke("OnTurn", 0.7f);
-        //    }
-        //    if (turn && Mathf.Approximately(transform.position.x, orizinalpos.x) && Mathf.Approximately(transform.position.y, orizinalpos.y))
-        //    {
-        //        Invoke("OffTurn", 0.7f);
-        //    }
-
-        //    if (!turn)
-        //    {
-        //        transform.position = Vector3.MoveTowards
-        //        (transform.position, movestop, Mathf.Abs(moveSpeed) * Time.deltaTime);
-        //    }
-        //    else
-        //    {
-        //        transform.position = Vector3.MoveTowards(transform.position, orizinalpos, Mathf.Abs(moveSpeed) * Time.deltaTime);
-        //    }
-        //}
-
-        if (!moveFlag || stop) return;
-        if (!move) return;
+        
+        if (moveFlag==false || stop) return;
+        if (move==false) return;
 
         if (!waiting)
         {
@@ -243,7 +223,7 @@ public class OnOffBrock : MonoBehaviour
             //目的地に到着したら
             if (Vector3.Distance(transform.position, target) < 0.01f)
             {
-                if (!loop) return;
+                if (loop==false) return;
                 waiting = true;
                 waitTimer = 0f;
             }
@@ -251,7 +231,7 @@ public class OnOffBrock : MonoBehaviour
         else
         {
             waitTimer += Time.deltaTime;
-            if (waitTimer >= 0.7f)
+            if (waitTimer >= 2f)
             {
                 waiting = false;
                 if (loop) turn = !turn;

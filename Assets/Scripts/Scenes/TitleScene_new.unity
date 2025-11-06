@@ -1617,6 +1617,8 @@ MonoBehaviour:
   locked: 0
   animator: {fileID: 0}
   padlockAnimator: {fileID: 0}
+  groupNumber: 1
+  stageNumber: 1
 --- !u!1 &911637047
 GameObject:
   m_ObjectHideFlags: 0
