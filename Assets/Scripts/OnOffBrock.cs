@@ -231,7 +231,7 @@ public class OnOffBrock : MonoBehaviour
         else
         {
             waitTimer += Time.deltaTime;
-            if (waitTimer >= 2f)
+            if (waitTimer >= 0.7f)
             {
                 waiting = false;
                 if (loop) turn = !turn;

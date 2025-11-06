@@ -2423,6 +2423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transitionTime: 1
   projectionTime: 1
+  waitTime: 0.7
   mainCamera: {fileID: 519420031}
   itemZoomCamera: {fileID: 1984708618}
   zoomCamera: {fileID: 250951270}
@@ -7565,7 +7566,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 0.7
+  orthographic size: 1
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -7590,7 +7591,7 @@ Transform:
   m_GameObject: {fileID: 1984708615}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.62, y: 4.24, z: -2.8}
+  m_LocalPosition: {x: -7.12, y: 4.05, z: -2.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

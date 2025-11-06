@@ -1,13 +1,16 @@
+using DG.Tweening;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
+using static System.TimeZoneInfo;
 
 public class TitleAnimation : MonoBehaviour
 {
     
     public Animator animator;
     public Animator playerAnimator;
+    public GameObject IrisShotObject;
 
     private bool on = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -23,20 +26,11 @@ public class TitleAnimation : MonoBehaviour
         //AudioManager.instance.PlayBGM("BGM1");
         if (Input.GetButtonDown("Title")||Input.anyKeyDown)
         {
-            if (on)
-            {
-                //animator.SetTrigger("ButtonTrigger");
-                SceneTransition.instance.Transition();
-                //IrisShot.instance.IrisOut();
-                OnPlayer();
-            }
-            else
-            {
-                //animator.SetTrigger("OffButtonTrigger");
-                SceneTransition.instance.Transition();
-                //IrisShot.instance.IrisOut();
-                OffPlayer();
-            }
+            IrisShotObject.SetActive(true);
+            IrisShot.instance.IrisOut();
+            Invoke("Transition", 0.7f);
+            if (on)OnPlayer();
+            else OffPlayer();
         }
 
     }
@@ -59,6 +53,19 @@ public class TitleAnimation : MonoBehaviour
     public void OffPlayer()
     {
         playerAnimator.SetTrigger("OffTrigger");
+    }
+
+    public void Transition()
+    {
+        //SceneTransition.instance.Transition();
+
+        //if (IrisShot.instance != null) IrisShot.instance.IrisIN();
+
+        //n•bŒã‚ÉƒV[ƒ“‘JˆÚ
+        DOVirtual.DelayedCall(0.5f, () =>
+        {
+            SceneManager.LoadScene("01");
+        });
     }
 
 }
