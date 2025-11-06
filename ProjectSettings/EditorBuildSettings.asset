@@ -12,37 +12,37 @@ EditorBuildSettings:
     path: Assets/Scripts/Scenes/TitleScene_new.unity
     guid: 5099bac681070c0408959dde800bfeea
   - enabled: 1
-    path: Assets/Scripts/Scenes/01.unity
+    path: Assets/Scripts/Scenes/TrueScene/01.unity
     guid: 38ebd310eb4d90548a10ce585f6d2623
   - enabled: 1
-    path: Assets/Scripts/Scenes/02.unity
+    path: Assets/Scripts/Scenes/TrueScene/02.unity
     guid: 2a501d0d0c7f32241ac9a475cb25c0fb
   - enabled: 1
-    path: Assets/Scripts/Scenes/02.5siun.unity
+    path: Assets/Scripts/Scenes/TrueScene/03.unity
     guid: 918ed640463bbe34a8bc156976425f3d
   - enabled: 1
-    path: Assets/Scripts/Scenes/03_honnke.unity
+    path: Assets/Scripts/Scenes/TrueScene/04.unity
     guid: 4064149384af33c469b87be79b38b292
   - enabled: 1
-    path: Assets/Scripts/Scenes/03.5kairi.unity
+    path: Assets/Scripts/Scenes/TrueScene/05.unity
     guid: d01ddec73fef19e429f7f7e38d954312
   - enabled: 1
-    path: Assets/Scripts/Scenes/04.unity
+    path: Assets/Scripts/Scenes/TrueScene/06.unity
     guid: 72249e9e09a09454ba1e4a5dce1b3827
   - enabled: 1
-    path: Assets/Scripts/Scenes/05.unity
+    path: Assets/Scripts/Scenes/TrueScene/07.unity
     guid: 91b6d5c5c326d4342a3461c6c1b610b0
   - enabled: 1
-    path: Assets/Scripts/Scenes/05 honnke.unity
+    path: Assets/Scripts/Scenes/TrueScene/08.unity
     guid: 59e0be0e644cda2438bcfbf204786b6c
   - enabled: 1
-    path: Assets/Scripts/Scenes/06siun.unity
+    path: Assets/Scripts/Scenes/TrueScene/09.unity
     guid: 2a266841ad061aa4f9612194c32194cc
   - enabled: 1
-    path: Assets/Scripts/Scenes/07siun 1.unity
+    path: Assets/Scripts/Scenes/TrueScene/10.unity
     guid: fb157a8b84e032642bb14c1692f83e69
   - enabled: 1
-    path: Assets/Scripts/Scenes/09siun.unity
+    path: Assets/Scripts/Scenes/TrueScene/11.unity
     guid: 62e5273af328c7e4d987b37800b0c7fc
   - enabled: 1
     path: Assets/Scripts/Scenes/OverScene.unity

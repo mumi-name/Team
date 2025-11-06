@@ -7954,7 +7954,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4712945695039586591, guid: fda23340a0585d9498419516baf21b52, type: 3}
       propertyPath: sceneName
-      value: ClearScene
+      value: 02
       objectReference: {fileID: 0}
     - target: {fileID: 6572658815104897753, guid: fda23340a0585d9498419516baf21b52, type: 3}
       propertyPath: m_Size.x

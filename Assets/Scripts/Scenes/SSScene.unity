@@ -1458,8 +1458,8 @@ MonoBehaviour:
   - {fileID: -3935531025487923894, guid: 6a064192a4a89e4498ae067d23e93199, type: 3}
   stageSceneName:
   - 01
-  - 03.5kairi
-  - 06siun
+  - 05
+  - 09
   stageAnimators:
   - {fileID: 524830089}
   - {fileID: 140891159}
