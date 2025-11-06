@@ -118,7 +118,7 @@ public class TotalResultScript : MonoBehaviour
         rankAnimator.ResetTrigger("C");
         rankAnimator.SetTrigger(rank);
         Debug.Log("ランクアニメーション再生: " + rank);
-        koteiSprite(rank);
+        //koteiSprite(rank);
     }
     //public void koteiSprite(string rank)
     //{
