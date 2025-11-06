@@ -9,16 +9,16 @@ public class TimerManager : MonoBehaviour
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI deathText;
 
-    [Header("設定値")]
-    public int stagesPerGroup = 3; // ←★1グループ内のステージ数
-    public int totalGroups = 2;    // ←★グループ数（ステージ数 = stagesPerGroup × totalGroups）
+    //[Header("設定値")]
+    public int stagesPerGroup = 4; // ←★1グループ内のステージ数
+    public int totalGroups = 3;    // ←★グループ数（ステージ数 = stagesPerGroup × totalGroups）
 
     [Header("タイム・死亡管理")]
     public float elapsedTime = 0f;
     private bool isRunning = false;
     public int deathCount = 0;
 
-    public float[] stageClearTimes; // ステージごとのクリア時間
+    public float[] stageClearTimes = new float[3]; // ステージごとのクリア時間
     public bool[] stageCleared;
 
     [SerializeField] private float[] stageTimes = new float[3]; // 3ステージの時間
@@ -102,6 +102,7 @@ public class TimerManager : MonoBehaviour
         float total = 0f;
         bool anyCleared = false;
 
+        groupIndex = Mathf.Clamp(groupIndex, 0, totalGroups - 1);
         // groupIndex が 0～(totalGroups-1) かチェック
         if (groupIndex < 0 || groupIndex >= totalGroups)
         {
