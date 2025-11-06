@@ -25,12 +25,16 @@ public class TitleAnimation : MonoBehaviour
         {
             if (on)
             {
-                animator.SetTrigger("ButtonTrigger");
+                //animator.SetTrigger("ButtonTrigger");
+                SceneTransition.instance.Transition();
+                //IrisShot.instance.IrisOut();
                 OnPlayer();
             }
             else
             {
-                animator.SetTrigger("OffButtonTrigger");
+                //animator.SetTrigger("OffButtonTrigger");
+                SceneTransition.instance.Transition();
+                //IrisShot.instance.IrisOut();
                 OffPlayer();
             }
         }
