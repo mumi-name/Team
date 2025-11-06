@@ -39,11 +39,9 @@ public class CameraZoomTransition : MonoBehaviour
             // サイズ補間（2Dの場合はorthographicSizeでズーム）
             mainCamera.orthographicSize = Mathf.Lerp(startSize, endSize, t);
 
-
             if (t >= 1f)
             {
                 isZooming = false;
-
             }
         }
 
