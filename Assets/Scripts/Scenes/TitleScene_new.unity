@@ -1151,7 +1151,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &700374138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1166,6 +1166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   playerAnimator: {fileID: 0}
+  IrisShotObject: {fileID: 0}
 --- !u!95 &700374139
 Animator:
   serializedVersion: 7
@@ -1705,7 +1706,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e028bc6e877c90f4e807b14afe737276, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c47ffd16901e6064ab2f4b07dfc23a1f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1767,6 +1768,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 860844387}
   playerAnimator: {fileID: 1598769973}
+  IrisShotObject: {fileID: 1401591930}
 --- !u!114 &860844389
 MonoBehaviour:
   m_ObjectHideFlags: 0

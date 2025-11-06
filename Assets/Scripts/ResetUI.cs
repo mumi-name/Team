@@ -27,12 +27,12 @@ public class ResetUI : MonoBehaviour
             }
             else
             {
-                Debug.Log("uiObject‚ª‚È‚¢‚¨(^¤^)");
+                Debug.Log("uiObject‚ª‚ ‚è‚Ü‚¹‚ñ");
             }
         }
         else
         {
-            Debug.Log("Player‚ÉG‚ê‚Ä‚È‚¢‚æ");
+            Debug.Log("Player‚ÉG‚ê‚Ä‚Ü‚¹‚ñ");
         }
     }
     private void OnTriggerExit2D(Collider2D collider)

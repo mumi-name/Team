@@ -13,7 +13,7 @@ public class SceneChangeScript : MonoBehaviour
     {
         if (Input.GetButtonDown("Title"))
         {
-                SceneManager.LoadScene(sceneName);
+            SceneManager.LoadScene(sceneName);
         }
     }
 }

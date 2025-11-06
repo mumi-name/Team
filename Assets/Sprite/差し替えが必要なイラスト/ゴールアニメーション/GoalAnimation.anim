@@ -40,6 +40,22 @@ AnimationClip:
       value: {fileID: 21300000, guid: c444ae5ade634b64db7ac532638ad78c, type: 3}
     - time: 0.75
       value: {fileID: 21300000, guid: 4f9172b72cbf6c14aa96ff892bb85e51, type: 3}
+    - time: 0.8333333
+      value: {fileID: 21300000, guid: 87824457c8f6d8d419a0011b271ae395, type: 3}
+    - time: 0.9166667
+      value: {fileID: 21300000, guid: 2d01b5103bcd2b948ab8d18f899cd643, type: 3}
+    - time: 1
+      value: {fileID: 21300000, guid: 9d4f7f8978d29b241b078add494b5cff, type: 3}
+    - time: 1.0833334
+      value: {fileID: 21300000, guid: f3b17569ac93a3949abcfff9335dae34, type: 3}
+    - time: 1.1666666
+      value: {fileID: 21300000, guid: 169f332bcaed102499577c8cf5ba40a9, type: 3}
+    - time: 1.25
+      value: {fileID: 21300000, guid: 97ee1f474adddd640be96b084bf76f3a, type: 3}
+    - time: 1.3333334
+      value: {fileID: 21300000, guid: 3ec8dcb4fcc3b9342aba503fb5f8846a, type: 3}
+    - time: 1.4166666
+      value: {fileID: 21300000, guid: 4ee78107345af614a81ccc19814728ac, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -72,12 +88,20 @@ AnimationClip:
     - {fileID: 21300000, guid: 9e203320acadcd0479d56210dd1a780d, type: 3}
     - {fileID: 21300000, guid: c444ae5ade634b64db7ac532638ad78c, type: 3}
     - {fileID: 21300000, guid: 4f9172b72cbf6c14aa96ff892bb85e51, type: 3}
+    - {fileID: 21300000, guid: 87824457c8f6d8d419a0011b271ae395, type: 3}
+    - {fileID: 21300000, guid: 2d01b5103bcd2b948ab8d18f899cd643, type: 3}
+    - {fileID: 21300000, guid: 9d4f7f8978d29b241b078add494b5cff, type: 3}
+    - {fileID: 21300000, guid: f3b17569ac93a3949abcfff9335dae34, type: 3}
+    - {fileID: 21300000, guid: 169f332bcaed102499577c8cf5ba40a9, type: 3}
+    - {fileID: 21300000, guid: 97ee1f474adddd640be96b084bf76f3a, type: 3}
+    - {fileID: 21300000, guid: 3ec8dcb4fcc3b9342aba503fb5f8846a, type: 3}
+    - {fileID: 21300000, guid: 4ee78107345af614a81ccc19814728ac, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1
+    m_StopTime: 1.5
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -97,7 +121,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 1
+  - time: 1.5
     functionName: Transition
     data: 
     objectReferenceParameter: {fileID: 0}

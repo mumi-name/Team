@@ -6,6 +6,7 @@ public class CameraZoomTransition : MonoBehaviour
     public static CameraZoomTransition instance;
     public float transitionTime = 1f; // ズームにかける秒数
     public float projectionTime = 1f;//カメラ遷移後映す時間
+    public float waitTime = 0.7f;
 
     public Camera mainCamera;         // メインカメラ
     public Camera itemZoomCamera;    //最初にズームするカメラ
@@ -22,7 +23,8 @@ public class CameraZoomTransition : MonoBehaviour
     void Start()
     {
         instance = this;
-        SceneStartZoom();
+        PlayerScript.instance.animator.speed = 0;
+        Invoke("SceneStartZoom", waitTime);
         PlayerScript.instance.cannotMoveMode();
     }
     void Update()
@@ -57,11 +59,13 @@ public class CameraZoomTransition : MonoBehaviour
         
         startPos = mainCamera.transform.position;
         startSize = mainCamera.orthographicSize;
-        endPos = zoomCamera.transform.position;
-        endSize = zoomCamera.orthographicSize;
+        endPos = itemZoomCamera.transform.position;
+        endSize = itemZoomCamera.orthographicSize;
         timer = 0f;
         isZooming = true;
-        Invoke("SceneStartZoom2", projectionTime + transitionTime-1f);
+        //Invoke("SceneStartZoom2", projectionTime + transitionTime-1f);
+        Invoke("ReturnZoom2", projectionTime + transitionTime - 1f);
+        Invoke("canMove", transitionTime);
 
     }
 

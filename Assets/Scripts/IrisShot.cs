@@ -37,6 +37,7 @@ public class IrisShot : MonoBehaviour
         }
         else Destroy(gameObject);
     }
+
     public void IrisIN()
     {
         if (hasOpened) return;
@@ -66,6 +67,7 @@ public class IrisShot : MonoBehaviour
     {
         //unmask.DOScale(IRIS_IN_SCALE, SCALE_DURATION).SetEase(Ease.InCubic);
         //unmask.DOScale(IRIS_IN_SCALE, SCALE_DURATION).SetEase(Ease.InCubic).OnComplete(() => unmask.localScale = Vector3.zero);
+        unmask.localScale = IRIS_IN_SCALE;
         Invoke("CallResetFlag", 0.65f);//リセットボタンの連打禁止
 
         DOVirtual.DelayedCall(0.2f, () =>

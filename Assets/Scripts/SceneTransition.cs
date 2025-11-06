@@ -28,9 +28,6 @@ public class SceneTransition : MonoBehaviour
             instance = this;
         }
 
-       
-
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
