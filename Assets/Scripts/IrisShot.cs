@@ -98,7 +98,11 @@ public class IrisShot : MonoBehaviour
 
     void CallResetFlag()
     {
-        GameManager.instance.ResetFlag();
+        if(GameManager.instance!= null)
+        {
+            GameManager.instance.ResetFlag();
+        }
+        
     }
     void Update()
     {

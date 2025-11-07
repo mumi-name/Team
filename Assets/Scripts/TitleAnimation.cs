@@ -67,7 +67,7 @@ public class TitleAnimation : MonoBehaviour
         //n•bŒã‚ÉƒV[ƒ“‘JˆÚ
         DOVirtual.DelayedCall(0.5f, () =>
         {
-            SceneManager.LoadScene("01");
+            SceneManager.LoadScene("SSScene");
         });
     }
 

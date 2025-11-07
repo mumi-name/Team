@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scripts/Scenes/TitleScene_new.unity
     guid: 5099bac681070c0408959dde800bfeea
   - enabled: 1
+    path: Assets/Scripts/Scenes/SSScene.unity
+    guid: 0edb8177e684c474d9d0b9480f060c4b
+  - enabled: 1
     path: Assets/Scripts/Scenes/TrueScene/01.unity
     guid: 38ebd310eb4d90548a10ce585f6d2623
   - enabled: 1
@@ -50,9 +53,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scripts/Scenes/ClearScene.unity
     guid: 03c329de4bd85ea4d988fa89755215ed
-  - enabled: 1
-    path: Assets/Scripts/Scenes/SSScene.unity
-    guid: 0edb8177e684c474d9d0b9480f060c4b
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
