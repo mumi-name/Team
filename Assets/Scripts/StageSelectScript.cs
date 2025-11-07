@@ -25,6 +25,8 @@ public class StageSelectScript : MonoBehaviour
     private float inputDelay = 0.2f;  // 連続入力防止用
     private float inputTimer = 0f;
 
+    //追加
+    //private float previousGroupIndex;
     void Start()
     {
         UpdateSelection();
@@ -106,6 +108,18 @@ public class StageSelectScript : MonoBehaviour
             previewImage.gameObject.SetActive(false);
         }
 
+        //追加
+        //int groupIndex = Mathf.Clamp(currentIndex / TimerManager.instance.stagesPerGroup, 0, TimerManager.instance.totalGroups - 1);
+        //if (groupIndex != previousGroupIndex)
+        //{
+        //    Debug.Log($"グループ {groupIndex + 1} に切り替わったのでタイムを初期化します");
+        //    if (TimerManager.instance != null)
+        //    {
+        //        TimerManager.instance.ResetGroupTime(groupIndex);
+        //    }
+        //    previousGroupIndex = groupIndex;
+        //}
+        //追加
         // 総合クリア時間表示
         if (TimerManager.instance != null)
         {

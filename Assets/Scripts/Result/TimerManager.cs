@@ -169,6 +169,17 @@ public class TimerManager : MonoBehaviour
         return $"{m}:{s:00}.{ms:00}";
     }
 
+    public void ResetGroupTime(int groupIndex)
+    {
+        if (groupIndex < 0 || groupIndex >= stageClearTimes.Length)
+        {
+            Debug.LogError("ResetGroupTime: groupIndex が範囲外です: " + groupIndex);
+            return;
+        }
+
+        stageClearTimes[groupIndex] = 0f;
+        Debug.Log("グループ " + (groupIndex + 1) + " の総クリア時間をリセットしました");
+    }
     // すべてのステージ（全グループ含む）をクリア済みかどうか判定
     public bool IsAllStageCleared()
     {

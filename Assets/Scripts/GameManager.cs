@@ -185,7 +185,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         Time.fixedDeltaTime = 0.02f;
 
-        // 死亡カウントとIrisShotのリセット
+        // 死亡カウントとIrisShot
         TimerManager.instance?.AddDeath();
         IrisShot.instance?.ResetIris();
 
