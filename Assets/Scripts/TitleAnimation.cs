@@ -13,6 +13,7 @@ public class TitleAnimation : MonoBehaviour
     public GameObject IrisShotObject;
 
     private bool on = false;
+    private bool flag = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -26,6 +27,8 @@ public class TitleAnimation : MonoBehaviour
         //AudioManager.instance.PlayBGM("BGM1");
         if (Input.GetButtonDown("Title")||Input.anyKeyDown)
         {
+            if (flag) return;
+            flag = true;
             IrisShotObject.SetActive(true);
             IrisShot.instance.IrisOut();
             Invoke("Transition", 0.7f);

@@ -79,6 +79,8 @@ public class GameManager : MonoBehaviour
     public void OnOff(bool OnOff)
     {
         if (PlayerScript.instance.GetIngoreInput()) return;
+       // if (PlayerScript.instance.GetJumpFlag() && PlayerScript.instance.rb.linearVelocityY < 0) return;
+
         foreach (var brock in brocks)
         {
             brock.OnOff(OnOff);

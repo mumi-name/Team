@@ -71,6 +71,9 @@ public class OnOffBrock : MonoBehaviour
         {
             //”»’è‚ğ—LŒø‰»
             box.enabled = true;
+            this.gameObject.layer = LayerMask.NameToLayer("Floor");
+            if(move) this.gameObject.layer = LayerMask.NameToLayer("elevator");
+
             if (GameManager.instance.GetWaveAnimation() == true && !changed)
             {
                 box.isTrigger = false;
@@ -102,6 +105,8 @@ public class OnOffBrock : MonoBehaviour
         {
             //”»’è‚ğ–³Œø‰»
             box.enabled = false;
+            this.gameObject.layer = LayerMask.NameToLayer("Default");
+
             //waveAnimation’†‚Ìê‡‚Í“–‚½‚è”»’è‚Ìæ‚è•û‚ğˆê“I‚ÉTrigger‚Åæ‚éB(enabled‚¾‚ÆOnOff”½“]‚µ‚È‚¢‚½‚ß)
             if ((GameManager.instance.GetWaveAnimation() == true || animation) && !changed)
             {

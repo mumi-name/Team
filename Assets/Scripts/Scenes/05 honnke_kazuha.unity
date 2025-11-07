@@ -1956,8 +1956,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 0}
   deathText: {fileID: 0}
+  stagesPerGroup: 4
+  totalGroups: 3
   elapsedTime: 0
   deathCount: 0
+  stageClearTimes:
+  - 0
+  - 0
+  - 0
+  stageCleared: 
+  stageTimes:
+  - 0
+  - 0
+  - 0
+  deathCounts: 000000000000000000000000
 --- !u!4 &569426596
 Transform:
   m_ObjectHideFlags: 0
@@ -2184,6 +2196,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slowSpeed: 1
+  finalTime: 0
+  douziOsi: 0
   brocks:
   - {fileID: 205220367}
   - {fileID: 1548780210}
@@ -2203,8 +2217,6 @@ MonoBehaviour:
   traps: []
   onSprite: {fileID: 21300000, guid: e076c65a2bf8e3c4eb71488d476f2932, type: 3}
   offSprite: {fileID: 21300000, guid: 7922245629c5ccb4b872f774f8960962, type: 3}
-  douziOsi: 0
-  finalTime: 0
 --- !u!4 &685783118
 Transform:
   m_ObjectHideFlags: 0
@@ -4740,7 +4752,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 1668964057}
-  deathCount: {fileID: 0}
+  deathText: {fileID: 0}
+  rankText: {fileID: 0}
 --- !u!114 &1668964057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5232,7 +5245,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1817566135
 MonoBehaviour:
   m_ObjectHideFlags: 0
