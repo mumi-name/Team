@@ -27,12 +27,22 @@ public class ResultrankAnime : MonoBehaviour
 
         switch (currentRank)
         {
-            case "S": rankImage.sprite = rankS; break;
-            case "A": rankImage.sprite = rankA; break;
-            case "B": rankImage.sprite = rankB; break;
-            case "C": rankImage.sprite = rankC; break;
+            case "S": 
+                rankImage.sprite = rankS;
+                //Debug.Log("rankImageに" + currentRank + "の画像が入りました！");
+                break;
+            case "A": 
+                rankImage.sprite = rankA;
+                //Debug.Log("rankImageに" + currentRank + "の画像が入りました！");
+                break;
+            case "B": 
+                rankImage.sprite = rankB;
+                //Debug.Log("rankImageに" + currentRank + "の画像が入りました！");
+                break;
+            case "C": 
+                rankImage.sprite = rankC;
+                //Debug.Log("rankImageに" + currentRank + "の画像が入りました！");
+                break;
         }
-
-        Debug.Log("Animation Event  → 画像固定しました：" + currentRank);
     }
 }

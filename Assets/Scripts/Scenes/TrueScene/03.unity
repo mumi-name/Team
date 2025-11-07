@@ -4318,6 +4318,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3a8c7050fe917cf4ea19ce6a8ef33b2e, type: 3}
   - {fileID: 8300000, guid: 98798d080da31054dbe245abba0eb044, type: 3}
   - {fileID: 8300000, guid: 7c30060e283ebea4291dad1ada52400f, type: 3}
+  - {fileID: 8300000, guid: fe257433209fa994da190543ccb58151, type: 3}
 --- !u!4 &1140590877
 Transform:
   m_ObjectHideFlags: 0
@@ -7678,7 +7679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 1533330914}
   deathText: {fileID: 0}
-  stagesPerGroup: 1
+  stagesPerGroup: 3
   totalGroups: 1
   elapsedTime: 0
   deathCount: 0
